@@ -1,3 +1,9 @@
+import HeroPage from "../components/HeroPage";
+
 export default function Home() {
-  return <main>hello next 13</main>;
+  return (
+    <main>
+      <HeroPage />
+    </main>
+  );
 }
