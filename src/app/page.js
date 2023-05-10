@@ -9,7 +9,7 @@ const montserrat = Montserrat({
 export default function Home() {
   return (
     <main className={`${montserrat.className} bg-light w-full min-h-screen`}>
-      <HeroPage />
+      {/* <HeroPage /> */}
     </main>
   );
 }
