@@ -13,7 +13,6 @@ import {
 } from "./Icons";
 import HireMe from "./HireMe";
 import { MenuToggle } from "./NavDesktopToggle/MenuToggle";
-import { Navigation } from "./NavDesktopToggle/Navigation";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
@@ -91,7 +90,6 @@ const Navbar = () => {
           </motion.a>
           <span className="">
             <MenuToggle />
-            <Navigation />
           </span>
         </nav>
 

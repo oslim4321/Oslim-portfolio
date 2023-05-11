@@ -4,6 +4,7 @@ import { motion, sync, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
+import "./style.css";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -31,7 +32,8 @@ export const Example = () => {
   const { height } = useDimensions(containerRef);
 
   return (
-    <motion.nav
+    <motion.div
+      className="nav"
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom={height}
@@ -40,6 +42,6 @@ export const Example = () => {
       <motion.div className="background" variants={sidebar} />
       <Navigation />
       <MenuToggle toggle={() => toggleOpen()} />
-    </motion.nav>
+    </motion.div>
   );
 };

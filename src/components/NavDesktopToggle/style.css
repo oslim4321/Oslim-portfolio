@@ -1,4 +1,4 @@
-body {
+/* body {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(180deg, #0055ff 0%, rgb(0, 153, 255) 100%);
@@ -8,9 +8,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-nav {
+.nav {
   position: absolute;
   top: 0;
   left: 0;

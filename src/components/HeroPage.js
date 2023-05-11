@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { LinkArrow } from "./Icons";
 import { PopUp } from "./PopUp";
 import HeroPageAnimatedLeft from "./HeroPageAnimatedLeft";
+import { Example } from "./NavDesktopToggle/Popup";
 
 const HeroPage = () => {
   const MotionLink = motion(Link);
@@ -67,7 +68,7 @@ const HeroPage = () => {
           {/* </motion.div> */}
         </div>
       </div>
-      <PopUp />
+      <Example />
     </div>
   );
 };
