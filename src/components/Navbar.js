@@ -12,6 +12,8 @@ import {
   TwitterIcon,
 } from "./Icons";
 import HireMe from "./HireMe";
+import { MenuToggle } from "./NavDesktopToggle/MenuToggle";
+import { Navigation } from "./NavDesktopToggle/Navigation";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
@@ -87,14 +89,9 @@ const Navbar = () => {
           >
             <MoonIcon />
           </motion.a>
-          <span>
-            <button
-              type="button"
-              aria-label="Open contact menu"
-              aria-controls="contact-menu"
-              aria-expanded="false"
-              className="menu-toggle"
-            ></button>
+          <span className="">
+            <MenuToggle />
+            <Navigation />
           </span>
         </nav>
 
