@@ -1,17 +1,15 @@
 "use client";
 import Image from "next/image";
-import AnimatedText from "./AnimatedText";
+import AnimatedText, { singleWord } from "./AnimatedText";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { LinkArrow } from "./Icons";
+import { PopUp } from "./PopUp";
 
 const HeroPage = () => {
   const MotionLink = motion(Link);
   return (
-    //   className="h-[100vh] bg-[#c8e2df]"
     <div>
-      {/* <img src="/images/IMG_20230329_110911_269.jpg" width="'300'" alt="" /> */}
-
       <div className="flex items-center justify-between w-full">
         <div className="w-1/2">
           <Image
@@ -27,18 +25,27 @@ const HeroPage = () => {
             text={
               "Creating Engaging Digital Experiences with Custom Code and Design"
             }
-            className="!text-5xl !text-left"
+            className="!text-5xl !text-left font-bold capitalize"
           />
 
-          <p className="font-base my-4 font-medium">
+          {/* <p className="font-base my-4 font-medium">
             Explore my latest projects and articles: A testament to my passion
             for turning ideas into web applications
-          </p>
+          </p> */}
+          {/* small text */}
+          <AnimatedText
+            className="font-base my-4 !text-lg !font-medium text-start"
+            text="Explore my latest projects and articles: A testament to my passion
+            for turning ideas into web applications"
+          />
           {/* <motion.div> */}
           <MotionLink
             href="resume"
             target="_blank"
             className="flex items-center justify-center bg-dark text-light w-1/2 rounded py-3 text-lg font-semibold hover:bg-light"
+            variants={singleWord}
+            initial="initial"
+            animate="animate"
             whileHover={{
               backgroundColor: [
                 "#121212",
@@ -59,6 +66,7 @@ const HeroPage = () => {
           {/* </motion.div> */}
         </div>
       </div>
+      <PopUp />
     </div>
   );
 };
