@@ -33,7 +33,7 @@ const CustomLink = ({ href, title, className = "" }) => {
 const Navbar = () => {
   return (
     <div className="w-full py-8">
-      <div className="max-w-[90%] mx-auto font-medium flex items-center justify-between">
+      <div className="max-w-[90%] mx-auto font-medium flex items-center justify-between py-4">
         <nav>
           <CustomLink href="/" title="Home" className="mx-2" />
           <CustomLink href="/about" title="About" className="mx-2" />

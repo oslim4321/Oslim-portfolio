@@ -1,24 +1,25 @@
 "use client";
-import Image from "next/image";
 import AnimatedText, { singleWord } from "./AnimatedText";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { LinkArrow } from "./Icons";
 import { PopUp } from "./PopUp";
+import HeroPageAnimatedLeft from "./HeroPageAnimatedLeft";
 
 const HeroPage = () => {
   const MotionLink = motion(Link);
   return (
     <div>
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between w-full py-20">
         <div className="w-1/2">
-          <Image
+          {/* <Image
             src="/Images/IMG_20230329_110911_269.jpg"
             alt="oslim"
             width={"300"}
             height={"300"}
             className="w-[60%]"
-          />
+          /> */}
+          <HeroPageAnimatedLeft />
         </div>
         <div className="w-1/2 flex flex-col self-center">
           <AnimatedText
@@ -42,7 +43,7 @@ const HeroPage = () => {
           <MotionLink
             href="resume"
             target="_blank"
-            className="flex items-center justify-center bg-dark text-light w-1/2 rounded py-3 text-lg font-semibold hover:bg-light"
+            className="flex items-center justify-center bg-[#303841] text-light w-1/2 rounded py-3 text-lg font-semibold hover:bg-light"
             variants={singleWord}
             initial="initial"
             animate="animate"
