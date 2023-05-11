@@ -15,11 +15,11 @@ const HeroPage = () => {
       <div className="flex items-center justify-between w-full">
         <div className="w-1/2">
           <Image
-            src="/Images/youtube_profile_image.png"
+            src="/Images/IMG_20230329_110911_269.jpg"
             alt="oslim"
             width={"300"}
             height={"300"}
-            className="w-full"
+            className="w-[60%]"
           />
         </div>
         <div className="w-1/2 flex flex-col self-center">
@@ -27,7 +27,7 @@ const HeroPage = () => {
             text={
               "Creating Engaging Digital Experiences with Custom Code and Design"
             }
-            className="text-5xl text-left"
+            className="!text-5xl !text-left"
           />
 
           <p className="font-base my-4 font-medium">
@@ -52,7 +52,9 @@ const HeroPage = () => {
             }}
           >
             View My Resume
-            <LinkArrow className="w-6" />
+            <div className="w-10">
+              <LinkArrow className="w-10" />
+            </div>
           </MotionLink>
           {/* </motion.div> */}
         </div>
