@@ -2,7 +2,15 @@
 import Link from "next/link";
 import React from "react";
 import Logo from "./Logo";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import {
+  DribbbleIcon,
+  GithubIcon,
+  LinkedInIcon,
+  MoonIcon,
+  TwitterIcon,
+} from "./Icons";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
@@ -33,12 +41,52 @@ const Navbar = () => {
           <CustomLink href="/resume" title="Resume" className="mx-2" />
         </nav>
 
-        <nav>
-          <Link href={"/"}>T</Link>
-          <Link href={"/"}>T</Link>
-          <Link href={"/"}>T</Link>
-          <Link href={"/"}>T</Link>
-          <Link href={"/"}>T</Link>
+        <nav className="flex justify-center items-center flex-wrap">
+          <motion.a
+            href={"/"}
+            className="w-6 mx-3"
+            target="_blank"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <TwitterIcon />
+          </motion.a>
+          <motion.a
+            href={"/"}
+            className="w-6 mx-3"
+            target="_blank"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <GithubIcon />
+          </motion.a>
+          <motion.a
+            href={"/"}
+            className="w-6 mx-3"
+            target="_blank"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <LinkedInIcon />
+          </motion.a>
+          <motion.a
+            href={"/"}
+            className="w-6 mx-3"
+            target="_blank"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <DribbbleIcon />
+          </motion.a>
+          <motion.a
+            href={"/"}
+            className="w-6 ml-3"
+            target="_blank"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <MoonIcon />
+          </motion.a>
           <span>
             <button
               type="button"

@@ -9,8 +9,8 @@ const Logo = () => {
     <div className="flex justify-center items-center">
       <MotionLink href="/">
         <motion.img
-          className=" w-16 rounded-full"
-          src="/images/oslimLogo.jpeg"
+          className=" w-36 rounded-full"
+          src="/images/logo_transparent.png"
           alt="logo"
           whileHover={{ scale: 1.1 }}
         />
