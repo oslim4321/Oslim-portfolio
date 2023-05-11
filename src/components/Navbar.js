@@ -11,6 +11,7 @@ import {
   MoonIcon,
   TwitterIcon,
 } from "./Icons";
+import HireMe from "./HireMe";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
@@ -101,6 +102,7 @@ const Navbar = () => {
           <Logo />
         </div>
       </div>
+      <HireMe />
     </div>
   );
 };
