@@ -3,9 +3,7 @@ import AnimatedText, { singleWord } from "./AnimatedText";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { LinkArrow } from "./Icons";
-import { PopUp } from "./PopUp";
 import HeroPageAnimatedLeft from "./HeroPageAnimatedLeft";
-import { Example } from "./NavDesktopToggle/Popup";
 
 const HeroPage = () => {
   const MotionLink = motion(Link);
@@ -68,7 +66,6 @@ const HeroPage = () => {
           {/* </motion.div> */}
         </div>
       </div>
-      <Example />
     </div>
   );
 };

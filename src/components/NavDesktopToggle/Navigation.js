@@ -13,11 +13,13 @@ const variants = {
 };
 
 export const Navigation = () => (
-  <motion.ul variants={variants}>
-    {list.map((elem, i) => (
-      <MenuItem text={elem} i={elem.id} key={elem.id} />
-    ))}
-  </motion.ul>
+  <>
+    <motion.ul variants={variants}>
+      {list.map((elem, i) => (
+        <MenuItem text={elem} i={elem.id} key={elem.id} />
+      ))}
+    </motion.ul>
+  </>
 );
 
 const itemIds = ["hello", "my work", "testing", "jmmm", "tooo"];

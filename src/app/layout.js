@@ -1,3 +1,4 @@
+import { Example } from "../components/NavDesktopToggle/Popup";
 import Navbar from "../components/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -14,6 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <nav className="bg-light">
+          <div className="absoluten right-0 z-50">
+            <Example />
+          </div>
           <Navbar />
         </nav>
         {children}

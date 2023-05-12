@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { useRef } from "react";
 import { motion, sync, useCycle } from "framer-motion";
