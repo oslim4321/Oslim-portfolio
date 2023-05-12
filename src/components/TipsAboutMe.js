@@ -1,13 +1,14 @@
 import React from "react";
 import AnimatedText from "./AnimatedText";
+import Image from "next/image";
 
 const TipsAboutMe = () => {
   return (
-    <>
+    <div className="relative">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
-        className="mt-20"
+        className=" -mb-14"
       >
         <path
           fill="#efced9"
@@ -20,16 +21,40 @@ const TipsAboutMe = () => {
           text="Introduction and Expertise"
           className="!text-5xl font-bold capitalize"
         />
-        <div
-          style={{
-            backgroundImage: `url("/images/cartoonTable.jpg")`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            height: "100vh",
-          }}
-        ></div>
+        <div className=" cont grid grid-cols-12 place-items-center">
+          <div className="col-span-12 md:col-span-6">
+            <p className="text-center">
+              Passionate Web Developer with a knack for crafting innovative and
+              user-friendly digital experiences. With a strong foundation in
+              HTML, CSS, and JavaScript, I specialize in building responsive and
+              interactive websites. My goal is to combine my technical skills
+              and creative mindset to develop intuitive and visually captivating
+              web solutions. Through continuous learning and staying up-to-date
+              with industry trends, I strive to deliver high-quality code and
+              exceed client expectations. Let's bring your ideas to life and
+              create meaningful online experiences together.
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-6">
+            <Image
+              src={"/images/cartoonTable.jpg"}
+              width={"700"}
+              height={"700"}
+              className="w-full "
+            />
+          </div>
+
+          {/* <div
+            // className="flex justify-ceenter items-center"
+            style={{
+              backgroundImage: `url("/images/cartoonTable.jpg")`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div> */}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

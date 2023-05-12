@@ -99,7 +99,7 @@ const Navbar = () => {
             <Logo />
           </div>
         </div>
-        <HireMe />
+        {/* <HireMe /> */}
       </div>
     </>
   );

@@ -9,10 +9,9 @@ const Footer = () => {
       transition={{ duration: 0.5 }}
       className="bg-gray-9f00 h-1[100vh] text-white py-6"
       style={{
-        backgroundImage: `url("/images/12557718_4990044.jpg")`,
+        backgroundImage: "/images/12557718_4990044.jpg",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        height: "100vh",
       }}
     >
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
