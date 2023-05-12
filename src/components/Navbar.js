@@ -88,7 +88,7 @@ const Navbar = () => {
           >
             <MoonIcon />
           </motion.a>
-          <span className="">
+          <span>
             <MenuToggle />
           </span>
         </nav>

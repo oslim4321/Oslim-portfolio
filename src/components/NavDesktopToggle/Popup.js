@@ -33,7 +33,7 @@ export const Example = () => {
 
   return (
     <motion.div
-      className="nav"
+      className="nav right-0 absolute"
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom={height}

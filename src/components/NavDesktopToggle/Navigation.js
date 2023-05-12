@@ -14,10 +14,28 @@ const variants = {
 
 export const Navigation = () => (
   <motion.ul variants={variants}>
-    {itemIds.map((i) => (
-      <MenuItem i={i} key={i} />
+    {list.map((elem, i) => (
+      <MenuItem text={elem} i={elem.id} key={elem.id} />
     ))}
   </motion.ul>
 );
 
-const itemIds = [0, 1, 2, 3, 4];
+const itemIds = ["hello", "my work", "testing", "jmmm", "tooo"];
+
+const list = [
+  {
+    id: 1,
+    text: "my work",
+    link: "#",
+  },
+  {
+    id: 2,
+    text: "my Shelf",
+    link: "#",
+  },
+  {
+    id: 3,
+    text: "my Resume",
+    link: "#",
+  },
+];
