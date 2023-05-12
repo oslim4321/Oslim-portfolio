@@ -1,3 +1,4 @@
+import AnimatedText from "@/src/components/AnimatedText";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -9,8 +10,8 @@ const montserrat = Montserrat({
 const page = () => {
   // throw new Error("error fuck");
   return (
-    <div className={`${montserrat.className}`}>
-      <h2 className=" font-montserra">page</h2>
+    <div className="bg-[#efced9]">
+      <AnimatedText text="Passion Fuels Purpose!" />
     </div>
   );
 };

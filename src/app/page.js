@@ -1,5 +1,6 @@
 import HeroPage from "../components/HeroPage";
 import { Montserrat } from "next/font/google";
+import TipsAboutMe from "../components/TipsAboutMe";
 
 const montserrat = Montserrat({
   weight: ["400", "600"],
@@ -11,8 +12,9 @@ export default function Home() {
     <main
       className={`${montserrat.className} bg-light w-full min-h-screen tracking-wider`}
     >
-      <div className="max-w-[90%] mx-auto pt-10">
+      <div className=" pt-10">
         <HeroPage />
+        <TipsAboutMe />
       </div>
     </main>
   );

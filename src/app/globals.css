@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.cont {
+  max-width: 90%;
+  margin: 0 auto;
+
+  /* max-w-[90%] mx-auto */
+}
+
 .box {
   width: 200px;
   height: 200px;

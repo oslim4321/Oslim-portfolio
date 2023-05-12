@@ -21,7 +21,7 @@ const CustomLink = ({ href, title, className = "" }) => {
     <Link href={href} className={`${className} relative group`}>
       {title}
       <span
-        className={`h-[1px] inline-block absolute  bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
+        className={`h-[1px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
       ${pathname === href ? "w-full" : "w-0"}
       `}
       >
@@ -90,6 +90,9 @@ const Navbar = () => {
               <MoonIcon />
             </motion.a>
             <span>{/* <MenuToggle /> */}</span>
+            {/* <div className="bg-red-400 z-50">
+              <Example />
+            </div> */}
           </nav>
 
           <div className="absolute left-[50%] top-2 translate-x-[-50%]">
