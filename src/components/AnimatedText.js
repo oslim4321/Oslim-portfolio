@@ -1,37 +1,49 @@
 "use client";
-import React, { useRef, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
+
+export const singleWord = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 
 const AnimatedText = ({ text, className = "" }) => {
-  const sectionRef = useRef(null);
-  const controls = useAnimation();
+  // const sectionRef = useRef(null);
+  // const controls = useAnimation();
 
-  useEffect(() => {
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            controls.start("animate");
-          } else {
-            controls.start("initial");
-          }
-        });
-      },
-      { threshold: 0.5 } // Adjust the threshold value as needed
-    );
+  // useEffect(() => {
+  //   const sectionObserver = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           controls.start("animate");
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.5 } // Adjust the threshold value as needed
+  //   );
 
-    if (sectionRef.current) {
-      sectionObserver.observe(sectionRef.current);
-    }
+  //   if (sectionRef.current) {
+  //     sectionObserver.observe(sectionRef.current);
+  //   }
 
-    return () => {
-      sectionObserver.disconnect();
-    };
-  }, [controls]);
+  //   return () => {
+  //     sectionObserver.disconnect();
+  //   };
+  // }, [controls]);
 
   const quote = {
     initial: {
-      opacity: 1,
+      opacity: 0, // Set initial opacity to 0
     },
     animate: {
       opacity: 1,
@@ -42,30 +54,16 @@ const AnimatedText = ({ text, className = "" }) => {
     },
   };
 
-  const singleWord = {
-    initial: {
-      opacity: 0,
-      y: 50,
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
-
   return (
     <div
-      ref={sectionRef}
+      // ref={sectionRef}
       className="w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden"
     >
       <motion.h1
         className={`${className} inline-block w-full text-dark text-8xl `}
         variants={quote}
-        initial="initial"
-        animate={controls}
+        initial="initial" // Set initial state to "initial"
+        whileInView="animate"
       >
         {text.split(" ").map((word, i) => (
           <motion.span

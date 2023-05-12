@@ -1,4 +1,5 @@
 import AnimatedText from "@/src/components/AnimatedText";
+import Skills from "@/src/components/Skills";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -10,8 +11,14 @@ const montserrat = Montserrat({
 const page = () => {
   // throw new Error("error fuck");
   return (
-    <div className="bg-[#efced9]">
-      <AnimatedText text="Passion Fuels Purpose!" />
+    <div className=" bg-[#f5f5f5]">
+      <div className="cont">
+        <div className="h-screen">
+          <AnimatedText text="Passion Fuels Purpose!" />
+        </div>
+        {/* skkills */}
+        <Skills />
+      </div>
     </div>
   );
 };
