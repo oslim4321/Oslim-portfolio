@@ -8,7 +8,7 @@ const AnimatedImg = ({ path, alt, className = "", direction = "100%" }) => {
       className="overflow-x-hidden"
       initial={{ x: direction }}
       whileInView={{ x: 0 }}
-      transition={{ delay: 0.5, staggerChildren: 0.08 }}
+      transition={{ delay: 0.3, staggerChildren: 0.08 }}
     >
       {/* <HeroPageAnimatedLeft /> */}
       <Image
@@ -16,7 +16,7 @@ const AnimatedImg = ({ path, alt, className = "", direction = "100%" }) => {
         alt={alt}
         width={"700"}
         height={"700"}
-        className={`w-full ${className}`}
+        className={`${className} w-full `}
       />
     </motion.div>
   );
