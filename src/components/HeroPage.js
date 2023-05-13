@@ -3,15 +3,18 @@ import AnimatedText, { singleWord } from "./AnimatedText";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { LinkArrow } from "./Icons";
-import HeroPageAnimatedLeft from "./HeroPageAnimatedLeft";
+import AnimatedImg from "./AnimatedImg";
 
 const HeroPage = () => {
   const MotionLink = motion(Link);
   return (
     <div className="cont">
-      <div className="flex items-center justify-between w-full py-20">
+      <div className="flex items-center justify-between w-full py-10d">
         <div className="w-1/2">
-          <HeroPageAnimatedLeft />
+          <AnimatedImg
+            path={"/images/Work in progress-rafiki.svg"}
+            alt={"oslim"}
+          />
         </div>
         <div className="w-1/2 flex flex-col self-center">
           <AnimatedText
@@ -21,6 +24,11 @@ const HeroPage = () => {
             className="!text-5xl !text-left font-bold capitalize"
           />
 
+          {/* <p className="font-base my-4 font-medium">
+            Explore my latest projects and articles: A testament to my passion
+            for turning ideas into web applications
+          </p> */}
+          {/* small text */}
           <AnimatedText
             className="font-base my-4 !text-lg !font-medium text-start"
             text="Explore my latest projects and articles: A testament to my passion
