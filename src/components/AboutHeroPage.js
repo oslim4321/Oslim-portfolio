@@ -4,8 +4,8 @@ import AnimatedImg from "@/src/components/AnimatedImg";
 
 const AboutHeroPage = () => {
   return (
-    <div className="flex items-center justify-between w-full py-10d">
-      <div className="w-1/2 flex flex-col self-cdenter">
+    <div className="grid grid-cols-12 place-items-center w-full py-10d">
+      <div className="col-span-12 md:col-span-6 flex flex-col mb-10">
         {/* <AnimatedText
                 text={"about"}
                 className="!text-5xl !text-left font-bold capitalize"
@@ -31,7 +31,7 @@ const AboutHeroPage = () => {
         </p>
         {/* </motion.div> */}
       </div>
-      <div className="w-1/2">
+      <div className="col-span-12 md:col-span-6 ">
         {/* <HeroPageAnimatedLeft /> */}
         <div className="bord">
           {/* <Image
@@ -44,7 +44,7 @@ const AboutHeroPage = () => {
           <AnimatedImg
             path={"/images/mobile_small.png"}
             alt="oslim"
-            className="!w-[60%] "
+            className="!w-[80%] "
           />
         </div>
       </div>

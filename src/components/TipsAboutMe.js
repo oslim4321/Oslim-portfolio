@@ -8,9 +8,15 @@ const TipsAboutMe = () => {
   return (
     <div className="relative overflow-">
       <motion.svg
-        initial={{ y: "100%" }}
-        whileInView={{ y: 0 }}
-        transition={{ staggerChildren: 0.08 }}
+        initial={{ y: "100%", x: "-100%" }}
+        whileInView={{ y: 0, x: 0 }}
+        transition={{
+          y: { duration: 1, yoyo: Infinity },
+          x: { duration: 1, yoyo: Infinity },
+        }}
+        // initial={{ y: "100%" }}
+        // whileInView={{ y: 0 }}
+        // transition={{ staggerChildren: 0.08 }}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
         className=" -mb-14"
