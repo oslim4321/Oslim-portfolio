@@ -12,7 +12,7 @@ export default function Home() {
     <main
       className={`${montserrat.className} bg-light w-full min-h-screen tracking-wider`}
     >
-      <div className="bg-[#f5f5f5] pt-10">
+      <div className="b pt-10">
         <HeroPage />
         <TipsAboutMe />
       </div>

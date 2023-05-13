@@ -23,7 +23,8 @@ const HeroPage = () => {
             text={
               "Creating Engaging Digital Experiences with Custom Code and Design"
             }
-            className="!text-5xl !text-left font-bold capitalize"
+            className={"!text-5xl !text-left font-bold capitalize"}
+            undeline={true}
           />
 
           {/* small text */}

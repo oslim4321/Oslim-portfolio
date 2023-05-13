@@ -9,17 +9,17 @@ const page = () => {
     <div className=" bg-[#f5f5f5]">
       <div className="">
         <div className="">
+          {" "}
           <AnimatedText
             text="Unleashing Creativity!"
             className="my-10 !font-bold !text-8xl"
           />
-
           <AboutHeroPage />
           <Capability />
         </div>
         {/* skkills */}
         <Skills />
-        <div className="bg-[#efced9]">
+        <div className="bg-[#efced9 twoBgColor">
           <AboutPage />
         </div>
       </div>

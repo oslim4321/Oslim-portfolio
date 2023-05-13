@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 const UnderlineAnimation = () => {
   return (
     <motion.div
-      className="absolute bottom-0 left-0 w-full h-[1px] bg-[#efced9]"
-      initial={{ x: "-100%" }}
-      animate={{ x: "100%" }}
+      className="absolute bottom-0 left-0 w-full h-[3px] bg-[#efced9]"
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
       transition={{
         repeat: Infinity,
-        repeatType: "mirror",
+        repeatType: "reverse",
         duration: 2,
-        ease: "linear",
+        ease: "easeInOut",
       }}
     />
   );
@@ -32,7 +32,7 @@ export const singleWord = {
   },
 };
 
-const AnimatedText = ({ text, className = "" }) => {
+const AnimatedText = ({ text, className = "", undeline = false }) => {
   // const sectionRef = useRef(null);
   // const controls = useAnimation();
 
@@ -91,7 +91,7 @@ const AnimatedText = ({ text, className = "" }) => {
           </motion.span>
         ))}
       </motion.h1>
-      <UnderlineAnimation />
+      {undeline && <UnderlineAnimation />}
     </div>
   );
 };
