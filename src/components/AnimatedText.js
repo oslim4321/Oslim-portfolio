@@ -2,6 +2,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const UnderlineAnimation = () => {
+  return (
+    <motion.div
+      className="absolute bottom-0 left-0 w-full h-[1px] bg-[#efced9]"
+      initial={{ x: "-100%" }}
+      animate={{ x: "100%" }}
+      transition={{
+        repeat: Infinity,
+        repeatType: "mirror",
+        duration: 2,
+        ease: "linear",
+      }}
+    />
+  );
+};
+
 export const singleWord = {
   initial: {
     opacity: 0,
@@ -57,7 +73,7 @@ const AnimatedText = ({ text, className = "" }) => {
   return (
     <div
       // ref={sectionRef}
-      className="w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden"
+      className="w-full relative mx-auto py-2 flex items-center justify-center text-center overflow-hidden"
     >
       <motion.h1
         className={`${className} inline-block w-full text-dark text-8xl `}
@@ -75,6 +91,7 @@ const AnimatedText = ({ text, className = "" }) => {
           </motion.span>
         ))}
       </motion.h1>
+      <UnderlineAnimation />
     </div>
   );
 };

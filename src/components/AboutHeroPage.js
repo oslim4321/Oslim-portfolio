@@ -4,7 +4,7 @@ import AnimatedImg from "@/src/components/AnimatedImg";
 
 const AboutHeroPage = () => {
   return (
-    <div className="grid grid-cols-12 place-items-center w-full py-10d">
+    <div className="cont grid grid-cols-12 place-items-center w-full py-10d">
       <div className="col-span-12 md:col-span-6 flex flex-col mb-10">
         {/* <AnimatedText
                 text={"about"}

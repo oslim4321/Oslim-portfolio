@@ -27,7 +27,7 @@ const AnimatedNumber = ({ value }) => {
 
 const Capability = () => {
   return (
-    <div className="flex justify-center items-center flex-wrap">
+    <div className="cont flex justify-center items-center flex-wrap">
       <div className="px-20 py-4 rounded-full flex flex-col justify-center items-center">
         <span className=" inline-block text-7xl font-bold">
           <AnimatedNumber value={50} /> +

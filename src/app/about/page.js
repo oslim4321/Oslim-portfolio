@@ -7,11 +7,11 @@ import Skills from "@/src/components/Skills";
 const page = () => {
   return (
     <div className=" bg-[#f5f5f5]">
-      <div className="cont">
+      <div className="">
         <div className="">
           <AnimatedText
             text="Unleashing Creativity!"
-            className="my-10 !font-bold !text-4xl"
+            className="my-10 !font-bold !text-8xl"
           />
 
           <AboutHeroPage />
@@ -19,7 +19,9 @@ const page = () => {
         </div>
         {/* skkills */}
         <Skills />
-        <AboutPage />
+        <div className="bg-[#efced9]">
+          <AboutPage />
+        </div>
       </div>
     </div>
   );

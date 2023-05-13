@@ -68,10 +68,13 @@ const Experience = () => {
 //     </section>
 //   );
 // };
+const Education = () => {
+  return <div>ijfjf</div>;
+};
 
 const AboutPage = () => {
   return (
-    <div className="flex justify-center items-center flex-col bg-red-500">
+    <div className="flex justify-center items-center flex-co">
       <Experience />
       <Education />
     </div>
