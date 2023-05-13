@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
-    <section className=" py-10">
-      <h2 className=" font-bold text-8xl my-32 text-light w-full text-center ">
+    <section className=" py-10 cont">
+      <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center ">
         Experience
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="gridd grid-cols-1 md:grid-cols-2 gap-8">
         <motion.div
           className="p-6 bg-white rounded shadow-md"
           whileHover={{ scale: 1.05 }}
@@ -48,13 +48,13 @@ const Education = () => {
   ];
 
   return (
-    <section className="py-10 flex justify-center items-center flex-col">
-      <h2 className=" font-bold text-8xl my-32 text-light w-full text-center ">
+    <section className="py-10 cont">
+      <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center ">
         Education
       </h2>
       {educationData.map((edu) => (
         <div key={edu.id} className="my-5">
-          <div className="grid grid-cols-12 gap-8">
+          <div className="gridd grid-cols-12 gap-8">
             <motion.div
               className="p-6 bg-white rounded shadow-md col-span-12 md:col-span-6"
               whileHover={{ scale: 1.05 }}

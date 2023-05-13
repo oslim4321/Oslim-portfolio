@@ -12,7 +12,7 @@ const page = () => {
           {" "}
           <AnimatedText
             text="Unleashing Creativity!"
-            className="my-10 !font-bold !text-8xl"
+            className="my-10 !font-bold text-2xl md:!text-8xl"
           />
           <AboutHeroPage />
           <Capability />

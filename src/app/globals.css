@@ -19,6 +19,6 @@ body {
 }
 
 .twoBgColor {
-  background: linear-gradient(to right, #f5f5f5 50%, white 50%);
+  background: linear-gradient(to right, #efced9 50%, black 50%);
   /* height: 100vh; */
 }
