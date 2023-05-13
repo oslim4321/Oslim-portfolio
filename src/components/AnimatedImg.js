@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const AnimatedImg = ({ path, alt, className = "" }) => {
+const AnimatedImg = ({ path, alt, className = "", direction = "100%" }) => {
   return (
     <motion.div
-      className="overflow-x-auto"
-      initial={{ x: "-100%" }}
+      className="overflow-x-hidden"
+      initial={{ x: direction }}
       whileInView={{ x: 0 }}
       transition={{ delay: 0.5, staggerChildren: 0.08 }}
     >

@@ -1,10 +1,11 @@
+"use client";
 import React from "react";
 import AnimatedText from "./AnimatedText";
-import Image from "next/image";
+import AnimatedImg from "./AnimatedImg";
 
 const TipsAboutMe = () => {
   return (
-    <div className="relative">
+    <div className="relative overflow-">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
@@ -36,11 +37,17 @@ const TipsAboutMe = () => {
             </p>
           </div>
           <div className="col-span-12 md:col-span-6">
-            <Image
+            {/* <Image
               src={"/images/cartoonTable.jpg"}
               width={"700"}
               height={"700"}
               className="w-full "
+            /> */}
+            <AnimatedImg
+              path={"/images/cartoonTable.jpg"}
+              alt="coding table"
+              className=""
+              direction="100%"
             />
           </div>
 

@@ -14,6 +14,8 @@ const HeroPage = () => {
           <AnimatedImg
             path={"/images/Work in progress-rafiki.svg"}
             alt={"oslim"}
+            className=""
+            direction="-100%"
           />
         </div>
         <div className="w-1/2 flex flex-col self-center">
@@ -24,10 +26,6 @@ const HeroPage = () => {
             className="!text-5xl !text-left font-bold capitalize"
           />
 
-          {/* <p className="font-base my-4 font-medium">
-            Explore my latest projects and articles: A testament to my passion
-            for turning ideas into web applications
-          </p> */}
           {/* small text */}
           <AnimatedText
             className="font-base my-4 !text-lg !font-medium text-start"
