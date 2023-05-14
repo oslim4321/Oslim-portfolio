@@ -2,6 +2,7 @@ import HeroPage from "../components/HeroPage";
 import { Montserrat } from "next/font/google";
 import TipsAboutMe from "../components/TipsAboutMe";
 import ContactForm from "../components/GetInTouch";
+import BuildAndPaint from "../components/BuildAndPaint";
 
 const montserrat = Montserrat({
   weight: ["400", "600"],
@@ -13,9 +14,10 @@ export default function Home() {
     <main
       className={`${montserrat.className} bg-light w-full min-h-screen tracking-wider`}
     >
-      <div className="bg-[#f5f5f5] pt-10">
+      <div className="bg-[#f5f5f5]  dark:bg-dark pt-10">
         <HeroPage />
         <TipsAboutMe />
+        <BuildAndPaint />
         <ContactForm />
       </div>
     </main>

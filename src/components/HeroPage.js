@@ -15,7 +15,7 @@ const HeroPage = () => {
           <AnimatedImg
             path={"/images/Work in progress-rafiki.svg"}
             alt={"oslim"}
-            className=""
+            className=" "
             direction="-100%"
           />
         </div>
@@ -24,7 +24,9 @@ const HeroPage = () => {
             text={
               "Creating Engaging Digital Experiences with Custom Code and Design"
             }
-            className={"!text-5xl !text-left font-bold capitalize"}
+            className={
+              "!text-5xl !text-left font-bold capitalize dark:text-light"
+            }
             undeline={true}
           />
           {/* small text */}
@@ -43,21 +45,21 @@ const HeroPage = () => {
           <MotionLink
             href="resume"
             target="_blank"
-            className="flex items-center justify-center bg-[#303841] text-light w-full mt-6 rounded py-3 text-lg font-semibold hover:bg-light
-            border-3 border-[#efced9]"
+            className="flex items-center justify-center bg-[#303841] hover:bg-light hover:border hover:text-dark text-light w-full mt-6 rounded py-3 text-lg font-semibold 
+            border-3 border-[#efced9] dark:bg-light dark:text-dark hover:dark:border hover:dark:bg-transparent hover:dark:text-light"
             initial={{ x: "100%" }}
             whileInView={{ x: 0 }}
-            whileHover={{
-              backgroundColor: [
-                "#121212",
-                "rgba(131,58,180,1)",
-                "rgba(253,29,29,1)",
-                "rgba(252,176,69,1)",
-                "rgba(131,58,180,1)",
-                "#121212",
-              ],
-              transition: { duration: 1, repeat: Infinity },
-            }}
+            // whileHover={{
+            //   backgroundColor: [
+            //     "#121212",
+            //     "rgba(131,58,180,1)",
+            //     "rgba(253,29,29,1)",
+            //     "rgba(252,176,69,1)",
+            //     "rgba(131,58,180,1)",
+            //     "#121212",
+            //   ],
+            //   transition: { duration: 1, repeat: Infinity },
+            // }}
           >
             View My Resume
             <div className="w-10">

@@ -45,18 +45,18 @@ const Experience = () => {
       </h2>
 
       <div className="my-3 relative" ref={ref}>
+        {/* left line scrolling start */}
         <motion.div
-          className="absolute left-10 md:left-8 top-0 w-[4px] h-full origin-top bg-dark"
+          className="absolute left-0 md:left-8 top-0 w-[4px] h-full origin-top bg-dark"
           style={{ scaleY: scrollYProgress }}
         ></motion.div>
+        {/* left line scrolling end */}
 
         {experienceData.map((expe) => (
-          <motion.div
-            ref={liRef}
-            className="flex justify-center items-center flex-col m-6 relative"
-          >
+          <motion.div className="flex justify-center items-center flex-col m-6 relative">
             <LiIcons reference={liRef} />
             <motion.div
+              ref={liRef}
               className="p-6 glassBg rounded shadow-md md:w-[70%] flex justify-center items-center flex-col"
               // whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.8 }}
