@@ -17,11 +17,11 @@ const Skill = ({ name, x, y }) => (
 );
 const Skills = () => {
   return (
-    <div className="cont">
+    <div className="cont dark:bg-dark">
       <h2 className=" font-bold text-3xl md:text-8xl my-32 w-full text-center ">
         Skills
       </h2>
-      <div className="w-full h-screen relative flex items-center justify-center rounded-full bg-circular">
+      <div className="w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight dark:bg-circularDark">
         <motion.div
           className="flex items-center justify-center rounded-full font-semibold bg-dark text-light p-8  cursor-pointer"
           whileHover={{ scale: 1.05 }}

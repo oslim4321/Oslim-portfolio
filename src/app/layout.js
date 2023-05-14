@@ -1,5 +1,5 @@
+import Script from "next/script";
 import Footer from "../components/Footer";
-import { Example } from "../components/NavDesktopToggle/Popup";
 import Navbar from "../components/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -20,6 +20,15 @@ export default function RootLayout({ children }) {
         </nav>
         <div className="bg-light dark:bg-dark">{children}</div>
         <Footer />
+        <Script id="theme-switch" strategy="beforeInteractive">
+          {`
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+            `}
+        </Script>
       </body>
     </html>
   );
