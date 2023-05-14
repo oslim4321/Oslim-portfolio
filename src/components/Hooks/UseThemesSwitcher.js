@@ -1,8 +1,10 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 
 const UseThemesSwitcher = () => {
   const preferDarkQuery = "{prefer-color-scheme: dark}";
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState();
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(preferDarkQuery);

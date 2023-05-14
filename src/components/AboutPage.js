@@ -1,8 +1,9 @@
 "use client";
 import { motion, useScroll } from "framer-motion";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import LiIcons from "./LiIcons";
+import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
 
 const Experience = () => {
   const ref = useRef();
@@ -39,8 +40,8 @@ const Experience = () => {
   ];
 
   return (
-    <section className=" py-10 cont">
-      <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center ">
+    <section className=" py-10 cont dark:text-light">
+      <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center dark:text-light">
         Experience
       </h2>
 
@@ -77,7 +78,7 @@ const Experience = () => {
               <p className="text-gray-600">
                 {expe.title} | {expe.duration}
               </p>
-              <div className="text-gray-800 mt-4">
+              <div className="text-gray-800 mt-4 dark:text-light/90">
                 {expe.description.map((item, index) => (
                   <p className="my-4">
                     ({index + 1}) <span key={index}>{item}</span>
@@ -116,8 +117,8 @@ const Education = () => {
   ];
 
   return (
-    <section className="py-10 cont">
-      <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center ">
+    <section className="py-10 cont dark:text-light">
+      <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center dark:text-light ">
         Education
       </h2>
       {educationData.map((edu) => (
@@ -132,7 +133,7 @@ const Education = () => {
               <p className="text-gray-600">
                 {edu.degree} | {edu.year}
               </p>
-              <p className="text-gray-800 mt-4 text-center">
+              <p className="text-gray-800 mt-4 dark:text-light/90 text-center">
                 {edu.description.length > 70
                   ? `${edu.description.slice(0, 200)}...`
                   : edu.description}
@@ -148,8 +149,35 @@ const Education = () => {
 //   return <div>ijfjf</div>;
 // };
 const AboutPage = () => {
+  const [mode] = UseThemesSwitcher();
+  const [classs, setclasss] = useState();
+  console.log(mode);
+
+  useEffect(() => {
+    // Update your component or perform any side effects based on the current mode
+    // For example, you can conditionally apply different styles or logic
+    // alert("mode change");
+    // if (mode === "dark") {
+    //   setclasss("twoBgColorDark");
+    //   // Dark mode logic
+    // } else {
+    //   setclasss("twoBgColor");
+    //   // Light mode logic
+    // }
+  }, [mode]);
+  // if (mode) {
+
+  // }
+
   return (
-    <div>
+    <div
+      // className={`${
+      //   mode === "dark" ? "twoBgColorDark" : mode === "light" && "twoBgColor"
+      // }  dark:text-white`}
+      className="twoBgColor
+       dark:bg-gradient-to-r from-gray-900 via-transparent to-gray-700;
+"
+    >
       <Experience />
       <Education />
     </div>

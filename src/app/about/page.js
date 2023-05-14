@@ -17,7 +17,7 @@ const page = () => {
       </div>
       {/* skkills */}
       <Skills />
-      <div className="bg-[#efced9 twoBgColor">
+      <div>
         <AboutPage />
       </div>
     </div>

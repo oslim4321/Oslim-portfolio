@@ -22,6 +22,9 @@ body {
   background: linear-gradient(to right, #efced9 50%, #e8d2ed 50%);
   /* height: 100vh; */
 }
+.twoBgColorDark {
+  background: linear-gradient(to right, #1a202c 50%, #1f2937 50%);
+}
 
 .glassBg {
   background: rgba(255, 255, 255, 0.25);
