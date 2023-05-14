@@ -1,25 +1,83 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
+import Link from "next/link";
+import { useRef } from "react";
 
 const Experience = () => {
+  const ref = useRef();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center start"],
+  });
+  const experienceData = [
+    {
+      title: "Instructor",
+      duration: "01/January/2023 - PRESENT",
+      company: "SQI College of ICT, Ibadan, Nigeria",
+      description: [
+        "Taught courses in frontend web development, including JavaScript, HTML, CSS, and related technologies",
+        "Developed and updated course materials, including lesson plans, presentations, and assignments, to keep pace with industry trends and best practices",
+        "Facilitated hands-on coding projects and group exercises to help students build practical skills and apply theoretical concepts",
+        "Pursued professional development opportunities in frontend web development and teaching methodologies, including attending conferences and workshops and completing online courses and certifications.",
+      ],
+      href: "https://edu.sqi.ng/",
+    },
+    {
+      title: "Freelance MERN Stack Developer",
+      duration: "09/September/2022 - MONTH 20XX",
+      company: "Mern stack",
+      description: [
+        "Worked with clients to understand project requirements and deliver customized solutions using Next.js and MERN stack technologies",
+        "Designed and implemented responsive and user-friendly interfaces using HTML, CSS, and JavaScript frameworks such as React and Redux",
+        "Built scalable and efficient backend systems using Node.js, Express.js, MongoDB, and other related technologies",
+        "Implemented automated testing and deployment strategies to ensure code quality and reliability",
+        "Collaborated with other developers and project stakeholders to ensure timely delivery of high-quality work",
+      ],
+    },
+  ];
+
   return (
     <section className=" py-10 cont">
       <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center ">
         Experience
       </h2>
-      <div className="gridd grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="my-3 relative" ref={ref}>
         <motion.div
-          className="p-6 bg-white rounded shadow-md"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <h3 className="text-xl font-semibold mb-2">Company Name</h3>
-          <p className="text-gray-600">Position | Dates</p>
-          <p className="text-gray-800 mt-4">
-            Description of your experience and responsibilities in this role.
-          </p>
-        </motion.div>
-        {/* Add more experience items as needed */}
+          className="absolute left-0 md:left-8 top-0 w-[4px] h-full origin-top bg-dark"
+          style={{ scaleY: scrollYProgress }}
+        ></motion.div>
+
+        {experienceData.map((expe) => (
+          <div className="flex justify-center items-center flex-col m-6 relative">
+            <motion.div
+              className="p-6 glassBg rounded shadow-md md:w-[70%] flex justify-center items-center flex-col"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {expe.href ? (
+                <Link target="_blank" href={expe.href}>
+                  <h3 className="text-xl font-semibold mb-2">{expe.company}</h3>
+                </Link>
+              ) : (
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">{expe.company}</h3>
+                </div>
+              )}
+
+              <p className="text-gray-600">
+                {expe.title} | {expe.duration}
+              </p>
+              <div className="text-gray-800 mt-4">
+                {expe.description.map((item, index) => (
+                  <p className="my-4">
+                    ({index + 1}) <span key={index}>{item}</span>
+                  </p>
+                ))}
+              </div>
+            </motion.div>
+            {/* Add more experience items as needed */}
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -54,9 +112,9 @@ const Education = () => {
       </h2>
       {educationData.map((edu) => (
         <div key={edu.id} className="my-5">
-          <div className="gridd grid-cols-12 gap-8">
+          <div className="flex justify-center items-center flex-col gap-6">
             <motion.div
-              className="p-6 bg-white rounded shadow-md col-span-12 md:col-span-6"
+              className="p-6 glassBg rounded shadow-md  md:w-[70%] flex justify-center items-center flex-col"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -64,7 +122,11 @@ const Education = () => {
               <p className="text-gray-600">
                 {edu.degree} | {edu.year}
               </p>
-              <p className="text-gray-800 mt-4">{edu.description}</p>
+              <p className="text-gray-800 mt-4 text-center">
+                {edu.description.length > 70
+                  ? `${edu.description.slice(0, 200)}...`
+                  : edu.description}
+              </p>
             </motion.div>
           </div>
         </div>
@@ -75,7 +137,6 @@ const Education = () => {
 // const Education = () => {
 //   return <div>ijfjf</div>;
 // };
-
 const AboutPage = () => {
   return (
     <div>

@@ -12,7 +12,6 @@ import {
   TwitterIcon,
 } from "./Icons";
 import HireMe from "./HireMe";
-import { Example } from "./NavDesktopToggle/Popup";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();

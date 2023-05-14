@@ -1,6 +1,7 @@
 import HeroPage from "../components/HeroPage";
 import { Montserrat } from "next/font/google";
 import TipsAboutMe from "../components/TipsAboutMe";
+import ContactForm from "../components/GetInTouch";
 
 const montserrat = Montserrat({
   weight: ["400", "600"],
@@ -15,6 +16,7 @@ export default function Home() {
       <div className="bg-[#f5f5f5] pt-10">
         <HeroPage />
         <TipsAboutMe />
+        <ContactForm />
       </div>
     </main>
   );

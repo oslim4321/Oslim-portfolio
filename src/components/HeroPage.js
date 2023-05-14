@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { LinkArrow } from "./Icons";
 import AnimatedImg from "./AnimatedImg";
+import Summary from "./SummaryAboutMe";
 
 const HeroPage = () => {
   const MotionLink = motion(Link);
@@ -26,13 +27,18 @@ const HeroPage = () => {
             className={"!text-5xl !text-left font-bold capitalize"}
             undeline={true}
           />
-
           {/* small text */}
-          <AnimatedText
-            className="font-base my-4 !text-lg !font-medium text-start"
-            text="Explore my latest projects and articles: A testament to my passion
-            for turning ideas into web applications"
-          />
+          {/* <AnimatedText */}
+          {/* className="font-base my-4 !text-lg !font-medium text-start"
+          text="Hello i am sooto selim Explore my latest projects and articles:
+          A testament to my passion for turning ideas into web applications" */}
+          {/* /> */}
+
+          {/* <motion.p className="font-base my-4 !text-lg !font-medium text-start">
+            Hello i am sooto selim Explore my latest projects and articles: A
+            testament to my passion for turning ideas into web applications
+          </motion.p> */}
+          <Summary />
           {/* <motion.div> */}
           <MotionLink
             href="resume"
