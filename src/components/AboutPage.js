@@ -46,20 +46,23 @@ const Experience = () => {
 
       <div className="my-3 relative" ref={ref}>
         <motion.div
-          className="absolute left-0 md:left-8 top-0 w-[4px] h-full origin-top bg-dark"
+          className="absolute left-10 md:left-8 top-0 w-[4px] h-full origin-top bg-dark"
           style={{ scaleY: scrollYProgress }}
         ></motion.div>
 
         {experienceData.map((expe) => (
-          <div
+          <motion.div
             ref={liRef}
             className="flex justify-center items-center flex-col m-6 relative"
           >
             <LiIcons reference={liRef} />
             <motion.div
               className="p-6 glassBg rounded shadow-md md:w-[70%] flex justify-center items-center flex-col"
-              whileHover={{ scale: 1.05 }}
+              // whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.8 }}
+              initial={{ y: 50 }}
+              whileInView={{ y: 0 }}
+              transition={{ duration: 0.5, type: "spring" }}
             >
               {expe.href ? (
                 <Link target="_blank" href={expe.href}>
@@ -83,7 +86,7 @@ const Experience = () => {
               </div>
             </motion.div>
             {/* Add more experience items as needed */}
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

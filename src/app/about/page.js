@@ -1,7 +1,7 @@
 import AboutHeroPage from "@/src/components/AboutHeroPage";
+import AboutPage from "@/src/components/AboutPage";
 import AnimatedText from "@/src/components/AnimatedText";
 import Capability from "@/src/components/Capability";
-import AboutPage from "@/src/components/Experience";
 import Skills from "@/src/components/Skills";
 
 const page = () => {
