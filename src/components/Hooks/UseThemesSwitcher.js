@@ -27,6 +27,7 @@ const UseThemesSwitcher = () => {
         }
       }
     };
+    handleChange();
 
     mediaQuery.addEventListener("change", handleChange);
 

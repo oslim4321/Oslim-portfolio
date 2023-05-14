@@ -15,7 +15,7 @@ const ContactForm = () => {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      className="max-w-[800px] mx-auto p-6 bg-wghite shadow-mgd rounded-mgd relative my-20"
+      className="max-w-[800px] mx-auto p-6 bg-wghite shadow-mgd rounded-mgd relative my-20 dark:bg-slate-800 dark:text-light"
       initial={{ opacity: 0, x: -200 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.3 }}
@@ -24,7 +24,7 @@ const ContactForm = () => {
       <div className="mb-4">
         <label
           htmlFor="name"
-          className="block mb-2 font-semibold text-gray-800"
+          className="block mb-2 font-semibold text-gray-800 dark:text-light"
         >
           Name
         </label>
@@ -44,7 +44,7 @@ const ContactForm = () => {
       <div className="mb-4">
         <label
           htmlFor="email"
-          className="block mb-2 font-semibold text-gray-800"
+          className="block mb-2 font-semibold text-gray-800 dark:text-light"
         >
           Email
         </label>
@@ -64,7 +64,7 @@ const ContactForm = () => {
       <div className="mb-6">
         <label
           htmlFor="message"
-          className="block mb-2 font-semibold text-gray-800"
+          className="block mb-2 font-semibold text-gray-800 dark:text-light"
         >
           Message
         </label>

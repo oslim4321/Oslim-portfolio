@@ -6,22 +6,19 @@ import Skills from "@/src/components/Skills";
 
 const page = () => {
   return (
-    <div className=" bg-[#f5f5f5]  dark:bg-dark">
-      <div className="">
-        <div className="">
-          {" "}
-          <AnimatedText
-            text="Unleashing Creativity!"
-            className="my-10 !font-bold text-2xl md:!text-8xl"
-          />
-          <AboutHeroPage />
-          <Capability />
-        </div>
-        {/* skkills */}
-        <Skills />
-        <div className="bg-[#efced9 twoBgColor">
-          <AboutPage />
-        </div>
+    <div className=" bg-[rgb(245,245,245)]  dark:bg-dark dark:text-light">
+      <div className="dark:bg-slate-900">
+        <AnimatedText
+          text="Unleashing Creativity!"
+          className="my-10 !font-bold text-2xl md:!text-8xl !dark:text-dark"
+        />
+        <AboutHeroPage />
+        <Capability />
+      </div>
+      {/* skkills */}
+      <Skills />
+      <div className="bg-[#efced9 twoBgColor">
+        <AboutPage />
       </div>
     </div>
   );
