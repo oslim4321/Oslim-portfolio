@@ -9,6 +9,7 @@ const Skill = ({ name, x, y }) => (
     whileHover={{ scale: 1.09 }}
     initial={{ x: 0, y: 0 }}
     whileInView={{ x: x, y: y }}
+    whileTap={{ scale: 2 }}
     transition={{ duration: 1.5 }}
   >
     {name}
@@ -34,7 +35,6 @@ const Skills = () => {
         <Skill name="NextJs" x="0vw" y="15vw" />
         <Skill name="AstroJS" x="-15vw" y="5vw" />
         <Skill name="GatsbyJs" x="14vw" y="-20vw" />
-        <Skill name="Tailwind Css" x="10vw" y="20vw" />
         <Skill name="Bootstrap Css" x="-10vw" y="-20vw" />
         <Skill name="Tailwind Css" x="40vw" y="0vw" />
         <Skill name="Typescript" x="-40vw" y="2vw" />

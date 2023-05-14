@@ -2,9 +2,11 @@
 import { motion, useScroll } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
+import LiIcons from "./LiIcons";
 
 const Experience = () => {
   const ref = useRef();
+  const liRef = useRef();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center start"],
@@ -41,6 +43,7 @@ const Experience = () => {
       <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center ">
         Experience
       </h2>
+
       <div className="my-3 relative" ref={ref}>
         <motion.div
           className="absolute left-0 md:left-8 top-0 w-[4px] h-full origin-top bg-dark"
@@ -48,11 +51,15 @@ const Experience = () => {
         ></motion.div>
 
         {experienceData.map((expe) => (
-          <div className="flex justify-center items-center flex-col m-6 relative">
+          <div
+            ref={liRef}
+            className="flex justify-center items-center flex-col m-6 relative"
+          >
+            <LiIcons reference={liRef} />
             <motion.div
               className="p-6 glassBg rounded shadow-md md:w-[70%] flex justify-center items-center flex-col"
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.8 }}
             >
               {expe.href ? (
                 <Link target="_blank" href={expe.href}>
@@ -116,7 +123,7 @@ const Education = () => {
             <motion.div
               className="p-6 glassBg rounded shadow-md  md:w-[70%] flex justify-center items-center flex-col"
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.8 }}
             >
               <h3 className="text-xl font-semibold mb-2">{edu.institution}</h3>
               <p className="text-gray-600">

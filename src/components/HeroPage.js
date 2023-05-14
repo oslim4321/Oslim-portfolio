@@ -43,7 +43,7 @@ const HeroPage = () => {
           <MotionLink
             href="resume"
             target="_blank"
-            className="flex items-center justify-center bg-[#303841] text-light w-1/2 rounded py-3 text-lg font-semibold hover:bg-light
+            className="flex items-center justify-center bg-[#303841] text-light w-full mt-6 rounded py-3 text-lg font-semibold hover:bg-light
             border-3 border-[#efced9]"
             initial={{ x: "100%" }}
             whileInView={{ x: 0 }}
