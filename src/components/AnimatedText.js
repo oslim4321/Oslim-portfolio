@@ -76,7 +76,7 @@ const AnimatedText = ({ text, className = "", undeline = false }) => {
       className="w-full relative mx-auto py-2 flex items-center justify-center text-center overflow-hidden dark:text-light"
     >
       <motion.h1
-        className={`${className} inline-block w-full text-dark text-8xl dark:text-light `}
+        className={`${className} inline-block w-full text-dark text-8xl dark:text-ligfht `}
         variants={quote}
         initial="initial" // Set initial state to "initial"
         whileInView="animate"

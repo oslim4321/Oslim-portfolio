@@ -40,6 +40,7 @@ const AboutHeroPage = () => {
                   width={"700"}
                   height={"700"}
                   className="w-[70%]"
+                  prio
                 /> */}
           <AnimatedImg
             path={"/images/mobile_small.png"}

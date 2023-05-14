@@ -16,6 +16,8 @@ const AnimatedImg = ({ path, alt, className = "", direction = "100%" }) => {
         alt={alt}
         width={"700"}
         height={"700"}
+        priority
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
         className={`${className} w-full `}
       />
     </motion.div>
