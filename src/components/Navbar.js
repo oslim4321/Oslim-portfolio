@@ -65,7 +65,7 @@ const Navbar = () => {
             ></span>
           </button>
 
-          {/* first nav */}
+          {/* Desktop nav */}
           <div className="w-full justify-between items-center hidden lg:flex">
             <nav>
               <CustomLink href="/" title="Home" className="mx-2" />
@@ -135,79 +135,91 @@ const Navbar = () => {
             </nav>
           </div>
 
-          {/* secondd nav */}
-          <div
-            className="min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2
-           bg-dark/90 dark:bg-light/90 backdrop-blur-md py-32 lg:hidden "
-          >
-            <nav>
-              <CustomLink href="/" title="Home" className="mx-2" />
-              <CustomLink href="/about" title="About" className="mx-2" />
-              <CustomLink href="/project" title="Project" className="mx-2" />
-              <CustomLink href="/resume" title="Resume" className="mx-2" />
-            </nav>
-
-            <nav className="flex justify-center items-center flex-wrap">
-              <motion.a
-                href={"/"}
-                className="w-6 mx-3"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.8 }}
-              >
-                <TwitterIcon />
-              </motion.a>
-              <motion.a
-                href={"/"}
-                className="w-6 mx-3"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <GithubIcon />
-              </motion.a>
-              <motion.a
-                href={"/"}
-                className="w-6 mx-3"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <LinkedInIcon />
-              </motion.a>
-              <motion.a
-                href={"/"}
-                className="w-6 mx-3"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <DribbbleIcon />
-              </motion.a>
-              {/* <motion.a
-              href={"/"}
-              className="w-6 ml-3"
-              target="_blank"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
+          {/* Mobile nav */}
+          {isOpen ? (
+            <motion.div
+              initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+              animate={{ scale: 1, opacity: 1 }}
+              className={`min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2
+           bg-dark/90 dark:bg-light/90 dark:text-dark/90 backdrop-blur-md py-32 lg:hidden `}
             >
-              <MoonIcon />
-            </motion.a> */}
-              <button
-                onClick={() => setmode(mode === "light" ? "dark" : "light")}
-                className={`w-6 ml-3 rounde ${
-                  mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
-                } `}
+              <nav
+                className="flex flex-col justify-center items-center text-light/75"
+                onClick={() => setisOpen(false)}
               >
-                {mode === "dark" ? (
-                  <SunIcon className={"fill-dark"} />
-                ) : (
-                  <MoonIcon className={"fill-dark"} />
-                )}
-              </button>
-            </nav>
-          </div>
+                <CustomLink
+                  href="/"
+                  title="Home"
+                  className="m-2 dark:text-dark/90"
+                />
+                <CustomLink
+                  href="/about"
+                  title="About"
+                  className="m-2 dark:text-dark/90"
+                />
+                <CustomLink
+                  href="/project"
+                  title="Project"
+                  className="m-2 dark:text-dark/90"
+                />
+                <CustomLink
+                  href="/resume"
+                  title="Resume"
+                  className="m-2 dark:text-dark/90"
+                />
+              </nav>
 
+              <nav className="flex justify-center items-center flex-wrap">
+                <motion.a
+                  href={"/"}
+                  className="w-6 mx-3"
+                  target="_blank"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  <TwitterIcon />
+                </motion.a>
+                <motion.a
+                  href={"/"}
+                  className="w-6 mx-3 bg-light dark:bg-dark dark:text-light rounded-full"
+                  target="_blank"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <GithubIcon />
+                </motion.a>
+                <motion.a
+                  href={"/"}
+                  className="w-6 mx-3"
+                  target="_blank"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <LinkedInIcon />
+                </motion.a>
+                <motion.a
+                  href={"/"}
+                  className="w-6 mx-3"
+                  target="_blank"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <DribbbleIcon />
+                </motion.a>
+
+                <button
+                  onClick={() => setmode(mode === "light" ? "dark" : "light")}
+                  className="rounded-full bg-light dark:bg-dark dark:text-light"
+                >
+                  {mode === "dark" ? (
+                    <SunIcon className={"fill-dark"} />
+                  ) : (
+                    <MoonIcon className={"fill-dark"} />
+                  )}
+                </button>
+              </nav>
+            </motion.div>
+          ) : null}
           <div className="absolute left-[50%] top-2 translate-x-[-50%]">
             <Logo />
           </div>
@@ -219,3 +231,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// hounorabl maroof from lalupon

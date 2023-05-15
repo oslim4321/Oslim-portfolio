@@ -14,7 +14,7 @@ export default function Home() {
     <main
       className={`${montserrat.className} bg-light w-full min-h-screen tracking-wider`}
     >
-      <div className="bg-[#f5f5f5]  dark:bg-dark  dark:text-light pt-10">
+      <div className="bg-[#f5f5f5]  dark:bg-dark  dark:text-light pt-10 overflow-hidden">
         <HeroPage />
         <TipsAboutMe />
         <BuildAndPaint />

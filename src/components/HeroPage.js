@@ -10,8 +10,8 @@ const HeroPage = () => {
   const MotionLink = motion(Link);
   return (
     <div className="cont">
-      <div className="flex items-center justify-between w-full py-10d">
-        <div className="w-1/2">
+      <div className="md:flex items-center justify-between w-full ">
+        <div className="w-full md:w-1/2">
           <AnimatedImg
             path={"/images/Work in progress-rafiki.svg"}
             alt={"oslim"}
@@ -19,13 +19,13 @@ const HeroPage = () => {
             direction="-100%"
           />
         </div>
-        <div className="w-1/2 flex flex-col self-center">
+        <div className="w-full md:w-1/2 flex flex-col self-center">
           <AnimatedText
             text={
               "Creating Engaging Digital Experiences with Custom Code and Design"
             }
             className={
-              "!text-5xl !text-left font-bold capitalize dark:!text-light"
+              "!text-3xl md:text-4xl lg:!text-5xl !text-center md:!text-left font-bold capitalize dark:!text-light"
             }
             undeline={true}
           />
