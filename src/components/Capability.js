@@ -28,29 +28,29 @@ const AnimatedNumber = ({ value }) => {
 const Capability = () => {
   return (
     <div className="cont flex justify-center items-center flex-wrap">
-      <div className="px-20 py-4 rounded-full flex flex-col justify-center items-center">
-        <span className=" inline-block text-7xl font-bold">
+      <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center">
+        <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
           <AnimatedNumber value={50} /> +
         </span>
-        <h2 className=" text-xl font-medium text-dark/70 dark:text-light/75">
+        <h2 className="text-base md:text-xl text-center md:text-left font-medium text-dark/70 dark:text-light/75">
           Complete project
         </h2>
       </div>
-      <div className="px-20 py-4 rounded-full flex flex-col justify-center items-center mx-20">
-        <span className=" inline-block text-7xl font-bold">
+      <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center mx-20">
+        <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
           {" "}
           <AnimatedNumber value={2} /> +
         </span>
-        <h2 className=" text-xl font-medium text-dark/70 dark:text-light/75">
+        <h2 className="text-base md:text-xl text-center md:text-left font-medium text-dark/70 dark:text-light/75">
           Years of Experience
         </h2>
       </div>
-      <div className="px-20 py-4 rounded-full flex flex-col justify-center items-center">
-        <span className=" inline-block text-7xl font-bold">
+      <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center">
+        <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
           {" "}
           <AnimatedNumber value={5} /> +
         </span>
-        <h2 className=" text-xl font-medium text-dark/70 dark:text-light/75">
+        <h2 className="text-base md:text-xl text-center md:text-left font-medium text-dark/70 dark:text-light/75">
           Satisfied Client
         </h2>
       </div>

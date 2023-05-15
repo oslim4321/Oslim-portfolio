@@ -5,7 +5,7 @@ import AnimatedImg from "@/src/components/AnimatedImg";
 const AboutHeroPage = () => {
   return (
     <div className="cont grid grid-cols-12 place-items-center w-full py-10d overflow-hidden">
-      <div className="col-span-12 md:col-span-6 flex flex-col mb-10">
+      <div className="col-span-12 md:col-span-6 flex flex-col mb-10 mx-2">
         {/* <AnimatedText
                 text={"about"}
                 className="!text-5xl !text-left font-bold capitalize"
@@ -14,7 +14,7 @@ const AboutHeroPage = () => {
 
         {/* small text */}
 
-        <p className="font-base my-4 !text-lg !font-medium !text-justify ">
+        <p className="font-base my-4 md:text-lg !font-medium !text-justify ">
           Hey there, I'm Oslim, a web developer with a knack for crafting unique
           and captivating digital experiences. With 2 years of hands-on
           experience in the field, I'm constantly exploring innovative ways to

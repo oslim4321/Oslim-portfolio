@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 
 const Skill = ({ name, x, y }) => (
   <motion.div
-    className="flex items-center justify-center rounded-full font-semibold bg-dark text-light px-6 py-3  cursor-pointer absolute dark:bg-light dark:text-dark"
+    className="flex items-center justify-center rounded-full font-semibold  md:bg-dark text-dark py-1.5 px-1.5
+     md:px-6 md:py-3  cursor-pointer absolute text-sm md:text-lg sm:bg-transparent sm:text-light sm:dark:bg-transparent sm:text-sm
+     md:dark:bg-light dark:text-light"
     whileHover={{ scale: 1.09 }}
     initial={{ x: 0, y: 0 }}
     whileInView={{ x: x, y: y, transition: { duration: 1.5 } }}
@@ -17,7 +19,7 @@ const Skill = ({ name, x, y }) => (
 const Skills = () => {
   return (
     <div className="cont dark:bg-dark">
-      <h2 className=" font-bold text-3xl md:text-8xl my-32 w-full text-center ">
+      <h2 className=" font-bold text-3xl md:text-5xl lg:text-6xl xl:text-8xl my-10 md:my-32 w-full text-center ">
         Skills
       </h2>
       <div className="w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight dark:bg-circularDark">
