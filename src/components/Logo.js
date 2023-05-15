@@ -11,7 +11,7 @@ const Logo = () => {
       <MotionLink href="/">
         <motion.div whileHover={{ scale: 1.1 }}>
           <Image
-            className=" w-28 rounded-full"
+            className=" w-20 md:w-28 rounded-full"
             src="/images/logo_transparent.png"
             alt="logo"
             width={150}

@@ -5,7 +5,7 @@ const Summary = () => {
 
   return (
     <motion.p
-      className="font-base my-4 text-lg font-medium text-start dark:text-light"
+      className="font-base my-4 text-lg font-medium dark:text-light text-center md:text-start"
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.2 }}

@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 
 const BuildAndPaint = () => {
   return (
-    <section className="flex items-center py-16">
-      <div className="cont flex bg-white dark:bg-dark dark:border dark:text-light shadow md:h-[100vh] p-4 overflow-hidden">
-        <div className="flex-1 mt-28">
-          <div className="w-[60%] mx-auto">
+    <section className="flex flex-wrap items-center py-16">
+      <div className="cont grid grid-cols-12 bg-white dark:bg-dark dark:border dark:text-light shadow md:h-[100vh] p-4 overflow-hidden">
+        <div className="col-span-12 md:col-span-5 mt-28">
+          <div className="md:w-[70%] mx-auto">
             <motion.h1
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl font-bold tracking-widest mb-4 text-[#e49db5]"
+              className="text-4xl text-center md:text-left font-bold tracking-widest mb-4 text-[#e49db5]"
             >
               I Develop & <br /> Design Website
             </motion.h1>
@@ -20,7 +20,7 @@ const BuildAndPaint = () => {
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-gray-500 my-10 dark:text-light"
+              className="text-gray-500 text-center md:text-left my-10 dark:text-light"
             >
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat,
               et!
@@ -37,15 +37,15 @@ const BuildAndPaint = () => {
             </motion.button>
           </div>
         </div>
-        <div className="w-px  bg-[#efced9] mx-8" />
+        <div className="w-px  bg-[#efced9] mx-8 hidden md:block" />
         {/* right */}
-        <div className="flex-1 mt-28">
-          <div className="w-[60%] mx-auto">
+        <div className="col-span-12 md:col-span-5 mt-28">
+          <div className="md:w-[70%] mx-auto">
             <motion.h1
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl font-bold tracking-widest mb-4 text-[#e49db5]"
+              className="text-4xl text-center md:text-left font-bold tracking-widest mb-4 text-[#e49db5]"
             >
               I Paint, <br /> Sometimes
             </motion.h1>
@@ -53,7 +53,7 @@ const BuildAndPaint = () => {
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-gray-500 my-10 dark:text-light"
+              className="text-gray-500 text-center md:text-left my-10 dark:text-light"
             >
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat,
               et!

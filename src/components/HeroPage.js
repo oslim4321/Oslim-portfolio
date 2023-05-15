@@ -19,7 +19,7 @@ const HeroPage = () => {
             direction="-100%"
           />
         </div>
-        <div className="w-full md:w-1/2 flex flex-col self-center">
+        <div className="w-full md:w-1/2 flex flex-col self-center ">
           <AnimatedText
             text={
               "Creating Engaging Digital Experiences with Custom Code and Design"
