@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import TransitionEffect from "../components/TransitionEffect";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <nav className="bg-light dark:bg-dark">
           <Navbar />
         </nav>
+        <TransitionEffect />
         <div className="bg-light dark:bg-dark">{children}</div>
         <Footer />
         <Script id="theme-switch" strategy="beforeInteractive">
