@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 
 const Skill = ({ name, x, y }) => (
   <motion.div
-    className="flex items-center justify-center rounded-full font-semibold  md:bg-dark text-dark py-1.5 px-1.5
-     md:px-6 md:py-3  cursor-pointer absolute text-sm md:text-lg sm:bg-transparent sm:text-light sm:dark:bg-transparent sm:text-sm
-     md:dark:bg-light dark:text-dark"
+    className="flex items-center justify-center rounded-full font-semibold text-dark md:bg-dark dark:text-light md:text-light py-1.5 px-1.5
+     md:px-6 md:py-3  cursor-pointer absolute text-sm md:text-lg bg-transparent sm:text-light sm:dark:bg-transparent sm:text-sm
+     md:dark:bg-light dark:md:text-dark
+     
+     "
     whileHover={{ scale: 1.09 }}
     initial={{ x: 0, y: 0 }}
     whileInView={{ x: x, y: y, transition: { duration: 1.5 } }}
@@ -22,7 +24,7 @@ const Skills = () => {
       <h2 className=" font-bold text-3xl md:text-5xl lg:text-6xl xl:text-8xl my-10 md:my-32 w-full text-center ">
         Skills
       </h2>
-      <div className="w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight dark:bg-circularDark">
+      <div className="w-full h-[50vh] sm:h-[60vh] lg:h-[80vh] relative flex items-center justify-center rounded-full bg-circularLight dark:bg-circularDark">
         <motion.div
           className="flex items-center justify-center rounded-full font-semibold bg-dark text-light p-8  cursor-pointer dark:bg-light dark:text-dark"
           whileHover={{ scale: 1.05 }}
