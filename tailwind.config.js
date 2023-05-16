@@ -50,6 +50,18 @@ module.exports = {
           "repeating-radial-gradient(#efced9 2px, #f5f5f5 5px, #f5f5f5 100px);",
         circularDark:
           "repeating-radial-gradient(#efced9 2px, #1b1b1b 5px, #1b1b1b 100px);",
+        circularLightLg:
+          "repeating-radial-gradient(#efced9 2px, #f5f5f5 5px, #f5f5f5 80px);",
+        circularDarkLg:
+          "repeating-radial-gradient(#efced9 2px, #1b1b1b 5px, #1b1b1b 80px);",
+        circularLightMd:
+          "repeating-radial-gradient(#efced9 2px, #f5f5f5 5px, #f5f5f5 100px);",
+        circularDarkMd:
+          "repeating-radial-gradient(#efced9 2px, #1b1b1b 5px, #1b1b1b 100px);",
+        circularLightSm:
+          "repeating-radial-gradient(#efced9 2px, #f5f5f5 5px, #f5f5f5 40px);",
+        circularDarkSm:
+          "repeating-radial-gradient(#efced9 2px, #1b1b1b 5px, #1b1b1b 40px);",
       },
     },
   },
