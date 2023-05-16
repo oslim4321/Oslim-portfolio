@@ -122,7 +122,7 @@ const Navbar = () => {
             </motion.a> */}
               <button
                 onClick={() => setmode(mode === "light" ? "dark" : "light")}
-                className={`w-6 ml-3 rounde ${
+                className={`w-6 ml-3 rounded-full ${
                   mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
                 } `}
               >

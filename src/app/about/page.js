@@ -6,7 +6,7 @@ import Skills from "@/src/components/Skills";
 
 const page = () => {
   return (
-    <div className=" bg-[rgb(245,245,245)]  dark:bg-dark dark:text-light">
+    <div className=" bg-[rgb(245,245,245)]  dark:bg-dark dark:text-light overflow-hidden">
       <div className="dark:bg-slate-900">
         <AnimatedText
           text="Unleashing Creativity!"

@@ -30,7 +30,7 @@ const TipsAboutMe = () => {
       <div className="bg-[#efced9] ">
         <AnimatedText
           text="Introduction and Expertise"
-          className="!text-5xl font-bold capitalize !dark:text-dark"
+          className="!text-5xl font-bold capitalize !dark:text-dark !font-sans"
         />
         <div className=" cont grid grid-cols-12 place-items-center">
           <div className="col-span-12 md:col-span-6">

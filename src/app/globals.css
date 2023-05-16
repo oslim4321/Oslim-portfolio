@@ -82,3 +82,24 @@ body {
     transform: scale(1) rotateX(-180deg);
   }
 }
+
+.parent {
+  display: grid;
+  grid-template-columns: 3fr repeat(2, 1fr);
+  grid-template-rows: 4fr 3fr 5fr 2fr 3fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.div1 {
+  grid-area: 2 / 3 / 3 / 4;
+  background-color: green;
+}
+.div2 {
+  grid-area: 3 / 2 / 4 / 3;
+  background-color: green;
+}
+.div3 {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: green;
+}
