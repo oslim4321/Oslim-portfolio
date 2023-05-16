@@ -8,36 +8,42 @@ const items = [
     subtitle: "Subtitle 1",
     title: "Title 1",
     grid: "col-span-1 md:col-span-2",
+    direction: "100%",
   },
   {
     id: 2,
     subtitle: "Subtitle 2",
     title: "Title 2",
     grid: "col-span-1 md:col-span-2 row-span-1 md:row-span-2",
+    direction: "-100%",
   },
   {
     id: 3,
     subtitle: "Subtitle 3",
     title: "Title 3",
     grid: "col-span-1 md:col-span-2",
+    direction: "100%",
   },
   {
     id: 4,
     subtitle: "Subtitle 3",
     title: "Title 3",
     grid: "",
+    direction: "-100%",
   },
   {
     id: 5,
     subtitle: "Subtitle 3",
     title: "Title 3",
     grid: "",
+    direction: "100%",
   },
   {
     id: 6,
     subtitle: "Subtitle 3",
     title: "Title 3",
     grid: "col-span-1 md:col-span-2",
+    direction: "-100%",
   },
   // Add more items here
 ];
@@ -47,12 +53,17 @@ const ExampleComponent = () => {
 
   return (
     <div className="cont pt-10 grid grid-cols-2 grid-rows-3 md:grid-rows-4 md:grid-cols-4 gap-2 md:gap-4 h-screen">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <motion.div
           key={item.id}
           layoutId={item.id}
           onClick={() => setSelectedId(item.id)}
           className={`p-4 bg-white shadow-md rounded-md cursor-pointer ${item.grid} glassBg dark:text-white`}
+          initial={{ x: item.direction }} // Replace 'direction' with the desired initial position (-100 for left, 100 for right, etc.)
+          whileInView={{ x: 0 }}
+          transition={{ delay: 0.3 + index * 0.08 }} // Add stagger effect to delay each grid item's animation
+          whileHover={{ scale: 0.95 }}
+          whileTap={{ scale: 0.9 }}
         >
           <motion.h5 className="text-gray-600 mb-2">{item.subtitle}</motion.h5>
           <motion.h2 className="text-xl font-bold">{item.title}</motion.h2>
