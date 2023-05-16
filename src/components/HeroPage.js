@@ -2,7 +2,7 @@
 import AnimatedText, { singleWord } from "./AnimatedText";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { LinkArrow } from "./Icons";
+import { DownloadIcon, LinkArrow } from "./Icons";
 import AnimatedImg from "./AnimatedImg";
 import Summary from "./SummaryAboutMe";
 
@@ -65,6 +65,7 @@ const HeroPage = () => {
             <div className="w-10">
               <LinkArrow className="w-10" />
             </div>
+            <DownloadIcon />
           </MotionLink>
           {/* </motion.div> */}
         </div>

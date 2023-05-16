@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import TransitionEffect from "../components/TransitionEffect";
+import { AnimatePresence } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 

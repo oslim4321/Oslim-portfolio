@@ -74,7 +74,7 @@ const Navbar = () => {
               <CustomLink href="/resume" title="Resume" className="mx-2" />
             </nav>
 
-            <nav className="flex justify-center items-center flex-wrap">
+            <nav className="flex justify-center items-center flex-wrap DeskNav">
               <motion.a
                 href={"/"}
                 className="w-6 mx-3"
