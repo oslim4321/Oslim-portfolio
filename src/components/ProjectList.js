@@ -49,18 +49,12 @@ const items = [
   // Add more items here
 ];
 
-const ExampleComponent = () => {
+const ProjectList = () => {
   const [selectedId, setSelectedId] = useState(null);
 
   return (
     <>
-      <PaginatePage />
-      <motion.div
-        className="cont pt-10 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 grid-auto-rows-minmax(200px, auto)"
-        initial={{ x: -1000 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <motion.div className="cont pt-10 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 grid-auto-rows-minmax(200px, auto)">
         {items.map((item, index) => (
           <motion.div
             key={item.id}
@@ -135,4 +129,4 @@ const ExampleComponent = () => {
   );
 };
 
-export default ExampleComponent;
+export default ProjectList;
