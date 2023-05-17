@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import LiIcons from "./LiIcons";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
+import { Electric } from "./Icons";
 
 const Experience = () => {
   const ref = useRef();
@@ -175,9 +176,10 @@ const AboutPage = () => {
       //   mode === "dark" ? "twoBgColorDark" : mode === "light" && "twoBgColor"
       // }  dark:text-white`}
       className="twoBgColor
-       dark:bg-gradient-to-r from-gray-900 via-transparent to-gray-700;
+       dark:bg-gradient-to-r from-gray-900 via-transparent to-gray-700 relative;
 "
     >
+      <Electric className="absolute left-0  text-white" />
       <Experience />
       <Education />
     </div>

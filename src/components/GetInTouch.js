@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Shapes } from "./Icons";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -15,7 +16,7 @@ const ContactForm = () => {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      className="max-w-[800px] mx-auto p-6 bg-white dark:bg-slate-800 shadow-mgd rounded-mgd relative my-20 dark:text-light"
+      className="max-w-[800px] mx-auto p-6 bg-white dark:bg-slate-800 shadow-mgd rounded-mgd relative my-20 dark:text-light relative"
       initial={{ opacity: 0, x: -200 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.3 }}
