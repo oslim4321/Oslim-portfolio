@@ -42,31 +42,42 @@ const HeroPage = () => {
           </motion.p> */}
           <Summary />
           {/* <motion.div> */}
-          <MotionLink
-            href="resume"
-            target="_blank"
-            className="flex items-center justify-center bg-[#303841] hover:bg-light hover:border hover:text-dark text-light w-full mt-6 rounded py-3 text-lg font-semibold 
+          <div
+            className="flex items-center justify-center relative bg-[#303841] hover:bg-light hover:border hover:text-dark text-light w-full mt-6 rounded py-3 text-lg font-semibold 
             border-3 border-[#efced9] dark:bg-light dark:text-dark hover:dark:border hover:dark:bg-transparent hover:dark:text-light"
-            initial={{ x: "100%" }}
-            whileInView={{ x: 0 }}
-            // whileHover={{
-            //   backgroundColor: [
-            //     "#121212",
-            //     "rgba(131,58,180,1)",
-            //     "rgba(253,29,29,1)",
-            //     "rgba(252,176,69,1)",
-            //     "rgba(131,58,180,1)",
-            //     "#121212",
-            //   ],
-            //   transition: { duration: 1, repeat: Infinity },
-            // }}
           >
-            View My Resume
-            <div className="w-10">
-              <LinkArrow className="w-10" />
-            </div>
-            <DownloadIcon />
-          </MotionLink>
+            <MotionLink
+              href="resume"
+              target="_blank"
+              initial={{ x: "100%" }}
+              whileInView={{ x: 0 }}
+              // whileHover={{
+              //   backgroundColor: [
+              //     "#121212",
+              //     "rgba(131,58,180,1)",
+              //     "rgba(253,29,29,1)",
+              //     "rgba(252,176,69,1)",
+              //     "rgba(131,58,180,1)",
+              //     "#121212",
+              //   ],
+              //   transition: { duration: 1, repeat: Infinity },
+              // }}
+            >
+              <div className="flex items-center">
+                View My Resume
+                <div className="w-10">
+                  <LinkArrow className="w-10" />
+                </div>
+              </div>
+            </MotionLink>
+            <Link
+              download={true}
+              href={"resume"}
+              className="absolute right-0 text-3xl bg-[#efced9] h-full flex justify-center items-center z-20 "
+            >
+              <DownloadIcon className="text-lg mx-2" />
+            </Link>
+          </div>
           {/* </motion.div> */}
         </div>
       </div>

@@ -11,6 +11,7 @@ import {
   MoonIcon,
   SunIcon,
   TwitterIcon,
+  Whatsapp,
 } from "./Icons";
 import HireMe from "./HireMe";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
@@ -19,7 +20,10 @@ const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
 
   return (
-    <Link href={href} className={`${className} relative group`}>
+    <Link
+      href={href}
+      className={`${className} relative group hover:text-[#efced9] `}
+    >
       {title}
       <span
         className={`h-[1px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
@@ -77,39 +81,39 @@ const Navbar = () => {
             <nav className="flex justify-center items-center flex-wrap DeskNav">
               <motion.a
                 href={"/"}
-                className="w-6 mx-3"
+                className="w- mx-3  w-6"
                 target="_blank"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.8 }}
               >
-                <TwitterIcon />
+                <TwitterIcon className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
               </motion.a>
               <motion.a
                 href={"/"}
-                className="w-6 mx-3"
+                className="w- mx-3  w-6"
                 target="_blank"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <GithubIcon />
+                <GithubIcon className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
               </motion.a>
               <motion.a
                 href={"/"}
-                className="w-6 mx-3"
+                className="w- mx-3  w-6"
                 target="_blank"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <LinkedInIcon />
+                <LinkedInIcon className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
               </motion.a>
               <motion.a
                 href={"/"}
-                className="w-6 mx-3"
+                className="w- mx-3  w-6"
                 target="_blank"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <DribbbleIcon />
+                <Whatsapp className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
               </motion.a>
               {/* <motion.a
               href={"/"}
@@ -122,14 +126,14 @@ const Navbar = () => {
             </motion.a> */}
               <button
                 onClick={() => setmode(mode === "light" ? "dark" : "light")}
-                className={`w-6 ml-3 rounded-full ${
+                className={` w-6 ml-3 rounded-full ${
                   mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
                 } `}
               >
                 {mode === "dark" ? (
-                  <SunIcon className={"fill-dark"} />
+                  <SunIcon className={"fill-dark text-lg"} />
                 ) : (
-                  <MoonIcon className={"fill-dark"} />
+                  <MoonIcon className={"fill-dark text-lg"} />
                 )}
               </button>
             </nav>
@@ -172,7 +176,7 @@ const Navbar = () => {
               <nav className="flex justify-center items-center flex-wrap">
                 <motion.a
                   href={"/"}
-                  className="w-6 mx-3"
+                  className="w- mx-3  w-6"
                   target="_blank"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.8 }}
@@ -190,7 +194,7 @@ const Navbar = () => {
                 </motion.a>
                 <motion.a
                   href={"/"}
-                  className="w-6 mx-3"
+                  className="w- mx-3  w-6"
                   target="_blank"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.9 }}
@@ -199,7 +203,7 @@ const Navbar = () => {
                 </motion.a>
                 <motion.a
                   href={"/"}
-                  className="w-6 mx-3"
+                  className="w- mx-3  w-6"
                   target="_blank"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.9 }}

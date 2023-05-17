@@ -20,8 +20,10 @@ const ContactForm = () => {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.3 }}
     >
-      <h2 className="text-2xl font-bold mb-6">Contact Selim</h2>
-      <p>Thanks for taking the time to reach out. How can I help you today?</p>
+      <h2 className="text-2xl font-bold mb-6 text-center">Contact Selim</h2>
+      <p className="text-center">
+        Thanks for taking your time, I'm excited to hear from you?
+      </p>
       <div className="mb-4">
         <label
           htmlFor="name"
@@ -34,7 +36,7 @@ const ContactForm = () => {
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none dark:bg-gray-800 dark:border-gray-700 dark:focus:border-gray-700"
+          className="w-full px-3 py-2 border border-[#f0ceda] rounded-md focus:outline-none dark:bg-gray-800 dark:border-gray-700 shadow-xl dark:focus:border-gray-700"
           required
           initial={{ opacity: 0, x: 200 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -54,7 +56,7 @@ const ContactForm = () => {
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none dark:bg-gray-800 dark:border-gray-700 dark:focus:border-gray-700"
+          className="w-full px-3 py-2 border border-[#f0ceda] rounded-md focus:outline-none dark:bg-gray-800 dark:border-gray-700 shadow-xl dark:focus:border-gray-700"
           required
           initial={{ opacity: 0, x: 200 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -73,7 +75,7 @@ const ContactForm = () => {
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none dark:bg-gray-800 dark:border-gray-700 dark:focus:border-gray-700"
+          className="w-full px-3 py-2 border border-[#f0ceda] rounded-md focus:outline-none dark:bg-gray-800 dark:border-gray-700 shadow-xl dark:focus:border-gray-700"
           required
           initial={{ opacity: 0, x: 200 }}
           whileInView={{ opacity: 1, x: 0 }}

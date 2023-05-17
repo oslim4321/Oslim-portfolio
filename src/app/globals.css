@@ -103,11 +103,3 @@ body {
   grid-area: 1 / 1 / 2 / 2;
   background-color: green;
 }
-
-.DeskNav a svg {
-  border-radius: 50%;
-  padding: 20px;
-  border: 1px solid #efced9;
-  background-color: transparent;
-  color: red !important;
-}

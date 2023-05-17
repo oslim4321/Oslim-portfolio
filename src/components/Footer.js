@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <footer
@@ -14,31 +16,35 @@ const Footer = () => {
           <p className="text-sm">Web Developer</p>
         </div>
         <div className="flex space-x-4">
-          <a href="#" className="text-gray-400 hover:text-white">
+          <Link href="#" className="text-gray-400 hover:text-white">
             My Work
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white">
+          </Link>
+          <Link href="#" className="text-gray-400 hover:text-white">
             My Shelf
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white">
+          </Link>
+          <Link
+            href="resume"
+            target="_blank"
+            className="text-gray-400 hover:text-white"
+          >
             My Résumé
-          </a>
+          </Link>
         </div>
         <div className="flex space-x-4 mt-4 md:mt-0">
-          <a
+          <Link
             href="mailto:adewaleselim6@gmail.com"
             className="text-gray-400 hover:text-white"
           >
             adewaleselim6@gmail.com
-          </a>
-          <a
-            href="https://github.com/yourusername"
+          </Link>
+          <Link
+            href="https://github.com/oslim4321"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white"
           >
             GitHub
-          </a>
+          </Link>
           {/* Add more social media links here */}
         </div>
       </div>
