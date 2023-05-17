@@ -2,6 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Playfair_Display } from "next/font/google";
+
+const playfairDispla = Playfair_Display({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const Skill = ({ name, x, y }) => (
   <motion.div
@@ -23,7 +29,9 @@ const Skill = ({ name, x, y }) => (
 const Skills = () => {
   return (
     <>
-      <h2 className=" font-bold text-3xl md:text-5xl lg:text-6xl xl:text-8xl my-10 md:my-32 w-full text-center ">
+      <h2
+        className={` font-bold text-3xl md:text-5xl lg:text-6xl xl:text-8xl my-10 md:my-32 w-full text-center ${playfairDispla.className} `}
+      >
         Skills
       </h2>
       <div className="cont dark:bg-dark">

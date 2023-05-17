@@ -35,6 +35,7 @@ module.exports = {
       },
       fontFamily: {
         montserrat: ["var(--font-montserrat)"],
+        roboto: ["var(--font-montserrat)"],
       },
       colors: {
         dark: "#1b1b1b",

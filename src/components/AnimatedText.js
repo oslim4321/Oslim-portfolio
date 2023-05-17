@@ -1,11 +1,18 @@
 "use client";
+import { Merriweather } from "next/font/google";
+
 import React from "react";
 import { motion } from "framer-motion";
+
+const merriweather = Merriweather({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const UnderlineAnimation = () => {
   return (
     <motion.div
-      className="absolute bottom-0 left-0 w-full h-[3px] bg-[#efced9]"
+      className={`absolute bottom-0 left-0 w-full h-[3px] bg-[#efced9]`}
       initial={{ width: 0 }}
       animate={{ width: "100%" }}
       transition={{
@@ -76,7 +83,7 @@ const AnimatedText = ({ text, className = "", undeline = false }) => {
       className="w-full relative mx-auto py-2 flex items-center justify-center text-center overflow-hidden dark:text-light"
     >
       <motion.h1
-        className={`${className} inline-block w-full text-dark text-8xl `}
+        className={`${className} inline-block w-full text-dark text-8xl  ${merriweather.className}`}
         variants={quote}
         initial="initial" // Set initial state to "initial"
         whileInView="animate"
