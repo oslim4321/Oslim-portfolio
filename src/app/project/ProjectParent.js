@@ -51,6 +51,7 @@ import ProjectList from "@/src/components/ProjectList";
 import { useState } from "react";
 // import { initialTabs as tabs } from "./ingredients";
 import { motion, AnimatePresence } from "framer-motion";
+import PaginatePage from "./PaginatePage";
 
 export default function ProjectParent() {
   const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
@@ -58,6 +59,7 @@ export default function ProjectParent() {
   return (
     <div>
       <ul className="flex">
+        <PaginatePage />
         {allIngredients.map((item) => (
           <li
             key={item.label}
