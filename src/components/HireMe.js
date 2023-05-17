@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const HireMe = () => {
   return (
-    <div className="fixed right-0 bottom-0 z-50 cursor-pointer m-5">
+    <div className="fixed right-0 bottom-10 z-50 cursor-pointer m-5">
       <Link href="mailto:adewaleselim6@gmail.com">
         {/* <div className="w-24 h-24 rounded-full border-4 border-[#EFCED9] flex justify-center items-center"> */}
         <motion.div

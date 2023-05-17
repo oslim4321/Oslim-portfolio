@@ -1,5 +1,5 @@
 "use client";
-import AnimatedText, { singleWord } from "./AnimatedText";
+import AnimatedText from "./AnimatedText";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { DownloadIcon, LinkArrow } from "./Icons";
@@ -73,12 +73,13 @@ const HeroPage = () => {
             <Link
               download={true}
               href={"resume"}
-              className="absolute right-0 text-3xl bg-[#efced9] h-full flex justify-center items-center z-20 "
+              className="absolute right-0 text-3xl bg-[#a36bb9] h-full flex justify-center items-center z-20 "
             >
               <DownloadIcon className="text-lg mx-2" />
             </Link>
           </div>
           {/* </motion.div> */}
+          {/* DOT */}
         </div>
       </div>
     </div>

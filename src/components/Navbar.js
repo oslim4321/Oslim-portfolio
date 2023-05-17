@@ -15,6 +15,7 @@ import {
 } from "./Icons";
 import HireMe from "./HireMe";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
+import ShowIcon from "./ShowIcon";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
@@ -229,6 +230,7 @@ const Navbar = () => {
           </div>
         </div>
         <HireMe />
+        <ShowIcon />
       </div>
     </>
   );
