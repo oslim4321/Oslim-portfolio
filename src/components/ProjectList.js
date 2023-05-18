@@ -49,7 +49,7 @@ const items = [
   // Add more items here
 ];
 
-const ProjectList = () => {
+const ProjectList = ({ project }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   return (
@@ -62,11 +62,11 @@ const ProjectList = () => {
             onClick={() => setSelectedId(item.id)}
             className={`p-4 bg-white shadow-md rounded-md cursor-pointer w-full h-full row-span-1 md:row-span-4 ${item.grid} glassBg dark:text-white 
           md:flex justify-center items-center border-r-2 border-[#efced9]`}
-            initial={{ y: item.direction }}
-            animate={{ y: 0 }}
-            transition={{ delay: 0.1 + index * 0.08 }}
-            whileHover={{ scale: 0.95 }}
-            whileTap={{ scale: 0.9 }}
+            // initial={{ y: item.direction }}
+            // animate={{ y: 0 }}
+            // transition={{ delay: 0.1 + index * 0.08 }}
+            // whileHover={{ scale: 0.95 }}
+            // whileTap={{ scale: 0.9 }}
           >
             <div className=" md:w-[70%]">
               <img
@@ -77,7 +77,10 @@ const ProjectList = () => {
             </div>
             <div className="md:w-[30%] ">
               <motion.h5 className="text-gray-600 ">{item.subtitle}</motion.h5>
-              <motion.h2 className="text-xl font-bold">{item.title}</motion.h2>
+              <motion.h2 className="text-xl font-bold">
+                {item.title}
+                {project}{" "}
+              </motion.h2>
             </div>
           </motion.div>
         ))}
