@@ -7,7 +7,7 @@ import ProjectList from "@/src/components/ProjectList";
 import LoadingSpinner from "@/src/components/FetchProjectSpinner";
 
 export default function ProjectParent() {
-  const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
+  // const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
   const [project, setproject] = useState("Soft works");
 
   console.log(project);
@@ -30,9 +30,9 @@ export default function ProjectParent() {
       </ul> */}
 
       <div className="flex justify-center items-center">
-        {buttons.map((elem) => (
-          <PaginatePage text={elem.text} setproject={setproject} />
-        ))}
+        {/* {buttons.map((elem) => ( */}
+        <PaginatePage buttonList={buttons} setproject={setproject} />
+        {/* ))} */}
       </div>
 
       <main>
