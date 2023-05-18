@@ -1,12 +1,12 @@
 import TransitionEffect from "@/src/components/TransitionEffect";
 import ProjectParent from "./ProjectParent";
 import dbConnect from "@/lib/mongodb";
-import User from "@/model/user";
+import Project from "@/model/Project";
 
 async function getData() {
   await dbConnect();
 
-  const project = await User.find();
+  const project = await Project.find();
   // console.log(project);
   return project;
 }
@@ -18,9 +18,6 @@ const page = async () => {
     <>
       <TransitionEffect />
       <ProjectParent />
-
-      {/* <ProjectList /> */}
-      {/* <ProjectList /> */}
     </>
   );
 };
