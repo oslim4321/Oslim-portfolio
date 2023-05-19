@@ -6,11 +6,12 @@ import PaginatePage from "./PaginatePage";
 import ProjectList from "@/src/components/ProjectList";
 import LoadingSpinner from "@/src/components/FetchProjectSpinner";
 
-export default function ProjectParent() {
+export default function ProjectParent({ projectListData }) {
   // const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
   const [project, setproject] = useState("Soft works");
 
   console.log(project);
+  console.log(projectListData);
 
   return (
     <div>

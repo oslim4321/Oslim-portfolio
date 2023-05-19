@@ -112,3 +112,13 @@ export const allIngredients = [
 //   const existing = new Set(ingredients);
 //   return allIngredients.find((ingredient) => !existing.has(ingredient));
 // }
+
+
+// image
+// projectName
+// projectDesc
+// gitHubLink
+// projectLink
+// technologies
+// projectImages
+// type
