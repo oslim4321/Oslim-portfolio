@@ -46,10 +46,10 @@ export default function ProjectParent({ projectListData }) {
             transition={{ duration: 0.2 }}
           >
             {/* <TransitionEffect /> */}
-            <LoadingSpinner />
+            {projectListData ? null : <LoadingSpinner />}
 
             {/* {selectedTab ? selectedTab.icon : "😋"} */}
-            <ProjectList project={project} />
+            <ProjectList project={project} projectListData={projectListData} />
           </motion.div>
         </AnimatePresence>
       </main>

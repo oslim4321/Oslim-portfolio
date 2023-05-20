@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 import TechnologySelect from "./TechnologySelect";
+import ProjectImages from "./ProjectImages";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { db, storage } from "@/lib/utilty/firebase";
+import { addDoc, collection } from "firebase/firestore";
 
 export default function AddProject() {
   const [image, setImage] = useState(null);
@@ -9,28 +13,49 @@ export default function AddProject() {
   const [projectDesc, setProjectDesc] = useState("");
   const [gitHubLink, setGitHubLink] = useState("");
   const [projectLink, setProjectLink] = useState("");
-  const [technologies, setTechnologies] = useState("");
   const [projectImages, setProjectImages] = useState([]);
+  const [technologies, setTechnologies] = useState([]);
+  const [images, setImages] = useState([]);
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
+    console.log(e.target.files);
+  };
+
+  const uploadImageToStorage = async (image) => {
+    const storageRef = ref(storage, "images/" + image.name);
+    await uploadBytes(storageRef, image);
+    return getDownloadURL(storageRef);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      // Upload the image file to Firebase Storage
-      const storage = getStorage();
-      const storageRef = ref(storage, "images/" + image.name);
-      await uploadBytes(storageRef, image);
+      const imageDownloadURL = image ? await uploadImageToStorage(image) : null;
+      const colRef = collection(db, "projects");
 
-      // Get the download URL of the uploaded image
-      const downloadURL = await storageRef.getDownloadURL();
+      const imageUrls = await Promise.all(
+        images?.map(async (image) => {
+          return await uploadImageToStorage(image);
+        })
+      );
 
       // Save the project data to Firebase Firestore
-      await db.collection("projects").add({
-        image: downloadURL,
+      // await db.collection("projects").add({
+      //   image: imageDownloadURL,
+      //   projectImages: imageUrls,
+      //   projectName,
+      //   projectDesc,
+      //   gitHubLink,
+      //   projectLink,
+      //   technologies,
+      //   projectImages,
+      //   type: "client",
+      // });
+      addDoc(colRef, {
+        image: imageDownloadURL,
+        projectImages: imageUrls,
         projectName,
         projectDesc,
         gitHubLink,
@@ -41,14 +66,18 @@ export default function AddProject() {
       });
 
       // Reset the form
-      setImage(null);
-      setProjectName("");
-      setProjectDesc("");
-      setGitHubLink("");
-      setProjectLink("");
-      setTechnologies("");
-      setProjectImages([]);
+      const resetForm = () => {
+        setImage(null);
+        setProjectName("");
+        setProjectDesc("");
+        setGitHubLink("");
+        setProjectLink("");
+        setTechnologies("");
+        setProjectImages([]);
+      };
 
+      // Inside handleSubmit:
+      resetForm();
       console.log("Project added successfully!");
     } catch (error) {
       console.error("Error adding project:", error);
@@ -112,19 +141,11 @@ export default function AddProject() {
             className="w-full border rounded p-2"
           />
         </div>
-        {/* <div>
-          <label htmlFor="technologies" className="block mb-1 font-semibold">
-            Technologies
-          </label>
-          <input
-            type="text"
-            id="technologies"
-            value={technologies}
-            onChange={(e) => setTechnologies(e.target.value)}
-            className="w-full border rounded p-2"
-          />
-        </div> */}
-        <TechnologySelect />
+        <ProjectImages images={images} setImages={setImages} />
+        <TechnologySelect
+          technologies={technologies}
+          setTechnologies={setTechnologies}
+        />
         <button
           type="submit"
           className="bg-blue-500 text-white px-4 py-2 rounded"

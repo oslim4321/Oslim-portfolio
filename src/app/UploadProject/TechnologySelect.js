@@ -1,15 +1,6 @@
 // ...imports and other code...
 
-import { useState } from "react";
-
-export default function TechnologySelect() {
-  const [technologies, setTechnologies] = useState([]);
-
-  // Event handlers
-  const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
-  };
-
+export default function TechnologySelect({ technologies, setTechnologies }) {
   const handleTechnologiesChange = (e, index) => {
     const updatedTechnologies = [...technologies];
     updatedTechnologies[index] = e.target.value;
@@ -33,7 +24,7 @@ export default function TechnologySelect() {
         <label htmlFor="technologies" className="block mb-1 font-semibold">
           Technologies
         </label>
-        {technologies.map((tech, index) => (
+        {technologies?.map((tech, index) => (
           <div key={index} className="flex space-x-2">
             <input
               type="text"

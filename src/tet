@@ -113,7 +113,6 @@ export const allIngredients = [
 //   return allIngredients.find((ingredient) => !existing.has(ingredient));
 // }
 
-
 // image
 // projectName
 // projectDesc
@@ -122,3 +121,109 @@ export const allIngredients = [
 // technologies
 // projectImages
 // type
+
+export const db = getFirestore();
+export const auth = getAuth();
+// collection ref
+const colRef = collection(db, "books");
+/* QUERIES */
+const q = query(
+  colRef,
+  // where("author", "==", "oslim"),
+  // orderBy("title", "desc")
+  orderBy("createdAt")
+);
+
+// get collection data once
+
+// getDocs(q)
+//   .then((snapshot) => {
+//     let books = [];
+//     snapshot.docs.forEach((doc) => {
+//       books.push({ ...doc.data(), id: doc.id });
+//     });
+
+//     console.log(books, "query");
+//   })
+//   .catch((err) => {
+//     console.log(err.message);
+//   });
+
+/* Example of getting real time data we use something called onsSnap shot*/
+// evey time is is a changes in that collection it sends us back the collection data
+const colRef = collection(db, "books");
+
+onSnapshot(q, (snapshot) => {
+  let books = [];
+  snapshot.docs.forEach((doc) => {
+    books.push({ ...doc.data(), id: doc.id });
+  });
+  console.log(books);
+});
+
+// adding docs
+const addBookForm = document.querySelector(".add");
+addBookForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  addDoc(colRef, {
+    title: addBookForm.title.value,
+    author: addBookForm.author.value,
+    price: addBookForm.price.value,
+    createdAt: serverTimestamp(),
+  })
+    .then(() => {
+      addBookForm.reset();
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+});
+
+
+
+
+const items = [
+  {
+    id: 1,
+    subtitle: "Subtitle 1",
+    title: "Title 1",
+    grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-3",
+    direction: "-100%",
+  },
+  {
+    id: 2,
+    subtitle: "Subtitle 2",
+    title: "Title 2",
+    grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-3",
+    direction: "-100%",
+  },
+  {
+    id: 3,
+    subtitle: "Subtitle 3",
+    title: "Title 3",
+    grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-3",
+    direction: "-100%",
+  },
+  {
+    id: 4,
+    subtitle: "Subtitle 4",
+    title: "Title 4",
+    grid: "col-span-1 md:col-span-1 row-span-1 md:row-span-1",
+    direction: "-100%",
+  },
+  {
+    id: 5,
+    subtitle: "Subtitle 5",
+    title: "Title 5",
+    grid: "col-span-1 md:col-span-1 row-span-1 md:row-span-1",
+    direction: "-100%",
+  },
+  {
+    id: 6,
+    subtitle: "Subtitle 6",
+    title: "Title 6",
+    grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-4",
+    direction: "-100%",
+  },
+  // Add more items here
+];

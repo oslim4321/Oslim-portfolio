@@ -579,8 +579,8 @@ export const Shapes = ({ className }) => (
   >
     <mask id="path-1-inside-1_64_1298" fill="white">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M0 39.75H38.75H77.5V78.5H38.75V117.25H77.5V156H38.75H0V117.25V78.5V39.75Z"
       />
     </mask>
@@ -600,8 +600,8 @@ export const Shapes = ({ className }) => (
     >
       <rect fill="white" x="76.5" width="80" height="180" />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M77.5 1H116.25H155V39.75V78.5V117.25H116.25H77.5V78.5H116.25V39.75H77.5V1Z"
       />
     </mask>
