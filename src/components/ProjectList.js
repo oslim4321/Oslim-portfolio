@@ -18,52 +18,8 @@ const ProjectList = ({ project, projectListData }) => {
     return `col-span-${randomCols} md:col-span-${randomCols} row-span-${randomRows} md:row-span-${randomRows}`;
   };
 
-  function GridListing() {
-    return (
-      <motion.div className="cont pt-10 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 grid-auto-rows-minmax(200px)">
-        {projectListData.length > 0 &&
-          projectListData.map((item, index) => (
-            <motion.div
-              key={index + 1}
-              layoutId={index + 1}
-              className={`${getRandomGridSpan()} p-4 bg-white shadow-md rounded-md cursor-pointer glassBg dark:text-white 
-             md:fledx justify-center items-center border-r-2 border-[#efced9]`}
-              initial={{ x: item.direction }} // Replace 'direction' with the desired initial position (-100 for left, 100 for right, etc.)
-              whileInView={{ x: 0 }}
-              transition={{ delay: 0.3 + index * 0.08 }} // Add stagger effect to delay each grid item's animation
-              whileHover={{ scale: 0.95 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <div className="w-full h-[50%]">
-                <img
-                  src={item.image}
-                  className="w-full h-full object-cover"
-                  alt=""
-                />
-              </div>
-              <div className=" ">
-                <motion.h2 className="text-xl font-bold">
-                  {item.projectName}
-                </motion.h2>
-                <motion.h5 className="text-gray-600 ">
-                  {item.projectDesc.slice(0, 50)}
-                </motion.h5>
-                <button
-                  onClick={() => setSelectedId(index + 1)}
-                  className="border p-2"
-                >
-                  See details
-                </button>
-              </div>
-            </motion.div>
-          ))}
-      </motion.div>
-    );
-  }
-
   useEffect(() => {
-    GridListing();
-    console.log("just run");
+    <GridListing />;
   }, [rand]);
 
   return (
@@ -78,7 +34,11 @@ const ProjectList = ({ project, projectListData }) => {
       >
         shuffle
       </button>
-      <GridListing />
+      <GridListing
+        projectListData={projectListData}
+        getRandomGridSpan={getRandomGridSpan}
+        setSelectedId={setSelectedId}
+      />
       <AnimatePresence>
         {selectedId && pupUpShow && (
           <motion.div
@@ -121,3 +81,48 @@ const ProjectList = ({ project, projectListData }) => {
 };
 
 export default ProjectList;
+
+function GridListing({ projectListData, getRandomGridSpan, setSelectedId }) {
+  return (
+    <div>
+      <motion.div className="cont pt-10 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 grid-auto-rows-minmax(200px)">
+        {projectListData.length > 0 &&
+          projectListData.map((item, index) => (
+            <motion.div
+              key={index + 1}
+              layoutId={index + 1}
+              className={`${getRandomGridSpan()} p-4 bg-white shadow-md rounded-md cursor-pointer glassBg dark:text-white 
+             md:fledx justify-center items-center border-r-2 border-[#efced9]`}
+              initial={{ x: item.direction }} // Replace 'direction' with the desired initial position (-100 for left, 100 for right, etc.)
+              whileInView={{ x: 0 }}
+              transition={{ delay: 0.3 + index * 0.08 }} // Add stagger effect to delay each grid item's animation
+              whileHover={{ scale: 0.95 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <div className="w-full h-[50%]">
+                <img
+                  src={item.image}
+                  className="w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+              <div className=" ">
+                <motion.h2 className="text-xl font-bold">
+                  {item.projectName}
+                </motion.h2>
+                <motion.h5 className="text-gray-600 ">
+                  {item.projectDesc.slice(0, 50)}
+                </motion.h5>
+                <button
+                  onClick={() => setSelectedId(index + 1)}
+                  className="border p-2"
+                >
+                  See details
+                </button>
+              </div>
+            </motion.div>
+          ))}
+      </motion.div>
+    </div>
+  );
+}
