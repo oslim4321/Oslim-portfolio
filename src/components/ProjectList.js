@@ -19,7 +19,7 @@ const ProjectList = ({ project, projectListData }) => {
   };
 
   useEffect(() => {
-    <GridListing />;
+    GridListing({ projectListData, getRandomGridSpan, setSelectedId });
   }, [rand]);
 
   return (
