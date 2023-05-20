@@ -1,229 +1,226 @@
-"use client";
-// import { useState } from "react";
-// import PaginatePage from "./PaginatePage";
-import ProjectList from "@/src/components/ProjectList";
-// import { motion } from "framer-motion";
+// "use client";
+// // import { useState } from "react";
+// // import PaginatePage from "./PaginatePage";
+// import ProjectList from "@/src/components/ProjectList";
+// // import { motion } from "framer-motion";
 
-// const ProjectParent = () => {
-//   const [test, setTest] = useState(false);
+// // const ProjectParent = () => {
+// //   const [test, setTest] = useState(false);
+
+// //   return (
+// //     <>
+// //       <button onClick={() => setTest(!test)}>Toggle</button>
+// //       <PaginatePage />
+// //       <motion.div
+// //         style={{ display: "flex", overflow: "hidden" }}
+// //         initial={{ x: 0 }}
+// //         animate={{ x: test ? "-100%" : "0" }}
+// //         transition={{ duration: 0.5 }}
+// //       >
+// //         {test ? (
+// //           <motion.div
+// //             key="project1"
+// //             // style={{ width: "100%", marginRight: "1rem" }}
+// //             initial={{ x: -1000 }}
+// //             animate={{ x: test === true ? 0 : -1000 }}
+// //             transition={{ duration: 0.5 }}
+// //           >
+// //             1
+// //             <ProjectList />
+// //           </motion.div>
+// //         ) : (
+// //           <motion.div
+// //             key="project2"
+// //             style={{ width: "100%" }}
+// //             initial={{ x: -1000 }}
+// //             animate={{ x: !test ? 0 : -1000 }}
+// //             transition={{ duration: 0.5 }}
+// //           >
+// //             2
+// //             <ProjectList />
+// //           </motion.div>
+// //         )}
+// //       </motion.div>
+// //     </>
+// //   );
+// // };
+
+// // export default ProjectParent;
+
+// // import "./styles.css";
+// import { useState } from "react";
+// // import { initialTabs as tabs } from "./ingredients";
+// import { motion, AnimatePresence } from "framer-motion";
+
+// export default function ProjectParent() {
+//   const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
 
 //   return (
-//     <>
-//       <button onClick={() => setTest(!test)}>Toggle</button>
-//       <PaginatePage />
-//       <motion.div
-//         style={{ display: "flex", overflow: "hidden" }}
-//         initial={{ x: 0 }}
-//         animate={{ x: test ? "-100%" : "0" }}
-//         transition={{ duration: 0.5 }}
-//       >
-//         {test ? (
-//           <motion.div
-//             key="project1"
-//             // style={{ width: "100%", marginRight: "1rem" }}
-//             initial={{ x: -1000 }}
-//             animate={{ x: test === true ? 0 : -1000 }}
-//             transition={{ duration: 0.5 }}
+//     <div>
+//       <ul className="flex">
+//         {allIngredients.map((item) => (
+//           <li
+//             key={item.label}
+//             className={item === selectedTab ? "selected" : ""}
+//             onClick={() => setSelectedTab(item)}
 //           >
-//             1
+//             {`${item.icon} ${item.label}`}
+//             {item === selectedTab ? (
+//               <motion.div className="underline" layoutId="underline" />
+//             ) : null}
+//           </li>
+//         ))}
+//       </ul>
+
+//       <main>
+//         <AnimatePresence mode="wait">
+//           <motion.div
+//             key={selectedTab ? selectedTab.label : "empty"}
+//             initial={{ y: 10, opacity: 0 }}
+//             animate={{ y: 0, opacity: 1 }}
+//             exit={{ y: -10, opacity: 0 }}
+//             transition={{ duration: 0.2 }}
+//           >
+//             {selectedTab ? selectedTab.icon : "😋"}
 //             <ProjectList />
 //           </motion.div>
-//         ) : (
-//           <motion.div
-//             key="project2"
-//             style={{ width: "100%" }}
-//             initial={{ x: -1000 }}
-//             animate={{ x: !test ? 0 : -1000 }}
-//             transition={{ duration: 0.5 }}
-//           >
-//             2
-//             <ProjectList />
-//           </motion.div>
-//         )}
-//       </motion.div>
-//     </>
+//         </AnimatePresence>
+//       </main>
+//     </div>
 //   );
-// };
-
-// export default ProjectParent;
-
-// import "./styles.css";
-import { useState } from "react";
-// import { initialTabs as tabs } from "./ingredients";
-import { motion, AnimatePresence } from "framer-motion";
-
-export default function ProjectParent() {
-  const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
-
-  return (
-    <div>
-      <ul className="flex">
-        {allIngredients.map((item) => (
-          <li
-            key={item.label}
-            className={item === selectedTab ? "selected" : ""}
-            onClick={() => setSelectedTab(item)}
-          >
-            {`${item.icon} ${item.label}`}
-            {item === selectedTab ? (
-              <motion.div className="underline" layoutId="underline" />
-            ) : null}
-          </li>
-        ))}
-      </ul>
-
-      <main>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={selectedTab ? selectedTab.label : "empty"}
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            {selectedTab ? selectedTab.icon : "😋"}
-            <ProjectList />
-          </motion.div>
-        </AnimatePresence>
-      </main>
-    </div>
-  );
-}
-
-// export interface Ingredient {
-//   icon: string;
-//   label: string;
 // }
 
-export const allIngredients = [
-  { icon: "🍅", label: "Tomato" },
-  { icon: "🥬", label: "Lettuce" },
-  { icon: "🧀", label: "Cheese" },
-  { icon: "🥕", label: "Carrot" },
-  { icon: "🍌", label: "Banana" },
-  { icon: "🫐", label: "Blueberries" },
-  { icon: "🥂", label: "Champers?" },
-];
+// // export interface Ingredient {
+// //   icon: string;
+// //   label: string;
+// // }
 
-// const [tomato, lettuce, cheese] = allIngredients;
-// export const initialTabs = [tomato, lettuce, cheese];
+// export const allIngredients = [
+//   { icon: "🍅", label: "Tomato" },
+//   { icon: "🥬", label: "Lettuce" },
+//   { icon: "🧀", label: "Cheese" },
+//   { icon: "🥕", label: "Carrot" },
+//   { icon: "🍌", label: "Banana" },
+//   { icon: "🫐", label: "Blueberries" },
+//   { icon: "🥂", label: "Champers?" },
+// ];
 
-// export function getNextIngredient(ingredients) {
-//   const existing = new Set(ingredients);
-//   return allIngredients.find((ingredient) => !existing.has(ingredient));
-// }
+// // const [tomato, lettuce, cheese] = allIngredients;
+// // export const initialTabs = [tomato, lettuce, cheese];
 
-// image
-// projectName
-// projectDesc
-// gitHubLink
-// projectLink
-// technologies
-// projectImages
-// type
+// // export function getNextIngredient(ingredients) {
+// //   const existing = new Set(ingredients);
+// //   return allIngredients.find((ingredient) => !existing.has(ingredient));
+// // }
 
-export const db = getFirestore();
-export const auth = getAuth();
-// collection ref
-const colRef = collection(db, "books");
-/* QUERIES */
-const q = query(
-  colRef,
-  // where("author", "==", "oslim"),
-  // orderBy("title", "desc")
-  orderBy("createdAt")
-);
+// // image
+// // projectName
+// // projectDesc
+// // gitHubLink
+// // projectLink
+// // technologies
+// // projectImages
+// // type
 
-// get collection data once
+// export const db = getFirestore();
+// export const auth = getAuth();
+// // collection ref
+// const colRef = collection(db, "books");
+// /* QUERIES */
+// const q = query(
+//   colRef,
+//   // where("author", "==", "oslim"),
+//   // orderBy("title", "desc")
+//   orderBy("createdAt")
+// );
 
-// getDocs(q)
-//   .then((snapshot) => {
-//     let books = [];
-//     snapshot.docs.forEach((doc) => {
-//       books.push({ ...doc.data(), id: doc.id });
-//     });
+// // get collection data once
 
-//     console.log(books, "query");
-//   })
-//   .catch((err) => {
-//     console.log(err.message);
+// // getDocs(q)
+// //   .then((snapshot) => {
+// //     let books = [];
+// //     snapshot.docs.forEach((doc) => {
+// //       books.push({ ...doc.data(), id: doc.id });
+// //     });
+
+// //     console.log(books, "query");
+// //   })
+// //   .catch((err) => {
+// //     console.log(err.message);
+// //   });
+
+// /* Example of getting real time data we use something called onsSnap shot*/
+// // evey time is is a changes in that collection it sends us back the collection data
+// const colRef = collection(db, "books");
+
+// onSnapshot(q, (snapshot) => {
+//   let books = [];
+//   snapshot.docs.forEach((doc) => {
+//     books.push({ ...doc.data(), id: doc.id });
 //   });
+//   console.log(books);
+// });
 
-/* Example of getting real time data we use something called onsSnap shot*/
-// evey time is is a changes in that collection it sends us back the collection data
-const colRef = collection(db, "books");
+// // adding docs
+// const addBookForm = document.querySelector(".add");
+// addBookForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   addDoc(colRef, {
+//     title: addBookForm.title.value,
+//     author: addBookForm.author.value,
+//     price: addBookForm.price.value,
+//     createdAt: serverTimestamp(),
+//   })
+//     .then(() => {
+//       addBookForm.reset();
+//     })
+//     .catch((error) => {
+//       console.log(error.message);
+//     });
+// });
 
-onSnapshot(q, (snapshot) => {
-  let books = [];
-  snapshot.docs.forEach((doc) => {
-    books.push({ ...doc.data(), id: doc.id });
-  });
-  console.log(books);
-});
-
-// adding docs
-const addBookForm = document.querySelector(".add");
-addBookForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  addDoc(colRef, {
-    title: addBookForm.title.value,
-    author: addBookForm.author.value,
-    price: addBookForm.price.value,
-    createdAt: serverTimestamp(),
-  })
-    .then(() => {
-      addBookForm.reset();
-    })
-    .catch((error) => {
-      console.log(error.message);
-    });
-});
-
-
-
-
-const items = [
-  {
-    id: 1,
-    subtitle: "Subtitle 1",
-    title: "Title 1",
-    grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-3",
-    direction: "-100%",
-  },
-  {
-    id: 2,
-    subtitle: "Subtitle 2",
-    title: "Title 2",
-    grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-3",
-    direction: "-100%",
-  },
-  {
-    id: 3,
-    subtitle: "Subtitle 3",
-    title: "Title 3",
-    grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-3",
-    direction: "-100%",
-  },
-  {
-    id: 4,
-    subtitle: "Subtitle 4",
-    title: "Title 4",
-    grid: "col-span-1 md:col-span-1 row-span-1 md:row-span-1",
-    direction: "-100%",
-  },
-  {
-    id: 5,
-    subtitle: "Subtitle 5",
-    title: "Title 5",
-    grid: "col-span-1 md:col-span-1 row-span-1 md:row-span-1",
-    direction: "-100%",
-  },
-  {
-    id: 6,
-    subtitle: "Subtitle 6",
-    title: "Title 6",
-    grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-4",
-    direction: "-100%",
-  },
-  // Add more items here
-];
+// const items = [
+//   {
+//     id: 1,
+//     subtitle: "Subtitle 1",
+//     title: "Title 1",
+//     grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-3",
+//     direction: "-100%",
+//   },
+//   {
+//     id: 2,
+//     subtitle: "Subtitle 2",
+//     title: "Title 2",
+//     grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-3",
+//     direction: "-100%",
+//   },
+//   {
+//     id: 3,
+//     subtitle: "Subtitle 3",
+//     title: "Title 3",
+//     grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-3",
+//     direction: "-100%",
+//   },
+//   {
+//     id: 4,
+//     subtitle: "Subtitle 4",
+//     title: "Title 4",
+//     grid: "col-span-1 md:col-span-1 row-span-1 md:row-span-1",
+//     direction: "-100%",
+//   },
+//   {
+//     id: 5,
+//     subtitle: "Subtitle 5",
+//     title: "Title 5",
+//     grid: "col-span-1 md:col-span-1 row-span-1 md:row-span-1",
+//     direction: "-100%",
+//   },
+//   {
+//     id: 6,
+//     subtitle: "Subtitle 6",
+//     title: "Title 6",
+//     grid: "col-span-2 sm:col-span-1 md:col-span-2 row-span-1 md:row-span-4",
+//     direction: "-100%",
+//   },
+//   // Add more items here
+// ];
