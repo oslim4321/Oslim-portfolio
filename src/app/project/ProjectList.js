@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GithubIcon } from "../../components/Icons";
+import { Close, GithubIcon } from "../../components/Icons";
 
 const ProjectList = ({ project, projectListData }) => {
   const [selectedId, setSelectedId] = useState(null);
@@ -10,18 +10,6 @@ const ProjectList = ({ project, projectListData }) => {
     setpupUpShow(projectListData[selectedId - 1]);
   }, [selectedId]);
   console.log(selectedId, "selectedId");
-
-  const getRandomGridSpan = () => {
-    const randomCols = Math.floor(Math.random() * 4) + 1; // Random number between 1 and 4 for grid columns
-    const randomRows = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 3 for grid rows
-
-    return `col-span-${randomCols} md:col-span-${randomCols} row-span-${randomRows} md:row-span-${randomRows}`;
-  };
-
-  useEffect(() => {}, []);
-  // useEffect(() => {
-  //   GridListing();
-  // }, [rand]);
 
   return (
     <>
@@ -38,7 +26,6 @@ const ProjectList = ({ project, projectListData }) => {
       <div className=" h-[90vh] overflow-y-scroll no-scrollbar">
         <GridListing
           projectListData={projectListData}
-          getRandomGridSpan={getRandomGridSpan}
           setSelectedId={setSelectedId}
         />
         <AnimatePresence>
@@ -49,24 +36,28 @@ const ProjectList = ({ project, projectListData }) => {
               // onClick={() => setSelectedId(null)}
             >
               <motion.div
-                className="bg-white w-full md:w-[60%] h-[60%] shadow-md rounded-md p-4 overflow-scroll scrollbar-white"
+                className="bg-white w-full md:w-[60%] h-[60%] shadow-md rounded-md p-4 overflow-scroll scrollbar-white relative"
                 initial={{ opacity: 0, scale: 0.95, y: -20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <img
-                  src={pupUpShow.image}
-                  alt=""
-                  className="w-[500px] h-[200px] object-cover"
-                />
-                <motion.h5 className="text-gray-600 mb-2">
-                  {pupUpShow.projectName}
-                </motion.h5>
-                {/* descriptions */}
-                <motion.h2 className="text-xl font-bold">
-                  {pupUpShow.projectDesc}
-                </motion.h2>
+                <div className="flex gap-x-5">
+                  <img
+                    src={pupUpShow.image}
+                    alt=""
+                    className="w-[500px] h-[200px] object-cover"
+                  />
+                  <div>
+                    <motion.h5 className=" text-xl font-bold mb-2">
+                      {pupUpShow.projectName}
+                    </motion.h5>
+                    {/* descriptions */}
+                    <motion.h2 className="text-gray-600">
+                      {pupUpShow.projectDesc}
+                    </motion.h2>
+                  </div>
+                </div>
 
                 {/* skills */}
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -90,9 +81,10 @@ const ProjectList = ({ project, projectListData }) => {
                 </div>
                 <motion.button
                   onClick={() => setSelectedId(null)}
-                  className="mt-4 px-4 py-2 text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-md focus:outline-none"
+                  className="absolute top-0 right-0 "
+                  // className="mt-4 px-4 py-2 text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-md focus:outline-none"
                 >
-                  Close
+                  <Close className={"text-10xl"} size="50" />
                 </motion.button>
               </motion.div>
             </motion.div>
@@ -105,7 +97,14 @@ const ProjectList = ({ project, projectListData }) => {
 
 export default ProjectList;
 
-function GridListing({ projectListData, getRandomGridSpan, setSelectedId }) {
+function GridListing({ projectListData, setSelectedId }) {
+  const getRandomGridSpan = () => {
+    const randomCols = Math.floor(Math.random() * 4) + 1; // Random number between 1 and 4 for grid columns
+    const randomRows = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 3 for grid rows
+
+    return `col-span-${randomCols} md:col-span-${randomCols} row-span-${randomRows} md:row-span-${randomRows}`;
+  };
+
   return (
     <div>
       <motion.div className="cont pt-10 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 grid-auto-rows-minmax(200px)">
@@ -114,8 +113,8 @@ function GridListing({ projectListData, getRandomGridSpan, setSelectedId }) {
             <motion.div
               key={index + 1}
               layoutId={index + 1}
-              className={`${item.grid} p-4 bg-white shadow-md rounded-md cursor-pointer glassBg dark:text-white 
-             md:fledx justify-center items-center border-r-2 border-[#efced9]`}
+              className={`${getRandomGridSpan()} p-4 bg-white shadow-md rounded-md cursor-pointer glassBg dark:text-white 
+             border-r-2 border-[#efced9]`}
               initial={{ x: item.direction }}
               whileInView={{ x: 0 }}
               transition={{ delay: 0.3 + index * 0.08 }}

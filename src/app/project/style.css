@@ -1,0 +1,18 @@
+.gridItems {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.big {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+.smal {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+.normal {
+  grid-row: span 1;
+  grid-column: span 3;
+}
