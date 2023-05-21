@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PaginatePage from "./PaginatePage";
-import ProjectList from "@/src/components/ProjectList";
 import LoadingSpinner from "@/src/components/FetchProjectSpinner";
+import ProjectList from "./ProjectList";
 
 export default function ProjectParent({ projectListData }) {
   // const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
@@ -46,7 +46,7 @@ export default function ProjectParent({ projectListData }) {
             transition={{ duration: 0.2 }}
           >
             {/* <TransitionEffect /> */}
-            {projectListData ? null : <LoadingSpinner />}
+            {projectListData.length > 0 ? null : <LoadingSpinner />}
 
             {/* {selectedTab ? selectedTab.icon : "😋"} */}
             <ProjectList project={project} projectListData={projectListData} />

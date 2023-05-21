@@ -2,6 +2,7 @@ import TransitionEffect from "@/src/components/TransitionEffect";
 import ProjectParent from "./ProjectParent";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/utilty/firebase";
+import ErrorFetch from "@/src/components/ErrorFetch";
 
 async function getData() {
   let project = [];
@@ -11,14 +12,20 @@ async function getData() {
     res.docs.forEach((doc) => {
       project.push({ ...doc.data(), id: doc.id });
     });
+    // Recommendation: handle errors
+
     return project;
   } catch (error) {
+    if (error) {
+      return error;
+    }
     console.log(error.message);
   }
 }
 
 const page = async () => {
   const data = await getData();
+  // console.log(data);
   // .then((snapshot) => {
   //   let project = [];
   //   snapshot.docs.forEach((doc) => {

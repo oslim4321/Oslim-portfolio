@@ -1,33 +1,24 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GithubIcon } from "./Icons";
+import { GithubIcon } from "../../components/Icons";
 
 const ProjectList = ({ project, projectListData }) => {
   const [selectedId, setSelectedId] = useState(null);
   const [pupUpShow, setpupUpShow] = useState();
-  const [rand, setrand] = useState("");
-  const [colRow, setcolRow] = useState("");
   useEffect(() => {
     setpupUpShow(projectListData[selectedId - 1]);
   }, [selectedId]);
   console.log(selectedId, "selectedId");
 
   const getRandomGridSpan = () => {
-    console.log(colRow);
     const randomCols = Math.floor(Math.random() * 4) + 1; // Random number between 1 and 4 for grid columns
     const randomRows = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 3 for grid rows
 
-    setcolRow(
-      `col-span-${randomCols} md:col-span-${randomCols} row-span-${randomRows} md:row-span-${randomRows}`
-    );
-
-    // return `col-span-${randomCols} md:col-span-${randomCols} row-span-${randomRows} md:row-span-${randomRows}`;
+    return `col-span-${randomCols} md:col-span-${randomCols} row-span-${randomRows} md:row-span-${randomRows}`;
   };
 
-  useEffect(() => {
-    getRandomGridSpan();
-  }, []);
+  useEffect(() => {}, []);
   // useEffect(() => {
   //   GridListing();
   // }, [rand]);
@@ -35,7 +26,7 @@ const ProjectList = ({ project, projectListData }) => {
   return (
     <>
       {/* shuffle button */}
-      <button
+      {/* <button
         className="absolute right-0 border"
         onClick={() => {
           getRandomGridSpan();
@@ -43,11 +34,11 @@ const ProjectList = ({ project, projectListData }) => {
         }}
       >
         shuffle
-      </button>
+      </button> */}
       <div className=" h-[90vh] overflow-y-scroll no-scrollbar">
         <GridListing
           projectListData={projectListData}
-          colRow={colRow}
+          getRandomGridSpan={getRandomGridSpan}
           setSelectedId={setSelectedId}
         />
         <AnimatePresence>
@@ -114,7 +105,7 @@ const ProjectList = ({ project, projectListData }) => {
 
 export default ProjectList;
 
-function GridListing({ projectListData, colRow, setSelectedId }) {
+function GridListing({ projectListData, getRandomGridSpan, setSelectedId }) {
   return (
     <div>
       <motion.div className="cont pt-10 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 grid-auto-rows-minmax(200px)">
@@ -123,7 +114,7 @@ function GridListing({ projectListData, colRow, setSelectedId }) {
             <motion.div
               key={index + 1}
               layoutId={index + 1}
-              className={`${colRow} p-4 bg-white shadow-md rounded-md cursor-pointer glassBg dark:text-white 
+              className={`${item.grid} p-4 bg-white shadow-md rounded-md cursor-pointer glassBg dark:text-white 
              md:fledx justify-center items-center border-r-2 border-[#efced9]`}
               initial={{ x: item.direction }}
               whileInView={{ x: 0 }}
