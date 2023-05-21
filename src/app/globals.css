@@ -8,6 +8,18 @@
 
   /* max-w-[90%] mx-auto */
 }
+html::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #f8adc7;
+  border-radius: 5rem;
+}
 
 .box {
   width: 200px;
@@ -248,3 +260,34 @@ li button {
   cursor: default;
   pointer-events: none;
 } */
+
+.scrollbar-white::-webkit-scrollbar {
+  width: 12px;
+  height: 20px;
+}
+
+.scrollbar-white::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+.scrollbar-white::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  border: 3px solid #f2f2f2;
+}
+
+.scrollbar-white::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  /* IE and Edge */
+  scrollbar-width: none !important;
+  /* Firefox */
+}

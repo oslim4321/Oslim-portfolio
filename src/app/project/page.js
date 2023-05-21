@@ -30,11 +30,15 @@ const page = async () => {
   // .catch((err) => {
   //   console.log(err.message);
   // });
-
+  const styleOverflow = {
+    overflow: "hidden",
+  };
   return (
     <>
-      <TransitionEffect />
-      <ProjectParent projectListData={data} />
+      <div style={styleOverflow}>
+        <TransitionEffect />
+        <ProjectParent projectListData={data} />
+      </div>
     </>
   );
 };
