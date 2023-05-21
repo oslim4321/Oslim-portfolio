@@ -42,7 +42,7 @@ const ProjectList = ({ project, projectListData }) => {
                 exit={{ opacity: 0, scale: 0.95, y: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="flex gap-x-5">
+                <div className="flex flex-wrap gap-x-5">
                   <img
                     src={pupUpShow.image}
                     alt=""
@@ -56,15 +56,20 @@ const ProjectList = ({ project, projectListData }) => {
                     <motion.h2 className="text-gray-600">
                       {pupUpShow.projectDesc}
                     </motion.h2>
+                    <button>Visit Website</button>
                   </div>
                 </div>
 
                 {/* skills */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="flex flex-wrap gap-x-4">
                   {pupUpShow.technologies.map((skill, index) => (
                     <motion.div
                       key={index}
-                      className="bg-gray-100 p-4 rounded-lg shadow-md inline-block"
+                      className="flex items-center justify-center rounded-full font-semibold text-dark sm:bg-dark dark:text-light md:text-light py-1.5 px-1.5
+                      md:px-6 md:py-3  cursor-pointer text-sm md:text-lg bg-transparent sm:text-light sm:dark:bg-transparent sm:text-sm
+                      md:dark:bg-light dark:md:text-dark
+                      
+                      "
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -73,10 +78,18 @@ const ProjectList = ({ project, projectListData }) => {
                   ))}
                 </div>
                 {/*Images */}
-                <div className="flex gap-10">
+                <h5 className=" text-xl font-bold my-2 mt-5">
+                  Beautiful Pictures of the website
+                </h5>
+
+                <div className="flex gap-10 overflow-x-scroll  no-scrollbar">
                   {pupUpShow.projectImages.length > 0 &&
                     pupUpShow.projectImages.map((img) => (
-                      <img src={img} alt="" />
+                      <img
+                        src={img}
+                        alt=""
+                        className="w-[200px] h-[200px] object-cover"
+                      />
                     ))}
                 </div>
                 <motion.button
@@ -107,7 +120,7 @@ function GridListing({ projectListData, setSelectedId }) {
 
   return (
     <div>
-      <motion.div className="cont pt-10 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 grid-auto-rows-minmax(200px)">
+      <motion.div className="cont pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 grid-auto-rows-minmax(200px)">
         {projectListData.length > 0 &&
           projectListData.map((item, index) => (
             <motion.div

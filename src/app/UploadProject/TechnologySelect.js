@@ -24,23 +24,24 @@ export default function TechnologySelect({ technologies, setTechnologies }) {
         <label htmlFor="technologies" className="block mb-1 font-semibold">
           Technologies
         </label>
-        {technologies?.map((tech, index) => (
-          <div key={index} className="flex space-x-2">
-            <input
-              type="text"
-              value={tech}
-              onChange={(e) => handleTechnologiesChange(e, index)}
-              className="w-full border rounded p-2"
-            />
-            <button
-              type="button"
-              onClick={() => handleRemoveTechnology(index)}
-              className="bg-red-500 text-white px-4 py-2 rounded"
-            >
-              Remove
-            </button>
-          </div>
-        ))}
+        {technologies.length > 0 &&
+          technologies?.map((tech, index) => (
+            <div key={index} className="flex space-x-2">
+              <input
+                type="text"
+                value={tech}
+                onChange={(e) => handleTechnologiesChange(e, index)}
+                className="w-full border rounded p-2"
+              />
+              <button
+                type="button"
+                onClick={() => handleRemoveTechnology(index)}
+                className="bg-red-500 text-white px-4 py-2 rounded"
+              >
+                Remove
+              </button>
+            </div>
+          ))}
         <button
           type="button"
           onClick={handleAddTechnology}

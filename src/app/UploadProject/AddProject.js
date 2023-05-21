@@ -5,7 +5,7 @@ import TechnologySelect from "./TechnologySelect";
 import ProjectImages from "./ProjectImages";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "@/lib/utilty/firebase";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, arrayUnion, collection } from "firebase/firestore";
 
 export default function AddProject() {
   const [image, setImage] = useState(null);
@@ -23,7 +23,9 @@ export default function AddProject() {
   };
 
   const uploadImageToStorage = async (image) => {
-    const storageRef = ref(storage, "images/" + image.name);
+    const randomNumber = Math.floor(Math.random() * 2000);
+
+    const storageRef = ref(storage, "images/" + image.name + randomNumber);
     await uploadBytes(storageRef, image);
     return getDownloadURL(storageRef);
   };
@@ -41,18 +43,6 @@ export default function AddProject() {
         })
       );
 
-      // Save the project data to Firebase Firestore
-      // await db.collection("projects").add({
-      //   image: imageDownloadURL,
-      //   projectImages: imageUrls,
-      //   projectName,
-      //   projectDesc,
-      //   gitHubLink,
-      //   projectLink,
-      //   technologies,
-      //   projectImages,
-      //   type: "client",
-      // });
       addDoc(colRef, {
         image: imageDownloadURL,
         projectImages: imageUrls,
@@ -61,7 +51,6 @@ export default function AddProject() {
         gitHubLink,
         projectLink,
         technologies,
-        projectImages,
         type: "client",
       });
 
