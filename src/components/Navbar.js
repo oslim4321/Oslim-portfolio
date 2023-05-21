@@ -230,7 +230,7 @@ const Navbar = () => {
           </div>
         </div>
         <HireMe />
-        <ShowIcon />
+        {/* <ShowIcon /> */}
       </div>
     </>
   );

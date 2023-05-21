@@ -179,7 +179,7 @@ const AboutPage = () => {
        dark:bg-gradient-to-r from-gray-900 via-transparent to-gray-700 relative;
 "
     >
-      <Electric className="absolute left-0  text-white" />
+      {/* <Electric className="absolute left-0  text-white" /> */}
       <Experience />
       <Education />
     </div>
