@@ -23,9 +23,17 @@ const ProjectList = ({ project, projectListData }) => {
       >
         shuffle
       </button> */}
-      <div className=" h-[90vh] overflow-y-scroll no-scrollbar">
+      <div
+        className=" h-[90vh] overflow-y-scroll no-scrollbar"
+        style={{
+          backgroundImage: "images/32745786_03-removebg-preview.png",
+          backgroundSize: "cover",
+          width: "100%",
+        }}
+      >
         <GridListing
           projectListData={projectListData}
+          project={project}
           setSelectedId={setSelectedId}
         />
         <AnimatePresence>
@@ -45,7 +53,7 @@ const ProjectList = ({ project, projectListData }) => {
                 <div className="flex flex-wrap gap-x-5">
                   <img
                     src={pupUpShow.image}
-                    alt=""
+                    alt={pupUpShow.projectName}
                     className="w-[500px] h-[200px] object-cover"
                   />
                   <div>
@@ -87,7 +95,7 @@ const ProjectList = ({ project, projectListData }) => {
                     pupUpShow.projectImages.map((img) => (
                       <img
                         src={img}
-                        alt=""
+                        alt={pupUpShow.projectName}
                         className="w-[200px] h-[200px] object-cover"
                       />
                     ))}
@@ -110,31 +118,39 @@ const ProjectList = ({ project, projectListData }) => {
 
 export default ProjectList;
 
-function GridListing({ projectListData, setSelectedId }) {
+function GridListing({ projectListData, project, setSelectedId }) {
   const getRandomGridSpan = () => {
-    const randomCols = Math.floor(Math.random() * 4) + 1; // Random number between 1 and 4 for grid columns
-    const randomRows = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 3 for grid rows
+    const randomCols = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 4 for grid columns
+    const randomRows = Math.floor(Math.random() * 2) + 1; // Random number between 1 and 3 for grid rows
 
     return `col-span-${randomCols} md:col-span-${randomCols} row-span-${randomRows} md:row-span-${randomRows}`;
   };
 
   return (
-    <div>
-      <motion.div className="cont pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 grid-auto-rows-minmax(200px)">
+    <div className="my-10">
+      <p className="text-center">{project}</p>
+      <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-5 grid-row-1 md:grfid-rows-2 cont">
+        {/* <p>{project}</p> */}
+        {/* <div className="col-span-3 row-span-2 bg-purple-500">hello</div>
+        <div className="col-span-2 row-span-2 bg-purple-500">hello</div>
+        <div className="col-span-2 row-span-2 bg-purple-500">hello</div>
+        <div className="col-span-3 row-span-2 bg-purple-500">hello</div>
+        <div className="col-span-3 row-span-2 bg-purple-500">hello</div> */}
+
         {projectListData.length > 0 &&
           projectListData.map((item, index) => (
             <motion.div
               key={index + 1}
               layoutId={index + 1}
-              className={`${getRandomGridSpan()} p-4 bg-white shadow-md rounded-md cursor-pointer glassBg dark:text-white 
-             border-r-2 border-[#efced9]`}
+              className={` p-4 bg-white shadow-md rounded-md cursor-pointer glassBg dark:text-white 
+             border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px]`}
               initial={{ x: item.direction }}
               whileInView={{ x: 0 }}
               transition={{ delay: 0.3 + index * 0.08 }}
               whileHover={{ scale: 0.95 }}
               whileTap={{ scale: 0.9 }}
             >
-              <div className="w-full h-[50%]">
+              <div className="w-[100%] h-[50%] ">
                 <img
                   src={item.image}
                   className="w-full h-full object-cover"

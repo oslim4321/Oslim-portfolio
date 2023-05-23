@@ -8,7 +8,7 @@ import ProjectList from "./ProjectList";
 
 export default function ProjectParent({ projectListData }) {
   // const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
-  const [project, setproject] = useState("Soft works");
+  const [project, setproject] = useState("Personal projects");
 
   console.log(project);
   console.log(projectListData);
@@ -82,23 +82,23 @@ export const allIngredients = [
 
 const buttons = [
   {
-    text: "Soft works",
-    onClick: () => handleButtonClick("/soft-works"),
+    text: "Personal projects",
+    onClick: () => handleButtonClick("/personal-projects"),
   },
   {
-    text: "Skill work",
-    onClick: () => handleButtonClick("/skill-work"),
+    text: "Open source projects",
+    onClick: () => handleButtonClick("/open-source-projects"),
   },
   {
-    text: "Full stack project",
-    onClick: () => handleButtonClick("/full-stack-project"),
+    text: "Education projects",
+    onClick: () => handleButtonClick("/education-projects"),
   },
   {
-    text: "MERN stack project",
-    onClick: () => handleButtonClick("/mern-stack-project"),
+    text: "Freelance projects",
+    onClick: () => handleButtonClick("/freelance projects"),
   },
   {
-    text: "Client works",
-    onClick: () => handleButtonClick("/client-works"),
+    text: "Awards and recognition",
+    onClick: () => handleButtonClick("/awards-and-recognition"),
   },
 ];

@@ -2,7 +2,6 @@ import TransitionEffect from "@/src/components/TransitionEffect";
 import ProjectParent from "./ProjectParent";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/utilty/firebase";
-import ErrorFetch from "@/src/components/ErrorFetch";
 
 async function getData() {
   let project = [];
