@@ -7,29 +7,10 @@ import LoadingSpinner from "@/src/components/FetchProjectSpinner";
 import ProjectList from "./ProjectList";
 
 export default function ProjectParent({ projectListData }) {
-  // const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
   const [project, setproject] = useState("all");
-
-  console.log(project);
-  console.log(projectListData);
 
   return (
     <div>
-      {/* <ul className="flex">
-        {allIngredients.map((item) => (
-          <li
-            key={item.label}
-            className={item === selectedTab ? "selected" : ""}
-            onClick={() => setSelectedTab(item)}
-          >
-            {`${item.icon} ${item.label}`}
-            {item === selectedTab ? (
-              <motion.div className="underline" layoutId="underline" />
-            ) : null}
-          </li>
-        ))}
-      </ul> */}
-
       <div className="flex justify-center items-center">
         {/* {buttons.map((elem) => ( */}
         <PaginatePage buttonList={buttons} setproject={setproject} />
@@ -72,37 +53,29 @@ export const allIngredients = [
   { icon: "🥂", label: "Champers?" },
 ];
 
-// const [tomato, lettuce, cheese] = allIngredients;
-// export const initialTabs = [tomato, lettuce, cheese];
-
-// export function getNextIngredient(ingredients) {
-//   const existing = new Set(ingredients);
-//   return allIngredients.find((ingredient) => !existing.has(ingredient));
-// }
-
 const buttons = [
   {
     text: "All",
-    category: "/all",
+    category: "all",
   },
   {
     text: "Personal projects",
-    category: "/personal-projects",
+    category: "personal-projects",
   },
   {
     text: "Open source projects",
-    category: "/open-source-projects",
+    category: "open-source-projects",
   },
   {
     text: "Education projects",
-    category: "/",
+    category: "",
   },
   {
     text: "Freelance projects",
-    category: "/freelance projects",
+    category: "freelance projects",
   },
   {
     text: "Awards and recognition",
-    category: "/awards-and-recognition",
+    category: "awards-and-recognition",
   },
 ];

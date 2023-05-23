@@ -1,18 +1,24 @@
 import { fetchItemsByCategory } from "@/lib/QueryFirebase";
+import { useProjectCate } from "@/src/components/Hooks/UseProject";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const PaginatePage = ({ buttonList, setproject }) => {
+  const { setprojectCate } = useProjectCate();
+
   // const router = useRouter();
 
   const handleButtonClick = (route) => {
     // router.push(route);
   };
 
-  function filterByCateg(text) {
+  async function filterByCateg(text, category) {
     setproject(text);
 
-    fetchItemsByCategory(text);
+    const data = await fetchItemsByCategory(category);
+
+    setprojectCate(data);
   }
 
   return (
@@ -20,7 +26,7 @@ const PaginatePage = ({ buttonList, setproject }) => {
       {buttonList.map(({ text, category }) => (
         <motion.button
           key={text}
-          onClick={() => filterByCateg(category)}
+          onClick={() => filterByCateg(text, category)}
           // onClick={() => }
           className={`mx-2 px-4 py-2 rounded-lg text-sm font-medium border shadow`}
           whileHover={{ scale: 1.05 }}
