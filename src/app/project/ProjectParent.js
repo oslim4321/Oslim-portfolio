@@ -8,7 +8,7 @@ import ProjectList from "./ProjectList";
 
 export default function ProjectParent({ projectListData }) {
   // const [selectedTab, setSelectedTab] = useState(allIngredients[0]);
-  const [project, setproject] = useState("Personal projects");
+  const [project, setproject] = useState("all");
 
   console.log(project);
   console.log(projectListData);
@@ -82,23 +82,27 @@ export const allIngredients = [
 
 const buttons = [
   {
+    text: "All",
+    category: "/all",
+  },
+  {
     text: "Personal projects",
-    onClick: () => handleButtonClick("/personal-projects"),
+    category: "/personal-projects",
   },
   {
     text: "Open source projects",
-    onClick: () => handleButtonClick("/open-source-projects"),
+    category: "/open-source-projects",
   },
   {
     text: "Education projects",
-    onClick: () => handleButtonClick("/education-projects"),
+    category: "/",
   },
   {
     text: "Freelance projects",
-    onClick: () => handleButtonClick("/freelance projects"),
+    category: "/freelance projects",
   },
   {
     text: "Awards and recognition",
-    onClick: () => handleButtonClick("/awards-and-recognition"),
+    category: "/awards-and-recognition",
   },
 ];

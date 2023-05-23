@@ -4,25 +4,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Close, GithubIcon } from "../../components/Icons";
 
 const ProjectList = ({ project, projectListData }) => {
+  const [projectData, setprojectData] = useState("");
   const [selectedId, setSelectedId] = useState(null);
   const [pupUpShow, setpupUpShow] = useState();
+
   useEffect(() => {
-    setpupUpShow(projectListData[selectedId - 1]);
+    setprojectData(projectListData);
+  }, [projectListData]);
+
+  useEffect(() => {
+    setpupUpShow(projectData[selectedId - 1]);
   }, [selectedId]);
   console.log(selectedId, "selectedId");
 
   return (
     <>
-      {/* shuffle button */}
-      {/* <button
-        className="absolute right-0 border"
-        onClick={() => {
-          getRandomGridSpan();
-          // setrand(Math.random());
-        }}
-      >
-        shuffle
-      </button> */}
       <div
         className=" h-[90vh] overflow-y-scroll no-scrollbar"
         style={{
@@ -32,7 +28,7 @@ const ProjectList = ({ project, projectListData }) => {
         }}
       >
         <GridListing
-          projectListData={projectListData}
+          projectData={projectData}
           project={project}
           setSelectedId={setSelectedId}
         />
@@ -118,7 +114,7 @@ const ProjectList = ({ project, projectListData }) => {
 
 export default ProjectList;
 
-function GridListing({ projectListData, project, setSelectedId }) {
+function GridListing({ projectData, project, setSelectedId }) {
   const getRandomGridSpan = () => {
     const randomCols = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 4 for grid columns
     const randomRows = Math.floor(Math.random() * 2) + 1; // Random number between 1 and 3 for grid rows
@@ -130,15 +126,8 @@ function GridListing({ projectListData, project, setSelectedId }) {
     <div className="my-10">
       <p className="text-center">{project}</p>
       <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-5 grid-row-1 md:grfid-rows-2 cont">
-        {/* <p>{project}</p> */}
-        {/* <div className="col-span-3 row-span-2 bg-purple-500">hello</div>
-        <div className="col-span-2 row-span-2 bg-purple-500">hello</div>
-        <div className="col-span-2 row-span-2 bg-purple-500">hello</div>
-        <div className="col-span-3 row-span-2 bg-purple-500">hello</div>
-        <div className="col-span-3 row-span-2 bg-purple-500">hello</div> */}
-
-        {projectListData.length > 0 &&
-          projectListData.map((item, index) => (
+        {projectData.length > 0 &&
+          projectData.map((item, index) => (
             <motion.div
               key={index + 1}
               layoutId={index + 1}
