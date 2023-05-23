@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Close, GithubIcon } from "../../components/Icons";
-import { useProjectCate } from "@/src/components/Hooks/UseProject";
 
 const ProjectList = ({ project, projectData }) => {
   console.log(projectData);
@@ -20,7 +19,7 @@ const ProjectList = ({ project, projectData }) => {
       <div
         className=" h-[90vh] overflow-y-scroll no-scrollbar"
         style={{
-          backgroundImage: "url(/images/32745786_03-removebg-preview.png)",
+          // backgroundImage: "url(/images/12557718_4990044.jpg)",
           backgroundSize: "cover",
           width: "100%",
         }}
@@ -159,7 +158,9 @@ function GridListing({ projectData, project, setSelectedId }) {
                 <div className="flex justify-between items-center mt-4">
                   <button
                     onClick={() => setSelectedId(index + 1)}
-                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colorsb dark:text-light dark:hover:text-light/70"
+                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colorsb dark:text-light dark:hover:text-light/70
+                     hover:scale-x-100 transition-all duration-100
+                    "
                   >
                     See More
                   </button>
