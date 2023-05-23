@@ -20,7 +20,7 @@ const PaginatePage = ({ project, setproject, setprojectData }) => {
           key={text}
           onClick={() => filterByCateg(text, category)}
           // onClick={() => }
-          className={`mx-2 px-4 py-2 rounded-lg text-sm font-medium border shadow ${
+          className={`mx-2 px-4 py-2 rounded-lg text-sm font-medium border shadow dark:text-light my-3 ${
             text === project ? "border border-[#f2b6af]" : null
           }`}
           whileHover={{ scale: 1.05 }}

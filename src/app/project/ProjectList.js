@@ -20,7 +20,7 @@ const ProjectList = ({ project, projectData }) => {
       <div
         className=" h-[90vh] overflow-y-scroll no-scrollbar"
         style={{
-          backgroundImage: "images/32745786_03-removebg-preview.png",
+          backgroundImage: "url(/images/32745786_03-removebg-preview.png)",
           backgroundSize: "cover",
           width: "100%",
         }}
@@ -122,7 +122,9 @@ function GridListing({ projectData, project, setSelectedId }) {
 
   return (
     <div className="my-10">
-      <p className="text-center">{project}</p>
+      <p className="text-2xl font-bold mb-6 text-center dark:text-light">
+        {project}
+      </p>
       <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-5 grid-row-1 md:grfid-rows-2 cont">
         {projectData.length > 0 &&
           projectData.map((item, index) => (
@@ -148,13 +150,16 @@ function GridListing({ projectData, project, setSelectedId }) {
                 <motion.h2 className="text-xl font-bold">
                   {item.projectName}
                 </motion.h2>
-                <motion.h5 className="text-gray-600 ">
+                <motion.h5
+                  className="text-gray-600 dark:text-light/90
+                 "
+                >
                   {item.projectDesc.slice(0, 50)}...
                 </motion.h5>
                 <div className="flex justify-between items-center mt-4">
                   <button
                     onClick={() => setSelectedId(index + 1)}
-                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colorsb dark:text-light dark:hover:text-light/70"
                   >
                     See More
                   </button>
@@ -172,7 +177,7 @@ function GridListing({ projectData, project, setSelectedId }) {
                   {" "}
                   <button
                     onClick={() => setSelectedId(index + 1)}
-                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70"
                   >
                     Visit
                   </button>
