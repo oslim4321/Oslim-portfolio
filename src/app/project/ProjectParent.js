@@ -7,7 +7,7 @@ import LoadingSpinner from "@/src/components/FetchProjectSpinner";
 import ProjectList from "./ProjectList";
 
 export default function ProjectParent({ projectListData }) {
-  const [project, setproject] = useState("all");
+  const [project, setproject] = useState("All");
   const [projectData, setprojectData] = useState("");
 
   useEffect(() => {
@@ -17,9 +17,11 @@ export default function ProjectParent({ projectListData }) {
   return (
     <div>
       <div className="flex justify-center items-center">
-        {/* {buttons.map((elem) => ( */}
-        <PaginatePage buttonList={buttons} setproject={setproject} />
-        {/* ))} */}
+        <PaginatePage
+          project={project}
+          setproject={setproject}
+          setprojectData={setprojectData}
+        />
       </div>
 
       <main>
@@ -56,31 +58,4 @@ export const allIngredients = [
   { icon: "🍌", label: "Banana" },
   { icon: "🫐", label: "Blueberries" },
   { icon: "🥂", label: "Champers?" },
-];
-
-const buttons = [
-  {
-    text: "All",
-    category: "all",
-  },
-  {
-    text: "Personal projects",
-    category: "personal-projects",
-  },
-  {
-    text: "Open source projects",
-    category: "open-source-projects",
-  },
-  {
-    text: "Education projects",
-    category: "",
-  },
-  {
-    text: "Freelance projects",
-    category: "freelance projects",
-  },
-  {
-    text: "Awards and recognition",
-    category: "awards-and-recognition",
-  },
 ];

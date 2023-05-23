@@ -5,8 +5,7 @@ import { Close, GithubIcon } from "../../components/Icons";
 import { useProjectCate } from "@/src/components/Hooks/UseProject";
 
 const ProjectList = ({ project, projectData }) => {
-  const { projectCate } = useProjectCate();
-  console.log(projectCate);
+  console.log(projectData);
 
   const [selectedId, setSelectedId] = useState(null);
   const [pupUpShow, setpupUpShow] = useState();
