@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PaginatePage from "./PaginatePage";
 import LoadingSpinner from "@/src/components/FetchProjectSpinner";
@@ -8,6 +8,11 @@ import ProjectList from "./ProjectList";
 
 export default function ProjectParent({ projectListData }) {
   const [project, setproject] = useState("all");
+  const [projectData, setprojectData] = useState("");
+
+  useEffect(() => {
+    setprojectData(projectListData);
+  }, [projectListData]);
 
   return (
     <div>
@@ -30,7 +35,7 @@ export default function ProjectParent({ projectListData }) {
             {projectListData.length > 0 ? null : <LoadingSpinner />}
 
             {/* {selectedTab ? selectedTab.icon : "😋"} */}
-            <ProjectList project={project} projectListData={projectListData} />
+            <ProjectList project={project} projectData={projectData} />
           </motion.div>
         </AnimatePresence>
       </main>

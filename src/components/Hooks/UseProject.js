@@ -1,7 +1,12 @@
 import { useState } from "react";
 
 export const useProjectCate = () => {
-  const [projectCate, setprojectCate] = useState("lol");
+  const [projectCate, setprojectCate] = useState("");
+  console.log(projectCate, "from main");
 
-  return { projectCate, setprojectCate };
+  const handleChange = (data) => {
+    setprojectCate(data);
+  };
+
+  return { projectCate, handleChange };
 };

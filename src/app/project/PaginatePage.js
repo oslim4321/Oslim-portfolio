@@ -5,20 +5,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const PaginatePage = ({ buttonList, setproject }) => {
-  const { setprojectCate } = useProjectCate();
-
-  // const router = useRouter();
-
-  const handleButtonClick = (route) => {
-    // router.push(route);
-  };
-
   async function filterByCateg(text, category) {
     setproject(text);
 
     const data = await fetchItemsByCategory(category);
 
-    setprojectCate(data);
+    // await handleChange(data);
   }
 
   return (

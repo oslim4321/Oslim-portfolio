@@ -2,15 +2,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Close, GithubIcon } from "../../components/Icons";
+import { useProjectCate } from "@/src/components/Hooks/UseProject";
 
-const ProjectList = ({ project, projectListData }) => {
-  const [projectData, setprojectData] = useState("");
+const ProjectList = ({ project, projectData }) => {
+  const { projectCate } = useProjectCate();
+  console.log(projectCate);
+
   const [selectedId, setSelectedId] = useState(null);
   const [pupUpShow, setpupUpShow] = useState();
-
-  useEffect(() => {
-    setprojectData(projectListData);
-  }, [projectListData]);
 
   useEffect(() => {
     setpupUpShow(projectData[selectedId - 1]);
