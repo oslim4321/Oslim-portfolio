@@ -6,13 +6,41 @@ import PaginatePage from "./PaginatePage";
 import LoadingSpinner from "@/src/components/FetchProjectSpinner";
 import ProjectList from "./ProjectList";
 
-export default function ProjectParent({ projectListData }) {
-  const [project, setproject] = useState("All");
-  const [projectData, setprojectData] = useState("");
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/lib/utilty/firebase";
 
+export default function ProjectParent() {
+  const [project, setproject] = useState("All");
+  const [projectData, setprojectData] = useState([]);
+  const [loading, setloading] = useState(false);
+  const [errorState, seterrorState] = useState("");
+
+  // useEffect(() => {
+  //   setprojectData(projectListData);
+  // }, [projectListData]);
+
+  async function getData() {
+    let project = [];
+    try {
+      setloading(true);
+      const colRef = collection(db, "projects");
+      const res = await getDocs(colRef);
+      res.docs.forEach((doc) => {
+        project.push({ ...doc.data(), id: doc.id });
+      });
+      console.log(projectData, "projectData");
+      setprojectData(project);
+      return project;
+    } catch (error) {
+      seterrorState(error.message);
+      console.log(error.message);
+    } finally {
+      setloading(false);
+    }
+  }
   useEffect(() => {
-    setprojectData(projectListData);
-  }, [projectListData]);
+    getData();
+  }, []);
 
   return (
     <div>
@@ -34,10 +62,19 @@ export default function ProjectParent({ projectListData }) {
             transition={{ duration: 0.2 }}
           >
             {/* <TransitionEffect /> */}
-            {projectListData.length > 0 ? null : <LoadingSpinner />}
+            {loading ? (
+              <div className="flex justify-center items-center">
+                {" "}
+                <LoadingSpinner />
+              </div>
+            ) : null}
 
             {/* {selectedTab ? selectedTab.icon : "😋"} */}
-            <ProjectList project={project} projectData={projectData} />
+            {errorState ? (
+              <p className="text-center">{errorState}</p>
+            ) : (
+              <ProjectList project={project} projectData={projectData} />
+            )}
           </motion.div>
         </AnimatePresence>
       </main>

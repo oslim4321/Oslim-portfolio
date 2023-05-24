@@ -13,8 +13,8 @@ const ProjectList = ({ project, projectData }) => {
   useEffect(() => {
     setpupUpShow(projectData[selectedId - 1]);
   }, [selectedId]);
-  console.log(selectedId, "selectedId");
-  console.log(projectData);
+  // console.log(selectedId, "selectedId");
+  // console.log(projectData);
 
   return (
     <>
@@ -61,11 +61,11 @@ const ProjectList = ({ project, projectData }) => {
                     </motion.h2> */}
                     <motion.h2 className="text-gray-600">
                       {pupUpShow.projectDesc
-                        .split(/\n(?=\d\))/)
+                        .split(/(?=\d\))/)
                         .map((line, index) => (
-                          <div key={index}>
+                          <div key={index} className="my-2">
+                            {line.trim().startsWith("1)") ? <br /> : null}
                             {line.trim()}
-                            <br />
                           </div>
                         ))}
                     </motion.h2>
@@ -137,8 +137,9 @@ function GridListing({ projectData, project, setSelectedId }) {
       <p className="text-2xl font-bold mb-6 text-center dark:text-light">
         {project}
       </p>
-      <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-5 grid-row-1 md:grfid-rows-2 cont">
-        {projectData.length > 0 &&
+      <motion.div className="grid grid-cols-1 md:gdrid-cols-3 gap-4 lg:grid-cols-5 grid-row-1 md:grid-rows-2 cont">
+        {
+          // projectData.length > 0 &&
           projectData.map((item, index) => (
             <motion.div
               key={index + 1}
@@ -152,11 +153,13 @@ function GridListing({ projectData, project, setSelectedId }) {
               whileTap={{ scale: 0.9 }}
             >
               <div className="w-[100%] h-[50%] ">
-                <img
-                  src={item.image}
-                  className="w-full h-full object-cover"
-                  alt=""
-                />
+                <a href={item.projectLink} target="_blank">
+                  <img
+                    src={item.image}
+                    className="w-full h-full object-cover"
+                    alt=""
+                  />
+                </a>
               </div>
               <div className="">
                 <motion.h2 className="text-xl font-bold">
@@ -187,9 +190,14 @@ function GridListing({ projectData, project, setSelectedId }) {
                     <GithubIcon size={20} />
                   </a>
                 </div>
-                <div className="flex justify-end">
-                  {" "}
-                  <a href={item.projectLink} target="_blank">
+                <div className="flex justify-between items-center capitalize font-bold">
+                  {item.studentName && <p>{item.studentName}</p>}
+
+                  <a
+                    href={item.projectLink}
+                    target="_blank"
+                    className="text-end"
+                  >
                     <button
                       onClick={() => setSelectedId(index + 1)}
                       className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70"
@@ -201,7 +209,8 @@ function GridListing({ projectData, project, setSelectedId }) {
                 <p className="text-sm mt-2 text-gray-500">{item.projectType}</p>
               </div>
             </motion.div>
-          ))}
+          ))
+        }
       </motion.div>
     </div>
   );

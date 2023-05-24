@@ -18,6 +18,7 @@ export default function AddProject() {
   const [images, setImages] = useState([]);
   const [loading, setloading] = useState(false);
   const [category, setCategory] = useState("");
+  const [studentName, setstudentName] = useState("");
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -53,6 +54,7 @@ export default function AddProject() {
         projectDesc,
         gitHubLink,
         projectLink,
+        studentName,
         category,
         technologies,
         type: "client",
@@ -67,6 +69,7 @@ export default function AddProject() {
         setProjectLink("");
         setTechnologies("");
         setProjectImages([]);
+        setstudentName("");
       };
 
       // Inside handleSubmit:
@@ -133,6 +136,18 @@ export default function AddProject() {
             id="projectLink"
             value={projectLink}
             onChange={(e) => setProjectLink(e.target.value)}
+            className="w-full border rounded p-2"
+          />
+        </div>
+        <div>
+          <label htmlFor="projectLink" className="block mb-1 font-semibold">
+            Student Name (optional)
+          </label>
+          <input
+            type="text"
+            id="studentName"
+            value={projectLink}
+            onChange={(e) => setstudentName(e.target.value)}
             className="w-full border rounded p-2"
           />
         </div>
