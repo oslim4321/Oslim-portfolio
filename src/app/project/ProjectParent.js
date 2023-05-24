@@ -8,12 +8,14 @@ import ProjectList from "./ProjectList";
 
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/utilty/firebase";
+import MyContextProvider, { GlobalMyContextProvider } from "@/lib/Context";
 
 export default function ProjectParent() {
+  const { loading, setloading, errorState, seterrorState } =
+    GlobalMyContextProvider(MyContextProvider);
+
   const [project, setproject] = useState("All");
   const [projectData, setprojectData] = useState([]);
-  const [loading, setloading] = useState(false);
-  const [errorState, seterrorState] = useState("");
 
   // useEffect(() => {
   //   setprojectData(projectListData);
@@ -28,11 +30,12 @@ export default function ProjectParent() {
       res.docs.forEach((doc) => {
         project.push({ ...doc.data(), id: doc.id });
       });
-      console.log(projectData, "projectData");
+
       setprojectData(project);
       return project;
     } catch (error) {
-      seterrorState(error.message);
+      alert("error fetching projects");
+      seterrorState(error);
       console.log(error.message);
     } finally {
       setloading(false);

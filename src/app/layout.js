@@ -5,6 +5,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import TransitionEffect from "../components/TransitionEffect";
 import { AnimatePresence } from "framer-motion";
+import MyContextProvider from "@/lib/Context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,9 @@ export default function RootLayout({ children }) {
           <Navbar />
         </nav>
         <TransitionEffect />
-        <div className="bg-light dark:bg-dark">{children}</div>
+        <MyContextProvider>
+          <div className="bg-light dark:bg-dark">{children}</div>
+        </MyContextProvider>
         <Footer />
         <Script id="theme-switch" strategy="beforeInteractive">
           {`

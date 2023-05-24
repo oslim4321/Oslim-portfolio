@@ -1,16 +1,26 @@
+import MyContextProvider, { GlobalMyContextProvider } from "@/lib/Context";
 import { fetchItemsByCategory } from "@/lib/QueryFirebase";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const PaginatePage = ({ project, setproject, setprojectData }) => {
+  const { setloading, seterrorState } =
+    GlobalMyContextProvider(MyContextProvider);
+
   /* onclick button to filter item bg category from firebase */
   async function filterByCateg(text, category) {
-    /* setProject to the button  that  user click */
-    setproject(text);
-    /* send the the category the user click to the functnion that fetch it */
-    const data = await fetchItemsByCategory(category);
-    setprojectData(data);
+    setloading(true);
+    try {
+      /* setProject to the button  that  user click */
+      setproject(text);
+      /* send the the category the user click to the functnion that fetch it */
+      const data = await fetchItemsByCategory(category);
+      setprojectData(data);
+    } catch (error) {
+      setloading(false);
+    } finally {
+      setloading(false);
+    }
   }
 
   return (
