@@ -65,7 +65,7 @@ const buttons = [
     category: "freelance projects",
   },
   {
-    text: "Awards and recognition",
-    category: "awards-and-recognition",
+    text: "My CSS Student Project",
+    category: "my css student works",
   },
 ];

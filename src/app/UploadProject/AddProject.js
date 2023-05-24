@@ -16,6 +16,8 @@ export default function AddProject() {
   const [projectImages, setProjectImages] = useState([]);
   const [technologies, setTechnologies] = useState([]);
   const [images, setImages] = useState([]);
+  const [loading, setloading] = useState(false);
+  const [category, setCategory] = useState("");
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -32,6 +34,7 @@ export default function AddProject() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setloading(true);
 
     try {
       const imageDownloadURL = image ? await uploadImageToStorage(image) : null;
@@ -50,6 +53,7 @@ export default function AddProject() {
         projectDesc,
         gitHubLink,
         projectLink,
+        category,
         technologies,
         type: "client",
       });
@@ -67,9 +71,11 @@ export default function AddProject() {
 
       // Inside handleSubmit:
       resetForm();
-      console.log("Project added successfully!");
+      alert("Project added successfully!");
     } catch (error) {
       console.error("Error adding project:", error);
+    } finally {
+      setloading(false);
     }
   };
 
@@ -130,17 +136,42 @@ export default function AddProject() {
             className="w-full border rounded p-2"
           />
         </div>
+
+        <div>
+          <label htmlFor="category" className="block mb-1 font-semibold">
+            Category
+          </label>
+          <select
+            id="category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="w-full border rounded p-2 capitalize"
+          >
+            <option value="">Select a category</option>
+            <option value="personal-projects">personal-projects</option>
+            <option value="open-source-projects">open-source-projects</option>
+            <option value="freelance projects">freelance projects</option>
+            <option value="my css student works">my css student works</option>
+            {/* Add more options for other categories */}
+          </select>
+        </div>
         <ProjectImages images={images} setImages={setImages} />
         <TechnologySelect
           technologies={technologies}
           setTechnologies={setTechnologies}
         />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          Add Project
-        </button>
+        {loading ? (
+          <div className="bg-blue-500 text-white px-4 py-2 rounded inline-block">
+            Loading...
+          </div>
+        ) : (
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            Add Project
+          </button>
+        )}
       </form>
     </div>
   );

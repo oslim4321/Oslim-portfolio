@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Close, GithubIcon } from "../../components/Icons";
+import Link from "next/link";
 
 const ProjectList = ({ project, projectData }) => {
   console.log(projectData);
@@ -13,6 +14,7 @@ const ProjectList = ({ project, projectData }) => {
     setpupUpShow(projectData[selectedId - 1]);
   }, [selectedId]);
   console.log(selectedId, "selectedId");
+  console.log(projectData);
 
   return (
     <>
@@ -54,9 +56,20 @@ const ProjectList = ({ project, projectData }) => {
                       {pupUpShow.projectName}
                     </motion.h5>
                     {/* descriptions */}
-                    <motion.h2 className="text-gray-600">
+                    {/* <motion.h2 className="text-gray-600">
                       {pupUpShow.projectDesc}
+                    </motion.h2> */}
+                    <motion.h2 className="text-gray-600">
+                      {pupUpShow.projectDesc
+                        .split(/\n(?=\d\))/)
+                        .map((line, index) => (
+                          <div key={index}>
+                            {line.trim()}
+                            <br />
+                          </div>
+                        ))}
                     </motion.h2>
+
                     <button>Visit Website</button>
                   </div>
                 </div>
@@ -166,7 +179,7 @@ function GridListing({ projectData, project, setSelectedId }) {
                   </button>
 
                   <a
-                    href={item.githubLink}
+                    href={item.gitHubLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -176,12 +189,14 @@ function GridListing({ projectData, project, setSelectedId }) {
                 </div>
                 <div className="flex justify-end">
                   {" "}
-                  <button
-                    onClick={() => setSelectedId(index + 1)}
-                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70"
-                  >
-                    Visit
-                  </button>
+                  <a href={item.projectLink} target="_blank">
+                    <button
+                      onClick={() => setSelectedId(index + 1)}
+                      className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70"
+                    >
+                      Visit
+                    </button>
+                  </a>
                 </div>
                 <p className="text-sm mt-2 text-gray-500">{item.projectType}</p>
               </div>
