@@ -1,5 +1,6 @@
 import MyContextProvider, { GlobalMyContextProvider } from "@/lib/Context";
 import { fetchItemsByCategory } from "@/lib/QueryFirebase";
+import { buttons } from "@/lib/utilty/arrayList";
 
 import { motion } from "framer-motion";
 
@@ -52,30 +53,3 @@ const PaginatePage = ({ project, setproject, setprojectData }) => {
 };
 
 export default PaginatePage;
-
-const buttons = [
-  {
-    text: "All",
-    category: "all",
-  },
-  {
-    text: "Personal projects",
-    category: "personal-projects",
-  },
-  {
-    text: "Open source projects",
-    category: "open-source-projects",
-  },
-  {
-    text: "Education projects",
-    category: "education-projects",
-  },
-  {
-    text: "Freelance projects",
-    category: "freelance projects",
-  },
-  {
-    text: "My CSS Student Project",
-    category: "my css student works",
-  },
-];

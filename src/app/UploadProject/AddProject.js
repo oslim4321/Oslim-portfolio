@@ -5,7 +5,8 @@ import TechnologySelect from "./TechnologySelect";
 import ProjectImages from "./ProjectImages";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "@/lib/utilty/firebase";
-import { addDoc, arrayUnion, collection } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
+import { buttons } from "@/lib/utilty/arrayList";
 
 export default function AddProject() {
   const [image, setImage] = useState(null);
@@ -146,7 +147,7 @@ export default function AddProject() {
           <input
             type="text"
             id="studentName"
-            value={projectLink}
+            value={studentName}
             onChange={(e) => setstudentName(e.target.value)}
             className="w-full border rounded p-2"
           />
@@ -163,10 +164,13 @@ export default function AddProject() {
             className="w-full border rounded p-2 capitalize"
           >
             <option value="">Select a category</option>
-            <option value="personal-projects">personal-projects</option>
+            {buttons.map((elem) => (
+              <option value={elem.category}>{elem.text}</option>
+            ))}
+            {/* <option value="personal-projects">personal-projects</option>
             <option value="open-source-projects">open-source-projects</option>
             <option value="freelance projects">freelance projects</option>
-            <option value="my css student works">my css student works</option>
+            <option value="my css student works">my css student works</option> */}
             {/* Add more options for other categories */}
           </select>
         </div>
