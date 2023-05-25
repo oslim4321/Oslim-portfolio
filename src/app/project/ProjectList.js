@@ -137,7 +137,7 @@ function GridListing({ projectData, project, setSelectedId }) {
       <p className="text-2xl font-bold mb-6 text-center dark:text-light">
         {project}
       </p>
-      <motion.div className="grid grid-cols-1 md:gdrid-cols-3 gap-4 lg:grid-cols-5 grid-row-1 md:grid-rows-2 cont">
+      <motion.div className="grid grid-cols-1 md:gdrid-cols-3 gap-4 lg:grid-cols-4 grid-row-1 md:grid-rows-2 cont">
         {
           // projectData.length > 0 &&
           projectData.map((item, index) => (

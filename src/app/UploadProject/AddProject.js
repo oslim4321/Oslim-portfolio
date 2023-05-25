@@ -5,7 +5,7 @@ import TechnologySelect from "./TechnologySelect";
 import ProjectImages from "./ProjectImages";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "@/lib/utilty/firebase";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { buttons } from "@/lib/utilty/arrayList";
 
 export default function AddProject() {
@@ -59,6 +59,7 @@ export default function AddProject() {
         category,
         technologies,
         type: "client",
+        createdAt: serverTimestamp(),
       });
 
       // Reset the form

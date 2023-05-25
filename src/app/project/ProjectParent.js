@@ -32,11 +32,15 @@ export default function ProjectParent() {
       });
 
       setprojectData(project);
-      return project;
+      if (project.length < 1) {
+        seterrorState("check internet connection");
+      }
+
+      // return project;
     } catch (error) {
-      alert("error fetching projects");
-      seterrorState(error);
-      console.log(error.message);
+      // alert("error fetching projects");
+      // seterrorState(error);
+      // console.log(error.message);
     } finally {
       setloading(false);
     }
@@ -74,7 +78,9 @@ export default function ProjectParent() {
 
             {/* {selectedTab ? selectedTab.icon : "😋"} */}
             {errorState ? (
-              <p className="text-center">{errorState}</p>
+              <p className="text-center text-2xl capitalize text-red-600">
+                {errorState}
+              </p>
             ) : (
               <ProjectList project={project} projectData={projectData} />
             )}
