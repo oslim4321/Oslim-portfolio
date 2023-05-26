@@ -5,49 +5,47 @@ import { motion, AnimatePresence } from "framer-motion";
 import PaginatePage from "./PaginatePage";
 import LoadingSpinner from "@/src/components/FetchProjectSpinner";
 import ProjectList from "./ProjectList";
-
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/lib/utilty/firebase";
 import MyContextProvider, { GlobalMyContextProvider } from "@/lib/Context";
 
-export default function ProjectParent() {
+export default function ProjectParent({ data }) {
   const { loading, setloading, errorState, seterrorState } =
     GlobalMyContextProvider(MyContextProvider);
 
   const [project, setproject] = useState("All");
   const [projectData, setprojectData] = useState([]);
+  // setprojectData(data);
 
-  // useEffect(() => {
-  //   setprojectData(projectListData);
-  // }, [projectListData]);
-
-  async function getData() {
-    let project = [];
-    try {
-      setloading(true);
-      const colRef = collection(db, "projects");
-      const res = await getDocs(colRef);
-      res.docs.forEach((doc) => {
-        project.push({ ...doc.data(), id: doc.id });
-      });
-
-      setprojectData(project);
-      if (project.length < 1) {
-        seterrorState("check internet connection");
-      }
-
-      // return project;
-    } catch (error) {
-      // alert("error fetching projects");
-      // seterrorState(error);
-      // console.log(error.message);
-    } finally {
-      setloading(false);
-    }
-  }
   useEffect(() => {
-    getData();
+    setprojectData(data);
   }, []);
+
+  // async function getData() {
+  //   let project = [];
+  //   try {
+  //     setloading(true);
+  //     const colRef = collection(db, "projects");
+  //     const res = await getDocs(colRef);
+  //     res.docs.forEach((doc) => {
+  //       project.push({ ...doc.data(), id: doc.id });
+  //     });
+
+  //     setprojectData(project);
+  //     if (project.length < 1) {
+  //       seterrorState("check internet connection");
+  //     }
+
+  //     // return project;
+  //   } catch (error) {
+  //     // alert("error fetching projects");
+  //     // seterrorState(error);
+  //     // console.log(error.message);
+  //   } finally {
+  //     setloading(false);
+  //   }
+  // }
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <div>
@@ -56,6 +54,7 @@ export default function ProjectParent() {
           project={project}
           setproject={setproject}
           setprojectData={setprojectData}
+          result={data}
         />
       </div>
 
