@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   DribbbleIcon,
+  Facebook,
   GithubIcon,
   LinkedInIcon,
   MoonIcon,
@@ -49,7 +50,7 @@ const Navbar = () => {
         <div className="cont font-medium flex items-center justify-between py-4 relative">
           {/* toggle */}
           <button
-            className="flex flex-col justify-center items-center lg:hidden "
+            className="flex flex-col justify-center items-center lg:hidden fixed z-50"
             onClick={handleClick}
           >
             <span
@@ -80,7 +81,7 @@ const Navbar = () => {
 
             <nav className="flex justify-center items-center flex-wrap DeskNav">
               <motion.a
-                href={"/"}
+                href={"https://twitter.com/selim_adewale"}
                 className="w- mx-3  w-6"
                 target="_blank"
                 whileHover={{ y: -2 }}
@@ -89,7 +90,7 @@ const Navbar = () => {
                 <TwitterIcon className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
               </motion.a>
               <motion.a
-                href={"/"}
+                href={"https://github.com/oslim4321"}
                 className="w- mx-3  w-6"
                 target="_blank"
                 whileHover={{ y: -2 }}
@@ -98,16 +99,16 @@ const Navbar = () => {
                 <GithubIcon className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
               </motion.a>
               <motion.a
-                href={"/"}
+                href={"https://m.facebook.com/selim.sooto"}
                 className="w- mx-3  w-6"
                 target="_blank"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <LinkedInIcon className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
+                <Facebook className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
               </motion.a>
               <motion.a
-                href={"/"}
+                href={"https://wa.me/07087121696"}
                 className="w- mx-3  w-6"
                 target="_blank"
                 whileHover={{ y: -2 }}
@@ -175,16 +176,16 @@ const Navbar = () => {
 
               <nav className="flex justify-center items-center flex-wrap">
                 <motion.a
-                  href={"/"}
+                  href={"https://twitter.com/selim_adewale"}
                   className="w- mx-3  w-6"
                   target="_blank"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.8 }}
                 >
-                  <TwitterIcon />
+                  <TwitterIcon className={"text-light dark:text-dark"} />
                 </motion.a>
                 <motion.a
-                  href={"/"}
+                  href={"https://github.com/oslim4321"}
                   className="w-6 mx-3 bg-light dark:bg-dark dark:text-light rounded-full"
                   target="_blank"
                   whileHover={{ y: -2 }}
@@ -193,22 +194,22 @@ const Navbar = () => {
                   <GithubIcon />
                 </motion.a>
                 <motion.a
-                  href={"/"}
+                  href={"https://wa.me/07087121696"}
                   className="w- mx-3  w-6"
                   target="_blank"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <LinkedInIcon />
+                  <Whatsapp className={"text-light dark:text-dark"} />
                 </motion.a>
                 <motion.a
-                  href={"/"}
+                  href={"https://m.facebook.com/selim.sooto"}
                   className="w- mx-3  w-6"
                   target="_blank"
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <DribbbleIcon />
+                  <Facebook className={"text-light dark:text-dark"} />
                 </motion.a>
 
                 <button

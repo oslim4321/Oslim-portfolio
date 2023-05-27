@@ -16,10 +16,14 @@ const Footer = () => {
           <p className="text-sm">Web Developer</p>
         </div>
         <div className="flex space-x-4">
-          <Link href="#" className="text-gray-400 hover:text-white">
+          <Link href="project" className="text-gray-400 hover:text-white">
             My Work
           </Link>
-          <Link href="#" className="text-gray-400 hover:text-white">
+          <Link
+            target="_blank"
+            href="#"
+            className="text-gray-400 hover:text-white"
+          >
             My Shelf
           </Link>
           <Link

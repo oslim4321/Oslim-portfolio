@@ -20,10 +20,10 @@ const ErrorFetch = ({ error }) => {
           {error}
         </p>
         <p
-          className="text-gray-500 dark:text-gray-400 mt-8 border-y-2 text-center cursor-pointer"
+          className="text-gray-500 dark:text-gray-400 mt-8 border-y-2 text-center cursor-pointer capitalize"
           onClick={refreshPage}
         >
-          Click to Reload
+          Click to Refresh
         </p>
       </div>
     </div>
