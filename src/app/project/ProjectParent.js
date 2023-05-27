@@ -6,17 +6,31 @@ import PaginatePage from "./PaginatePage";
 import LoadingSpinner from "@/src/components/FetchProjectSpinner";
 import ProjectList from "./ProjectList";
 import MyContextProvider, { GlobalMyContextProvider } from "@/lib/Context";
+import ErrorFetch from "@/src/components/ErrorFetch";
 
 export default function ProjectParent({ data }) {
   const { loading, errorState } = GlobalMyContextProvider(MyContextProvider);
+  const [error, setError] = useState("");
 
   const [project, setproject] = useState("Client works");
   const [projectData, setprojectData] = useState([]);
   // setprojectData(data);
+  useEffect(() => {
+    if (loading) {
+      setprojectData([]);
+    }
+  }, [loading]);
 
   useEffect(() => {
-    setprojectData(data);
-  }, []);
+    if (data.length < 1) {
+      setError(true);
+    } else {
+      setprojectData(data);
+    }
+  }, [data]);
+  if (error) {
+    return <ErrorFetch error={"Error getting Projects"} />;
+  }
 
   // async function getData() {
   //   let project = [];
@@ -53,7 +67,7 @@ export default function ProjectParent({ data }) {
           project={project}
           setproject={setproject}
           setprojectData={setprojectData}
-          result={data}
+          // result={data}
         />
       </div>
 

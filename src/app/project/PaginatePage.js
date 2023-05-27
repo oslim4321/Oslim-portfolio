@@ -4,7 +4,7 @@ import { buttons } from "@/lib/utilty/arrayList";
 
 import { motion } from "framer-motion";
 
-const PaginatePage = ({ project, setproject, setprojectData, result }) => {
+const PaginatePage = ({ project, setproject, setprojectData }) => {
   const { setloading, seterrorState } =
     GlobalMyContextProvider(MyContextProvider);
 
@@ -16,7 +16,7 @@ const PaginatePage = ({ project, setproject, setprojectData, result }) => {
       setproject(text);
       /* send the the category the user click to the functnion that fetch it */
       const data = await fetchItemsByCategory(category);
-      result = data;
+      // result = data;
       setprojectData(data);
     } catch (error) {
       setloading(false);
