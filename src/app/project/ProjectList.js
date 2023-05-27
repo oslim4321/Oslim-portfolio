@@ -145,7 +145,7 @@ function GridListing({ projectData, project, setSelectedId }) {
               key={index + 1}
               layoutId={index + 1}
               className={` p-4 bg-white shadow-md rounded-md cursor-pointer glassBg dark:text-white 
-             border-r-2 border-[#efced9]  h-[400px]`}
+             border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px] `}
               initial={{ x: item.direction }}
               whileInView={{ x: 0 }}
               transition={{ delay: 0.3 + index * 0.08 }}

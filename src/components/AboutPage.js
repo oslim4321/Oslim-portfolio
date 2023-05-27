@@ -49,7 +49,7 @@ const Experience = () => {
       <div className="my-3 relative" ref={ref}>
         {/* left line scrolling start */}
         <motion.div
-          className="absolute left-0 md:left-8 top-0 w-[4px] h-full origin-top bg-dark"
+          className="absolute left-0 md:left-8 top-0 w-[4px] h-full origin-top bg-dark dark:bg-light/70"
           style={{ scaleY: scrollYProgress }}
         ></motion.div>
         {/* left line scrolling end */}
@@ -117,15 +117,31 @@ const Education = () => {
     },
   ];
 
+  const ref = useRef();
+  const liRef = useRef();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center start"],
+  });
+
   return (
     <section className="py-10 cont dark:text-light">
       <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center dark:text-light ">
         Education
       </h2>
-      {educationData.map((edu) => (
-        <div key={edu.id} className="my-5">
-          <div className="flex justify-center items-center flex-col gap-6">
+
+      <motion.div ref={ref} className="my-3 relative">
+        {/* left line scrolling start */}
+        <motion.div
+          className="absolute left-0 md:left-8 top-0 w-[4px] h-full origin-top bg-dark dark:bg-light/70"
+          style={{ scaleY: scrollYProgress }}
+        ></motion.div>
+        {/* left line scrolling end */}
+        {educationData.map((edu) => (
+          <motion.div className="flex justify-center items-center flex-col m-6 relative">
+            <LiIcons reference={liRef} />
             <motion.div
+              ref={liRef}
               className="p-6 glassBg rounded shadow-md  md:w-[70%] flex justify-center items-center flex-col"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.8 }}
@@ -140,9 +156,11 @@ const Education = () => {
                   : edu.description}
               </p>
             </motion.div>
-          </div>
-        </div>
-      ))}
+            <motion.div />
+            {/* </div> */}
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 };
@@ -151,24 +169,7 @@ const Education = () => {
 // };
 const AboutPage = () => {
   const [mode] = UseThemesSwitcher();
-  const [classs, setclasss] = useState();
   console.log(mode);
-
-  useEffect(() => {
-    // Update your component or perform any side effects based on the current mode
-    // For example, you can conditionally apply different styles or logic
-    // alert("mode change");
-    // if (mode === "dark") {
-    //   setclasss("twoBgColorDark");
-    //   // Dark mode logic
-    // } else {
-    //   setclasss("twoBgColor");
-    //   // Light mode logic
-    // }
-  }, [mode]);
-  // if (mode) {
-
-  // }
 
   return (
     <div

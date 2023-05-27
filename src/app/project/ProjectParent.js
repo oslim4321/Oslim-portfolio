@@ -8,10 +8,9 @@ import ProjectList from "./ProjectList";
 import MyContextProvider, { GlobalMyContextProvider } from "@/lib/Context";
 
 export default function ProjectParent({ data }) {
-  const { loading, setloading, errorState, seterrorState } =
-    GlobalMyContextProvider(MyContextProvider);
+  const { loading, errorState } = GlobalMyContextProvider(MyContextProvider);
 
-  const [project, setproject] = useState("All");
+  const [project, setproject] = useState("Client works");
   const [projectData, setprojectData] = useState([]);
   // setprojectData(data);
 

@@ -1,22 +1,26 @@
 import TransitionEffect from "@/src/components/TransitionEffect";
 import ProjectParent from "./ProjectParent";
 import { db } from "@/lib/utilty/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 async function getData() {
   let project = [];
   try {
     // setloading(true);
     const colRef = collection(db, "projects");
-    const res = await getDocs(colRef);
+
+    const q = query(colRef, where("category", "==", "client-work"));
+    const res = await getDocs(q);
     res.docs.forEach((doc) => {
       project.push({ ...doc.data(), id: doc.id });
     });
-
-    // setprojectData(project);
+    if (project.length < 1) {
+      console.log("check internet connection");
+    }
     return project;
   } catch (error) {
-    return error;
+    throw Error;
+    // return error;
   } finally {
     // setloading(false);
   }
@@ -24,19 +28,7 @@ async function getData() {
 
 const page = async () => {
   const data = await getData();
-  console.log(data);
-  // console.log(data);
-  // .then((snapshot) => {
-  //   let project = [];
-  //   snapshot.docs.forEach((doc) => {
-  //     project.push({ ...doc.data(), id: doc.id });
-  //   });
-
-  //   console.log(project, "project");
-  // })
-  // .catch((err) => {
-  //   console.log(err.message);
-  // });
+  console.log(data, "data");
   const styleOverflow = {
     overflow: "hidden",
   };

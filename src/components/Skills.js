@@ -11,7 +11,7 @@ const playfairDispla = Playfair_Display({
 
 const Skill = ({ name, x, y }) => (
   <motion.div
-    className="flex items-center justify-center rounded-full font-semibold text-dark sm:bg-dark dark:text-light md:text-light py-1.5 px-1.5
+    className="flex items-center capitalize justify-center rounded-full font-semibold text-dark sm:bg-dark dark:text-light md:text-light py-1.5 px-1.5
      md:px-6 md:py-3  cursor-pointer absolute text-sm md:text-lg bg-transparent sm:text-light sm:dark:bg-transparent sm:text-sm
      md:dark:bg-light dark:md:text-dark
      
@@ -56,6 +56,7 @@ const Skills = () => {
           <Skill name="NextJs" x="0vw" y="15vw" />
           <Skill name="AstroJS" x="-15vw" y="5vw" />
           <Skill name="GatsbyJs" x="14vw" y="-20vw" />
+          <Skill name="firebase" x="30vw" y="-10vw" />
           <Skill name="Bootstrap Css" x="-10vw" y="-20vw" />
           <Skill name="Tailwind Css" x="40vw" y="0vw" />
           <Skill name="Typescript" x="-40vw" y="2vw" />
