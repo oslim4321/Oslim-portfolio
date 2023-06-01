@@ -31,92 +31,94 @@ const ProjectList = ({ project, projectData }) => {
           project={project}
           setSelectedId={setSelectedId}
         />
-        <AnimatePresence>
-          {selectedId && pupUpShow && (
-            <motion.div
-              layoutId={selectedId}
-              className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-              // onClick={() => setSelectedId(null)}
-            >
+        <div className="relative">
+          <AnimatePresence>
+            {selectedId && pupUpShow && (
               <motion.div
-                className="bg-white w-full md:w-[60%] h-[60%] shadow-md rounded-md p-4 overflow-scroll scrollbar-white relative"
-                initial={{ opacity: 0, scale: 0.95, y: -20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                transition={{ duration: 0.3 }}
+                layoutId={selectedId}
+                className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+                // onClick={() => setSelectedId(null)}
               >
-                <div className="flex flex-wrap gap-x-5">
-                  <img
-                    src={pupUpShow.image}
-                    alt={pupUpShow.projectName}
-                    className="w-[500px] h-[200px] object-cover"
-                  />
-                  <div>
-                    <motion.h5 className=" text-xl font-bold mb-2">
-                      {pupUpShow.projectName}
-                    </motion.h5>
-                    {/* descriptions */}
-                    {/* <motion.h2 className="text-gray-600">
+                <motion.div
+                  className="bg-white w-full md:w-[60%] h-[60%] shadow-md rounded-md p-4 overflow-scroll scrollbar-white relative"
+                  initial={{ opacity: 0, scale: 0.95, y: -20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="flex flex-wrap gap-x-5">
+                    <img
+                      src={pupUpShow.image}
+                      alt={pupUpShow.projectName}
+                      className="w-[500px] h-[200px] object-cover"
+                    />
+                    <div>
+                      <motion.h5 className=" text-xl font-bold mb-2">
+                        {pupUpShow.projectName}
+                      </motion.h5>
+                      {/* descriptions */}
+                      {/* <motion.h2 className="text-gray-600">
                       {pupUpShow.projectDesc}
                     </motion.h2> */}
-                    <motion.h2 className="text-gray-600">
-                      {pupUpShow.projectDesc
-                        .split(/(?=\d\))/)
-                        .map((line, index) => (
-                          <div key={index} className="my-2">
-                            {line.trim().startsWith("1)") ? <br /> : null}
-                            {line.trim()}
-                          </div>
-                        ))}
-                    </motion.h2>
+                      <motion.h2 className="text-gray-600">
+                        {pupUpShow.projectDesc
+                          .split(/(?=\d\))/)
+                          .map((line, index) => (
+                            <div key={index} className="my-2">
+                              {line.trim().startsWith("1)") ? <br /> : null}
+                              {line.trim()}
+                            </div>
+                          ))}
+                      </motion.h2>
 
-                    <button>Visit Website</button>
+                      <button>Visit Website</button>
+                    </div>
                   </div>
-                </div>
 
-                {/* skills */}
-                <div className="flex flex-wrap gap-x-4">
-                  {pupUpShow.technologies.map((skill, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex items-center justify-center rounded-full font-semibold text-dark sm:bg-dark dark:text-light md:text-light py-1.5 px-1.5
+                  {/* skills */}
+                  <div className="flex flex-wrap gap-x-4">
+                    {pupUpShow.technologies.map((skill, index) => (
+                      <motion.div
+                        key={index}
+                        className="flex items-center justify-center rounded-full font-semibold text-dark sm:bg-dark dark:text-light md:text-light py-1.5 px-1.5
                       md:px-6 md:py-3  cursor-pointer text-sm md:text-lg bg-transparent sm:text-light sm:dark:bg-transparent sm:text-sm
                       md:dark:bg-light dark:md:text-dark
                       
                       "
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <p className="text-lg font-medium">{skill}</p>
-                    </motion.div>
-                  ))}
-                </div>
-                {/*Images */}
-                <h5 className=" text-xl font-bold my-2 mt-5">
-                  Beautiful Pictures of the website
-                </h5>
-
-                <div className="flex gap-10 overflow-x-scroll  no-scrollbar">
-                  {pupUpShow.projectImages.length > 0 &&
-                    pupUpShow.projectImages.map((img) => (
-                      <img
-                        src={img}
-                        alt={pupUpShow.projectName}
-                        className="w-[200px] h-[200px] object-cover"
-                      />
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <p className="text-lg font-medium">{skill}</p>
+                      </motion.div>
                     ))}
-                </div>
-                <motion.button
-                  onClick={() => setSelectedId(null)}
-                  className="absolute top-0 right-0 "
-                  // className="mt-4 px-4 py-2 text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-md focus:outline-none"
-                >
-                  <Close className={"text-10xl"} size="50" />
-                </motion.button>
+                  </div>
+                  {/*Images */}
+                  <h5 className=" text-xl font-bold my-2 mt-5">
+                    Beautiful Pictures of the website
+                  </h5>
+
+                  <div className="flex gap-10 overflow-x-scroll  no-scrollbar">
+                    {pupUpShow.projectImages.length > 0 &&
+                      pupUpShow.projectImages.map((img) => (
+                        <img
+                          src={img}
+                          alt={pupUpShow.projectName}
+                          className="w-[200px] h-[200px] object-cover"
+                        />
+                      ))}
+                  </div>
+                  <motion.button
+                    onClick={() => setSelectedId(null)}
+                    className="fixed right-0 md:right-[20%] top-[20%] z-50"
+                    // className="mt-4 px-4 py-2 text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-md focus:outline-none"
+                  >
+                    <Close className={"text-10xl"} size="50" />
+                  </motion.button>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </>
   );
@@ -160,10 +162,22 @@ function GridListing({ projectData, project, setSelectedId }) {
                     alt=""
                   />
                 </a>
+                {/* <div
+                  style={{
+                    backgroundImage: `url(/images/${item.projectLink})`,
+                    backgroundSize: "cover",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                ></div> */}
               </div>
               <div className="">
                 <motion.h2 className="text-xl font-bold">
-                  {item.projectName}
+                  {item.projectName.length > 21 ? (
+                    <div>{item.projectName.slice(0, 21)}...</div>
+                  ) : (
+                    item.projectName
+                  )}
                 </motion.h2>
                 <motion.h5
                   className="text-gray-600 dark:text-light/90

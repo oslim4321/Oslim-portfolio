@@ -65,16 +65,19 @@ const BuildAndPaint = () => {
               different mediums and techniques, and I am always looking for new
               ways to surprise and amaze my clients.
             </motion.p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-[#303841] text-white font-semibold dark:bg-slate-700 dark:text-light absolute bottom-0 md:bottom-28 dark:hover:bg-slate-300 dark:hover:text-dark w-full md:w-[80%] hover:bg-dark focus:outline-none"
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              See My Work
-            </motion.button>
+
+            <Link href={"coming-soon"}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 bg-[#303841] text-white font-semibold dark:bg-slate-700 dark:text-light absolute bottom-0 md:bottom-28 dark:hover:bg-slate-300 dark:hover:text-dark w-full md:w-[80%] hover:bg-dark focus:outline-none"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                See My Work
+              </motion.button>
+            </Link>
           </div>
         </div>
       </div>

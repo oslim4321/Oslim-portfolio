@@ -76,7 +76,7 @@ const Experience = () => {
                 </div>
               )}
 
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-light/70">
                 {expe.title} | {expe.duration}
               </p>
               <div className="text-gray-800 mt-4 dark:text-light/90">
@@ -147,7 +147,7 @@ const Education = () => {
               whileTap={{ scale: 0.8 }}
             >
               <h3 className="text-xl font-semibold mb-2">{edu.institution}</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-light/70">
                 {edu.degree} | {edu.year}
               </p>
               <p className="text-gray-800 mt-4 dark:text-light/90 text-center">

@@ -8,6 +8,10 @@
 
   /* max-w-[90%] mx-auto */
 }
+section {
+  padding-top: 70px;
+}
+/* font-sf-pro-display */
 html::-webkit-scrollbar {
   width: 0.3rem;
 }
@@ -17,10 +21,17 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: #f8adc7;
+  background: #3a8dde;
   border-radius: 5rem;
 }
 
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
 .box {
   width: 200px;
   height: 200px;

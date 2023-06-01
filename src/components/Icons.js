@@ -630,8 +630,8 @@ export const Close = ({ className, size }) => (
     className={`${className} bi bi-x`}
     size={size}
     xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="16"
+    width="40"
+    height="32"
     fill="currentColor"
     viewBox="0 0 16 16"
   >

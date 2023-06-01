@@ -1,7 +1,13 @@
 "use client";
 import React from "react";
 import AnimatedImg from "@/src/components/AnimatedImg";
+import { Poppins, Raleway } from "next/font/google";
 
+const raleway = Raleway({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+  // variable: "--font-montserrat",
+});
 const AboutHeroPage = () => {
   return (
     <div className="cont grid grid-cols-12 place-items-center w-full py-10d overflow-hidden">
@@ -14,9 +20,11 @@ const AboutHeroPage = () => {
 
         {/* small text */}
 
-        <p className="font-base my-4 md:text-lg !font-medium !text-justify ">
-          Hey there, I'm Oslim, a web developer with a knack for crafting unique
-          and captivating digital experiences. With 2 years of hands-on
+        <p
+          className={`font-base my-4 md:text-lg !font-medium !text-justify ${raleway.className}`}
+        >
+          Hey there, I'm Sooto Selim, a web developer with a knack for crafting
+          unique and captivating digital experiences. With 2 years of hands-on
           experience in the field, I'm constantly exploring innovative ways to
           bring my clients' visions to life. To me, design extends beyond mere
           aesthetics. It's about finding practical solutions and creating

@@ -46,7 +46,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="w-full py-8  dark:text-light border-b-[1px] border-transparent dark:border-light">
+      <div className="w-full py-8  dark:text-light border-b-[1px] border-transparent dark:border-light fixed top-0 left-0 right-0 shadow z-50 glassBg">
         <div className="cont font-medium flex items-center justify-between py-4 relative">
           {/* toggle */}
           <button
@@ -229,7 +229,6 @@ const Navbar = () => {
             <Logo />
           </div>
         </div>
-        <HireMe />
 
         {/* <ShowIcon /> */}
       </div>
