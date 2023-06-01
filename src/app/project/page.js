@@ -34,10 +34,12 @@ const page = async () => {
   };
   return (
     <>
-      <div style={styleOverflow}>
-        <TransitionEffect />
-        <ProjectParent data={data} />
-      </div>
+      <TransitionEffect />
+      <section>
+        <div style={styleOverflow}>
+          <ProjectParent data={data} />
+        </div>
+      </section>
     </>
   );
 };

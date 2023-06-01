@@ -6,14 +6,14 @@ const page = () => {
     <>
       <TransitionEffect />
 
-      <div className="w-full h-screen flex justify-center items-center bg-gray-100">
+      <secton className="w-full h-screen flex justify-center items-center bg-gray-100">
         <iframe
           src="/International CV.pdf"
           className="w-full h-full"
           width="100%"
           height="1000px"
         ></iframe>
-      </div>
+      </secton>
     </>
   );
 };

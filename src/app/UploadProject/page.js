@@ -3,9 +3,9 @@ import AddProject from "./AddProject";
 
 const page = () => {
   return (
-    <div>
+    <section>
       <AddProject />
-    </div>
+    </section>
   );
 };
 

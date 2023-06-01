@@ -3,7 +3,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <section>
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-center h-full">
           <div className="text-center py-12">
@@ -21,7 +21,7 @@ const page = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

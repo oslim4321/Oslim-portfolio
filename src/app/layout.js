@@ -4,9 +4,9 @@ import Navbar from "../components/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import TransitionEffect from "../components/TransitionEffect";
-import { AnimatePresence } from "framer-motion";
 import MyContextProvider from "@/lib/Context";
-import HireMe from "../components/HireMe";
+
+import Global from "../components/Global";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <nav className="bg-light dark:bg-dark">
           <Navbar />
-          <HireMe />
+          <Global />
         </nav>
         <TransitionEffect />
         <MyContextProvider>

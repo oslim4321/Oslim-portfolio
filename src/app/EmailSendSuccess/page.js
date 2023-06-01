@@ -3,7 +3,7 @@ import React from "react";
 
 const EmailSendSuccess = () => {
   return (
-    <div className="flex flex-col w-full max-w-[768px] mx-auto">
+    <section className="flex flex-col w-full max-w-[768px] mx-auto">
       <div className="bg-white shadow-md rounded-lg p-8">
         <h2 className="text-xl font-semibold text-gray-900 mb-4">
           Email Sent Successfully
@@ -18,7 +18,7 @@ const EmailSendSuccess = () => {
           </Link>
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 
