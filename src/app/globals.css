@@ -8,9 +8,9 @@
 
   /* max-w-[90%] mx-auto */
 }
-section {
+/* section {
   margin-top: 100px;
-}
+} */
 /* font-sf-pro-display */
 html::-webkit-scrollbar {
   width: 0.3rem;

@@ -46,16 +46,18 @@ const Navbar = () => {
   };
   return (
     <div className="relative">
-      <div className="w-full py-8  dark:text-light border-b-[1px] border-transparent dark:border-light fixed top-0 left-0 right-0 shadow z-50 glassBg">
+      <div className="w-full bg-light dark:bg-dark h-[120px]"></div>
+      <div className="w-full py-8  dark:text-light border-b-[1px] border-transparent dark:border-light fixed top-0 left-0 right-0 z-50 glassBg">
         <div className="cont font-medium flex items-center justify-between py-4 relative">
           {/* toggle */}
+          {/* toggle */}
           <button
-            className="flex flex-col justify-center items-center lg:hidden fixed z-50"
+            className="flex flex-col justify-center items-center lg:hiddenn absolute right-0 z-50 lg:hidden"
             onClick={handleClick}
           >
             <span
-              className={`bg-dark dark:bg-light block transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm -translate-y-0.5 ${
-                isOpen ? "rotate-45 translate-y-1" : " -translate-y-0.5"
+              className={`bg-dark dark:bg-light block transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm ${
+                isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
               }`}
             ></span>
             <span
@@ -64,9 +66,9 @@ const Navbar = () => {
               }`}
             ></span>
             <span
-              className={`bg-dark dark:bg-light block transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm translate-y-0.5 ${
-                isOpen ? "-rotate-45 -translate-y-1" : " translate-y-0.5"
-              } `}
+              className={`bg-dark dark:bg-light block transition-all duration-300 ease-in-out h-0.5 w-6 rounded-sm ${
+                isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
+              }`}
             ></span>
           </button>
 
@@ -127,7 +129,7 @@ const Navbar = () => {
             </motion.a> */}
               <button
                 onClick={() => setmode(mode === "light" ? "dark" : "light")}
-                className={` w-6 ml-3 rounded-full ${
+                className={` w-6 ml-3 rounded-full  dark:bg-light bg-dark ${
                   mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
                 } `}
               >
@@ -139,99 +141,97 @@ const Navbar = () => {
               </button>
             </nav>
           </div>
-
-          {/* Mobile nav */}
-          {isOpen ? (
-            <motion.div
-              initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
-              animate={{ scale: 1, opacity: 1 }}
-              className={`min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2
-           bg-dark/90 dark:bg-light/90 dark:text-dark/90 backdrop-blur-md py-32 lg:hidden `}
-            >
-              <nav
-                className="flex flex-col justify-center items-center text-light/75"
-                onClick={() => setisOpen(false)}
-              >
-                <CustomLink
-                  href="/"
-                  title="Home"
-                  className="m-2 dark:text-dark/90"
-                />
-                <CustomLink
-                  href="/about"
-                  title="About"
-                  className="m-2 dark:text-dark/90"
-                />
-                <CustomLink
-                  href="/project"
-                  title="Project"
-                  className="m-2 dark:text-dark/90"
-                />
-                <CustomLink
-                  href="/resume"
-                  title="Resume"
-                  className="m-2 dark:text-dark/90"
-                />
-              </nav>
-
-              <nav className="flex justify-center items-center flex-wrap">
-                <motion.a
-                  href={"https://twitter.com/selim_adewale"}
-                  className="w- mx-3  w-6"
-                  target="_blank"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  <TwitterIcon className={"text-light dark:text-dark"} />
-                </motion.a>
-                <motion.a
-                  href={"https://github.com/oslim4321"}
-                  className="w-6 mx-3 bg-light dark:bg-dark dark:text-light rounded-full"
-                  target="_blank"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <GithubIcon />
-                </motion.a>
-                <motion.a
-                  href={"https://wa.me/07087121696"}
-                  className="w- mx-3  w-6"
-                  target="_blank"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <Whatsapp className={"text-light dark:text-dark"} />
-                </motion.a>
-                <motion.a
-                  href={"https://m.facebook.com/selim.sooto"}
-                  className="w- mx-3  w-6"
-                  target="_blank"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <Facebook className={"text-light dark:text-dark"} />
-                </motion.a>
-
-                <button
-                  onClick={() => setmode(mode === "light" ? "dark" : "light")}
-                  className="rounded-full bg-light dark:bg-dark dark:text-light"
-                >
-                  {mode === "dark" ? (
-                    <SunIcon className={"fill-dark"} />
-                  ) : (
-                    <MoonIcon className={"fill-dark"} />
-                  )}
-                </button>
-              </nav>
-            </motion.div>
-          ) : null}
-          <div className="absolute left-[50%] top-2 translate-x-[-50%]">
+          <div className="absolute left-[50%] top-[50%] translate-x-[-50%]">
             <Logo />
           </div>
+          {/* <ShowIcon /> */}
         </div>
-
-        {/* <ShowIcon /> */}
+        {/* Mobile nav */}
       </div>
+      {isOpen ? (
+        <motion.div
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+          animate={{ scale: 1, opacity: 1 }}
+          className={`min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2
+           bg-dark/90 dark:bg-light/90 dark:text-dark/90 backdrop-blur-md py-32 lg:hidden `}
+        >
+          <nav
+            className="flex flex-col justify-center items-center text-light/75"
+            onClick={() => setisOpen(false)}
+          >
+            <CustomLink
+              href="/"
+              title="Home"
+              className="m-2 dark:text-dark/90"
+            />
+            <CustomLink
+              href="/about"
+              title="About"
+              className="m-2 dark:text-dark/90"
+            />
+            <CustomLink
+              href="/project"
+              title="Project"
+              className="m-2 dark:text-dark/90"
+            />
+            <CustomLink
+              href="/resume"
+              title="Resume"
+              className="m-2 dark:text-dark/90"
+            />
+          </nav>
+
+          <nav className="flex justify-center items-center flex-wrap">
+            <motion.a
+              href={"https://twitter.com/selim_adewale"}
+              className="w- mx-3  w-6"
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.8 }}
+            >
+              <TwitterIcon className={"text-light dark:text-dark"} />
+            </motion.a>
+            <motion.a
+              href={"https://github.com/oslim4321"}
+              className="w-6 mx-3 bg-light dark:bg-dark dark:text-light rounded-full"
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <GithubIcon />
+            </motion.a>
+            <motion.a
+              href={"https://wa.me/07087121696"}
+              className="w- mx-3  w-6"
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Whatsapp className={"text-light dark:text-dark"} />
+            </motion.a>
+            <motion.a
+              href={"https://m.facebook.com/selim.sooto"}
+              className="w- mx-3  w-6"
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Facebook className={"text-light dark:text-dark"} />
+            </motion.a>
+
+            <button
+              onClick={() => setmode(mode === "light" ? "dark" : "light")}
+              className="rounded-full bg-light dark:bg-dark dark:text-light"
+            >
+              {mode === "dark" ? (
+                <SunIcon className={"fill-dark"} />
+              ) : (
+                <MoonIcon className={"fill-dark"} />
+              )}
+            </button>
+          </nav>
+        </motion.div>
+      ) : null}
     </div>
   );
 };

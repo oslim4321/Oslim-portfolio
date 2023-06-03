@@ -6,7 +6,7 @@ const page = () => {
     <>
       <TransitionEffect />
 
-      <secton className="w-full h-screen flex justify-center items-center bg-gray-100">
+      <secton className="w-full h-screen flex justify-center items-center bg-gray-100 mt-5">
         <iframe
           src="/International CV.pdf"
           className="w-full h-full"

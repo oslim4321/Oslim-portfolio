@@ -26,7 +26,7 @@ const PaginatePage = ({ project, setproject, setprojectData }) => {
   }
 
   return (
-    <div className="mt-40d">
+    <div className="mt-10">
       {buttons.map(({ text, category }) => (
         <motion.button
           key={text}
