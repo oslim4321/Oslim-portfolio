@@ -35,7 +35,7 @@ const TipsAboutMe = () => {
         <div className=" cont grid grid-cols-12 place-items-center">
           <div className="col-span-12 md:col-span-6">
             <p className="text-center dark:text-dark">
-              Passionate Web Developer with a knack for crafting innovative and
+              {/* Passionate Web Developer with a knack for crafting innovative and
               user-friendly digital experiences. With a strong foundation in
               HTML, CSS, and JavaScript, I specialize in building responsive and
               interactive websites. My goal is to combine my technical skills
@@ -43,7 +43,18 @@ const TipsAboutMe = () => {
               web solutions. Through continuous learning and staying up-to-date
               with industry trends, I strive to deliver high-quality code and
               exceed client expectations. Let's bring your ideas to life and
-              create meaningful online experiences together.
+              create meaningful online experiences together. */}
+              I am a Junior Web Developer with 2+ years of experience in React,
+              Node.js, and MySQL. I am passionate about building high-quality,
+              user-friendly websites and applications. I am also a quick learner
+              and I am always eager to take on new challenges. In my previous
+              role at Acme Corporation, I was responsible for developing and
+              maintaining the company's website. I also worked on a number of
+              internal applications, including a customer relationship
+              management system and a human resources management system. I am a
+              highly motivated and results-oriented individual. I am also a team
+              player and I am always willing to help others. I am confident that
+              I can make a significant contribution to your team.
             </p>
           </div>
           <div className="col-span-12 md:col-span-6">

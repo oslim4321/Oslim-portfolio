@@ -1,10 +1,38 @@
 "use client";
+import MyContextProvider, { GlobalMyContextProvider } from "@/lib/Context";
+import { fetchItemsByCategory } from "@/lib/QueryFirebase";
 import { buttons as projectCategory } from "@/lib/utilty/arrayList";
 import React, { useState } from "react";
 
 const SelectProjectCat = () => {
+  const { setloading, seterrorState } =
+    GlobalMyContextProvider(MyContextProvider);
+
   const [category, setcategory] = useState("Client works");
   console.log(category);
+
+  /* onclick button to filter item bg category from firebase */
+  async function filterByCateg(e) {
+    // const datasetValue = e.currentTarget.dataset.cat;
+    // console.log(datasetValue, "key");
+    // console.log("called");
+    setloading(true);
+    try {
+      /* setProject to the button  that  user click */
+      setcategory(e.target.value);
+      /* send the the category the user click to the functnion that fetch it */
+      const data = await fetchItemsByCategory(e.target.value);
+      console.log(data, "from meee lol");
+      // result = data;
+      //   setprojectData(data);
+    } catch (error) {
+      setloading(false);
+      seterrorState(true);
+    } finally {
+      setloading(false);
+    }
+  }
+
   return (
     <div>
       <div>
@@ -13,18 +41,23 @@ const SelectProjectCat = () => {
       <div className="my-2 flex sm:flex-row flex-col">
         <div className="flex flex-row mb-1 sm:mb-0">
           <div className="relative">
-            <select className="appearance-none h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
-              {projectCategory.map((cat) => (
-                <option
-                  key={cat.category}
-                  onClick={() => setcategory(cat.text)}
-                >
-                  {cat.text}
+            <select
+              onChange={filterByCateg}
+              className=" h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500"
+            >
+              {projectCategory.map(({ text, category: cat }) => (
+                <option dataset={cat} key={cat} value={cat}>
+                  {text}
                 </option>
               ))}
-              {/* <option>Active</option>
-              <option>Inactive</option> */}
             </select>
+            {/* <div className=" h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
+              {projectCategory.map(({ text, category }) => (
+                <p key={category} onClick={() => filterByCateg(text, category)}>
+                  {text}
+                </p>
+              ))}
+            </div> */}
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
                 className="fill-current h-4 w-4"
