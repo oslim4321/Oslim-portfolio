@@ -1,9 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import EditPopUp from "./EditPopUp";
 
 const ProjectList = ({ QueryProject }) => {
   console.log(QueryProject, "i am fast");
+  const [oneProject, setoneProject] = useState("");
+
+  function GetTheProject(id) {
+    setoneProject(id);
+    console.log(id);
+  }
+
   return (
     <>
       <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -60,7 +68,12 @@ const ProjectList = ({ QueryProject }) => {
                     </p>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm cursor-pointer border flexd justify-center items-center">
-                    <p className="text-gray-900 whitespace-no-wrap ">Edit</p>
+                    <p
+                      className="text-gray-900 whitespace-no-wrap "
+                      onClick={() => GetTheProject(proj.id)}
+                    >
+                      Edit
+                    </p>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm cursor-pointer border flexd justify-center items-center">
                     <p className="text-gray-900 whitespace-no-wrap ">delete</p>
@@ -78,10 +91,16 @@ const ProjectList = ({ QueryProject }) => {
               ))}
             </tbody>
           </table>
-          <div className="glassBg absolute fixed inset-0 mt-20"></div>
-          <div className="absolute top-20 left-[50%] translate-x-[-50%] ">
-            <EditPopUp />
-          </div>
+          {oneProject ? (
+            <div>
+              <div className="glassBg absolute fixed inset-0 mt-20"></div>
+              <div className="absolute top-20 left-[50%] translate-x-[-50%] ">
+                <EditPopUp />
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </>
