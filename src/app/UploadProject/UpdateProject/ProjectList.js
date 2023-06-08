@@ -78,8 +78,8 @@ const ProjectList = ({ QueryProject }) => {
               ))}
             </tbody>
           </table>
-          <div className="glassBg absolute fixed inset-0"></div>
-          <div className="absolute top-0 left-[50%] translate-x-[-50%] ">
+          <div className="glassBg absolute fixed inset-0 mt-20"></div>
+          <div className="absolute top-20 left-[50%] translate-x-[-50%] ">
             <EditPopUp />
           </div>
         </div>

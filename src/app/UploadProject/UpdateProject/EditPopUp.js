@@ -12,12 +12,12 @@ const EditPopUp = () => {
             <div>
               <label
                 className="text-white dark:text-gray-200"
-                htmlFor="username"
+                htmlFor="ProjectName"
               >
-                Username
+                Project Name
               </label>
               <input
-                id="username"
+                id="ProjectName"
                 type="text"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
@@ -26,12 +26,12 @@ const EditPopUp = () => {
             <div>
               <label
                 className="text-white dark:text-gray-200"
-                htmlFor="emailAddress"
+                htmlFor="gitHubLink"
               >
-                Email Address
+                GitHub Link
               </label>
               <input
-                id="emailAddress"
+                id="gitHubLink"
                 type="email"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
@@ -40,12 +40,13 @@ const EditPopUp = () => {
             <div>
               <label
                 className="text-white dark:text-gray-200"
-                htmlFor="password"
+                htmlFor="ProjectLink
+"
               >
-                Password
+                Project Link
               </label>
               <input
-                id="password"
+                id="ProjectLink"
                 type="password"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
@@ -54,35 +55,24 @@ const EditPopUp = () => {
             <div>
               <label
                 className="text-white dark:text-gray-200"
-                htmlFor="passwordConfirmation"
+                htmlFor="StudentName"
               >
-                Password Confirmation
+                Student Name (optional)
               </label>
               <input
-                id="passwordConfirmation"
+                id="StudentName"
                 type="password"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               />
             </div>
+
             <div>
               <label
                 className="text-white dark:text-gray-200"
-                htmlFor="passwordConfirmation"
+                htmlFor="Category
+"
               >
-                Color
-              </label>
-              <input
-                id="color"
-                type="color"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-              />
-            </div>
-            <div>
-              <label
-                className="text-white dark:text-gray-200"
-                htmlFor="passwordConfirmation"
-              >
-                Select
+                Category
               </label>
               <select className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
                 <option>Surabaya</option>
@@ -91,41 +81,16 @@ const EditPopUp = () => {
                 <option>Bandung</option>
               </select>
             </div>
+
             <div>
               <label
                 className="text-white dark:text-gray-200"
                 htmlFor="passwordConfirmation"
               >
-                Range
-              </label>
-              <input
-                id="range"
-                type="range"
-                className="block w-full py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-              />
-            </div>
-            <div>
-              <label
-                className="text-white dark:text-gray-200"
-                htmlFor="passwordConfirmation"
-              >
-                Date
-              </label>
-              <input
-                id="date"
-                type="date"
-                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-              />
-            </div>
-            <div>
-              <label
-                className="text-white dark:text-gray-200"
-                htmlFor="passwordConfirmation"
-              >
-                Text Area
+                Project Description
               </label>
               <textarea
-                id="textarea"
+                id="ProjectDescription"
                 type="textarea"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
               ></textarea>
@@ -179,7 +144,7 @@ const EditPopUp = () => {
         </form>
       </section>
 
-      <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800 mt-20">
+      {/* <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800 mt-20">
         <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">
           Account settings
         </h2>
@@ -249,7 +214,7 @@ const EditPopUp = () => {
             </button>
           </div>
         </form>
-      </section>
+      </section> */}
     </div>
   );
 };
