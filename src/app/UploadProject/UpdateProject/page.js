@@ -1,10 +1,11 @@
 import React from "react";
 import ProjectList from "./ProjectList";
 import { getData } from "@/lib/QueryFirebase";
+import ParentWrap from "./ParentWrap";
 
 const page = async () => {
   const data = await getData();
-  console.log(data, "data");
+  // console.log(data, "data");
 
   return (
     <div className="antialiased font-sans bg-gray-200">
@@ -12,7 +13,7 @@ const page = async () => {
         <div className="py-8">
           {/* here */}
 
-          <ProjectList project={data} />
+          <ParentWrap project={data} />
         </div>
       </div>
     </div>

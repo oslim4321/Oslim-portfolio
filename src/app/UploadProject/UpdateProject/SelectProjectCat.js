@@ -4,7 +4,7 @@ import { fetchItemsByCategory } from "@/lib/QueryFirebase";
 import { buttons as projectCategory } from "@/lib/utilty/arrayList";
 import React, { useState } from "react";
 
-const SelectProjectCat = () => {
+const SelectProjectCat = ({ setQueryProject }) => {
   const { setloading, seterrorState } =
     GlobalMyContextProvider(MyContextProvider);
 
@@ -23,8 +23,7 @@ const SelectProjectCat = () => {
       /* send the the category the user click to the functnion that fetch it */
       const data = await fetchItemsByCategory(e.target.value);
       console.log(data, "from meee lol");
-      // result = data;
-      //   setprojectData(data);
+      setQueryProject(data);
     } catch (error) {
       setloading(false);
       seterrorState(true);
@@ -46,7 +45,7 @@ const SelectProjectCat = () => {
               className=" h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500"
             >
               {projectCategory.map(({ text, category: cat }) => (
-                <option dataset={cat} key={cat} value={cat}>
+                <option key={cat} value={cat}>
                   {text}
                 </option>
               ))}
