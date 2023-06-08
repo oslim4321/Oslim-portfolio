@@ -2,14 +2,18 @@
 
 import { useState } from "react";
 import EditPopUp from "./EditPopUp";
+import { getProjectById } from "@/lib/QueryFirebase";
 
 const ProjectList = ({ QueryProject }) => {
   console.log(QueryProject, "i am fast");
-  const [oneProject, setoneProject] = useState("");
+  const [oneProject, setoneProject] = useState(false);
 
-  function GetTheProject(id) {
+  async function GetTheProject(id) {
     setoneProject(id);
     console.log(id);
+
+    const data = await getProjectById(id);
+    console.log(data, "this is the data");
   }
 
   return (
@@ -93,7 +97,10 @@ const ProjectList = ({ QueryProject }) => {
           </table>
           {oneProject ? (
             <div>
-              <div className="glassBg absolute fixed inset-0 mt-20"></div>
+              <div
+                className="glassBg absolute fixed inset-0 mt-20 cursor-pointer"
+                onClick={() => setoneProject(false)}
+              ></div>
               <div className="absolute top-20 left-[50%] translate-x-[-50%] ">
                 <EditPopUp />
               </div>
