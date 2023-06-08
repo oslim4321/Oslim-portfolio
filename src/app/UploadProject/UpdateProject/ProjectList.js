@@ -7,13 +7,12 @@ import { getProjectById } from "@/lib/QueryFirebase";
 const ProjectList = ({ QueryProject }) => {
   console.log(QueryProject, "i am fast");
   const [oneProject, setoneProject] = useState(false);
+  const [Aproject, setAproject] = useState("");
 
   async function GetTheProject(id) {
     setoneProject(id);
-    console.log(id);
-
     const data = await getProjectById(id);
-    console.log(data, "this is the data");
+    setAproject(data);
   }
 
   return (
@@ -99,10 +98,13 @@ const ProjectList = ({ QueryProject }) => {
             <div>
               <div
                 className="glassBg absolute fixed inset-0 mt-20 cursor-pointer"
-                onClick={() => setoneProject(false)}
+                onClick={() => {
+                  setoneProject(false);
+                  setAproject("");
+                }}
               ></div>
               <div className="absolute top-20 left-[50%] translate-x-[-50%] ">
-                <EditPopUp />
+                <EditPopUp Aproject={Aproject} />
               </div>
             </div>
           ) : (
