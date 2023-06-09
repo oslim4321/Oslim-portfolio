@@ -15,7 +15,10 @@ const ParentWrap = ({ project }) => {
   return (
     <div>
       {loading ? (
-        " getting projects.."
+        <div className="flex">
+          <p> getting projects..</p>
+          <div className="w-12 h-12 border-2 border-purple-600 rounded-full loader"></div>
+        </div>
       ) : errorState ? (
         "error"
       ) : (

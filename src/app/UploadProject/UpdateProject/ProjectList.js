@@ -63,7 +63,9 @@ const ProjectList = ({ QueryProject }) => {
                     </div>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-900 whitespace-no-wrap">Admin</p>
+                    <p className="text-gray-900 whitespace-no-wrap">
+                      {proj.studentName ? proj.studentName : "not a student"}
+                    </p>
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                     <p className="text-gray-900 whitespace-no-wrap">
