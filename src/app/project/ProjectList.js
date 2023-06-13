@@ -37,8 +37,9 @@ const ProjectList = ({ project, projectData }) => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex flex-wrap gap-x-5">
+                    {/* <img src={pupUpShow.image} alt="" /> */}
                     <Image
-                      src={pupUpShow.image}
+                      src={pupUpShow.image ? pupUpShow.image : ""}
                       alt={pupUpShow.projectName}
                       className="w-[500px] h-[200px] object-cover"
                       width="500"
@@ -134,8 +135,9 @@ function GridListing({ projectData, project, setSelectedId }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                {/* <img src={item.image} alt="" /> */}
                 <Image
-                  src={item.image}
+                  src={item.image ? item.image : ""}
                   className="w-full h-full object-cover"
                   alt={item.projectName}
                   width="500"

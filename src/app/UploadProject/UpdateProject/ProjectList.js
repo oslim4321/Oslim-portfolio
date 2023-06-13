@@ -106,7 +106,10 @@ const ProjectList = ({ QueryProject }) => {
                 }}
               ></div>
               <div className="absolute top-20 left-[50%] translate-x-[-50%] ">
-                <EditPopUp Aproject={Aproject} />
+                <EditPopUp
+                  Aproject={Aproject}
+                  removeEditPopup={setoneProject}
+                />
               </div>
             </div>
           ) : (

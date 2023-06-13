@@ -2,12 +2,23 @@
 
 import React, { useState } from "react";
 import { buttons as projectCategory } from "@/lib/utilty/arrayList";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "@/lib/utilty/firebase";
 
-const EditPopUp = ({ Aproject }) => {
+const EditPopUp = ({ Aproject, removeEditPopup }) => {
   const [projectData, setprojectData] = useState({});
+  console.log(Aproject, "ok it me");
 
   function EditProject() {
-    console.log(projectData);
+    const docRef = doc(db, "projects", Aproject?.id);
+    updateDoc(docRef, projectData)
+      .then(() => {
+        console.log("Document successfully updated!");
+        removeEditPopup(false);
+      })
+      .catch((error) => {
+        console.error("Error updating document:", error);
+      });
   }
 
   function formData(e) {
@@ -55,6 +66,22 @@ const EditPopUp = ({ Aproject }) => {
                   onChange={formData}
                   name={"gitHubLink"}
                   value={Aproject.gitHubLink}
+                />
+              </div>
+              <div>
+                <label
+                  className="text-white dark:text-gray-200"
+                  htmlFor="projectLink"
+                >
+                  Web Link
+                </label>
+                <input
+                  id="projectLink"
+                  type="text"
+                  className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                  onChange={formData}
+                  name={"projectLink"}
+                  value={Aproject.projectLink}
                 />
               </div>
 
