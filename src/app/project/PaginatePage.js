@@ -13,6 +13,7 @@ const PaginatePage = ({ project, setproject, setprojectData }) => {
   /* onclick button to filter item bg category from firebase */
   async function filterByCateg(text, category) {
     setloading(true);
+    setprojectData("");
     try {
       /* setProject to the button  that  user click */
       setproject(text);
