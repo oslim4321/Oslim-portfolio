@@ -99,7 +99,7 @@ const ContactForm = () => {
         <input
           type="hidden"
           name="_next"
-          value="http://localhost:3001/EmailSendSuccess"
+          value="https://oslim-portfolio.vercel.app//EmailSendSuccess"
         />
         <input type="hidden" name="_template" value="table" />
 

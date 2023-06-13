@@ -19,6 +19,8 @@ module.exports = {
   //   path: "https://firebasestorage.googleapis.com/v0/b/my-portfolio-4bcd3.appspot.com/o/",
   // },
   images: {
-    domains: ["https://firebase.google.com/docs/storage"],
+    remotePatterns: [
+      { protocol: "https", hostname: "firebasestorage.googleapis.com" },
+    ],
   },
 };

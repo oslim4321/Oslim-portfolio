@@ -6,7 +6,7 @@ import { getData } from "@/lib/QueryFirebase";
 
 const page = async () => {
   const data = await getData();
-  console.log(data, "data");
+
   const styleOverflow = {
     overflow: "hidden",
   };

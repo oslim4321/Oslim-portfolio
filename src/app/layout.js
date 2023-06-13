@@ -36,7 +36,9 @@ export default function RootLayout({ children }) {
   document.documentElement.classList.remove('dark')
 }
             `}
+          0{" "}
         </Script>
+        <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
       </body>
     </html>
   );

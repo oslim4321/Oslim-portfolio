@@ -3,29 +3,20 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Close, GithubIcon } from "../../components/Icons";
 import Link from "next/link";
+import ProjectImageList from "./ProjectImageList";
+import Image from "next/image";
 
 const ProjectList = ({ project, projectData }) => {
-  console.log(projectData);
-
   const [selectedId, setSelectedId] = useState(null);
   const [pupUpShow, setpupUpShow] = useState();
 
   useEffect(() => {
     setpupUpShow(projectData[selectedId - 1]);
   }, [selectedId]);
-  // console.log(selectedId, "selectedId");
-  // console.log(projectData);
 
   return (
     <>
-      <div
-        className=" h-[90vh] overflow-y-scroll no-scrollbar"
-        style={{
-          // backgroundImage: "url(/images/12557718_4990044.jpg)",
-          backgroundSize: "cover",
-          width: "100%",
-        }}
-      >
+      <div className="h-[90vh] no-scrollbar  relative dark:bg-gray-900">
         <GridListing
           projectData={projectData}
           project={project}
@@ -37,30 +28,27 @@ const ProjectList = ({ project, projectData }) => {
               <motion.div
                 layoutId={selectedId}
                 className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-                // onClick={() => setSelectedId(null)}
               >
                 <motion.div
-                  className="bg-white w-full md:w-[60%] h-[60%] shadow-md rounded-md p-4 overflow-scroll scrollbar-white relative"
+                  className="bg-white dark:bg-gray-800 w-full md:w-[60%] h-[60%] shadow-md rounded-md p-4 overflow-scroll scrollbar-white relative"
                   initial={{ opacity: 0, scale: 0.95, y: -20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: -20 }}
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex flex-wrap gap-x-5">
-                    <img
+                    <Image
                       src={pupUpShow.image}
                       alt={pupUpShow.projectName}
                       className="w-[500px] h-[200px] object-cover"
+                      width="500"
+                      height="500"
                     />
                     <div>
-                      <motion.h5 className=" text-xl font-bold mb-2">
+                      <motion.h5 className="text-xl font-bold mb-2 dark:text-light">
                         {pupUpShow.projectName}
                       </motion.h5>
-                      {/* descriptions */}
-                      {/* <motion.h2 className="text-gray-600">
-                      {pupUpShow.projectDesc}
-                    </motion.h2> */}
-                      <motion.h2 className="text-gray-600">
+                      <motion.h2 className="text-gray-600 dark:text-gray-400">
                         {pupUpShow.projectDesc
                           .split(/(?=\d\))/)
                           .map((line, index) => (
@@ -71,20 +59,17 @@ const ProjectList = ({ project, projectData }) => {
                           ))}
                       </motion.h2>
 
-                      <button>Visit Website</button>
+                      <button className="my-3 border px-2 py-1 dark:text-light/70 ">
+                        Visit Website
+                      </button>
                     </div>
                   </div>
 
-                  {/* skills */}
-                  <div className="flex flex-wrap gap-x-4">
+                  <div className="flex flex-wrap gap-4">
                     {pupUpShow.technologies.map((skill, index) => (
                       <motion.div
                         key={index}
-                        className="flex items-center justify-center rounded-full font-semibold text-dark sm:bg-dark dark:text-light md:text-light py-1.5 px-1.5
-                      md:px-6 md:py-3  cursor-pointer text-sm md:text-lg bg-transparent sm:text-light sm:dark:bg-transparent sm:text-sm
-                      md:dark:bg-light dark:md:text-dark
-                      
-                      "
+                        className="flex items-center justify-center rounded-full font-semibold text-dark py-1.5 px-1.5 md:px-6 md:py-3 cursor-pointer text-sm md:text-lg bg-transparent bg-slate-300 sm:text-sm bg-slate-100 dark:bg-slate-600 dark:text-light "
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -92,27 +77,19 @@ const ProjectList = ({ project, projectData }) => {
                       </motion.div>
                     ))}
                   </div>
-                  {/*Images */}
-                  <h5 className=" text-xl font-bold my-2 mt-5">
+
+                  <h5 className="text-xl font-bold my-2 mt-5 dark:text-light">
                     Beautiful Pictures of the website
                   </h5>
 
-                  <div className="flex gap-10 overflow-x-scroll  no-scrollbar">
-                    {pupUpShow.projectImages.length > 0 &&
-                      pupUpShow.projectImages.map((img) => (
-                        <img
-                          src={img}
-                          alt={pupUpShow.projectName}
-                          className="w-[200px] h-[200px] object-cover"
-                        />
-                      ))}
+                  <div>
+                    <ProjectImageList pupUpShow={pupUpShow} />
                   </div>
                   <motion.button
                     onClick={() => setSelectedId(null)}
                     className="fixed right-0 md:right-[20%] top-[20%] z-50"
-                    // className="mt-4 px-4 py-2 text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-md focus:outline-none"
                   >
-                    <Close className={"text-10xl"} size="50" />
+                    <Close className="text-10xl dark:text-white" size="50" />
                   </motion.button>
                 </motion.div>
               </motion.div>
@@ -128,8 +105,8 @@ export default ProjectList;
 
 function GridListing({ projectData, project, setSelectedId }) {
   const getRandomGridSpan = () => {
-    const randomCols = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 4 for grid columns
-    const randomRows = Math.floor(Math.random() * 2) + 1; // Random number between 1 and 3 for grid rows
+    const randomCols = Math.floor(Math.random() * 3) + 1;
+    const randomRows = Math.floor(Math.random() * 2) + 1;
 
     return `col-span-${randomCols} md:col-span-${randomCols} row-span-${randomRows} md:row-span-${randomRows}`;
   };
@@ -139,92 +116,77 @@ function GridListing({ projectData, project, setSelectedId }) {
       <p className="text-2xl font-bold mb-6 text-center dark:text-light">
         {project}
       </p>
-      <motion.div className="grid grid-cols-1 md:gdrid-cols-3 gap-4 lg:grid-cols-4 grid-row-1 md:grid-rows-2 cont">
-        {
-          // projectData.length > 0 &&
-          projectData.map((item, index) => (
-            <motion.div
-              key={index + 1}
-              layoutId={index + 1}
-              className={` p-4 bg-white shadow-md rounded-md cursor-pointer glassBg dark:text-white 
-             border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px] `}
-              initial={{ x: item.direction }}
-              whileInView={{ x: 0 }}
-              transition={{ delay: 0.3 + index * 0.08 }}
-              whileHover={{ scale: 0.95 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <div className="w-[100%] h-[50%] ">
-                <a href={item.projectLink} target="_blank">
-                  <img
-                    src={item.image}
-                    className="w-full h-full object-cover"
-                    alt=""
-                  />
-                </a>
-                {/* <div
-                  style={{
-                    backgroundImage: `url(/images/${item.projectLink})`,
-                    backgroundSize: "cover",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                ></div> */}
-              </div>
-              <div className="">
-                <motion.h2 className="text-xl font-bold">
-                  {item.projectName.length > 21 ? (
-                    <div>{item.projectName.slice(0, 21)}...</div>
-                  ) : (
-                    item.projectName
-                  )}
-                </motion.h2>
-                <motion.h5
-                  className="text-gray-600 dark:text-light/90
-                 "
+      <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-4 grid-row-1 md:grid-rows-2 cont">
+        {projectData.map((item, index) => (
+          <motion.div
+            key={index + 1}
+            layoutId={index + 1}
+            className={`p-4 bg-white dark:bg-gray-800 shadow-md rounded-md cursor-pointer glassBg dark:text-white border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px]`}
+            initial={{ x: item.direction }}
+            whileInView={{ x: 0 }}
+            transition={{ delay: 0.3 + index * 0.08 }}
+            whileHover={{ scale: 0.95 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <div className="w-[100%] h-[50%]">
+              <a
+                href={item.projectLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={item.image}
+                  className="w-full h-full object-cover"
+                  alt={item.projectName}
+                  width="500"
+                  height="500"
+                />
+              </a>
+            </div>
+            <div className="">
+              <motion.h2 className="text-xl font-bold">
+                {item.projectName.length > 21 ? (
+                  <div>{item.projectName.slice(0, 21)}...</div>
+                ) : (
+                  item.projectName
+                )}
+              </motion.h2>
+              <motion.h5 className="text-gray-600 dark:text-gray-400">
+                {item.projectDesc.slice(0, 50)}...
+              </motion.h5>
+              <div className="flex justify-between items-center mt-4">
+                <button
+                  onClick={() => setSelectedId(index + 1)}
+                  className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 hover:scale-x-100 transition-all duration-100"
                 >
-                  {item.projectDesc.slice(0, 50)}...
-                </motion.h5>
-                <div className="flex justify-between items-center mt-4">
+                  See More
+                </button>
+
+                <a
+                  href={item.gitHubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <GithubIcon size={20} />
+                </a>
+              </div>
+              <div className="flex justify-between items-center capitalize font-bold">
+                {item.studentName && <p>{item.studentName}</p>}
+
+                <a href={item.projectLink} target="_blank" className="text-end">
                   <button
                     onClick={() => setSelectedId(index + 1)}
-                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colorsb dark:text-light dark:hover:text-light/70
-                     hover:scale-x-100 transition-all duration-100
-                    "
+                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70"
                   >
-                    See More
+                    Visit
                   </button>
-
-                  <a
-                    href={item.gitHubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-gray-600 transition-colors"
-                  >
-                    <GithubIcon size={20} />
-                  </a>
-                </div>
-                <div className="flex justify-between items-center capitalize font-bold">
-                  {item.studentName && <p>{item.studentName}</p>}
-
-                  <a
-                    href={item.projectLink}
-                    target="_blank"
-                    className="text-end"
-                  >
-                    <button
-                      onClick={() => setSelectedId(index + 1)}
-                      className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70"
-                    >
-                      Visit
-                    </button>
-                  </a>
-                </div>
-                <p className="text-sm mt-2 text-gray-500">{item.projectType}</p>
+                </a>
               </div>
-            </motion.div>
-          ))
-        }
+              <p className="text-sm mt-2 text-gray-500">{item.projectType}</p>
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
     </div>
   );
