@@ -16,7 +16,7 @@ const ProjectList = ({ project, projectData }) => {
 
   return (
     <>
-      <div className="h-[90vh] no-scrollbar  relative dark:bg-gray-900">
+      <div className="h-[90vh] no-scrollbar overflow-y-scroll  relative dark:bg-gray-900">
         <GridListing
           projectData={projectData}
           project={project}

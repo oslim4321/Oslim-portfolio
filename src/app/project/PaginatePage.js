@@ -1,3 +1,5 @@
+"use client";
+
 import MyContextProvider, { GlobalMyContextProvider } from "@/lib/Context";
 import { fetchItemsByCategory } from "@/lib/QueryFirebase";
 import { buttons } from "@/lib/utilty/arrayList";
@@ -17,6 +19,7 @@ const PaginatePage = ({ project, setproject, setprojectData }) => {
       /* send the the category the user click to the functnion that fetch it */
       const data = await fetchItemsByCategory(category);
       // result = data;
+      console.log(data, "lolo");
       setprojectData(data);
     } catch (error) {
       setloading(false);
