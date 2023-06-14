@@ -50,7 +50,7 @@ const ProjectList = ({ project, projectData }) => {
                         {pupUpShow.projectName}
                       </motion.h5>
                       <motion.h2 className="text-gray-600 dark:text-gray-400">
-                        {pupUpShow.projectDesc
+                        {pupUpShow?.projectDesc
                           .split(/(?=\d\))/)
                           .map((line, index) => (
                             <div key={index} className="my-2">
@@ -67,7 +67,7 @@ const ProjectList = ({ project, projectData }) => {
                   </div>
 
                   <div className="flex flex-wrap gap-4">
-                    {pupUpShow.technologies.map((skill, index) => (
+                    {pupUpShow?.technologies.map((skill, index) => (
                       <motion.div
                         key={index}
                         className="flex items-center justify-center rounded-full font-semibold text-dark py-1.5 px-1.5 md:px-6 md:py-3 cursor-pointer text-sm md:text-lg bg-transparent bg-slate-300 sm:text-sm bg-slate-100 dark:bg-slate-600 dark:text-light "
@@ -118,77 +118,82 @@ function GridListing({ projectData, project, setSelectedId }) {
         {project}
       </p>
       <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-4 grid-row-1 md:grid-rows-2 cont">
-        {projectData.map((item, index) => (
-          <motion.div
-            key={index + 1}
-            layoutId={index + 1}
-            className={`p-4 bg-white dark:bg-gray-800 shadow-md rounded-md cursor-pointer glassBg dark:text-white border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px]`}
-            initial={{ x: item.direction }}
-            whileInView={{ x: 0 }}
-            transition={{ delay: 0.3 + index * 0.08 }}
-            whileHover={{ scale: 0.95 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <div className="w-[100%] h-[50%]">
-              <a
-                href={item.projectLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {/* <img src={item.image} alt="" /> */}
-                <Image
-                  src={item.image ? item.image : ""}
-                  className="w-full h-full object-cover"
-                  alt={item.projectName}
-                  width="500"
-                  height="500"
-                />
-              </a>
-            </div>
-            <div className="">
-              <motion.h2 className="text-xl font-bold">
-                {item.projectName.length > 21 ? (
-                  <div>{item.projectName.slice(0, 21)}...</div>
-                ) : (
-                  item.projectName
-                )}
-              </motion.h2>
-              <motion.h5 className="text-gray-600 dark:text-gray-400">
-                {item.projectDesc.slice(0, 50)}...
-              </motion.h5>
-              <div className="flex justify-between items-center mt-4">
-                <button
-                  onClick={() => setSelectedId(index + 1)}
-                  className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 hover:scale-x-100 transition-all duration-100"
-                >
-                  See More
-                </button>
-
+        {projectData.length > 0 &&
+          projectData?.map((item, index) => (
+            <motion.div
+              key={index + 1}
+              layoutId={index + 1}
+              className={`p-4 bg-white dark:bg-gray-800 shadow-md rounded-md cursor-pointer glassBg dark:text-white border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px]`}
+              initial={{ x: item.direction }}
+              whileInView={{ x: 0 }}
+              transition={{ delay: 0.3 + index * 0.08 }}
+              whileHover={{ scale: 0.95 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <div className="w-[100%] h-[50%]">
                 <a
-                  href={item.gitHubLink}
+                  href={item.projectLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-gray-600 transition-colors"
                 >
-                  <GithubIcon size={20} />
+                  {/* <img src={item.image} alt="" /> */}
+                  <Image
+                    src={item.image ? item.image : ""}
+                    className="w-full h-full object-cover"
+                    alt={item.projectName}
+                    width="500"
+                    height="500"
+                  />
                 </a>
               </div>
-              <div className="flex justify-between items-center capitalize font-bold">
-                {item.studentName && <p>{item.studentName}</p>}
-
-                <a href={item.projectLink} target="_blank" className="text-end">
+              <div className="">
+                <motion.h2 className="text-xl font-bold">
+                  {item.projectName.length > 21 ? (
+                    <div>{item.projectName.slice(0, 21)}...</div>
+                  ) : (
+                    item.projectName
+                  )}
+                </motion.h2>
+                <motion.h5 className="text-gray-600 dark:text-gray-400">
+                  {item.projectDesc.slice(0, 50)}...
+                </motion.h5>
+                <div className="flex justify-between items-center mt-4">
                   <button
                     onClick={() => setSelectedId(index + 1)}
-                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70"
+                    className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 hover:scale-x-100 transition-all duration-100"
                   >
-                    Visit
+                    See More
                   </button>
-                </a>
+
+                  <a
+                    href={item.gitHubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-gray-600 transition-colors"
+                  >
+                    <GithubIcon size={20} />
+                  </a>
+                </div>
+                <div className="flex justify-between items-center capitalize font-bold">
+                  {item.studentName && <p>{item.studentName}</p>}
+
+                  <a
+                    href={item.projectLink}
+                    target="_blank"
+                    className="text-end"
+                  >
+                    <button
+                      onClick={() => setSelectedId(index + 1)}
+                      className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70"
+                    >
+                      Visit
+                    </button>
+                  </a>
+                </div>
+                <p className="text-sm mt-2 text-gray-500">{item.projectType}</p>
               </div>
-              <p className="text-sm mt-2 text-gray-500">{item.projectType}</p>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
       </motion.div>
     </div>
   );

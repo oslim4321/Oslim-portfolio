@@ -3,28 +3,57 @@
 import React, { useState } from "react";
 import { buttons as projectCategory } from "@/lib/utilty/arrayList";
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "@/lib/utilty/firebase";
+import { db, storage } from "@/lib/utilty/firebase";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 const EditPopUp = ({ Aproject, removeEditPopup }) => {
   const [projectData, setprojectData] = useState({});
+  const [Image, setImage] = useState("");
   console.log(Aproject, "ok it me");
 
-  function EditProject() {
-    const docRef = doc(db, "projects", Aproject?.id);
-    updateDoc(docRef, projectData)
-      .then(() => {
-        console.log("Document successfully updated!");
-        removeEditPopup(false);
-      })
-      .catch((error) => {
-        console.error("Error updating document:", error);
-      });
+  /* get  image url */
+  const uploadImage = async () => {
+    const randomNumber = Math.floor(Math.random() * 2000);
+
+    const storageRef = ref(storage, `images/${Image.name + randomNumber}`);
+    await uploadBytes(storageRef, Image);
+    const downloadURL = await getDownloadURL(storageRef);
+    return downloadURL;
+  };
+
+  async function EditProject() {
+    try {
+      let newImageUrl = null;
+
+      if (Image) {
+        newImageUrl = await uploadImage();
+      }
+      // Update the project data with the new image URL
+      const updatedProjectData = { ...projectData, image: newImageUrl };
+
+      console.log(updatedProjectData);
+
+      const docRef = doc(db, "projects", Aproject?.id);
+      await updateDoc(docRef, Image ? updatedProjectData : projectData);
+
+      console.log("Document successfully updated!");
+      removeEditPopup(false);
+      alert("success");
+    } catch (error) {
+      console.error("Error updating document:", error);
+    }
   }
 
   function formData(e) {
     // console.log(e.target.value);
     setprojectData({ ...projectData, [e.target.name]: e.target.value });
   }
+
+  /* get image */
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
+    console.log(e.target.files);
+  };
 
   return (
     <div>
@@ -172,15 +201,16 @@ const EditPopUp = ({ Aproject, removeEditPopup }) => {
                   <div className="space-y-1 text-center">
                     <div className="flex text-sm text-gray-600">
                       <label
-                        htmlFor="file-upload"
+                        htmlFor="image"
                         className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                       >
                         <span className="">Upload a file</span>
                         <input
-                          id="file-upload"
-                          name="file-upload"
+                          id="image"
+                          name="image"
                           type="file"
                           className="sr-only"
+                          onChange={handleImageChange}
                         />
                       </label>
                       <p className="pl-1 text-white">or drag and drop</p>
