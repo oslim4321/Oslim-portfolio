@@ -1,7 +1,8 @@
 "use client";
-import { MyEmail, MyPhone, YearOfExperiance } from "@/lib/MyDetails";
+import { MyAddress, MyEmail, MyPhone, YearOfExperiance } from "@/lib/MyDetails";
 import { educationData, experienceData } from "@/src/components/AboutPage";
 import React from "react";
+import Skillls from "./Skillls";
 
 const Resume = () => {
   return (
@@ -110,7 +111,9 @@ const Resume = () => {
               </li>
               <li className="px-2 mt-1">
                 <strong className="mr-1">Location</strong>
-                <span className="block">Seoul, South Korea</span>
+                <span className="block">
+                  <MyAddress />
+                </span>
               </li>
             </ul>
             <strong className="text-xl font-medium ">Github Stats</strong>
@@ -126,41 +129,14 @@ const Resume = () => {
               </li>
             </ul>
             {/* <!-- skills --> */}
-            <strong className="text-xl font-medium">Skills</strong>
-            <ul className="mt-2 mb-10">
-              <li className="px-2 mt-1">HTML</li>
-              <li className="px-2 mt-1">CSS</li>
-              <li className="px-2 mt-1">JavaScript</li>
-              <li className="px-2 mt-1">React</li>
-              <li className="px-2 mt-1">Node.js</li>
-            </ul>
-            <strong className="text-xl font-medium">Further Education</strong>
-            <ul className="mt-2 mb-10">
-              <li className="px-2 mt-1">Like Lion Frontend School</li>
-              <li className="px-2 mt-1">Udemy</li>
-              <li className="px-2 mt-1">Freecodecamp</li>
-            </ul>
-            {/* <!-- what I'm learning these days --> */}
-            <strong className="text-xl font-medium">Currently learning</strong>
-            <ul className="mt-2 mb-10">
-              <li className="px-2 mt-1">About Web Accessibility</li>
-              <li className="px-2 mt-1">and User Experience</li>
-            </ul>
-            <strong className="text-xl font-medium">Interests & Hobbies</strong>
-            <ul className="mt-2">
-              <li className="px-2 mt-1">Sustainability</li>
-              <li className="px-2 mt-1">New technologies</li>
-              <li className="px-2 mt-1">Blogging on dev.to</li>
-              <li className="px-2 mt-1">Investment</li>
-              <li className="px-2 mt-1">Travel</li>
-            </ul>
+            <Skillls />
           </div>
           {/* <!-- info --> */}
           <div className="w-4/6">
             <section>
               {/* <!-- about me --> */}
               <h2 className="text-2xl pb-1 border-b font-semibold">About</h2>
-              <p className=" text-gray-800 mt-4 dark:text-light/90">
+              <p className="text-gray-800 mt-4 dark:text-light/90">
                 I am a Junior Web Developer with <YearOfExperiance />+ years of
                 experience in the MERN (MongoDB, Express.js, React, Node.js)
                 stack and the MEVN (MongoDB, Express.js, Vue.js, Node.js) stack.

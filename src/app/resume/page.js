@@ -1,6 +1,7 @@
 import TransitionEffect from "@/src/components/TransitionEffect";
 import React from "react";
 import Resume from "./Resume";
+import Cv from "./Cv";
 
 const page = () => {
   return (
@@ -16,6 +17,7 @@ const page = () => {
         ></iframe>
       </secton> */}
       <Resume />
+      {/* <Cv /> */}
     </>
   );
 };
