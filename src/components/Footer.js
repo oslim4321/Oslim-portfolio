@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         <div className="flex space-x-4 mt-4 md:mt-0">
           <Link
-            href={`mailto:${(<MyEmail />)}`}
+            href="mailto:adewaleselim6@gmail.com"
             className="text-gray-400 hover:text-white"
           >
             <MyEmail />

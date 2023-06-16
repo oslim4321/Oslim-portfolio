@@ -1,3 +1,6 @@
+"use client";
+import { MyEmail, MyPhone, YearOfExperiance } from "@/lib/MyDetails";
+import { educationData, experienceData } from "@/src/components/AboutPage";
 import React from "react";
 
 const Resume = () => {
@@ -39,8 +42,8 @@ const Resume = () => {
                 >
                   <g fill="none">
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
                       fill="currentColor"
                     />
@@ -66,8 +69,8 @@ const Resume = () => {
                 >
                   <g fill="none">
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M120.12 208.29c-3.88-2.9-7.77-4.35-11.65-4.35H91.03v104.47h17.45c3.88 0 7.77-1.45 11.65-4.35s5.82-7.25 5.82-13.06v-69.65c-.01-5.8-1.96-10.16-5.83-13.06zM404.1 32H43.9C19.7 32 .06 51.59 0 75.8v360.4C.06 460.41 19.7 480 43.9 480h360.2c24.21 0 43.84-19.59 43.9-43.8V75.8c-.06-24.21-19.7-43.8-43.9-43.8zM154.2 291.19c0 18.81-11.61 47.31-48.36 47.25h-46.4V172.98h47.38c35.44 0 47.36 28.46 47.37 47.28zm100.68-88.66H201.6v38.42h32.57v29.57H201.6v38.41h53.29v29.57h-62.18c-11.16.29-20.44-8.53-20.72-19.69V193.7c-.27-11.15 8.56-20.41 19.71-20.69h63.19zm103.64 115.29c-13.2 30.75-36.85 24.63-47.44 0l-38.53-144.8h32.57l29.71 113.72 29.57-113.72h32.58z"
                       fill="currentColor"
                     />
@@ -96,13 +99,13 @@ const Resume = () => {
               <li className="px-2 mt-1">
                 <strong className="mr-1">Phone </strong>
                 <a href="tel:+821023456789" className="block">
-                  +82 10 2345 6789
+                  <MyPhone />
                 </a>
               </li>
               <li className="px-2 mt-1">
                 <strong className="mr-1">E-mail </strong>
                 <a href="mailto:" className="block">
-                  aspiringfe@helloworld.com
+                  <MyEmail />
                 </a>
               </li>
               <li className="px-2 mt-1">
@@ -157,19 +160,19 @@ const Resume = () => {
             <section>
               {/* <!-- about me --> */}
               <h2 className="text-2xl pb-1 border-b font-semibold">About</h2>
-              <p className="mt-4 text-xs">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Possimus deserunt modi qui. Dolorum aliquid quasi velit
-                cupiditate officia magnam impedit, sapiente hic, eaque quaerat
-                ullam fugiat reprehenderit voluptates odit! Error. Tempore fuga
-                iusto eveniet omnis impedit repellat ab repellendus nesciunt
-                similique. Iure voluptates, enim nesciunt tempora amet earum,
-                porro rem ad et sequi corrupti neque quidem? Debitis quo
-                quibusdam nemo. Nam doloremque perferendis tempora asperiores,
-                ullam praesentium et, voluptas pariatur illo aliquid similique,
-                fugiat repellendus ipsa necessitatibus minus hic culpa quasi.
-                Sed voluptate itaque accusantium earum cupiditate ipsa neque
-                magnam!
+              <p className=" text-gray-800 mt-4 dark:text-light/90">
+                I am a Junior Web Developer with <YearOfExperiance />+ years of
+                experience in the MERN (MongoDB, Express.js, React, Node.js)
+                stack and the MEVN (MongoDB, Express.js, Vue.js, Node.js) stack.
+                I specialize in frontend development and have a strong
+                understanding of backend technologies. Currently, I am working
+                as a Frontend Developer Instructor at SQI College of ICT , where
+                I impart my knowledge and expertise to aspiring developers. I am
+                passionate about creating well-designed, responsive, and
+                user-friendly websites and applications. I enjoy working with
+                diverse teams and I am always eager to learn and take on new
+                challenges. With my skills and dedication, I am confident that I
+                can make a valuable contribution to your organization.
               </p>
             </section>
             <section>
@@ -368,7 +371,7 @@ const Resume = () => {
                 Work Experiences
               </h2>
               <ul className="mt-2">
-                <li className="pt-2">
+                {/* <li className="pt-2">
                   <p className="flex justify-between text-sm">
                     <strong className="text-base">Company Name</strong>2019-2021
                   </p>
@@ -403,7 +406,26 @@ const Resume = () => {
                     corporis unde ducimus quis aliquid, distinctio dolorum quo
                     ullam a at, fugit veniam optio.
                   </p>
-                </li>
+                </li> */}
+                {experienceData.map((experi) => (
+                  <li className="pt-2">
+                    <p className="flex justify-between text-sm">
+                      <strong className="text-base">{experi.company}</strong>
+                      {experi.duration}
+                    </p>
+                    <p className="flex justify-between text-base">
+                      {experi.title}
+                      <small>Nigeria</small>
+                    </p>
+                    <div className="text-gray-800 mt-4 dark:text-light/90">
+                      {experi.description.map((item, index) => (
+                        <p className="my-4">
+                          ({index + 1}) <span key={index}>{item}</span>
+                        </p>
+                      ))}
+                    </div>
+                  </li>
+                ))}
               </ul>
             </section>
             <section>
@@ -412,7 +434,7 @@ const Resume = () => {
                 Education
               </h2>
               <ul className="mt-2">
-                <li className="pt-2">
+                {/* <li className="pt-2">
                   <p className="flex justify-between text-sm">
                     <strong className="text-base">Hello Univerisity</strong>
                     2022-2019
@@ -429,7 +451,20 @@ const Resume = () => {
                   <p className="flex justify-between text-sm">
                     Fashion Design<small>GPA 3.8</small>
                   </p>
-                </li>
+                </li> */}
+                {educationData.map((edu) => (
+                  <>
+                    <p className="flex justify-between text-sm">
+                      <strong className="text-base">{edu.institution}</strong>
+                      {edu.year}
+                    </p>
+                    <p className="text-gray-800 mt-4 dark:text-light/90 text-start w-[80%]">
+                      {edu.description.length > 70
+                        ? `${edu.description}...`
+                        : edu.description}
+                    </p>
+                  </>
+                ))}
               </ul>
             </section>
           </div>
