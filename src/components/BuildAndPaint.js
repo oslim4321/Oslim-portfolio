@@ -1,6 +1,6 @@
 "use client";
 
-import YearOfExperiance from "@/lib/YearOfExperiance";
+import { YearOfExperiance } from "@/lib/MyDetails";
 import { motion } from "framer-motion";
 import Link from "next/link";
 

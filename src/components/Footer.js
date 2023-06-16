@@ -1,3 +1,4 @@
+import { MyEmail, MyName } from "@/lib/MyDetails";
 import Link from "next/link";
 
 const Footer = () => {
@@ -10,36 +11,41 @@ const Footer = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center cont">
         <div className="flex flex-col mb-4 md:mb-0">
-          <h2 className="text-lg font-semibold">Sooto Selim</h2>
-          <p className="text-sm">Web Developer</p>
+          <h2 className="text-lg font-semibold text-dark dark:text-light">
+            <MyName />
+          </h2>
+          <p className="text-sm text-dark dark:text-light">Web Developer</p>
         </div>
         <div className="flex space-x-4">
-          <Link href="project" className="text-gray-400 hover:text-white">
+          <Link
+            href="project"
+            className="text-gray-400 hover:text-slate-400 dark:"
+          >
             My Work
           </Link>
-          <Link
+          {/* <Link
             target="_blank"
             href="#"
-            className="text-gray-400 hover:text-white"
+            className="text-gray-400 hover:text-slate-400 dark:"
           >
             My Shelf
-          </Link>
+          </Link> */}
           <Link
             href="resume"
             target="_blank"
-            className="text-gray-400 hover:text-white"
+            className="text-gray-400 hover:text-slate-400 dark:"
           >
             My Résumé
           </Link>
         </div>
         <div className="flex space-x-4 mt-4 md:mt-0">
           <Link
-            href="mailto:adewaleselim6@gmail.com"
+            href={`mailto:${(<MyEmail />)}`}
             className="text-gray-400 hover:text-white"
           >
-            adewaleselim6@gmail.com
+            <MyEmail />
           </Link>
           <Link
             href="https://github.com/oslim4321"

@@ -3,7 +3,7 @@ import React from "react";
 import AnimatedText from "./AnimatedText";
 import AnimatedImg from "./AnimatedImg";
 import { motion } from "framer-motion";
-import YearOfExperiance from "@/lib/YearOfExperiance";
+import { YearOfExperiance } from "@/lib/MyDetails";
 
 const TipsAboutMe = () => {
   return (
