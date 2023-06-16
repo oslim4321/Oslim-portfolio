@@ -3,6 +3,7 @@ import React from "react";
 import AnimatedText from "./AnimatedText";
 import AnimatedImg from "./AnimatedImg";
 import { motion } from "framer-motion";
+import YearOfExperiance from "@/lib/YearOfExperiance";
 
 const TipsAboutMe = () => {
   return (
@@ -44,17 +45,21 @@ const TipsAboutMe = () => {
               with industry trends, I strive to deliver high-quality code and
               exceed client expectations. Let's bring your ideas to life and
               create meaningful online experiences together. */}
-              I am a Junior Web Developer with 2+ years of experience in React,
-              Node.js, and MySQL. I am passionate about building high-quality,
-              user-friendly websites and applications. I am also a quick learner
-              and I am always eager to take on new challenges. In my previous
-              role at Acme Corporation, I was responsible for developing and
-              maintaining the company's website. I also worked on a number of
-              internal applications, including a customer relationship
-              management system and a human resources management system. I am a
-              highly motivated and results-oriented individual. I am also a team
-              player and I am always willing to help others. I am confident that
-              I can make a significant contribution to your team.
+              I am a Junior Web Developer with <YearOfExperiance />+ years of
+              experience in the MERN (MongoDB, Express.js, React, Node.js) stack
+              and the MEVN (MongoDB, Express.js, Vue.js, Node.js) stack. I
+              specialize in frontend development and have a strong understanding
+              of backend technologies. Currently, I am working as a Frontend
+              Developer Instructor at{" "}
+              <span className="bg-[#a671be] px-2 py-1 rounded-md text-white animated-border dark:text-dark">
+                SQI College of ICT
+              </span>
+              , where I impart my knowledge and expertise to aspiring
+              developers. I am passionate about creating well-designed,
+              responsive, and user-friendly websites and applications. I enjoy
+              working with diverse teams and I am always eager to learn and take
+              on new challenges. With my skills and dedication, I am confident
+              that I can make a valuable contribution to your organization.
             </p>
           </div>
           <div className="col-span-12 md:col-span-6">

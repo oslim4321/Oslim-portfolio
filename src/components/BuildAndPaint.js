@@ -1,5 +1,6 @@
 "use client";
 
+import YearOfExperiance from "@/lib/YearOfExperiance";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -23,10 +24,11 @@ const BuildAndPaint = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-gray-500 text-center md:text-left my-10 mb-20 md:mb-0 dark:text-light"
             >
-              I am a professional web developer with over 2 years of freelance
-              experience. I have a strong portfolio of work that demonstrates my
-              skills and abilities. I am confident that I can meet your needs
-              and deliver high-quality work on time and within budget.
+              I am a professional web developer with over <YearOfExperiance />{" "}
+              years of freelance experience. I have a strong portfolio of work
+              that demonstrates my skills and abilities. I am confident that I
+              can meet your needs and deliver high-quality work on time and
+              within budget.
             </motion.p>
             <Link href="project">
               <motion.button

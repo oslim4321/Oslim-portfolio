@@ -7,7 +7,7 @@ const HireMe = () => {
       <Link href="mailto:adewaleselim6@gmail.com">
         {/* <div className="w-24 h-24 rounded-full border-4 border-[#EFCED9] flex justify-center items-center"> */}
         <motion.div
-          className="w-24 h-24 border-4 border-[#EFCED9] rounded-full flex justify-center items-center"
+          className="w-24 h-24 border-4 border-[#EFCED9] rounded-full flex justify-center items-center dark:text-white"
           initial={{ y: 0 }}
           animate={{ y: [-20, 0] }}
           whileTap={{ scale: 0.8 }}
