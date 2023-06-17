@@ -2,15 +2,28 @@
 import { MyAddress, MyEmail, MyPhone, YearOfExperiance } from "@/lib/MyDetails";
 import { educationData, experienceData } from "@/src/components/AboutPage";
 import React from "react";
-import Skillls from "./Skillls";
+import Skillls, { MobileSkills } from "./Skillls";
+import { Merriweather } from "next/font/google";
+import { motion } from "framer-motion";
+import {
+  Facebook,
+  GithubIcon,
+  TwitterIcon,
+  Whatsapp,
+} from "@/src/components/Icons";
+
+const merriweather = Merriweather({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 const Resume = () => {
   return (
     <div className="flex justify-center content-center">
-      <div className="border border-gray-300 rounded-sm shadow-lg py-10 px-10 w-4/5 mt-10 mb-10">
+      <div className="border border-gray-300 rounded-sm shadow-lg py-10 px-10 md:w-4/5 mt-10 mb-10 dark:bg-slate-800">
         <header>
           <ul className="flex flex-wrap justify-end gap-2">
-            <li>
+            {/* <li>
               <a
                 href=""
                 className="bg-blue-600 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
@@ -27,10 +40,10 @@ const Resume = () => {
                   </g>
                 </svg>
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               {/* <!-- github --> */}
-              <a
+            {/* <a
                 href="https://github.com/"
                 className="bg-gray-700 p-2 font-medium text-white inline-flex items-center space-x-2 rounded"
               >
@@ -51,72 +64,120 @@ const Resume = () => {
                   </g>
                 </svg>
               </a>
-            </li>
-            <li>
-              {/* <!-- tech blog --> */}
-              <a
-                href="https://dev.to/"
-                className="bg-black p-2 font-medium text-white inline-flex items-center space-x-2 rounded"
+            </li>  */}
+
+            <li className="bg-[#a36cb7] flex justify-center items-center rounded-full w-10 h-10 hover:bg-slate-300">
+              {" "}
+              <motion.a
+                href={"https://twitter.com/selim_adewale"}
+                className="w- mx-3  w-6"
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.8 }}
               >
-                <svg
-                  className="w-5 h-5"
-                  role="img"
-                  aria-hidden="true"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 32 447.99999999999994 448"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="2500"
-                  height="2321"
-                >
-                  <g fill="none">
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M120.12 208.29c-3.88-2.9-7.77-4.35-11.65-4.35H91.03v104.47h17.45c3.88 0 7.77-1.45 11.65-4.35s5.82-7.25 5.82-13.06v-69.65c-.01-5.8-1.96-10.16-5.83-13.06zM404.1 32H43.9C19.7 32 .06 51.59 0 75.8v360.4C.06 460.41 19.7 480 43.9 480h360.2c24.21 0 43.84-19.59 43.9-43.8V75.8c-.06-24.21-19.7-43.8-43.9-43.8zM154.2 291.19c0 18.81-11.61 47.31-48.36 47.25h-46.4V172.98h47.38c35.44 0 47.36 28.46 47.37 47.28zm100.68-88.66H201.6v38.42h32.57v29.57H201.6v38.41h53.29v29.57h-62.18c-11.16.29-20.44-8.53-20.72-19.69V193.7c-.27-11.15 8.56-20.41 19.71-20.69h63.19zm103.64 115.29c-13.2 30.75-36.85 24.63-47.44 0l-38.53-144.8h32.57l29.71 113.72 29.57-113.72h32.58z"
-                      fill="currentColor"
-                    />
-                  </g>
-                </svg>
-              </a>
+                <TwitterIcon className="text-[#fab0c8] text-2xl hover:text-black dark:hover:text-light" />
+              </motion.a>
+            </li>
+            <li className="bg-[#a36cb7] flex justify-center items-center rounded-full w-10 h-10 hover:bg-slate-300">
+              {" "}
+              <motion.a
+                href={"https://github.com/oslim4321"}
+                className="w- mx-3  w-6"
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <GithubIcon className="text-[#fab0c8] text-2xl hover:text-black dark:hover:text-light" />
+              </motion.a>
+            </li>
+            <li className="bg-[#a36cb7] flex justify-center items-center rounded-full w-10 h-10 hover:bg-slate-300">
+              {" "}
+              <motion.a
+                href={"https://m.facebook.com/selim.sooto"}
+                className="w- mx-3  w-6"
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Facebook className="text-[#fab0c8] text-2xl hover:text-black dark:hover:text-light" />
+              </motion.a>
+            </li>
+            <li className="bg-[#a36cb7] flex justify-center items-center rounded-full w-10 h-10 hover:bg-slate-300">
+              <motion.a
+                href={"https://wa.me/07087121696"}
+                className="w- mx-3  w-6"
+                target="_blank"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Whatsapp className="text-[#fab0c8] text-2xl hover:text-black dark:hover:text-light" />
+              </motion.a>
             </li>
           </ul>
           <div className="flex justify-between items-center">
-            <div>
+            {/* <div>
               <div
                 className="bg-cover bg-no-repeat rounded-full h-52 w-52"
                 //   style="background-image: url(../bootstrap/dog.jpg)"
               ></div>
-            </div>
-            <div className="grid justify-items-end">
-              <h1 className="text-7xl font-extrabold">Sooto Selim Olalekan</h1>
-              <p className="text-xl mt-5">Full stack Developer</p>
+            </div> */}
+            {/* text */}
+            <div className="grid justify-items-start md:justify-items-end mt-4 w-full">
+              <motion.h1
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#a36cb7] dark:text-white relative inline-block"
+              >
+                <span
+                  className="relative"
+                  style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
+                >
+                  Sooto Selim
+                </span>
+                <motion.span
+                  className={`absolute inset-0 ${merriweather.className}`}
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  style={{ borderColor: "#efced9" }}
+                ></motion.span>
+              </motion.h1>
+              <p className="text-xl mt-5 dark:text-light/75">
+                Full stack Developer
+              </p>
             </div>
           </div>
         </header>
-        <main className="flex gap-x-10 mt-10">
-          <div className="w-2/6">
-            <strong className="text-xl font-medium">Contact Details</strong>
-            <ul className="mt-2 mb-10">
+        <main className="md:flex gap-x-10">
+          <div className="md:w-2/6">
+            <h2 className="text-2xl pb-1 border-b font-semibold text-[#a36cb7]">
+              Contact Details
+            </h2>
+            <ul className="mt-2 mb-10 fleex md:block">
               <li className="px-2 mt-1">
-                <strong className="mr-1">Phone </strong>
-                <a href="tel:+821023456789" className="block">
+                <strong className="mr-1 dark:text-light">Phone </strong>
+                <a
+                  href="tel:+821023456789"
+                  className="block dark:text-slate-200"
+                >
                   <MyPhone />
                 </a>
               </li>
               <li className="px-2 mt-1">
-                <strong className="mr-1">E-mail </strong>
-                <a href="mailto:" className="block">
+                <strong className="mr-1 dark:text-light">E-mail </strong>
+                <a href="mailto:" className="block dark:text-slate-200">
                   <MyEmail />
                 </a>
               </li>
               <li className="px-2 mt-1">
-                <strong className="mr-1">Location</strong>
-                <span className="block">
+                <strong className="mr-1 dark:text-light">Location</strong>
+                <span className="block dark:text-slate-200">
                   <MyAddress />
                 </span>
               </li>
             </ul>
-            <strong className="text-xl font-medium ">Github Stats</strong>
+            {/* <strong className="text-xl font-medium ">Github Stats</strong>
             <ul className="flex w-full mt-2 mb-10">
               <li className="px-2 mt-2 w-4/12 bg-pink-600 text-white text-center rounded-tl-lg rounded-bl-lg">
                 HTML
@@ -127,15 +188,22 @@ const Resume = () => {
               <li className="px-2 mt-2 w-5/12 bg-yellow-500 text-white text-center rounded-tr-lg rounded-br-lg">
                 JS
               </li>
-            </ul>
+            </ul> */}
             {/* <!-- skills --> */}
-            <Skillls />
+            <div className="hidden md:block">
+              <Skillls />
+            </div>
+            <div className="md:hidden">
+              <MobileSkills />
+            </div>
           </div>
           {/* <!-- info --> */}
-          <div className="w-4/6">
+          <div className="w-full md:w-4/6">
             <section>
               {/* <!-- about me --> */}
-              <h2 className="text-2xl pb-1 border-b font-semibold">About</h2>
+              <h2 className="text-2xl pb-1 border-b font-semibold text-[#a36cb7]">
+                About
+              </h2>
               <p className="text-gray-800 mt-4 dark:text-light/90">
                 I am a Junior Web Developer with <YearOfExperiance />+ years of
                 experience in the MERN (MongoDB, Express.js, React, Node.js)
@@ -151,8 +219,8 @@ const Resume = () => {
                 can make a valuable contribution to your organization.
               </p>
             </section>
-            <section>
-              {/* <!-- projects --> */}
+
+            {/* <section>
               <h2 className="text-2xl mt-6 pb-1 border-b font-semibold">
                 Projects
               </h2>
@@ -340,56 +408,20 @@ const Resume = () => {
                   </p>
                 </li>
               </ul>
-            </section>
+            </section> */}
             <section>
               {/* <!-- work experiences --> */}
-              <h2 className="text-2xl mt-6 pb-1 border-b font-semibold">
+              <h2 className="text-2xl mt-6 pb-1 border-b font-semibold text-[#a36cb7]">
                 Work Experiences
               </h2>
               <ul className="mt-2">
-                {/* <li className="pt-2">
-                  <p className="flex justify-between text-sm">
-                    <strong className="text-base">Company Name</strong>2019-2021
-                  </p>
-                  <p className="flex justify-between text-base">
-                    Job title<small>location</small>
-                  </p>
-                  <p className="text-justify text-xs">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolorum, expedita exercitationem, cum quisquam laboriosam
-                    voluptas aut libero officiis quae natus laborum explicabo,
-                    labore nobis porro ad et soluta deleniti. Rerum?
-                    Voluptatibus id officiis adipisci eligendi provident minima
-                    sed. Ullam aliquid, fuga nisi modi amet quasi, quod veniam
-                    eos sit culpa distinctio rem a tempora ad autem soluta
-                    rerum, doloremque quas?
-                  </p>
-                </li>
-                <li className="pt-2">
-                  <p className="flex justify-between text-sm">
-                    <strong className="text-base">Company Name</strong>2014-2019
-                  </p>
-                  <p className="flex justify-between text-base">
-                    Job title<small>location</small>
-                  </p>
-                  <p className="text-justify text-xs">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Delectus nemo fugiat neque tempore consectetur nihil alias
-                    ullam esse corporis fugit deserunt maxime, numquam eos
-                    repellendus, deleniti quae at fuga repudiandae! Perspiciatis
-                    odit nobis sunt! Natus ea reiciendis enim! Itaque possimus
-                    eaque perspiciatis architecto reiciendis laboriosam voluptas
-                    corporis unde ducimus quis aliquid, distinctio dolorum quo
-                    ullam a at, fugit veniam optio.
-                  </p>
-                </li> */}
                 {experienceData.map((experi) => (
                   <li className="pt-2">
-                    <p className="flex justify-between text-sm">
-                      <strong className="text-base">{experi.company}</strong>
+                    <p className="flex justify-between text-sm dark:text-light">
+                      <strong className="text-base ">{experi.company}</strong>
                       {experi.duration}
                     </p>
-                    <p className="flex justify-between text-base">
+                    <p className="flex justify-between text-base dark:text-light/70">
                       {experi.title}
                       <small>Nigeria</small>
                     </p>
@@ -406,37 +438,19 @@ const Resume = () => {
             </section>
             <section>
               {/* <!-- education --> */}
-              <h2 className="text-2xl mt-6 pb-1 border-b font-semibold">
+              <h2 className="text-2xl mt-6 pb-1 border-b font-semibold text-[#a36cb7]">
                 Education
               </h2>
               <ul className="mt-2">
-                {/* <li className="pt-2">
-                  <p className="flex justify-between text-sm">
-                    <strong className="text-base">Hello Univerisity</strong>
-                    2022-2019
-                  </p>
-                  <p className="flex justify-between text-sm">
-                    Digital marketing<small>GPA 4.0</small>
-                  </p>
-                </li>
-                <li className="pt-2">
-                  <p className="flex justify-between text-sm">
-                    <strong className="text-base">World Univerisity</strong>
-                    2022-2019
-                  </p>
-                  <p className="flex justify-between text-sm">
-                    Fashion Design<small>GPA 3.8</small>
-                  </p>
-                </li> */}
                 {educationData.map((edu) => (
                   <>
-                    <p className="flex justify-between text-sm">
-                      <strong className="text-base">{edu.institution}</strong>
+                    <p className="flex justify-between text-sm dark:text-light mt-2">
+                      <strong className="text-base  ">{edu.institution}</strong>
                       {edu.year}
                     </p>
                     <p className="text-gray-800 mt-4 dark:text-light/90 text-start w-[80%]">
                       {edu.description.length > 70
-                        ? `${edu.description}...`
+                        ? `${edu.description}`
                         : edu.description}
                     </p>
                   </>
@@ -445,7 +459,7 @@ const Resume = () => {
             </section>
           </div>
         </main>
-        <footer className="mt-6">
+        {/* <footer className="mt-6">
           <p className="bg-gray-600 text-white text-center text-xs pt-2">
             The best way to predict the future is to create it.{" "}
             <small>- AbrahamLincoln</small>
@@ -454,7 +468,7 @@ const Resume = () => {
             I am creating my future by learning new things and making small
             progresses everyday.
           </p>
-        </footer>
+        </footer> */}
       </div>
     </div>
   );
