@@ -91,14 +91,21 @@ const skillsData = [
   "HTML",
   "CSS",
   "JavaScript",
-  "React",
-  "Vue.js",
-  "Sass",
-  "Webpack",
-  "Babel",
+  "ReactJs",
+  "NextJs",
+  "AstroJS",
+  "GatsbyJs",
+  "firebase",
+  "Bootstrap CSS",
+  "Tailwind CSS",
+  "TypeScript",
+  "Node.js",
+  "Express.js",
+  "PHP",
+  "Laravel",
   "Git",
-  "Responsive Design",
-  "UI/UX Design",
+  "GitHub",
+
   // Add more skills as needed
 ];
 

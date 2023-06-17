@@ -114,13 +114,13 @@ const Resume = () => {
               </motion.a>
             </li>
           </ul>
-          <div className="flex justify-between items-center">
-            {/* <div>
+          <div className="md:flex justify-between items-center">
+            <div className="my-5">
               <div
                 className="bg-cover bg-no-repeat rounded-full h-52 w-52"
-                //   style="background-image: url(../bootstrap/dog.jpg)"
+                style={{ backgroundImage: "url(images/myPicture.jpg)" }}
               ></div>
-            </div> */}
+            </div>
             {/* text */}
             <div className="grid justify-items-start md:justify-items-end mt-4 w-full">
               <motion.h1
