@@ -35,53 +35,54 @@ export default function AddProject() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setloading(true);
+    // e.preventDefault();
+    // setloading(true);
 
-    try {
-      const imageDownloadURL = image ? await uploadImageToStorage(image) : null;
-      const colRef = collection(db, "projects");
+    // try {
+    //   const imageDownloadURL = image ? await uploadImageToStorage(image) : null;
+    //   const colRef = collection(db, "projects");
 
-      const imageUrls = await Promise.all(
-        images?.map(async (image) => {
-          return await uploadImageToStorage(image);
-        })
-      );
+    //   const imageUrls = await Promise.all(
+    //     images?.map(async (image) => {
+    //       return await uploadImageToStorage(image);
+    //     })
+    //   );
 
-      addDoc(colRef, {
-        image: imageDownloadURL,
-        projectImages: imageUrls,
-        projectName,
-        projectDesc,
-        gitHubLink,
-        projectLink,
-        studentName,
-        category,
-        technologies,
-        type: "client",
-        createdAt: serverTimestamp(),
-      });
+    //   addDoc(colRef, {
+    //     image: imageDownloadURL,
+    //     projectImages: imageUrls,
+    //     projectName,
+    //     projectDesc,
+    //     gitHubLink,
+    //     projectLink,
+    //     studentName,
+    //     category,
+    //     technologies,
+    //     type: "client",
+    //     createdAt: serverTimestamp(),
+    //   });
 
-      // Reset the form
-      const resetForm = () => {
-        setImage(null);
-        setProjectName("");
-        setProjectDesc("");
-        setGitHubLink("");
-        setProjectLink("");
-        setTechnologies("");
-        setProjectImages([]);
-        setstudentName("");
-      };
+    //   // Reset the form
+    //   const resetForm = () => {
+    //     setImage(null);
+    //     setProjectName("");
+    //     setProjectDesc("");
+    //     setGitHubLink("");
+    //     setProjectLink("");
+    //     setTechnologies("");
+    //     setProjectImages([]);
+    //     setstudentName("");
+    //   };
 
-      // Inside handleSubmit:
-      resetForm();
-      alert("Project added successfully!");
-    } catch (error) {
-      console.error("Error adding project:", error);
-    } finally {
-      setloading(false);
-    }
+    //   // Inside handleSubmit:
+    //   resetForm();
+    //   alert("Project added successfully!");
+    // } catch (error) {
+    //   console.error("Error adding project:", error);
+    // } finally {
+    //   setloading(false);
+    // }
+    alert("lol they play");
   };
 
   return (

@@ -1,3 +1,5 @@
+"use client";
+
 // import React from "react";
 
 // const Skillls = () => {
@@ -109,19 +111,21 @@ const skillsData = [
   // Add more skills as needed
 ];
 
-// const languageData = [
-//   "JavaScript",
-//   "Python",
-//   "Java",
-//   "C#",
-//   "Ruby",
-//   "Go",
-//   "Swift",
-//   "TypeScript",
-//   "PHP",
-//   "Rust",
-//   // Add more programming languages as needed
-// ];
+const skillDa = {
+  "Web Development Frameworks": [
+    "ReactJs",
+    "NextJs",
+    "AstroJS",
+    "GatsbyJs",
+    "Bootstrap CSS",
+    "Tailwind CSS",
+  ],
+  "Front-end Technologies": ["HTML", "CSS", "JavaScript"],
+  "Back-end Technologies": ["Node.js", "Express.js", "PHP", "Laravel"],
+  "Database Management": ["Firebase", "MongoDb", "SQL"],
+  "Design Tools": ["Git", "GitHub"],
+};
+console.log(skillDa);
 
 const Skillls = () => {
   return (
@@ -130,7 +134,52 @@ const Skillls = () => {
         <div>
           <h1 className="text-3xl font-bold mb-4 text-[#a36cb7]">Skills</h1>
           <ul className="list-none space-y-2 flex flex-wrap gap-3 mb-4">
-            {skillsData.map((skill, index) => (
+            {Object.entries(skillDa).map(([category, skills]) => (
+              <div key={category} className="mb-4">
+                <h2 className="text-xl font-bold mb-2">{category}</h2>
+                <ul className="list-none space-y-2 flex items-center flex-wrap gap-3 mb-4">
+                  {skills.map((skill, index) => (
+                    <li
+                      key={index}
+                      className="text-lg flex items-center dark:text-light"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 mr-2 text-[#a36cb7]"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-14a6 6 0 100 12 6 6 0 000-12zm1 7H9v2h2v-2zm0-4H9V7h2v2z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+import React from "react";
+
+export const MobileSkills = () => {
+  const skillsArray = Object.values(skillDa).flat();
+  console.log(skillsArray);
+
+  return (
+    <div className="container mx-auto py-8">
+      <div className="grid grid-cols-1 gap-8">
+        <div>
+          <h1 className="text-3xl font-bold mb-4 text-[#a36cb7]">Skills</h1>
+          <ul className="list-none space-y-2 flex flex-wrap gap-3 mb-4">
+            {skillsArray.map((skill, index) => (
               <li
                 key={index}
                 className="text-lg flex items-center dark:text-light"
@@ -152,74 +201,7 @@ const Skillls = () => {
             ))}
           </ul>
         </div>
-
-        {/* <div>
-          <h1 className="text-3xl font-bold mb-4">Programming Languages</h1>
-          <ul className="list-none space-y-2 flex flex-wrap gap-3">
-            {languageData.map((language, index) => (
-              <li key={index} className="text-lg flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2 text-blue-500"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-14a6 6 0 100 12 6 6 0 000-12zm1 7H9v2h2v-2zm0-4H9V7h2v2z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                {language}
-              </li>
-            ))}
-          </ul>
-        </div> */}
       </div>
-    </div>
-  );
-};
-import React from "react";
-
-export const MobileSkills = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { delay: 0.5, staggerChildren: 0.1 } },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  return (
-    <div className="flex flex-col gap-6">
-      <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-        Skills
-      </h2>
-      <div className="border border-gray-300 rounded-md shadow-md py-4 px-6 flex flex-wrap gap-3">
-        {skillsData.map((skill) => (
-          <div
-            key={skill}
-            className="bg-purple-500 text-white rounded-md py-1 px-3 text-sm font-medium"
-          >
-            {skill}
-          </div>
-        ))}
-      </div>
-      <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-        Languages
-      </h2>
-      {/* <div className="border border-gray-300 rounded-md shadow-md py-4 px-6 flex flex-wrap gap-3">
-        {languageData.map((language) => (
-          <div
-            key={language}
-            className="bg-blue-500 text-white rounded-md py-1 px-3 text-sm font-medium"
-          >
-            {language}
-          </div>
-        ))}
-      </div> */}
     </div>
   );
 };

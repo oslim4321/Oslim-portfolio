@@ -3,7 +3,7 @@ import { MyAddress, MyEmail, MyPhone, YearOfExperiance } from "@/lib/MyDetails";
 import { educationData, experienceData } from "@/src/components/AboutPage";
 import React from "react";
 import Skillls, { MobileSkills } from "./Skillls";
-import { Merriweather } from "next/font/google";
+import { Merriweather, Poppins } from "next/font/google";
 import { motion } from "framer-motion";
 import {
   Facebook,
@@ -11,10 +11,12 @@ import {
   TwitterIcon,
   Whatsapp,
 } from "@/src/components/Icons";
+import Image from "next/image";
 
-const merriweather = Merriweather({
-  weight: ["400", "700"],
+const poppins = Poppins({
+  weight: ["400", "600"],
   subsets: ["latin"],
+  // variable: "--font-montserrat",
 });
 
 const Resume = () => {
@@ -117,9 +119,16 @@ const Resume = () => {
           <div className="md:flex justify-between items-center">
             <div className="my-5">
               <div
-                className="bg-cover bg-no-repeat rounded-full h-52 w-52"
-                style={{ backgroundImage: "url(images/myPicture.jpg)" }}
-              ></div>
+                className="bg-cover bg-no-repeat rounded-full h-52 w-52 border-4 border-[#a36cb7] overflow-hidden"
+                // style={{ backgroundImage: "url(images/myPicture.jpg)" }}
+              >
+                <Image
+                  width="500"
+                  height="500"
+                  src="/images/myPicture.jpg"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             {/* text */}
             <div className="grid justify-items-start md:justify-items-end mt-4 w-full">
@@ -127,16 +136,16 @@ const Resume = () => {
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#a36cb7] dark:text-white relative inline-block"
+                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#a36cb7] dark:text-white relative inline-block ${poppins.className}`}
               >
                 <span
-                  className="relative"
+                  className={`relative ${poppins.className}`}
                   style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
                 >
                   Sooto Selim
                 </span>
                 <motion.span
-                  className={`absolute inset-0 ${merriweather.className}`}
+                  className={`absolute inset-0`}
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 1, delay: 0.5 }}
@@ -204,7 +213,7 @@ const Resume = () => {
               <h2 className="text-2xl pb-1 border-b font-semibold text-[#a36cb7]">
                 About
               </h2>
-              <p className="text-gray-800 mt-4 dark:text-light/90">
+              <p className="text-gray-800 mt-4 dark:text-light/90 text-justify">
                 I am a Junior Web Developer with <YearOfExperiance />+ years of
                 experience in the MERN (MongoDB, Express.js, React, Node.js)
                 stack and the MEVN (MongoDB, Express.js, Vue.js, Node.js) stack.
@@ -415,8 +424,8 @@ const Resume = () => {
                 Work Experiences
               </h2>
               <ul className="mt-2">
-                {experienceData.map((experi) => (
-                  <li className="pt-2">
+                {experienceData.map((experi, i) => (
+                  <li className="pt-2" key={i}>
                     <p className="flex justify-between text-sm dark:text-light">
                       <strong className="text-base ">{experi.company}</strong>
                       {experi.duration}
@@ -425,9 +434,9 @@ const Resume = () => {
                       {experi.title}
                       <small>Nigeria</small>
                     </p>
-                    <div className="text-gray-800 mt-4 dark:text-light/90">
+                    <div className="text-gray-800 mt-4 dark:text-light/90 text-justify">
                       {experi.description.map((item, index) => (
-                        <p className="my-4">
+                        <p className="my-4" key={index}>
                           ({index + 1}) <span key={index}>{item}</span>
                         </p>
                       ))}
@@ -442,18 +451,18 @@ const Resume = () => {
                 Education
               </h2>
               <ul className="mt-2">
-                {educationData.map((edu) => (
-                  <>
+                {educationData.map((edu, i) => (
+                  <div key={i}>
                     <p className="flex justify-between text-sm dark:text-light mt-2">
                       <strong className="text-base  ">{edu.institution}</strong>
                       {edu.year}
                     </p>
-                    <p className="text-gray-800 mt-4 dark:text-light/90 text-start w-[80%]">
+                    <p className="text-gray-800 mt-4 dark:text-light/90 text-justify">
                       {edu.description.length > 70
                         ? `${edu.description}`
                         : edu.description}
                     </p>
-                  </>
+                  </div>
                 ))}
               </ul>
             </section>
