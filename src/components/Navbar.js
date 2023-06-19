@@ -16,6 +16,7 @@ import {
 } from "./Icons";
 import HireMe from "./HireMe";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
+import { DarkLightAnimation } from "./TransitionEffect";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
@@ -128,7 +129,10 @@ const Navbar = () => {
               <MoonIcon />
             </motion.a> */}
               <button
-                onClick={() => setmode(mode === "light" ? "dark" : "light")}
+                onClick={() => {
+                  setmode(mode === "light" ? "dark" : "light"),
+                    DarkLightAnimation();
+                }}
                 className={` w-6 ml-3 rounded-full  dark:bg-light bg-dark ${
                   mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
                 } `}
