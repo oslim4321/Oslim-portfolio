@@ -9,7 +9,7 @@ const page = () => {
   return (
     <>
       <TransitionEffect />
-      <DarkLightAnimation />
+      {/* <DarkLightAnimation /> */}
       {/* 
       <secton className="w-full h-screen flex justify-center items-center bg-gray-100 mt-5">
         <iframe

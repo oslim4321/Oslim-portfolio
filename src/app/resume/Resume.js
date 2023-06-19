@@ -215,20 +215,29 @@ const Resume = () => {
               <h2 className="text-2xl pb-1 border-b font-semibold text-[#a36cb7]">
                 About
               </h2>
-              <p className="text-gray-800 mt-4 dark:text-light/90 text-justify">
-                I am a Junior Web Developer with <YearOfExperiance />+ years of
-                experience in the MERN (MongoDB, Express.js, React, Node.js)
-                stack and the MEVN (MongoDB, Express.js, Vue.js, Node.js) stack.
-                I specialize in frontend development and have a strong
-                understanding of backend technologies. Currently, I am working
-                as a Frontend Developer Instructor at SQI College of ICT , where
-                I impart my knowledge and expertise to aspiring developers. I am
-                passionate about creating well-designed, responsive, and
-                user-friendly websites and applications. I enjoy working with
-                diverse teams and I am always eager to learn and take on new
-                challenges. With my skills and dedication, I am confident that I
-                can make a valuable contribution to your organization.
-              </p>
+              <div className="text-gray-800 mt-4 dark:text-light/90 text-justify">
+                <p>
+                  I am a Junior Web Developer with <YearOfExperiance />+ years
+                  of experience in the MERN (MongoDB, Express.js, React,
+                  Node.js) stack and the MEVN (MongoDB, Express.js, Vue.js,
+                  Node.js) stack, and also a PHP Laravel developer. I specialize
+                  in frontend development and have a strong understanding of
+                  backend technologies.
+                </p>
+                <p>
+                  Currently, I am working as a Frontend Developer Instructor at
+                  SQI College of ICT, where I impart my knowledge and expertise
+                  to aspiring developers. I am passionate about creating
+                  well-designed, responsive, and user-friendly websites and
+                  applications.
+                </p>
+                <p>
+                  I enjoy working with diverse teams and I am always eager to
+                  learn and take on new challenges. With my skills and
+                  dedication, I am confident that I can make a valuable
+                  contribution to your organization.
+                </p>
+              </div>
             </section>
 
             <section>

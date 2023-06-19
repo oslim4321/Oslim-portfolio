@@ -45,6 +45,9 @@ const Navbar = () => {
   const handleClick = () => {
     setisOpen(!isOpen);
   };
+  function toggleDarkLightMode() {
+    setmode(mode === "light" ? "dark" : "light");
+  }
   return (
     <div className="relative">
       <div className="w-full bg-light dark:bg-dark h-[120px]"></div>
@@ -129,10 +132,7 @@ const Navbar = () => {
               <MoonIcon />
             </motion.a> */}
               <button
-                onClick={() => {
-                  setmode(mode === "light" ? "dark" : "light"),
-                    DarkLightAnimation();
-                }}
+                onClick={toggleDarkLightMode}
                 className={` w-6 ml-3 rounded-full  dark:bg-light bg-dark ${
                   mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
                 } `}

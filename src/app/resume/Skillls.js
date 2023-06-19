@@ -136,12 +136,14 @@ const Skillls = () => {
           <ul className="list-none space-y-2 flex flex-wrap gap-3 mb-4">
             {Object.entries(skillDa).map(([category, skills]) => (
               <div key={category} className="mb-4">
-                <h2 className="text-xl font-bold mb-2">{category}</h2>
+                <h2 className="text-xl font-bold mb-2 dark:text-light">
+                  {category}
+                </h2>
                 <ul className="list-none space-y-2 flex items-center flex-wrap gap-3 mb-4">
                   {skills.map((skill, index) => (
                     <li
                       key={index}
-                      className="text-lg flex items-center dark:text-light"
+                      className="text-lg flex items-center dark:text-light/80"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

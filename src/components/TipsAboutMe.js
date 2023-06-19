@@ -35,7 +35,7 @@ const TipsAboutMe = () => {
         />
         <div className=" cont grid grid-cols-12 place-items-center">
           <div className="col-span-12 md:col-span-6">
-            <p className="text-center dark:text-dark">
+            <div className="text-center dark:text-dark">
               {/* Passionate Web Developer with a knack for crafting innovative and
               user-friendly digital experiences. With a strong foundation in
               HTML, CSS, and JavaScript, I specialize in building responsive and
@@ -45,22 +45,28 @@ const TipsAboutMe = () => {
               with industry trends, I strive to deliver high-quality code and
               exceed client expectations. Let's bring your ideas to life and
               create meaningful online experiences together. */}
-              I am a Junior Web Developer with <YearOfExperiance />+ years of
-              experience in the MERN (MongoDB, Express.js, React, Node.js) stack
-              and the MEVN (MongoDB, Express.js, Vue.js, Node.js) stack. I
-              specialize in frontend development and have a strong understanding
-              of backend technologies. Currently, I am working as a Frontend
-              Developer Instructor at{" "}
-              <span className="bg-[#a671be] px-2 py-1 rounded-md text-white animated-border dark:text-dark">
-                SQI College of ICT
-              </span>
-              , where I impart my knowledge and expertise to aspiring
-              developers. I am passionate about creating well-designed,
-              responsive, and user-friendly websites and applications. I enjoy
-              working with diverse teams and I am always eager to learn and take
-              on new challenges. With my skills and dedication, I am confident
-              that I can make a valuable contribution to your organization.
-            </p>
+              <p>
+                I am a Junior Web Developer with <YearOfExperiance />+ years of
+                experience in the MERN (MongoDB, Express.js, React, Node.js)
+                stack and the MEVN (MongoDB, Express.js, Vue.js, Node.js) stack,
+                and also a PHP Laravel developer. I specialize in frontend
+                development and have a strong understanding of backend
+                technologies.
+              </p>
+              <p>
+                Currently, I am working as a Frontend Developer Instructor at
+                SQI College of ICT, where I impart my knowledge and expertise to
+                aspiring developers. I am passionate about creating
+                well-designed, responsive, and user-friendly websites and
+                applications.
+              </p>
+              <p>
+                I enjoy working with diverse teams and I am always eager to
+                learn and take on new challenges. With my skills and dedication,
+                I am confident that I can make a valuable contribution to your
+                organization.
+              </p>
+            </div>
           </div>
           <div className="col-span-12 md:col-span-6">
             {/* <Image
