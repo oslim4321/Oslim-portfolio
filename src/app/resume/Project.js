@@ -59,16 +59,7 @@ const Project = () => {
           <li className="py-2" key={i}>
             <div className="flex justify-between my-1 dark:text-light/90">
               <strong>{project.projectName}</strong>
-              <p className="flex">
-                {project.languages.map((elem, i) => (
-                  <span
-                    className="bg-[#a36cb7] text-white px-2 py-1 ml-1 text-xs rounded"
-                    key={i}
-                  >
-                    {elem.slice(0, 5)}
-                  </span>
-                ))}
-              </p>
+              {/* beforw  */}
             </div>
             <ul className="flex mb-2">
               <li>
@@ -91,6 +82,18 @@ const Project = () => {
             <p className="text-gray-800 mt-4 dark:text-light/70 text-justify">
               {project.projectDesc}
             </p>
+            <div className="w-2e0 md:w-[40%] flex justify-start">
+              <p className="flex  overflow-x-scroll no-scrollbar">
+                {project.languages.slice(0, 4).map((elem, i) => (
+                  <span
+                    className="border border-[#a36cb7] text-black px-2 py-1 ml-1 text-xs rounded dark:text-light"
+                    key={i}
+                  >
+                    {elem.slice(0, 5)}
+                  </span>
+                ))}
+              </p>
+            </div>
           </li>
         ))}{" "}
       </ul>
