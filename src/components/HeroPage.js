@@ -25,7 +25,7 @@ const HeroPage = () => {
               "Creating Engaging Digital Experiences with Custom Code and Design"
             }
             className={
-              "!text-3xl md:text-4xl lg:!text-5xl !text-center md:!text-left font-bold capitalize dark:!text-light"
+              "!text-3xl md:text-4xl lg:!text-5xl !text-center md:!text-left font-bold capitalize dark:!text-light leading-[30px]"
             }
             undeline={true}
           />
@@ -63,7 +63,7 @@ const HeroPage = () => {
             </div>
             <a
               download={true}
-              href={"resume"}
+              href={"/Sooto Mern stack CV.pdf"}
               className="text-3xl w-[10%] bg-[#a36bb9] h-full flex justify-center items-center z-20 py-6"
             >
               <DownloadIcon className="text-lg mx-2 text-white" />

@@ -17,6 +17,7 @@ import {
 import HireMe from "./HireMe";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
 import { DarkLightAnimation } from "./TransitionEffect";
+import Curtain from "./Curtain";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
@@ -42,14 +43,17 @@ const CustomLink = ({ href, title, className = "" }) => {
 const Navbar = () => {
   const [mode, setmode] = UseThemesSwitcher();
   const [isOpen, setisOpen] = useState(false);
+  const [showCurtain, setshowCurtain] = useState("black");
   const handleClick = () => {
     setisOpen(!isOpen);
   };
   function toggleDarkLightMode() {
     setmode(mode === "light" ? "dark" : "light");
+    setshowCurtain(mode);
   }
   return (
     <div className="relative">
+      <Curtain showCurtain={showCurtain} mode={mode} />
       <div className="w-full bg-light dark:bg-dark h-[120px]"></div>
       <div className="w-full py-8  dark:text-light border-b-[1px] border-transparent dark:border-light fixed top-0 left-0 right-0 z-50 glassBg">
         <div className="cont font-medium flex items-center justify-between py-4 relative">
@@ -157,7 +161,7 @@ const Navbar = () => {
           initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
           animate={{ scale: 1, opacity: 1 }}
           className={`min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2
-           bg-dark/90 dark:bg-light/90 dark:text-dark/90 backdrop-blur-md py-32 lg:hidden `}
+           bg-dark/90 dark:bg-light/90 dark:text-dark/90 backdrop-blur-md py-32 lg:hidden px-2 `}
         >
           <nav
             className="flex flex-col justify-center items-center text-light/75"
@@ -184,7 +188,7 @@ const Navbar = () => {
               className="m-2 dark:text-dark/90"
             />
           </nav>
-
+          <div className="w-[100%] h-[1px] my-2 bg-white dark:bg-black"></div>
           <nav className="flex justify-center items-center flex-wrap">
             <motion.a
               href={"https://twitter.com/selim_adewale"}
