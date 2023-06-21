@@ -23,7 +23,7 @@ const poppins = Poppins({
 
 const Resume = () => {
   return (
-    <div className="flex justify-center content-center">
+    <div className="flex justify-center content-center FunFont">
       <div className="border border-gray-300 rounded-sm shadow-lg py-10 px-10 md:w-4/5 mt-10 mb-10 dark:bg-slate-800">
         <header>
           <ul className="flex flex-wrap justify-end gap-2">
@@ -141,7 +141,7 @@ const Resume = () => {
                 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#a36cb7] dark:text-white relative inline-block ${poppins.className}`}
               >
                 <span
-                  className={`relative ${poppins.className}`}
+                  className={`relative FunFont`}
                   style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" }}
                 >
                   Sooto Selim
@@ -168,18 +168,15 @@ const Resume = () => {
             <ul className="mt-2 mb-10 fleex md:block">
               <li className="px-2 mt-1">
                 <strong className="mr-1 dark:text-light">Phone </strong>
-                <a
-                  href="tel:+821023456789"
-                  className="block dark:text-slate-200"
-                >
+                <span className="block dark:text-slate-200">
                   <MyPhone />
-                </a>
+                </span>
               </li>
               <li className="px-2 mt-1">
                 <strong className="mr-1 dark:text-light">E-mail </strong>
-                <a href="mailto:" className="block dark:text-slate-200">
+                <span className="block dark:text-slate-200">
                   <MyEmail />
-                </a>
+                </span>
               </li>
               <li className="px-2 mt-1">
                 <strong className="mr-1 dark:text-light">Location</strong>

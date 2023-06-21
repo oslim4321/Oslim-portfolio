@@ -302,3 +302,7 @@ li button {
   scrollbar-width: none !important;
   /* Firefox */
 }
+
+.FunFont {
+  font-family: "Trebuchet MS";
+}

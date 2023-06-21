@@ -41,12 +41,12 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex space-x-4 mt-4 md:mt-0">
-          <Link
+          <span
             href="mailto:adewaleselim6@gmail.com"
             className="text-gray-400 hover:text-white"
           >
             <MyEmail />
-          </Link>
+          </span>
           <Link
             href="https://github.com/oslim4321"
             target="_blank"
