@@ -306,3 +306,6 @@ li button {
 .FunFont {
   font-family: "Trebuchet MS";
 }
+.folded {
+  transform: translateY(-100%);
+}

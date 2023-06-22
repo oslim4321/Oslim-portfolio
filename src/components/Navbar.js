@@ -119,15 +119,7 @@ const Navbar = () => {
               >
                 <Whatsapp className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
               </motion.a>
-              {/* <motion.a
-              href={"/"}
-              className="w-6 ml-3"
-              target="_blank"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <MoonIcon />
-            </motion.a> */}
+
               <button
                 onClick={toggleDarkLightMode}
                 className={` w-6 ml-3 rounded-full  dark:bg-light bg-dark ${

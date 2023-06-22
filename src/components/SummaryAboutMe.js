@@ -12,7 +12,7 @@ const Summary = () => {
     >
       Hello, I am{" "}
       <motion.span
-        className="bg-[#efced9] px-2 py-1 rounded-md text-white animated-border dark:text-dark"
+        className="bg-[#efced9] px-2 py-1 rounded-md  animated-border text-dark"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}

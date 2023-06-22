@@ -3,6 +3,7 @@
 import { YearOfExperiance } from "@/lib/MyDetails";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import FoldAnimation from "./FoldAnimation";
 
 const BuildAndPaint = () => {
   return (
@@ -42,6 +43,7 @@ const BuildAndPaint = () => {
                 See My Work
               </motion.button>
             </Link>
+            <FoldAnimation />
           </div>
         </div>
         <div className="w-px  bg-[#efced9] mx-8 hidden md:block" />

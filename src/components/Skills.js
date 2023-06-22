@@ -79,7 +79,7 @@ const Skills = () => {
           <Skill name="language/icons8-bootstrap.svg" x="-10vw" y="-20vw" />
           <Skill name="/language/icons8-tailwind-css.svg" x="40vw" y="0vw" />
           <Skill name="/language/icons8-typescript.svg" x="-40vw" y="2vw" />
-          <Skill name="/language/icons8-node-js.svg" x="10vw" y="20vw" />
+          {/* <Skill name="/language/icons8-node-js.svg" x="10vw" y="20vw" /> */}
           <Skill name="/language/icons8-express-js.svg" x="-25vw" y="-22vw" />
           <Skill name="/language/php-svgrepo-com.svg" x="-30vw" y="-10vw" />
           <Skill name="/language/laravel-svgrepo-com.svg" x="-10vw" y="-8vw" />
