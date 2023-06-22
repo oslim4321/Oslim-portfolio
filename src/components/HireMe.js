@@ -13,7 +13,7 @@ const HireMe = () => {
         >
           {/* <div className="w-24 h-24 rounded-full border-4 border-[#EFCED9] flex justify-center items-center"> */}
           <motion.div
-            className="w-24 h-24 border-4 border-[#EFCED9] rounded-full flex justify-center items-center dark:text-white"
+            className="w-24 h-24 bg-[#a772bf] rounded-full flex justify-center items-center text-white shadow"
             initial={{ y: 0 }}
             animate={{ y: [-20, 0] }}
             whileTap={{ scale: 0.8 }}

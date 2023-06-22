@@ -35,7 +35,7 @@ const TipsAboutMe = () => {
         />
         <div className=" cont grid grid-cols-12 place-items-center">
           <div className="col-span-12 md:col-span-6">
-            <div className="text-start dark:text-dark">
+            <div className="text-center md:text-start dark:text-dark">
               {/*             
               <p>
                 I am a Junior Web Developer with <YearOfExperiance />+ years of

@@ -82,13 +82,6 @@ const Navbar = () => {
 
           {/* Desktop nav */}
           <div className="w-full justify-between items-center hidden lg:flex">
-            <nav>
-              <CustomLink href="/" title="Home" className="mx-2" />
-              <CustomLink href="/about" title="About" className="mx-2" />
-              <CustomLink href="/project" title="Project" className="mx-2" />
-              {/* <CustomLink href="/resume" title="Resume" className="mx-2" /> */}
-            </nav>
-
             <nav className="flex justify-center items-center flex-wrap DeskNav">
               <motion.a
                 href={"https://twitter.com/selim_adewale"}
@@ -147,6 +140,12 @@ const Navbar = () => {
                   <MoonIcon className={"fill-dark text-lg"} />
                 )}
               </button>
+            </nav>
+            <nav>
+              <CustomLink href="/" title="Home" className="mx-2" />
+              <CustomLink href="/about" title="About" className="mx-2" />
+              <CustomLink href="/project" title="Project" className="mx-2" />
+              {/* <CustomLink href="/resume" title="Resume" className="mx-2" /> */}
             </nav>
           </div>
           <div className="absolute left-[50%] top-[50%] translate-x-[-50%]">
