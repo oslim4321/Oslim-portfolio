@@ -2,10 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Playfair_Display } from "next/font/google";
-import { merriweather } from "@/lib/utilty/Font";
 import AnimatedText from "./AnimatedText";
-import { Html } from "next/document";
 import Image from "next/image";
 
 // const playfairDispla = Playfair_Display({

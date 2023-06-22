@@ -18,7 +18,7 @@ const ContactForm = () => {
       action="https://formsubmit.co/60c535fc401ac4506b8e09f49dd50508"
       method="POST"
       // onSubmit={handleSubmit}
-      className="max-w-[800px] mx-auto p-6 bg-white dark:bg-slate-800 shadow-mgd rounded-mgd relative my-20 dark:text-light relative"
+      className="max-w-[800px] mx-auto p-6 bg-white dark:bg-slate-800 shadow-mgd rounded-mgd relative my-20 dark:text-light overflow-hidden"
       initial={{ opacity: 0, x: -200 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.3 }}
