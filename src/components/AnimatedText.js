@@ -34,7 +34,7 @@ export const singleWord = {
   },
 };
 
-const AnimatedText = ({ text, className = "", undeline = false }) => {
+const AnimatedText = ({ text, className = "", undeline = false, paddin }) => {
   // const sectionRef = useRef(null);
   // const controls = useAnimation();
 
@@ -86,7 +86,7 @@ const AnimatedText = ({ text, className = "", undeline = false }) => {
         {text.split(" ").map((word, i) => (
           <motion.span
             key={word + i}
-            className="inline-block p-2"
+            className={`inline-block ${paddin ? " p-2" : ""} `}
             variants={singleWord}
           >
             {word}&nbsp;

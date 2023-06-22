@@ -1,3 +1,4 @@
+import Image from "next/image";
 import * as React from "react";
 
 export const GithubIcon = ({ className, ...rest }) => (
@@ -681,4 +682,8 @@ export const Bullet = ({ className, rest }) => (
   >
     <circle cx="12" cy="12" r="2" />
   </svg>
+);
+
+export const Html = ({ className, rest }) => (
+  <Image src={"/language/icons8-html.svg"} width="300" height={"400"} />
 );

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Playfair_Display } from "next/font/google";
 import { merriweather } from "@/lib/utilty/Font";
 import AnimatedText from "./AnimatedText";
+import { Html } from "next/document";
 
 // const playfairDispla = Playfair_Display({
 //   weight: "400",
@@ -23,7 +24,8 @@ const Skill = ({ name, x, y }) => (
     whileInView={{ x: x, y: y, transition: { duration: 1.5 } }}
     whileTap={{ scale: 2 }}
   >
-    {name}
+    {/* {name} */}
+    <Image src={"/language/icons8-html.svg"} width="300" height={"400"} />
   </motion.div>
 );
 //  bg-circularLight dark:bg-circularDark
@@ -55,7 +57,7 @@ const Skills = () => {
           >
             Web
           </motion.div>
-          <Skill name="HTML" x="5vw" y="-10vw" />
+          <Skill name="/language/icons8-html.svg" x="5vw" y="-10vw" />
           <Skill name="CSS" x="20vw" y="-2vw" />
           <Skill name="javaScript" x="10vw" y="2vw" />
           <Skill name="ReactJs" x="20vw" y="12vw" />

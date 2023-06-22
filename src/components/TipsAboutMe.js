@@ -31,20 +31,12 @@ const TipsAboutMe = () => {
       <div className="bg-[#efced9] ">
         <AnimatedText
           text="Introduction and Expertise"
-          className={`!text-5xl font-bold capitalize !dark:text-dark !FunFont`}
+          className={`my-10 !font-bold !text-3xl md:!text-7xl !leading-10`}
         />
         <div className=" cont grid grid-cols-12 place-items-center">
           <div className="col-span-12 md:col-span-6">
             <div className="text-start dark:text-dark">
-              {/* Passionate Web Developer with a knack for crafting innovative and
-              user-friendly digital experiences. With a strong foundation in
-              HTML, CSS, and JavaScript, I specialize in building responsive and
-              interactive websites. My goal is to combine my technical skills
-              and creative mindset to develop intuitive and visually captivating
-              web solutions. Through continuous learning and staying up-to-date
-              with industry trends, I strive to deliver high-quality code and
-              exceed client expectations. Let's bring your ideas to life and
-              create meaningful online experiences together. */}
+              {/*             
               <p>
                 I am a Junior Web Developer with <YearOfExperiance />+ years of
                 experience in the MERN (MongoDB, Express.js, React, Node.js)
@@ -65,6 +57,12 @@ const TipsAboutMe = () => {
                 learn and take on new challenges. With my skills and dedication,
                 I am confident that I can make a valuable contribution to your
                 organization.
+              </p> */}
+              <p class="text-lg font-semibold">
+                Experienced Web Developer with 4+ years in MERN, MEVN, and PHP
+                Laravel. Strong frontend skills. Passionate about creating
+                user-friendly websites. Collaborative team player. Ready for new
+                challenges.
               </p>
             </div>
           </div>
