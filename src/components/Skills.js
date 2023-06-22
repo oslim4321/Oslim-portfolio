@@ -6,6 +6,7 @@ import { Playfair_Display } from "next/font/google";
 import { merriweather } from "@/lib/utilty/Font";
 import AnimatedText from "./AnimatedText";
 import { Html } from "next/document";
+import Image from "next/image";
 
 // const playfairDispla = Playfair_Display({
 //   weight: "400",
@@ -25,7 +26,7 @@ const Skill = ({ name, x, y }) => (
     whileTap={{ scale: 2 }}
   >
     {/* {name} */}
-    <Image src={"/language/icons8-html.svg"} width="300" height={"400"} />
+    <Image src={name} width="300" height={"400"} className="w-20" />
   </motion.div>
 );
 //  bg-circularLight dark:bg-circularDark
@@ -58,22 +59,26 @@ const Skills = () => {
             Web
           </motion.div>
           <Skill name="/language/icons8-html.svg" x="5vw" y="-10vw" />
-          <Skill name="CSS" x="20vw" y="-2vw" />
-          <Skill name="javaScript" x="10vw" y="2vw" />
-          <Skill name="ReactJs" x="20vw" y="12vw" />
-          <Skill name="NextJs" x="0vw" y="15vw" />
-          <Skill name="AstroJS" x="-15vw" y="5vw" />
-          <Skill name="GatsbyJs" x="14vw" y="-20vw" />
-          <Skill name="firebase" x="30vw" y="-10vw" />
-          <Skill name="Bootstrap Css" x="-10vw" y="-20vw" />
-          <Skill name="Tailwind Css" x="40vw" y="0vw" />
-          <Skill name="Typescript" x="-40vw" y="2vw" />
+          <Skill name="/language/icons8-css.svg" x="20vw" y="-2vw" />
+          <Skill name="/language/icons8-javaScript.svg" x="10vw" y="2vw" />
+          <Skill name="/language/icons8-react.svg" x="20vw" y="12vw" />
+          <Skill
+            name="/language/nextjs-icon-svgrepo-com.svg"
+            x="0vw"
+            y="15vw"
+          />
+          <Skill name="/language/astro-svgrepo-com.svg" x="-15vw" y="5vw" />
+          <Skill name="/language/icons8-gatsbyjs.svg" x="14vw" y="-20vw" />
+          <Skill name="/language/icons8-firebase.svg" x="30vw" y="-10vw" />
+          <Skill name="language/icons8-bootstrap.svg" x="-10vw" y="-20vw" />
+          <Skill name="language/icons8-tailwind-css.svg" x="40vw" y="0vw" />
+          {/*<Skill name="Typescript" x="-40vw" y="2vw" />
           <Skill name="Node.Js" x="10vw" y="20vw" />
           <Skill name="express.Js" x="-25vw" y="-22vw" />
           <Skill name="PHP" x="-30vw" y="-10vw" />
           <Skill name="Laravel" x="-10vw" y="-8vw" />
           <Skill name="Git" x="-10vw" y="20vw" />
-          <Skill name="GitHub" x="-30vw" y="15vw" />
+          <Skill name="GitHub" x="-30vw" y="15vw" /> */}
         </div>
       </div>
     </>
