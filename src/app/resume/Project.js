@@ -65,7 +65,7 @@ const Project = () => {
               <li>
                 <a
                   href={project.projectLink}
-                  className="bg-[#efced9] text-white px-2 py-1 mr-1 text-sm rounded"
+                  className="bg-[#efced9] text-dark px-2 py-1 mr-1 text-sm rounded"
                 >
                   Live
                 </a>
@@ -73,7 +73,7 @@ const Project = () => {
               <li>
                 <a
                   href="#"
-                  className="bg-[#efced9] text-white px-2 py-1 mr-1 text-sm rounded"
+                  className="bg-[#efced9] text-dark px-2 py-1 mr-1 text-sm rounded"
                 >
                   {project.projecrGithub ? "Code" : "private repositories"}
                 </a>

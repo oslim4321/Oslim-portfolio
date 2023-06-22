@@ -166,24 +166,24 @@ const Resume = () => {
               Contact Details
             </h2>
             <ul className="mt-2 mb-10 fleex md:block">
-              <li className="px-2 mt-1">
+              {/* <li className="px-2 mt-1">
                 <strong className="mr-1 dark:text-light">Phone </strong>
                 <span className="block dark:text-slate-200">
                   <MyPhone />
                 </span>
-              </li>
+              </li> */}
               <li className="px-2 mt-1">
                 <strong className="mr-1 dark:text-light">E-mail </strong>
                 <span className="block dark:text-slate-200">
                   <MyEmail />
                 </span>
               </li>
-              <li className="px-2 mt-1">
+              {/* <li className="px-2 mt-1">
                 <strong className="mr-1 dark:text-light">Location</strong>
                 <span className="block dark:text-slate-200">
                   <MyAddress />
                 </span>
-              </li>
+              </li> */}
             </ul>
             {/* <strong className="text-xl font-medium ">Github Stats</strong>
             <ul className="flex w-full mt-2 mb-10">
@@ -210,11 +210,11 @@ const Resume = () => {
             <section>
               {/* <!-- about me --> */}
               <h2 className="text-2xl pb-1 border-b font-semibold text-[#a36cb7]">
-                About
+                Summary
               </h2>
               <div className="text-gray-800 mt-4 dark:text-light/90 text-justify">
                 <p>
-                  I am a Junior Web Developer with <YearOfExperiance />+ years
+                  {/* I am a Junior Web Developer with <YearOfExperiance />+ years
                   of experience in the MERN (MongoDB, Express.js, React,
                   Node.js) stack and the MEVN (MongoDB, Express.js, Vue.js,
                   Node.js) stack, and also a PHP Laravel developer. I specialize
@@ -232,7 +232,14 @@ const Resume = () => {
                   I enjoy working with diverse teams and I am always eager to
                   learn and take on new challenges. With my skills and
                   dedication, I am confident that I can make a valuable
-                  contribution to your organization.
+                  contribution to your organization. */}
+                  I'm a skilled Web Developer with
+                  <YearOfExperiance />+ years of experience in MERN, MEVN, and
+                  PHP Laravel. Specializing in frontend development, I create
+                  captivating and user-friendly websites and applications.
+                  Currently an Instructor at SQI College of ICT, I share my
+                  expertise with aspiring developers. Let's collaborate and
+                  bring your digital vision to life.
                 </p>
               </div>
             </section>
