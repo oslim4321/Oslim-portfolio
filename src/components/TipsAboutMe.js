@@ -31,11 +31,11 @@ const TipsAboutMe = () => {
       <div className="bg-[#efced9] ">
         <AnimatedText
           text="Introduction and Expertise"
-          className={`!text-5xl font-bold capitalize !dark:text-dark !font-sans`}
+          className={`!text-5xl font-bold capitalize !dark:text-dark !FunFont`}
         />
         <div className=" cont grid grid-cols-12 place-items-center">
           <div className="col-span-12 md:col-span-6">
-            <div className="text-center dark:text-dark">
+            <div className="text-start dark:text-dark">
               {/* Passionate Web Developer with a knack for crafting innovative and
               user-friendly digital experiences. With a strong foundation in
               HTML, CSS, and JavaScript, I specialize in building responsive and

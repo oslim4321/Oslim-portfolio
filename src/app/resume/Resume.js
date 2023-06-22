@@ -253,7 +253,7 @@ const Resume = () => {
                       {experi.title}
                       <small>Nigeria</small>
                     </p>
-                    <div className="text-gray-800 mt-4 dark:text-light/90 text-justify">
+                    {/* <div className="text-gray-800 mt-4 dark:text-light/90 text-justify">
                       {experi.description.map((item, index) => (
                         <div className="my-4" key={index}>
                           <div className="flex items-start">
@@ -264,7 +264,7 @@ const Resume = () => {
                           </div>
                         </div>
                       ))}
-                    </div>
+                    </div> */}
                   </li>
                 ))}
               </ul>
@@ -281,11 +281,11 @@ const Resume = () => {
                       <strong className="text-base  ">{edu.institution}</strong>
                       {edu.year}
                     </p>
-                    <p className="text-gray-800 mt-4 dark:text-light/90 text-justify">
+                    {/* <p className="text-gray-800 mt-4 dark:text-light/90 text-justify">
                       {edu.description.length > 70
                         ? `${edu.description}`
                         : edu.description}
-                    </p>
+                    </p> */}
                   </div>
                 ))}
               </ul>

@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import LiIcons from "./LiIcons";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
 import { Electric } from "./Icons";
+import { merriweather } from "@/lib/utilty/Font";
+import AnimatedText from "./AnimatedText";
 
 export const experienceData = [
   {
@@ -63,9 +65,15 @@ const Experience = () => {
 
   return (
     <section className=" py-10 cont dark:text-light">
-      <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center dark:text-light">
+      {/* <h2
+        className={` font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center dark:text-light ${merriweather.className}`}
+      >
         Experience
-      </h2>
+      </h2> */}
+      <AnimatedText
+        text={"Experience"}
+        className={`my-10 !font-bold !text-3xl dark:!text-light sm:!text-4xl md:!text-5xl lg:!text-7xl xl:!text-8xl `}
+      />
 
       <div className="my-3 relative" ref={ref}>
         {/* left line scrolling start */}
@@ -100,13 +108,13 @@ const Experience = () => {
               <p className="text-gray-600 dark:text-light/70">
                 {expe.title} | {expe.duration}
               </p>
-              <div className="text-gray-800 mt-4 dark:text-light/90">
+              {/* <div className="text-gray-800 mt-4 dark:text-light/90">
                 {expe.description.map((item, index) => (
                   <p className="my-4">
                     ({index + 1}) <span key={index}>{item}</span>
                   </p>
                 ))}
-              </div>
+              </div> */}
             </motion.div>
             {/* Add more experience items as needed */}
           </motion.div>
@@ -126,9 +134,15 @@ const Education = () => {
 
   return (
     <section className="py-10 cont dark:text-light">
-      <h2 className=" font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center dark:text-light ">
+      {/* <h2
+        className={` font-bold  text-3xl md:text-8xl  my-32 text-light w-full text-center dark:text-light font-bold ${merriweather.className}`}
+      >
         Education
-      </h2>
+      </h2> */}
+      <AnimatedText
+        text={"Education"}
+        className={`my-10 !font-bold !text-3xl dark:!text-light sm:!text-4xl md:!text-5xl lg:!text-7xl xl:!text-8xl `}
+      />
 
       <motion.div ref={ref} className="my-3 relative">
         {/* left line scrolling start */}
@@ -150,11 +164,11 @@ const Education = () => {
               <p className="text-gray-600 dark:text-light/70">
                 {edu.degree} | {edu.year}
               </p>
-              <p className="text-gray-800 mt-4 dark:text-light/90 text-center">
+              {/* <p className="text-gray-800 mt-4 dark:text-light/90 text-center">
                 {edu.description.length > 70
                   ? `${edu.description.slice(0, 200)}...`
                   : edu.description}
-              </p>
+              </p> */}
             </motion.div>
             <motion.div />
             {/* </div> */}

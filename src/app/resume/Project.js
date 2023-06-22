@@ -79,9 +79,9 @@ const Project = () => {
                 </a>
               </li>
             </ul>
-            <p className="text-gray-800 mt-4 dark:text-light/70 text-justify">
+            {/* <p className="text-gray-800 mt-4 dark:text-light/70 text-justify">
               {project.projectDesc}
-            </p>
+            </p> */}
             <div className="w-2e0 md:w-[40%] flex justify-start">
               <p className="flex  overflow-x-scroll no-scrollbar">
                 {project.languages.slice(0, 4).map((elem, i) => (

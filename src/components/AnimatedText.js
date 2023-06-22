@@ -1,13 +1,8 @@
 "use client";
-import { Merriweather } from "next/font/google";
 
 import React from "react";
 import { motion } from "framer-motion";
-
-const merriweather = Merriweather({
-  weight: "400",
-  subsets: ["latin"],
-});
+import { merriweather } from "@/lib/utilty/Font";
 
 const UnderlineAnimation = () => {
   return (
@@ -86,12 +81,12 @@ const AnimatedText = ({ text, className = "", undeline = false }) => {
         className={`${className} inline-block w-full text-dark text-8xl  ${merriweather.className}`}
         variants={quote}
         initial="initial" // Set initial state to "initial"
-        whileInView="animate"
+        animate="animate"
       >
         {text.split(" ").map((word, i) => (
           <motion.span
             key={word + i}
-            className="inline-block"
+            className="inline-block p-2"
             variants={singleWord}
           >
             {word}&nbsp;

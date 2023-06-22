@@ -86,7 +86,7 @@ const Navbar = () => {
               <CustomLink href="/" title="Home" className="mx-2" />
               <CustomLink href="/about" title="About" className="mx-2" />
               <CustomLink href="/project" title="Project" className="mx-2" />
-              <CustomLink href="/resume" title="Resume" className="mx-2" />
+              {/* <CustomLink href="/resume" title="Resume" className="mx-2" /> */}
             </nav>
 
             <nav className="flex justify-center items-center flex-wrap DeskNav">
@@ -182,11 +182,11 @@ const Navbar = () => {
               title="Project"
               className="m-2 dark:text-dark/90"
             />
-            <CustomLink
+            {/* <CustomLink
               href="/resume"
               title="Resume"
               className="m-2 dark:text-dark/90"
-            />
+            /> */}
           </nav>
           <div className="w-[100%] h-[1px] my-2 bg-white dark:bg-black"></div>
           <nav className="flex justify-center items-center flex-wrap">

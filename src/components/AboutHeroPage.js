@@ -2,6 +2,7 @@
 import React from "react";
 import AnimatedImg from "@/src/components/AnimatedImg";
 import { Poppins, Raleway } from "next/font/google";
+import AnimatedText from "./AnimatedText";
 
 const raleway = Raleway({
   weight: ["400", "600"],
@@ -12,13 +13,11 @@ const AboutHeroPage = () => {
   return (
     <div className="cont grid grid-cols-12 place-items-center w-full py-10d overflow-hidden">
       <div className="col-span-12 md:col-span-6 flex flex-col mb-10 mx-2">
-        {/* <AnimatedText
-                text={"about"}
-                className="!text-5xl !text-left font-bold capitalize"
-              /> */}
-        <h3 className="!text-xl !text-left font-bold uppercase">BIOGRAPHY</h3>
-
-        {/* small text */}
+        <AnimatedText
+          text="Unleashing Creativity!"
+          className={`my-10 !font-bold !text-3xl dark:!text-light sm:!text-4xl md:!text-5xl lg:!text-7xl xl:!text-8xl !leading-10`}
+        />
+        {/* <h3 className="!text-xl !text-left font-bold uppercase">BIOGRAPHY</h3>
 
         <p
           className={`font-base my-4 md:text-lg !font-medium !text-justify ${raleway.className}`}
@@ -36,7 +35,7 @@ const AboutHeroPage = () => {
           transforming ideas into functional and visually appealing websites.
           I'm excited to apply my skills and passion to your next project. Let's
           collaborate and build a website that truly stands out.
-        </p>
+        </p> */}
         {/* </motion.div> */}
       </div>
       <div className="col-span-12 md:col-span-6 ">

@@ -3,11 +3,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Playfair_Display } from "next/font/google";
+import { merriweather } from "@/lib/utilty/Font";
+import AnimatedText from "./AnimatedText";
 
-const playfairDispla = Playfair_Display({
-  weight: "400",
-  subsets: ["latin"],
-});
+// const playfairDispla = Playfair_Display({
+//   weight: "400",
+//   subsets: ["latin"],
+// });
 
 const Skill = ({ name, x, y }) => (
   <motion.div
@@ -29,11 +31,15 @@ const Skill = ({ name, x, y }) => (
 const Skills = () => {
   return (
     <>
-      <h2
-        className={` font-bold text-3xl md:text-5xl lg:text-6xl xl:text-8xl my-10 md:my-32 w-full text-center ${playfairDispla.className} `}
+      {/* <h2
+        className={` font-bold text-3xl md:text-5xl lg:text-6xl xl:text-8xl my-10 md:my-32 w-full text-center ${merriweather.className} `}
       >
         Skills
-      </h2>
+      </h2> */}
+      <AnimatedText
+        text={"Skills"}
+        className={`my-10 !font-bold !text-3xl dark:!text-light sm:!text-4xl md:!text-5xl lg:!text-7xl xl:!text-8xl `}
+      />
       <div className="cont dark:bg-dark">
         <div
           className="w-full h-[50vh] sm:h-[50vh] lg:h-[80vh] xl:h-screen relative flex items-center justify-center rounded-full

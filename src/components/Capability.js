@@ -30,7 +30,7 @@ const Capability = () => {
     <div className="cont flex justify-center items-center flex-wrap">
       <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center">
         <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
-          <AnimatedNumber value={50} /> +
+          <AnimatedNumber value={150} /> +
         </span>
         <h2 className="text-base md:text-xl text-center md:text-left font-medium text-dark/70 dark:text-light/75">
           Complete project
@@ -39,7 +39,7 @@ const Capability = () => {
       <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center mx-20">
         <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
           {" "}
-          <AnimatedNumber value={2} /> +
+          <AnimatedNumber value={4} /> +
         </span>
         <h2 className="text-base md:text-xl text-center md:text-left font-medium text-dark/70 dark:text-light/75">
           Years of Experience
@@ -48,7 +48,7 @@ const Capability = () => {
       <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center">
         <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
           {" "}
-          <AnimatedNumber value={5} /> +
+          <AnimatedNumber value={50} /> +
         </span>
         <h2 className="text-base md:text-xl text-center md:text-left font-medium text-dark/70 dark:text-light/75">
           Satisfied Client
