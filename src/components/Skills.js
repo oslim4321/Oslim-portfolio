@@ -12,13 +12,14 @@ import Image from "next/image";
 //   weight: "400",
 //   subsets: ["latin"],
 // });
+//  py-1.5 px-1.5
+//      md:px-3 md:py-3 lg:px-6
 
 const Skill = ({ name, x, y }) => (
   <motion.div
-    className="flex items-center capitalize justify-center rounded-full font-semibold text-dark sm:bg-dark dark:text-light md:text-light py-1.5 px-1.5
-     md:px-6 md:py-3  cursor-pointer absolute text-sm md:text-lg bg-transparent sm:text-light sm:dark:bg-transparent sm:text-sm
+    className="flex items-center capitalize justify-center rounded-full font-semibold text-dark sm:bg-dark dark:text-light md:text-light cursor-pointer absolute text-sm md:text-lg  sm:text-light sm:text-sm
      md:dark:bg-light dark:md:text-dark
-     
+     w-10 h-10 md:w-20 md:h-20 lg:w-28 lg:h-28 dark:bg-white
      "
     whileHover={{ scale: 1.09 }}
     initial={{ x: 0, y: 0 }}
@@ -26,7 +27,12 @@ const Skill = ({ name, x, y }) => (
     whileTap={{ scale: 2 }}
   >
     {/* {name} */}
-    <Image src={name} width="300" height={"400"} className="w-20" />
+    <Image
+      src={name}
+      width="300"
+      height={"400"}
+      className="w-10 md:w-[80%] rounded-full"
+    />
   </motion.div>
 );
 //  bg-circularLight dark:bg-circularDark
@@ -71,14 +77,18 @@ const Skills = () => {
           <Skill name="/language/icons8-gatsbyjs.svg" x="14vw" y="-20vw" />
           <Skill name="/language/icons8-firebase.svg" x="30vw" y="-10vw" />
           <Skill name="language/icons8-bootstrap.svg" x="-10vw" y="-20vw" />
-          <Skill name="language/icons8-tailwind-css.svg" x="40vw" y="0vw" />
-          {/*<Skill name="Typescript" x="-40vw" y="2vw" />
-          <Skill name="Node.Js" x="10vw" y="20vw" />
-          <Skill name="express.Js" x="-25vw" y="-22vw" />
-          <Skill name="PHP" x="-30vw" y="-10vw" />
-          <Skill name="Laravel" x="-10vw" y="-8vw" />
-          <Skill name="Git" x="-10vw" y="20vw" />
-          <Skill name="GitHub" x="-30vw" y="15vw" /> */}
+          <Skill name="/language/icons8-tailwind-css.svg" x="40vw" y="0vw" />
+          <Skill name="/language/icons8-typescript.svg" x="-40vw" y="2vw" />
+          <Skill name="/language/icons8-node-js.svg" x="10vw" y="20vw" />
+          <Skill name="/language/icons8-express-js.svg" x="-25vw" y="-22vw" />
+          <Skill name="/language/php-svgrepo-com.svg" x="-30vw" y="-10vw" />
+          <Skill name="/language/laravel-svgrepo-com.svg" x="-10vw" y="-8vw" />
+          <Skill name="/language/git-svgrepo-com.svg" x="-10vw" y="20vw" />
+          <Skill
+            name="/language/github-142-svgrepo-com.svg"
+            x="-30vw"
+            y="15vw"
+          />
         </div>
       </div>
     </>
