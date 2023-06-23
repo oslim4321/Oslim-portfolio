@@ -15,7 +15,7 @@ const AboutHeroPage = () => {
       <div className="col-span-12 md:col-span-6 flex flex-col mb-10 mx-2">
         <AnimatedText
           text="Unleashing Creativity!"
-          className={`my-10 !font-bold !text-3xl dark:!text-light sm:!text-4xl md:!text-5xl lg:!text-7xl xl:!text-8xl !leading-10`}
+          className={`my-10 !font-bold !text-4xl dark:!text-light md:!text-5xl lg:!text-7xl xl:!text-8xl`}
           paddin={true}
         />
         {/* <h3 className="!text-xl !text-left font-bold uppercase">BIOGRAPHY</h3>
