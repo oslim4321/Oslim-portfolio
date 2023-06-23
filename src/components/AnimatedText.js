@@ -86,7 +86,7 @@ const AnimatedText = ({ text, className = "", undeline = false, paddin }) => {
         {text.split(" ").map((word, i) => (
           <motion.span
             key={word + i}
-            className={`inline-block ${paddin ? " p-2" : ""} `}
+            className={`inline-block text-start ${paddin ? " p-3 my-3" : ""} `}
             variants={singleWord}
           >
             {word}&nbsp;

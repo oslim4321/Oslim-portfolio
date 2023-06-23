@@ -18,6 +18,7 @@ import HireMe from "./HireMe";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
 import { DarkLightAnimation } from "./TransitionEffect";
 import Curtain from "./Curtain";
+import Aside from "./Aside";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
@@ -47,10 +48,7 @@ const Navbar = () => {
   const handleClick = () => {
     setisOpen(!isOpen);
   };
-  function toggleDarkLightMode() {
-    setmode(mode === "light" ? "dark" : "light");
-    setshowCurtain(mode);
-  }
+
   return (
     <div className="relative">
       <Curtain showCurtain={showCurtain} mode={mode} />
@@ -80,64 +78,17 @@ const Navbar = () => {
             ></span>
           </button>
 
+          <div className="absolute top-1/2 ">
+            {" "}
+            <Aside />
+          </div>
           {/* Desktop nav */}
           <div className="w-full justify-between items-center hidden lg:flex">
-            <nav className="flex justify-center items-center flex-wrap DeskNav">
-              <motion.a
-                href={"https://twitter.com/selim_adewale"}
-                className="w- mx-3  w-6"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.8 }}
-              >
-                <TwitterIcon className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
-              </motion.a>
-              <motion.a
-                href={"https://github.com/oslim4321"}
-                className="w- mx-3  w-6"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <GithubIcon className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
-              </motion.a>
-              <motion.a
-                href={"https://m.facebook.com/selim.sooto"}
-                className="w- mx-3  w-6"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Facebook className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
-              </motion.a>
-              <motion.a
-                href={"https://wa.me/07087121696"}
-                className="w- mx-3  w-6"
-                target="_blank"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Whatsapp className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
-              </motion.a>
-
-              <button
-                onClick={toggleDarkLightMode}
-                className={` w-6 ml-3 rounded-full  dark:bg-light bg-dark ${
-                  mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
-                } `}
-              >
-                {mode === "dark" ? (
-                  <SunIcon className={"fill-dark text-lg"} />
-                ) : (
-                  <MoonIcon className={"fill-dark text-lg"} />
-                )}
-              </button>
-            </nav>
+            {/* logo gos herre */}
             <nav>
               <CustomLink href="/" title="Home" className="mx-2" />
               <CustomLink href="/about" title="About" className="mx-2" />
               <CustomLink href="/project" title="Project" className="mx-2" />
-              {/* <CustomLink href="/resume" title="Resume" className="mx-2" /> */}
             </nav>
           </div>
           <div className="absolute left-[50%] top-[50%] translate-x-[-50%]">

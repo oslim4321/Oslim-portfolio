@@ -22,7 +22,8 @@ const HeroPage = () => {
         <div className="w-full md:w-1/2 flex flex-col self-center ">
           <AnimatedText
             text={
-              "Creating Engaging Digital Experiences with Custom Code and Design"
+              // "Creating Engaging Digital Experiences with Custom Code and Design"
+              "I solve challenges through innovative coding."
             }
             className={
               "!text-3xl md:text-4xl lg:!text-5xl !text-center md:!text-left font-bold capitalize dark:!text-light leading-[30px]"

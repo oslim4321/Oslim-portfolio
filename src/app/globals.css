@@ -39,6 +39,7 @@ html::-webkit-scrollbar-thumb {
 }
 body {
   overflow-x: hidden;
+  font-family: "Trebuchet MS";
 }
 
 .twoBgColor {

@@ -23,7 +23,7 @@ export const experienceData = [
   },
   {
     title: "Freelance MERN Stack Developer",
-    duration: "09/September/2019 - MONTH 20XX",
+    duration: "09/September/2021 - MONTH 20XX",
     company: "Mern stack",
     description: [
       "Worked with clients to understand project requirements and deliver customized solutions using Next.js and MERN stack technologies",
@@ -42,12 +42,12 @@ export const educationData = [
     institution: "Gateway Polytechnic, Ogun State, Nigeria",
     degree: "Diploma: Computer Science",
     description:
-      "As a recent graduate of Gateway Polytechnic with a diploma in Computer Science, I am a highly motivated and detail-oriented individual with a passion for learning and applying new knowledge. Throughout my studies, I have developed strong skills in written and verbal communication, critical thinking, and problem-solving, which I have successfully applied in various academic projects and internships. I am adept at working collaboratively with diverse teams and individuals, and I thrive in adapting to changing situations and meeting deadlines. As I embark on the next phase of my academic and professional journey, I am excited to leverage my skills and experience to pursue new opportunities and make a positive impact in the field of computer science.",
+      " As a recent graduate of Gateway Polytechnic with a diploma in Computer Science, I am a highly motivated and detail-oriented individual with a passion for learning and applying new knowledge. Throughout my studies, I have developed strong skills in written and verbal communication, critical thinking, and problem-solving, which I have successfully applied in various academic projects and internships. I am adept at working collaboratively with diverse teams and individuals, and I thrive in adapting to changing situations and meeting deadlines. As I embark on the next phase of my academic and professional journey, I am excited to leverage my skills and experience to pursue new opportunities and make a positive impact in the field of computer science.",
   },
   {
     id: 2,
     title: "Education",
-    year: "2022 / 2023",
+    year: "2019 / 2020",
     institution: "SQI College of ICT, Ibadan.",
     degree: "Software Engineering",
     description:
