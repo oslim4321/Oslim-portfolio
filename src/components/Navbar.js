@@ -53,12 +53,17 @@ const Navbar = () => {
     <div className="relative">
       <Curtain showCurtain={showCurtain} mode={mode} />
       <div className="w-full bg-light dark:bg-dark h-[120px]"></div>
-      <div className="w-full py-8  dark:text-light border-b-[1px] border-transparent dark:border-light fixed top-0 left-0 right-0 z-50 glassBg">
+
+      <div className="w-full py-4  dark:text-light border-b-[1px] border-transparent dark:border-light fixed top-0 left-0 right-0 z-50 glassBg">
         <div className="cont font-medium flex items-center justify-between py-4 relative">
+          <div className="md:hidden ">
+            {" "}
+            <Logo />
+          </div>
           {/* toggle */}
           {/* toggle */}
           <button
-            className="flex flex-col justify-center items-center lg:hiddenn absolute right-0 z-50 lg:hidden"
+            className="flex flex-col justify-center items-center absolute right-0 z-50 md:hidden"
             onClick={handleClick}
           >
             <span
@@ -78,22 +83,23 @@ const Navbar = () => {
             ></span>
           </button>
 
-          <div className="absolute top-1/2 ">
-            {" "}
-            <Aside />
+          <div className="fixed top-1/2 transform translate-y-1/2 left-10 hidden md:block">
+            <Aside setshowCurtain={setshowCurtain} />
           </div>
+
           {/* Desktop nav */}
-          <div className="w-full justify-between items-center hidden lg:flex">
+          <div className="w-full justify-between items-center hidden md:flex">
             {/* logo gos herre */}
+            <Logo />
             <nav>
               <CustomLink href="/" title="Home" className="mx-2" />
               <CustomLink href="/about" title="About" className="mx-2" />
               <CustomLink href="/project" title="Project" className="mx-2" />
             </nav>
           </div>
-          <div className="absolute left-[50%] top-[50%] translate-x-[-50%]">
-            <Logo />
-          </div>
+          {/* <div className="absolute left-[50%] top-[50%] translate-x-[-50%]">
+          
+          </div> */}
           {/* <ShowIcon /> */}
         </div>
         {/* Mobile nav */}

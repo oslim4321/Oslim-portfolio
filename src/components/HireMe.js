@@ -12,7 +12,7 @@ const HireMe = () => {
   };
 
   return (
-    <div className="fixed right-0 bottom-10 z-50 cursor-pointer m-5">
+    <div className="fixed right-0  bottom-10 z-50 cursor-pointer m-5">
       <motion.div
         className="w-24 h-24 bg-[#a772bf] rounded-full flex justify-center items-center text-white shadow"
         initial={{ y: 0 }}

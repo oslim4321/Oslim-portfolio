@@ -11,7 +11,7 @@ import {
 } from "./Icons";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
 
-function Aside() {
+function Aside({ setshowCurtain }) {
   const [mode, setmode] = UseThemesSwitcher();
 
   function toggleDarkLightMode() {
@@ -20,47 +20,63 @@ function Aside() {
   }
   return (
     <div>
-      <nav className="fled justify-center items-center flex-wrap DeskNav">
+      <nav className="flex flex-col justify-center gap-8 items-center flex-wrap DeskNav">
         <motion.a
           href={"https://twitter.com/selim_adewale"}
-          className="w- mx-3  w-6"
+          className="w-10 shadow"
           target="_blank"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.8 }}
         >
-          <TwitterIcon className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
+          <TwitterIcon
+            className="text-[#a772bf] text-lg p-2 border border-[#fab0c8] hover:text-black dark:hover:text-light"
+            width={"30px"}
+            height={"30px"}
+          />
         </motion.a>
         <motion.a
           href={"https://github.com/oslim4321"}
-          className="w- mx-3  w-6"
+          className="w-10 shadow"
           target="_blank"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
         >
-          <GithubIcon className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
+          <GithubIcon
+            className="text-[#a772bf] text-lg p-2 border border-[#fab0c8] hover:text-black dark:hover:text-light"
+            width={"30px"}
+            height={"30px"}
+          />
         </motion.a>
         <motion.a
           href={"https://m.facebook.com/selim.sooto"}
-          className="w- mx-3  w-6"
+          className="w-10 shadow"
           target="_blank"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
         >
-          <Facebook className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
+          <Facebook
+            className="text-[#a772bf] text-lg p-2 border border-[#fab0c8] hover:text-black dark:hover:text-light"
+            width={"30px"}
+            height={"30px"}
+          />
         </motion.a>
         <motion.a
           href={"https://wa.me/07087121696"}
-          className="w- mx-3  w-6"
+          className="w-10 shadow"
           target="_blank"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.9 }}
         >
-          <Whatsapp className="text-[#fab0c8] text-lg hover:text-black dark:hover:text-light" />
+          <Whatsapp
+            className="text-[#a772bf] text-lg p-2 border border-[#fab0c8] hover:text-black dark:hover:text-light"
+            width={"30px"}
+            height={"30px"}
+          />
         </motion.a>
 
         <button
           onClick={toggleDarkLightMode}
-          className={` w-6 ml-3 rounded-full  dark:bg-light bg-dark ${
+          className={` w-6 rounded-full  dark:bg-light bg-dark ${
             mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
           } `}
         >
@@ -76,3 +92,4 @@ function Aside() {
 }
 
 export default Aside;
+// fab0c8;

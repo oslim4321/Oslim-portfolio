@@ -38,14 +38,23 @@ export const educationData = [
   {
     id: 1,
     title: "Education",
-    year: "2019 / 2021",
+    year: "2017 / 2021",
+    institution: "University of Ibadan",
+    degree: "(B.Sc.) degree: Computer Science",
+    description:
+      "As a recent graduate with a Bachelor of Science (B.Sc.) degree in Computer Science from the esteemed University of Ibadan, I am a highly motivated individual with a keen attention to detail. Throughout my educational journey, I have honed advanced skills in written and verbal communication, critical thinking, and problem-solving. These skills have proven invaluable in my successful completion of various academic projects and internships. I thrive in collaborative team environments and excel at adapting to dynamic situations and meeting deadlines. I am enthusiastic about utilizing my expertise and experience to pursue fresh opportunities and make a positive impact in the field of computer science.",
+  },
+  {
+    id: 2,
+    title: "Education",
+    year: "2015 / 2017",
     institution: "Gateway Polytechnic, Ogun State, Nigeria",
     degree: "Diploma: Computer Science",
     description:
       " As a recent graduate of Gateway Polytechnic with a diploma in Computer Science, I am a highly motivated and detail-oriented individual with a passion for learning and applying new knowledge. Throughout my studies, I have developed strong skills in written and verbal communication, critical thinking, and problem-solving, which I have successfully applied in various academic projects and internships. I am adept at working collaboratively with diverse teams and individuals, and I thrive in adapting to changing situations and meeting deadlines. As I embark on the next phase of my academic and professional journey, I am excited to leverage my skills and experience to pursue new opportunities and make a positive impact in the field of computer science.",
   },
   {
-    id: 2,
+    id: 3,
     title: "Education",
     year: "2019 / 2020",
     institution: "SQI College of ICT, Ibadan.",
