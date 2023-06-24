@@ -58,7 +58,7 @@ const TipsAboutMe = () => {
                 I am confident that I can make a valuable contribution to your
                 organization.
               </p> */}
-              <p class="text-lg font-semibold">
+              <p className="text-lg font-semibold">
                 Experienced Web Developer with 4+ years in MERN, MEVN, and PHP
                 Laravel. Strong frontend skills. Passionate about creating
                 user-friendly websites. Collaborative team player. Ready for new

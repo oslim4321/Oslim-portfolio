@@ -15,13 +15,13 @@ const HeroPage = () => {
   const style = {
     color: "red",
     height: "100vh",
-    width: "200vw",
+    width: "100vw",
   };
   return (
     <>
       {/* <Cursor /> */}
 
-      <div className="absolute">
+      <div className="absolute left-0 right-0">
         <Lottie animationData={animationData} style={style} />;
       </div>
       <div className="cont">
@@ -79,7 +79,7 @@ const HeroPage = () => {
               </div>
               <a
                 download={true}
-                href={"/Sooto Mern stack CV.pdf"}
+                href={"/Sooto Mern Stack Dev CV.pdf"}
                 className="text-3xl w-[10%] bg-[#a36bb9] h-full flex justify-center items-center z-20 py-6"
               >
                 <DownloadIcon className="text-lg mx-2 text-white" />
