@@ -83,7 +83,7 @@ const Navbar = () => {
             ></span>
           </button>
 
-          <div className="fixed top-1/2 transform translate-y-1/2 left-10 hidden md:block">
+          <div className="fixed top-1/2 transform translate-y-1/2 left-9 hidden md:block">
             <Aside setshowCurtain={setshowCurtain} />
           </div>
 

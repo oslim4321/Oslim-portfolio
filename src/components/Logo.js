@@ -12,7 +12,7 @@ const Logo = () => {
         <motion.div whileHover={{ scale: 1.1 }}>
           <Image
             className=" w-20 md:w-2d8 rounded-full"
-            src="/logo/my_logo_3-removebg-preview.png"
+            src="/images/MyLogo.png"
             alt="logo"
             width={150}
             height={150}
