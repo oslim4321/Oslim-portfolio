@@ -43,7 +43,7 @@ const BuildAndPaint = () => {
                 See My Work
               </motion.button>
             </Link>
-            <FoldAnimation />
+            {/* <FoldAnimation /> */}
           </div>
         </div>
         <div className="w-px  bg-[#efced9] mx-8 hidden md:block" />

@@ -157,19 +157,19 @@ function GridListing({ projectData, project, setSelectedId }) {
                 <motion.h5 className="text-gray-600 dark:text-gray-400">
                   {item.projectDesc.slice(0, 50)}...
                 </motion.h5>
-                <div className="flex justify-between items-center mt-4">
-                  <button
+                <div className="flex justify-end items-center mt-4">
+                  {/* <button
                     onClick={() => setSelectedId(index + 1)}
                     className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 hover:scale-x-100 transition-all duration-100"
                   >
                     See More
-                  </button>
+                  </button> */}
 
                   <a
                     href={item.gitHubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-gray-600 transition-colors"
+                    className="text-gray-400 hover:text-gray-600 transition-colors "
                   >
                     <GithubIcon size={20} />
                   </a>

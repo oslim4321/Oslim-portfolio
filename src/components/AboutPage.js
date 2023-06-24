@@ -58,7 +58,7 @@ export const educationData = [
     title: "Education",
     year: "2019 / 2020",
     institution: "SQI College of ICT, Ibadan.",
-    degree: "Software Engineering",
+    degree: "(B.Sc.) degree: Software Engineering",
     description:
       "As a software engineering student at SQI College of ICT, I am a dedicated and detail-oriented individual with a strong interest in software development and emerging technologies. Through my coursework and projects, I have gained a solid foundation in programming languages, software design, and development methodologies, as well as experience working in collaborative team environments. I am eager to continue building my skills and knowledge in software engineering and to apply them to real-world challenges and opportunities.",
   },
