@@ -166,8 +166,9 @@ const Education = () => {
             <motion.div
               ref={liRef}
               className="p-6 glassBg rounded shadow-md  md:w-[70%] flex justify-center items-center flex-col"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.8 }}
+              initial={{ y: 50 }}
+              whileInView={{ y: 0 }}
+              transition={{ duration: 0.5, type: "spring" }}
             >
               <h3 className="text-xl font-semibold mb-2">{edu.institution}</h3>
               <p className="text-gray-600 dark:text-light/70">
