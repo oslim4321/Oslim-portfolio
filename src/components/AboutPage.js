@@ -92,8 +92,11 @@ const Experience = () => {
         ></motion.div>
         {/* left line scrolling end */}
 
-        {experienceData.map((expe) => (
-          <motion.div className="flex justify-center items-center flex-col m-6 relative">
+        {experienceData.map((expe, i) => (
+          <motion.div
+            className="flex justify-center items-center flex-col m-6 relative"
+            key={i}
+          >
             <LiIcons reference={liRef} />
             <motion.div
               ref={liRef}
@@ -160,8 +163,11 @@ const Education = () => {
           style={{ scaleY: scrollYProgress }}
         ></motion.div>
         {/* left line scrolling end */}
-        {educationData.map((edu) => (
-          <motion.div className="flex justify-center items-center flex-col m-6 relative">
+        {educationData.map((edu, i) => (
+          <motion.div
+            className="flex justify-center items-center flex-col m-6 relative"
+            key={i}
+          >
             <LiIcons reference={liRef} />
             <motion.div
               ref={liRef}

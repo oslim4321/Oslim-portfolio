@@ -12,7 +12,9 @@ const UseThemesSwitcher = () => {
 
     const handleChange = () => {
       if (userPref) {
-        let check = userPref === "dark" ? "dark" : "light";
+        // let check = userPref === "dark" ? "dark" : "light";
+        let check = mediaQuery.matches ? "dark" : "dark";
+
         setMode(check);
         if (check === "dark") {
           document.documentElement.classList.add("dark");
