@@ -63,7 +63,7 @@ const Skills = () => {
           </motion.div>
           <Skill name="/language/icons8-html.svg" x="5vw" y="-10vw" />
           <Skill name="/language/icons8-css.svg" x="20vw" y="-2vw" />
-          <Skill name="/language/icons8-javaScript.svg" x="10vw" y="2vw" />
+          <Skill name="/images/icons8-javaScript.svg" x="10vw" y="2vw" />
           <Skill name="/language/icons8-react.svg" x="20vw" y="12vw" />
           <Skill
             name="/language/nextjs-icon-svgrepo-com.svg"
