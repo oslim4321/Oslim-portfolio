@@ -22,7 +22,7 @@ const ProjectList = ({ project, projectData }) => {
           project={project}
           setSelectedId={setSelectedId}
         />
-        <div className="relative">
+        {/* <div className="relative">
           <AnimatePresence>
             {selectedId && pupUpShow && (
               <motion.div
@@ -30,14 +30,13 @@ const ProjectList = ({ project, projectData }) => {
                 className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
               >
                 <motion.div
-                  className="bg-white dark:bg-gray-800 w-full md:w-[60%] h-[60%] shadow-md rounded-md p-4 overflow-scroll scrollbar-white relative"
+                  className="bg-white dark:bg-gray-800 w-full md:w-[60%] h-[60%] shadow-mdd  rounded-md p-4 overflow-scroll scrollbar-white relative"
                   initial={{ opacity: 0, scale: 0.95, y: -20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: -20 }}
                   transition={{ duration: 0.3 }}
                 >
                   <div className="flex flex-wrap gap-x-5">
-                    {/* <img src={pupUpShow.image} alt="" /> */}
                     <Image
                       src={pupUpShow.image ? pupUpShow.image : ""}
                       alt={pupUpShow.projectName}
@@ -96,7 +95,7 @@ const ProjectList = ({ project, projectData }) => {
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
+        </div> */}
       </div>
     </>
   );
@@ -123,7 +122,7 @@ function GridListing({ projectData, project, setSelectedId }) {
             <motion.div
               key={index + 1}
               layoutId={index + 1}
-              className={`p-4 bg-white dark:bg-gray-800 shadow-md rounded-md cursor-pointer glassBg dark:text-white border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px]`}
+              className={`p-4 bg-white dark:bg-gray-800 shadow-md rounded-md cursor-pointer glassBg dark:text-white border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px] py-10`}
               initial={{ x: item.direction }}
               whileInView={{ x: 0 }}
               transition={{ delay: 0.3 + index * 0.08 }}
@@ -157,7 +156,20 @@ function GridListing({ projectData, project, setSelectedId }) {
                 <motion.h5 className="text-gray-600 dark:text-gray-400">
                   {item.projectDesc.slice(0, 50)}...
                 </motion.h5>
-                <div className="flex justify-end items-center mt-4">
+                <div className="flex justify-between items-center mt-4">
+                  <p className="leading-relaxed text-base overflow-x-auto w-40 scrollbar-white no-scrollbar">
+                    <span className="inline-flex space-x-2">
+                      {item.technologies.map((language, i) => (
+                        <span
+                          className="inline-block px-2 py-1 text-sm font-medium leading-none bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-full whitespace-nowrap"
+                          key={i}
+                        >
+                          {language}
+                        </span>
+                      ))}
+                    </span>
+                  </p>
+
                   {/* <button
                     onClick={() => setSelectedId(index + 1)}
                     className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 hover:scale-x-100 transition-all duration-100"
@@ -184,9 +196,9 @@ function GridListing({ projectData, project, setSelectedId }) {
                   >
                     <button
                       onClick={() => setSelectedId(index + 1)}
-                      className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70"
+                      className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 mt-5"
                     >
-                      Visit
+                      Visit Portfolio
                     </button>
                   </a>
                 </div>

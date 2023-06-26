@@ -5,6 +5,7 @@ import ContactForm from "../components/GetInTouch";
 import BuildAndPaint from "../components/BuildAndPaint";
 import TransitionEffect from "../components/TransitionEffect";
 import { Shapes } from "../components/Icons";
+import WhatIDo from "../components/WhatIDo";
 
 const montserrat = Montserrat({
   weight: ["400", "600"],
@@ -23,7 +24,8 @@ export default function Home() {
 
           <HeroPage />
           <TipsAboutMe />
-          <BuildAndPaint />
+          {/* <BuildAndPaint /> */}
+          <WhatIDo />
           <ContactForm />
         </div>
       </main>

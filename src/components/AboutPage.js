@@ -1,11 +1,10 @@
 "use client";
 import { motion, useScroll } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import LiIcons from "./LiIcons";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
-import { Electric } from "./Icons";
-import { merriweather } from "@/lib/utilty/Font";
+
 import AnimatedText from "./AnimatedText";
 
 export const experienceData = [
@@ -207,7 +206,7 @@ const AboutPage = () => {
       //   mode === "dark" ? "twoBgColorDark" : mode === "light" && "twoBgColor"
       // }  dark:text-white`}
       className="twoBgColor
-       dark:bg-gradient-to-r from-gray-900 via-transparent to-gray-700 relative py-20;
+       dark:bg-gradient-to-r from-gray-900 via-transparent to-gray-700 relative md:py-40 
 "
     >
       {/* <Electric className="absolute left-0  text-white" /> */}

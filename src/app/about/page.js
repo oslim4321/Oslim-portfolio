@@ -30,7 +30,7 @@ const page = () => {
           <div className="mt-20">
             <Skills />
           </div>
-          <div className="py-20 my-20">
+          <div className="m">
             <AboutPage />
           </div>
         </div>
