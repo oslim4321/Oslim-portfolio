@@ -10,7 +10,7 @@
 }
 @media (max-width: 900px) {
   .cont {
-    max-width: 00%;
+    max-width: 100%;
     margin: 0 auto;
 
     /* max-w-[90%] mx-auto */
