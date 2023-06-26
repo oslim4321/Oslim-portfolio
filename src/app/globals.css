@@ -8,6 +8,14 @@
 
   /* max-w-[90%] mx-auto */
 }
+@media (max-width: 900px) {
+  .cont {
+    max-width: 00%;
+    margin: 0 auto;
+
+    /* max-w-[90%] mx-auto */
+  }
+}
 /* section {
   margin-top: 100px;
 } */

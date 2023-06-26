@@ -24,8 +24,8 @@ export default function Home() {
 
           <HeroPage />
           <TipsAboutMe />
-          {/* <BuildAndPaint /> */}
-          <WhatIDo />
+          <BuildAndPaint />
+          {/* <WhatIDo /> */}
           <ContactForm />
         </div>
       </main>

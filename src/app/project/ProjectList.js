@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Close, GithubIcon } from "../../components/Icons";
+import { motion } from "framer-motion";
+import { GithubIcon } from "../../components/Icons";
 import Link from "next/link";
-import ProjectImageList from "./ProjectImageList";
+import { merriweather } from "@/lib/utilty/Font";
 import Image from "next/image";
 
 const ProjectList = ({ project, projectData }) => {
@@ -146,7 +146,9 @@ function GridListing({ projectData, project, setSelectedId }) {
                 </a>
               </div>
               <div className="">
-                <motion.h2 className="text-xl font-bold">
+                <motion.h2
+                  className={`text-xl font-bold ${merriweather.clasName}`}
+                >
                   {item.projectName.length > 21 ? (
                     <div>{item.projectName.slice(0, 21)}...</div>
                   ) : (
