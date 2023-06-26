@@ -207,7 +207,7 @@ const AboutPage = () => {
       //   mode === "dark" ? "twoBgColorDark" : mode === "light" && "twoBgColor"
       // }  dark:text-white`}
       className="twoBgColor
-       dark:bg-gradient-to-r from-gray-900 via-transparent to-gray-700 relative;
+       dark:bg-gradient-to-r from-gray-900 via-transparent to-gray-700 relative py-20;
 "
     >
       {/* <Electric className="absolute left-0  text-white" /> */}

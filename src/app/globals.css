@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .cont {
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
 
   /* max-w-[90%] mx-auto */

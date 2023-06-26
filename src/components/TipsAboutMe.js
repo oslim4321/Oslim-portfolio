@@ -3,7 +3,7 @@ import React from "react";
 import AnimatedText from "./AnimatedText";
 import AnimatedImg from "./AnimatedImg";
 import { motion } from "framer-motion";
-import { YearOfExperiance } from "@/lib/MyDetails";
+import { merriweather } from "@/lib/utilty/Font";
 
 const TipsAboutMe = () => {
   return (
@@ -29,13 +29,21 @@ const TipsAboutMe = () => {
         ></path>
       </motion.svg>
       <div className="bg-[#efced9] ">
-        <AnimatedText
-          text="Introduction and Expertise"
-          className={`my-10 !font-bold !text-3xl md:!text-7xl !leading-10`}
-        />
         <div className=" cont grid grid-cols-12 place-items-center">
           <div className="col-span-12 md:col-span-6">
             <div className="text-center md:text-start dark:text-dark">
+              {/* <AnimatedText
+                text="Introduction and Expertise"
+                className={`my-10 !font-bold !text-3xl md:!text-5xl !leading-10`}
+              /> */}
+              <h1
+                className={`my-10 !font-bold !text-3xl md:!text-6xl !leading-10 ${merriweather.className}`}
+              >
+                <span>
+                  {" "}
+                  Introduction <br /> and Expertise
+                </span>
+              </h1>
               {/*             
               <p>
                 I am a Junior Web Developer with <YearOfExperiance />+ years of
@@ -58,7 +66,7 @@ const TipsAboutMe = () => {
                 I am confident that I can make a valuable contribution to your
                 organization.
               </p> */}
-              <p className="text-lg font-semibold">
+              <p className="text-lg ">
                 Experienced Web Developer with 4+ years in MERN, MEVN, and PHP
                 Laravel. Strong frontend skills. Passionate about creating
                 user-friendly websites. Collaborative team player. Ready for new

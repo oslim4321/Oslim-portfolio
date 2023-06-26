@@ -27,7 +27,7 @@ const AnimatedNumber = ({ value }) => {
 
 const Capability = () => {
   return (
-    <div className="cont flex justify-center items-center flex-wrap">
+    <div className="cont flex justify-center items-center flex-wrap py-10">
       <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center">
         <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
           <AnimatedNumber value={150} /> +
@@ -48,7 +48,7 @@ const Capability = () => {
       <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center">
         <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
           {" "}
-          <AnimatedNumber value={50} /> +
+          <AnimatedNumber value={19} /> +
         </span>
         <h2 className="text-base md:text-xl text-center md:text-left font-medium text-dark/70 dark:text-light/75">
           Satisfied Client

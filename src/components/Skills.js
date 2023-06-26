@@ -46,7 +46,7 @@ const Skills = () => {
         text={"Skills"}
         className={`my-10 !font-bold !text-3xl dark:!text-light sm:!text-4xl md:!text-5xl lg:!text-7xl xl:!text-8xl `}
       />
-      <div className="cont dark:bg-dark">
+      <div className="cont dadrk:bg-dadrk">
         <div
           className="w-full h-[50vh] sm:h-[50vh] lg:h-[80vh] xl:h-screen relative flex items-center justify-center rounded-full
          bg-circularLightSm dark:bg-circularDarkSm  

@@ -18,7 +18,7 @@ const page = () => {
         <TransitionEffect />
 
         <div className=" bg-[rgb(245,245,245)]  dark:bg-dark dark:text-light overflow-hidden">
-          <div className="dark:bg-slate-900">
+          <div className="dark:bg-sdlate-900">
             {/* <AnimatedText
               text="Unleashing Creativity!"
               className={`my-10 !font-bold !text-3xl dark:!text-light sm:!text-4xl md:!text-5xl lg:!text-7xl xl:!text-8xl`}
@@ -27,8 +27,10 @@ const page = () => {
             <Capability />
           </div>
           {/* skkills */}
-          <Skills />
-          <div>
+          <div className="mt-20">
+            <Skills />
+          </div>
+          <div className="py-20 my-20">
             <AboutPage />
           </div>
         </div>

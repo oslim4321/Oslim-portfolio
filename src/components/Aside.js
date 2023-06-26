@@ -11,12 +11,11 @@ import {
 } from "./Icons";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
 
-function Aside({ setshowCurtain }) {
+function Aside({}) {
   const [mode, setmode] = UseThemesSwitcher();
 
   function toggleDarkLightMode() {
     setmode(mode === "light" ? "dark" : "light");
-    setshowCurtain(mode);
   }
   return (
     <div>

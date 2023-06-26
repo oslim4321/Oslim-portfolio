@@ -44,14 +44,12 @@ const CustomLink = ({ href, title, className = "" }) => {
 const Navbar = () => {
   const [mode, setmode] = UseThemesSwitcher();
   const [isOpen, setisOpen] = useState(false);
-  const [showCurtain, setshowCurtain] = useState("black");
   const handleClick = () => {
     setisOpen(!isOpen);
   };
 
   return (
     <div className="relative">
-      <Curtain showCurtain={showCurtain} mode={mode} />
       <div className="w-full bg-light dark:bg-dark h-[120px]"></div>
 
       <div className="w-full py-4  dark:text-light border-b-[1px] border-transparent dark:border-light fixed top-0 left-0 right-0 z-50 glassBg">
@@ -83,8 +81,8 @@ const Navbar = () => {
             ></span>
           </button>
 
-          <div className="fixed top-1/2 transform translate-y-1/2 left-9 hidden md:block">
-            <Aside setshowCurtain={setshowCurtain} />
+          <div className="fixed top-[50%] transform translate-y-1/2 left-9 hidden md:block">
+            <Aside />
           </div>
 
           {/* Desktop nav */}
