@@ -64,7 +64,7 @@ const WhatIDo = () => {
               <h1 className="sm:text-4xl text-5xl font-medium font-bold title-font mb-2 text-gray- dark:text-slate-200">
                 What I DO
               </h1>
-              <div className="h-1 w-20 bg-indigo-500 rounded"></div>
+              <div className="h-1 w-20 bg-[#a772bf] rounded"></div>
             </div>
           </div>
           <div className="flex flex-wrap -m-4">

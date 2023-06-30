@@ -4,7 +4,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer
-      className="h-1[100vh] text-white py-6 dark:bg-dark"
+      className="h-1[100vh] text-white py-6 dark:bg-slate-800"
       style={{
         backgroundImage: "/images/12557718_4990044.jpg",
         backgroundSize: "cover",
