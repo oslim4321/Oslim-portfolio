@@ -31,14 +31,14 @@ const WhatIDo = () => {
       language: ["html", "css", "js"],
     },
     {
-      heading: "I Paint, Sometimes",
+      heading: "Aspiring UI/UX",
       img: [
-        "/images/cartonPaint.jpg",
-        "/images/cartonPaint2.jpg",
-        "/images/cartonPaint3.jpg",
+        "/images/ui ux 01.png",
+        "/images/ui ux 2.jpg",
+        "/images/ui ux 3.jpg",
       ],
       descrip:
-        "I am a painter and cartoonist with a passion for using my art to tell stories.",
+        "aspiring to become a professional Ui/UX designer in the near future, showcasing a strong drive and ambition for pursuing a career in the field of user interface and user experience design.",
       url: "coming-soon",
       language: ["html", "css", "js"],
     },
@@ -61,7 +61,7 @@ const WhatIDo = () => {
         <div className="container px-5 py-24 mx-auto max-w-7x1">
           <div className="flex flex-wrap w-full mb-4 p-4">
             <div className="w-full mb-6 lg:mb-0">
-              <h1 className="sm:text-4xl text-5xl font-medium font-bold title-font mb-2 text-gray-">
+              <h1 className="sm:text-4xl text-5xl font-medium font-bold title-font mb-2 text-gray- dark:text-slate-200">
                 What I DO
               </h1>
               <div className="h-1 w-20 bg-indigo-500 rounded"></div>
@@ -75,7 +75,7 @@ const WhatIDo = () => {
                     initial={{ opacity: 0, x: 100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-2xl whitedpace-nowrap text-center md:text-left font-bold tracking-widest mb-4 text-[#e49db5]"
+                    className="text-2xl whitedspace-nowrap text-center md:text-left font-bold tracking-widest mb-4 text-[#e49db5]"
                   >
                     {skil.heading}
                   </motion.h1>
@@ -95,8 +95,8 @@ const WhatIDo = () => {
                       className="h-[90%] object-cover"
                     />
                   </motion.div>
-                  <p className="leading-relaxed text-base text-dark dark:text-light">
-                    {skil.descrip.slice(0, 70)}
+                  <p className="leading-relaxed text-basfe text-dark dark:text-light text-sm">
+                    {skil.descrip.slice(0, 80)}
                   </p>
                   <p className="leading-relaxed text-base">
                     {skil.language.map((language, i) => (
