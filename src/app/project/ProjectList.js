@@ -113,7 +113,9 @@ function GridListing({ projectData, project, setSelectedId }) {
 
   return (
     <div className="my-10">
-      <p className="text-2xl font-bold mb-6 text-center dark:text-light">
+      <p
+        className={`my-10 !font-bold !text-3xl dark:!text-light sm:!text-4xl md:!text-4xl lg:!text-5xl text-center ${merriweather.className}`}
+      >
         {project}
       </p>
       <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-4 grid-row-1 md:grid-rows-2 cont">

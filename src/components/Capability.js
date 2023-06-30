@@ -1,6 +1,7 @@
 "use client";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import React, { useEffect, useRef } from "react";
+import { merriweather } from "@/lib/utilty/Font";
 
 const AnimatedNumber = ({ value }) => {
   const ref = useRef();
@@ -29,7 +30,9 @@ const Capability = () => {
   return (
     <div className="cont flex justify-center items-center flex-wrap py-10">
       <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center">
-        <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+        <span
+          className={`inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl fdont-bold ${merriweather.className}`}
+        >
           <AnimatedNumber value={150} /> +
         </span>
         <h2 className="text-base md:text-xl text-center md:text-left font-medium text-dark/70 dark:text-light/75">
@@ -37,7 +40,9 @@ const Capability = () => {
         </h2>
       </div>
       <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center mx-20">
-        <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+        <span
+          className={`inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl fdont-bold ${merriweather.className}`}
+        >
           {" "}
           <AnimatedNumber value={4} /> +
         </span>
@@ -46,7 +51,9 @@ const Capability = () => {
         </h2>
       </div>
       <div className="px-20 py-4 rounded-full flex flex-col justify-center my-2 items-center">
-        <span className=" inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+        <span
+          className={`inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl fdont-bold ${merriweather.className}`}
+        >
           {" "}
           <AnimatedNumber value={19} /> +
         </span>
