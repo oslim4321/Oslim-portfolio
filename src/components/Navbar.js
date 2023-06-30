@@ -53,7 +53,7 @@ const Navbar = () => {
       <div className="w-full bg-light dark:bg-dark h-[120px]"></div>
 
       <div className="w-full py-4  dark:text-light border-b-[1px] border-transparent dark:border-light fixed top-0 left-0 right-0 z-50 glassBg">
-        <div className="cont font-medium flex items-center justify-between py-4 relative">
+        <div className="cont font-medium flex items-center justify-between py-f4 relative">
           <div className="md:hidden ">
             {" "}
             <Logo />

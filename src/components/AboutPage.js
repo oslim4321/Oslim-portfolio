@@ -22,7 +22,7 @@ export const experienceData = [
   },
   {
     title: "Freelance MERN Stack Developer",
-    duration: "09/September/2021 - MONTH 20XX",
+    duration: "09/September/2021 - PRESENT",
     company: "Mern stack",
     description: [
       "Worked with clients to understand project requirements and deliver customized solutions using Next.js and MERN stack technologies",
@@ -99,7 +99,7 @@ const Experience = () => {
             <LiIcons reference={liRef} />
             <motion.div
               ref={liRef}
-              className="p-6 glassBg rounded shadow-md md:w-[70%] flex justify-center items-center flex-col"
+              className="p-6 glassBgNoShadow rounded shadow-md md:w-[70%] flex justify-center items-center flex-col"
               // whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.8 }}
               initial={{ y: 50 }}
@@ -170,7 +170,7 @@ const Education = () => {
             <LiIcons reference={liRef} />
             <motion.div
               ref={liRef}
-              className="p-6 glassBg rounded shadow-md  md:w-[70%] flex justify-center items-center flex-col"
+              className="p-6 glassBgNoShadow rounded shadow-md  md:w-[70%] flex justify-center items-center flex-col"
               initial={{ y: 50 }}
               whileInView={{ y: 0 }}
               transition={{ duration: 0.5, type: "spring" }}

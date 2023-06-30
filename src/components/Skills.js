@@ -16,7 +16,7 @@ const Skill = ({ name, x, y }) => (
   <motion.div
     className="flex items-center capitalize justify-center rounded-full font-semibold text-dark bg-rslate-700 dark:text-light md:text-light cursor-pointer absolute text-sm md:text-lg  sm:text-light sm:text-sm
      md:dark:bg-light dark:md:text-dark
-     w-10 h-10 md:w-20 md:h-20 lg:w-28 lg:h-28 dark:bg-white
+     w-10 h-10 lg:w-20 lg:h-20 dark:bg-white
      "
     whileHover={{ scale: 1.09 }}
     initial={{ x: 0, y: 0 }}

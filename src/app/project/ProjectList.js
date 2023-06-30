@@ -122,7 +122,7 @@ function GridListing({ projectData, project, setSelectedId }) {
             <motion.div
               key={index + 1}
               layoutId={index + 1}
-              className={`p-4 bg-white dark:bg-gray-800 shadow-md rounded-md cursor-pointer glassBg dark:text-white border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px] py-10`}
+              className={`p-4 bg-white dark:bg-gray-800 shadow-md rounded-md cursor-pointer glassBgNoShadow dark:text-white border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px] py-10`}
               initial={{ x: item.direction }}
               whileInView={{ x: 0 }}
               transition={{ delay: 0.3 + index * 0.08 }}
@@ -198,7 +198,7 @@ function GridListing({ projectData, project, setSelectedId }) {
                   >
                     <button
                       onClick={() => setSelectedId(index + 1)}
-                      className="border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 mt-5"
+                      className="border-slate-300 border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 mt-5 text-slate-400"
                     >
                       Visit Portfolio
                     </button>

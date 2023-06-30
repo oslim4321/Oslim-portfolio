@@ -12,7 +12,7 @@ export default function ProjectParent({ data }) {
   const { loading, errorState } = GlobalMyContextProvider(MyContextProvider);
   const [error, setError] = useState("");
 
-  const [project, setproject] = useState("Client works");
+  const [project, setproject] = useState("Portfolio works");
   const [projectData, setprojectData] = useState([]);
   // setprojectData(data);
   useEffect(() => {
