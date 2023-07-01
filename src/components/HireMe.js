@@ -14,7 +14,7 @@ const HireMe = () => {
   return (
     <div className="fixed right-0  bottom-10 z-50 cursor-pointer m-5">
       <motion.div
-        className="w-[100px] h-[100px] bg-[#a772bf] text-lg rounded-full flex justify-center items-center text-white shadow"
+        className="w-[90px] h-[90px] bg-[#a772bf] text-sm rounded-full flex justify-center items-center text-white shadow p-2"
         initial={{ y: 0 }}
         animate={{ y: [-20, 0] }}
         whileTap={{ scale: 0.8 }}

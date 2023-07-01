@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import Slider from "react-slick";
+import { merriweather } from "@/lib/utilty/Font";
 
 const WhatIDo = () => {
   const WhatIdDo = [
@@ -38,7 +40,7 @@ const WhatIDo = () => {
         "/images/ui ux 3.jpg",
       ],
       descrip:
-        "aspiring to become a professional Ui/UX designer in the near future, showcasing a strong drive and ambition for pursuing a career in the field of user interface and user experience design.",
+        "Aspiring to become a professional Ui/UX designer in the near future, showcasing a strong drive and ambition for pursuing a career in the field of user interface and user experience design.",
       url: "coming-soon",
       language: ["html", "css", "js"],
     },
@@ -61,7 +63,9 @@ const WhatIDo = () => {
         <div className="container px-5 py-24 mx-auto max-w-7x1">
           <div className="flex flex-wrap w-full mb-4 p-4">
             <div className="w-full mb-6 lg:mb-0">
-              <h1 className="sm:text-4xl text-5xl font-medium font-bold title-font mb-2 text-gray- dark:text-slate-200">
+              <h1
+                className={`sm:text-4xl text-5xl font-medium font-bold title-font mb-2 text-dark dark:text-slate-200 ${merriweather.className}`}
+              >
                 What I DO
               </h1>
               <div className="h-1 w-20 bg-[#a772bf] rounded"></div>
