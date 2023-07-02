@@ -18,7 +18,7 @@ const WhatIDo = () => {
       descrip:
         "Create captivating websites that cater to your specific requirements. Specializing in visually striking and user-friendly designs.",
       url: "project",
-      language: ["html", "css", "js"],
+      language: ["Node js", "React", "laravel", "..."],
     },
     {
       heading: "I Paint, Sometimes",
@@ -30,7 +30,7 @@ const WhatIDo = () => {
       descrip:
         "Unleash my creativity through the power of painting. Bringing stories to life with my passion for art and cartooning. ",
       url: "coming-soon",
-      language: ["html", "css", "js"],
+      language: ["Adobe", "Autodesk", "illustrator", "..."],
     },
     {
       heading: "Aspiring UI/UX",
@@ -42,7 +42,7 @@ const WhatIDo = () => {
       descrip:
         "Aspiring to become a professional Ui/UX designer in the near future, showcasing a strong drive and ambition for pursuing a career in the field of user interface and user experience design.",
       url: "coming-soon",
-      language: ["html", "css", "js"],
+      language: ["Figma", "Adobe XD", "Sketch"],
     },
   ];
   const [activeIndex, setActiveIndex] = useState(0);
@@ -102,7 +102,7 @@ const WhatIDo = () => {
                   <p className="leading-relaxed text-basfe text-dark dark:text-light text-sm">
                     {skil.descrip.slice(0, 80)}
                   </p>
-                  <p className="leading-relaxed text-base">
+                  <p className="leading-relaxed text-base my-2">
                     {skil.language.map((language, i) => (
                       <span
                         className="inline-block px-2 py-1 mr-2 mb-2 text-sm font-medium leading-none bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-full"
