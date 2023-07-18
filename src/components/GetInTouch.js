@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Shapes } from "./Icons";
 
 const ContactForm = () => {
   const [name, setName] = useState("");

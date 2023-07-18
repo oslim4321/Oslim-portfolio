@@ -1,9 +1,9 @@
 "use client";
-import { MyAddress, MyEmail, MyPhone, YearOfExperiance } from "@/lib/MyDetails";
+import { MyEmail, YearOfExperiance } from "@/lib/MyDetails";
 import { educationData, experienceData } from "@/src/components/AboutPage";
 import React from "react";
 import Skillls, { MobileSkills } from "./Skillls";
-import { Poppins } from "next/font/google";
+// import { Poppins } from "next/font/google";
 import { motion } from "framer-motion";
 import { Bullet } from "@/src/components/Icons";
 import {
@@ -15,11 +15,11 @@ import {
 import Image from "next/image";
 import Project from "./Project";
 
-const poppins = Poppins({
-  weight: ["400", "600"],
-  subsets: ["latin"],
-  // variable: "--font-montserrat",
-});
+// const poppins = Poppins({
+//   weight: ["400", "600"],
+//   subsets: ["latin"],
+//   // variable: "--font-montserrat",
+// });
 
 const Resume = () => {
   return (
@@ -127,7 +127,7 @@ const Resume = () => {
                 <Image
                   width="500"
                   height="500"
-                  src="/images/myPicture.jpg"
+                  src="/images/Selim1s.jpg"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -138,7 +138,7 @@ const Resume = () => {
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#a36cb7] dark:text-white relative inline-block ${poppins.className}`}
+                className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#a36cb7] dark:text-white relative inline-block`}
               >
                 <span
                   className={`relative FunFont`}

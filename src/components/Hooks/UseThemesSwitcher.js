@@ -12,20 +12,20 @@ const UseThemesSwitcher = () => {
 
     const handleChange = () => {
       if (userPref) {
-        // let check = userPref === "dark" ? "dark" : "light";
-        let check = mediaQuery.matches ? "dark" : "dark";
+        let check = userPref === "dark" ? "dark" : "light";
+        // let check = mediaQuery.matches ? "dark" : "dark";
 
         setMode(check);
         if (check === "dark") {
           document.documentElement.classList.add("dark");
         } else {
-          document.documentElement.classList.remove("dark");
+          document.documentElement.classList.remove("light");
         }
       } else {
-        let check = mediaQuery.matches ? "dark" : "light";
+        // let check = mediaQuery.matches ? "dark" : "light";
         setMode(check);
         if (check === "dark") {
-          document.documentElement.classList.add("dark");
+          document.documentElement.classList.add("light");
         } else {
           document.documentElement.classList.remove("dark");
         }

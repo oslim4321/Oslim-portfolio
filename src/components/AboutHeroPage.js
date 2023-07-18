@@ -51,9 +51,9 @@ const AboutHeroPage = () => {
                   prio
                 /> */}
           <AnimatedImg
-            path={"/images/mobile_small.png"}
+            path={"/MyPic/Cut 3.png"}
             alt="oslim"
-            className="!w-[80%] "
+            className="!w-full md:!w-[70%]"
           />
         </div>
       </div>
