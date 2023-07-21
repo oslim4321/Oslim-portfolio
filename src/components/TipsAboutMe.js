@@ -82,7 +82,7 @@ const TipsAboutMe = () => {
               className="w-full "
             /> */}
             <AnimatedImg
-              path={"/MyPic/Cut 3.png"}
+              path={"/CollinDesign/3ss.png"}
               alt="coding table"
               className="w-full md:!w-[80%]"
               direction="100%"
