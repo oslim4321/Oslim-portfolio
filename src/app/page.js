@@ -6,6 +6,7 @@ import BuildAndPaint from "../components/BuildAndPaint";
 import TransitionEffect from "../components/TransitionEffect";
 import { Shapes } from "../components/Icons";
 import WhatIDo from "../components/WhatIDo";
+import FirstHeroPage from "../components/FirstHeroPage";
 
 const montserrat = Montserrat({
   weight: ["400", "600"],
@@ -22,7 +23,8 @@ export default function Home() {
         <div className="bg-[#f5f5f5]  dark:bg-dark  dark:text-light overflow-hidden">
           <Shapes className="absolute left-0 top-[50%] md:top-[400%]" />
 
-          <HeroPage />
+          {/* <HeroPage /> */}
+          <FirstHeroPage />
           <TipsAboutMe />
           {/* <BuildAndPaint /> */}
           <WhatIDo />

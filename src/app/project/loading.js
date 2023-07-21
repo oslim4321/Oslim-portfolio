@@ -1,3 +1,4 @@
+import { Skeleton } from "@/src/components/Icons";
 import Image from "next/image";
 import React from "react";
 
@@ -10,6 +11,7 @@ const loading = () => {
         height="700"
       /> */}
       loading...
+      {/* <Skeleton /> */}
     </div>
   );
 };
