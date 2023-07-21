@@ -1,4 +1,5 @@
 import { Skeleton } from "@/src/components/Icons";
+import LoadingSkeleton from "@/src/components/LoadingSkeleton";
 import Image from "next/image";
 import React from "react";
 
@@ -12,6 +13,7 @@ const loading = () => {
       /> */}
       loading...
       {/* <Skeleton /> */}
+      <LoadingSkeleton />
     </div>
   );
 };
