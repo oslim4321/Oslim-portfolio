@@ -3,6 +3,7 @@ import { merriweather } from "@/lib/utilty/Font";
 import React from "react";
 import AnimatedImg from "./AnimatedImg";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const FirstHeroPage = () => {
   return (
@@ -11,9 +12,29 @@ const FirstHeroPage = () => {
         <div className="cont md:flex justify-between items-center border border-b-2">
           {/* left */}
           <div className="flex flex-col gap-5 md:w-[40%]">
-            <p className="text-[48px] font-normal font-[400] text-[#efced9]">
+            {/* <p className="text-[48px] font-normal font-[400] text-[#efced9]">
               Hi, i’m
-            </p>
+            </p> */}
+            <motion.p
+              className="text-[48px] font-normal font-[400]"
+              style={{
+                background: "linear-gradient(90deg, #efced9, #efced9)",
+                WebkitBackgroundClip: "text", // Required for background gradient to work in some browsers
+                color: "transparent", // Hide the original text, only show the gradient
+                display: "inline-block", // Prevents the gradient from taking full width
+              }}
+              animate={{
+                backgroundPosition: ["100% 0%", "0% 100%"], // Animate the background position to create the gradient effect
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 5,
+                ease: "linear",
+              }}
+            >
+              Hi, i’m
+            </motion.p>
+
             <h1
               className={` !font-bold !text-3xl md:!text-3xl lg:!text-6xl !leading-10 z-10 ${merriweather.className}`}
             >
