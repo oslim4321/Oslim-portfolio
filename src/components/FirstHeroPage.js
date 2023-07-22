@@ -13,7 +13,7 @@ const FirstHeroPage = () => {
         <div className="cont flex flex-col md:flex-row justify-center md:justify-between items-center gap-y-5 md:gap-y-0">
           {/* left */}
           <div className="flex flex-col gap-5 md:w-[40%]">
-            <p className="text-[48px] font-normal font-[400] text-[#efced9]">
+            <p className="text-[48px] font-normal font-[400] text-[#efced9] text-shadow">
               Hi, i’m
             </p>
 
@@ -39,7 +39,7 @@ const FirstHeroPage = () => {
               <Link href="/project" className="w-[40%] md:w-[60%]">
                 <button
                   className="w-full h-[60px] rounded-[80px] text-white bg-[#a772bf] hover:bg-[#efced9] transition duration-500 ease-in-out transform 
-                       hover:-translate-y-1 hover:scale-110 "
+                       hover:-translate-y-1 hover:scale-110  uppercase"
                 >
                   Portfolio
                 </button>
@@ -47,7 +47,7 @@ const FirstHeroPage = () => {
               <button
                 onClick={handleClickHireMe}
                 className="w-[40%] md:w-[60%] h-[60px] rounded-[80px]  border border-[#a772bf] text-[#a772bf] hover:bg-[#efced9] transition duration-500 ease-in-out transform 
-                       hover:-translate-y-1 hover:scale-110 uppercase"
+                       hover:-translate-y-1 hover:scale-110 uppercase "
               >
                 Hire ME
               </button>
@@ -55,11 +55,11 @@ const FirstHeroPage = () => {
           </div>
           {/* right */}
           <div>
-            <div className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] flex-shrindk-0 rounded-full bg-[#efced9] border-10 border-[#caaad9]">
+            <div className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] flex-shrindk-0 rounded-full bg-[#efced9] border-10 border-[#caaad9] ">
               <AnimatedImg
                 path="/CollinDesign/2s.png"
                 alt="oslim"
-                className="shadow"
+                className="shadow-lg rounded-fulld"
               />
             </div>
           </div>

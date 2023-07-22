@@ -25,3 +25,7 @@ const AnimatedImg = ({ path, alt, className = "", direction = "100%" }) => {
 };
 
 export default AnimatedImg;
+
+export const Img = ({ path, alt, className }) => (
+  <Image width="500" height="500" src={path} alt={alt} className={className} />
+);

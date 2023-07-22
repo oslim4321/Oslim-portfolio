@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
 import { merriweather } from "@/lib/utilty/Font";
+import { Img } from "./AnimatedImg";
 
 const WhatIDo = () => {
   const WhatIdDo = [
@@ -83,7 +84,7 @@ const WhatIDo = () => {
                   >
                     {skil.heading}
                   </motion.h1>
-                  <motion.div
+                  {/* <motion.div
                     key={activeIndex}
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -98,7 +99,14 @@ const WhatIDo = () => {
                       alt="Image Size 720x400"
                       className="h-[90%] object-cover"
                     />
-                  </motion.div>
+                  </motion.div> */}
+                  <div className="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6">
+                    <Img
+                      path={skil.img[0]}
+                      alt="Image Size 720x400"
+                      className="h-[90%] object-cover"
+                    />
+                  </div>
                   <p className="leading-relaxed text-basfe text-dark dark:text-light text-sm">
                     {skil.descrip.slice(0, 80)}
                   </p>
