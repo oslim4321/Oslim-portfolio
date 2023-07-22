@@ -11,11 +11,11 @@ const raleway = Raleway({
 });
 const AboutHeroPage = () => {
   return (
-    <div className="cont grid grid-cols-12 place-items-center gap-x-10 w-full py-10d overflow-hidden">
-      <div className="col-span-12 md:col-span-6 flex flex-col mb-10 mx-2">
+    <div className="cont grid grid-cols-12 place-items-center md:gap-x-10 w-full py-10d overflow-hidden">
+      <div className="col-span-12 md:col-span-6 ">
         <AnimatedText
           text="Unleashing Creativity!"
-          className={`my-10 !font-bold !text-4xl dark:!text-light md:!text-5xl lg:!text-7xl xl:!text-8xl`}
+          className={`my-10 !font-bold !text-5xl dark:!text-light md:!text-6xl lg:!text-7xl xl:!text-8xl`}
           paddin={true}
         />
         {/* <h3 className="!text-xl !text-left font-bold uppercase">BIOGRAPHY</h3>
