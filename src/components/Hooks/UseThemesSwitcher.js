@@ -22,7 +22,7 @@ const UseThemesSwitcher = () => {
           document.documentElement.classList.remove("light");
         }
       } else {
-        // let check = mediaQuery.matches ? "dark" : "light";
+        let check = mediaQuery.matches ? "dark" : "light";
         setMode(check);
         if (check === "dark") {
           document.documentElement.classList.add("light");

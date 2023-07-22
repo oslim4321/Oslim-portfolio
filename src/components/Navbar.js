@@ -4,21 +4,9 @@ import React, { useState } from "react";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import {
-  DribbbleIcon,
-  Facebook,
-  GithubIcon,
-  LinkedInIcon,
-  MoonIcon,
-  SunIcon,
-  TwitterIcon,
-  Whatsapp,
-} from "./Icons";
-import HireMe from "./HireMe";
+import { Facebook, GithubIcon, TwitterIcon, Whatsapp } from "./Icons";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
-import { DarkLightAnimation } from "./TransitionEffect";
-import Curtain from "./Curtain";
-import Aside from "./Aside";
+import Aside, { ToggleMode } from "./Aside";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const pathname = usePathname();
@@ -42,7 +30,6 @@ const CustomLink = ({ href, title, className = "" }) => {
 };
 
 const Navbar = () => {
-  const [mode, setmode] = UseThemesSwitcher();
   const [isOpen, setisOpen] = useState(false);
   const handleClick = () => {
     setisOpen(!isOpen);
@@ -173,7 +160,7 @@ const Navbar = () => {
               <Facebook className={"text-light dark:text-dark"} />
             </motion.a>
 
-            <button
+            {/* <button
               onClick={() => setmode(mode === "light" ? "dark" : "light")}
               className="rounded-full bg-light dark:bg-dark dark:text-light"
             >
@@ -182,7 +169,8 @@ const Navbar = () => {
               ) : (
                 <MoonIcon className={"fill-dark"} />
               )}
-            </button>
+            </button> */}
+            <ToggleMode />
           </nav>
         </motion.div>
       ) : null}

@@ -12,11 +12,6 @@ import {
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
 
 function Aside({}) {
-  const [mode, setmode] = UseThemesSwitcher();
-
-  function toggleDarkLightMode() {
-    setmode(mode === "light" ? "dark" : "light");
-  }
   return (
     <div>
       <nav className="flex flex-col justify-center gap-8 items-center flex-wrap DeskNav">
@@ -73,7 +68,7 @@ function Aside({}) {
           />
         </motion.a>
 
-        <button
+        {/* <button
           onClick={toggleDarkLightMode}
           className={` w-6 rounded-full  dark:bg-light bg-dark ${
             mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
@@ -84,11 +79,34 @@ function Aside({}) {
           ) : (
             <MoonIcon className={"fill-dark text-lg"} />
           )}
-        </button>
+        </button> */}
+        <ToggleMode />
       </nav>
     </div>
   );
 }
 
 export default Aside;
+
+export const ToggleMode = () => {
+  const [mode, setmode] = UseThemesSwitcher();
+
+  function toggleDarkLightMode() {
+    setmode(mode === "light" ? "dark" : "light");
+  }
+  return (
+    <button
+      onClick={toggleDarkLightMode}
+      className={` w-6 rounded-full  dark:bg-light bg-dark ${
+        mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
+      } `}
+    >
+      {mode === "dark" ? (
+        <SunIcon className={"fill-dark text-lg"} />
+      ) : (
+        <MoonIcon className={"fill-dark text-lg"} />
+      )}
+    </button>
+  );
+};
 // fab0c8;

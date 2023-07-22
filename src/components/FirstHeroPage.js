@@ -14,7 +14,8 @@ const FirstHeroPage = () => {
           {/* left */}
           <div className="flex flex-col gap-5 md:w-[40%]">
             <p className="text-[48px] font-normal font-[400] text-[#efced9] text-shadow">
-              Hi, i’m
+              <span className="text-[#a772bf]"> Hi, </span>
+              i’m
             </p>
 
             <h1
