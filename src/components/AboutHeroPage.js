@@ -11,7 +11,7 @@ const raleway = Raleway({
 });
 const AboutHeroPage = () => {
   return (
-    <div className="cont grid grid-cols-12 place-items-center w-full py-10d overflow-hidden">
+    <div className="cont grid grid-cols-12 place-items-center gap-x-10 w-full py-10d overflow-hidden">
       <div className="col-span-12 md:col-span-6 flex flex-col mb-10 mx-2">
         <AnimatedText
           text="Unleashing Creativity!"
@@ -39,9 +39,9 @@ const AboutHeroPage = () => {
         </p> */}
         {/* </motion.div> */}
       </div>
-      <div className="col-span-12 md:col-span-6 ">
+      <div className="col-span-12 md:col-span-4">
         {/* <HeroPageAnimatedLeft /> */}
-        <div className="bord">
+        <div className="bord flex items-end justify-end">
           {/* <Image
                   src="/images/my-toon-picture-removebg-preview.png"
                   alt="oslim"
@@ -53,7 +53,7 @@ const AboutHeroPage = () => {
           <AnimatedImg
             path={"/MyPic/Cut 3.png"}
             alt="oslim"
-            className="!w-full md:!w-[70%]"
+            className="!w-full md:!w-[100%]"
           />
         </div>
       </div>
