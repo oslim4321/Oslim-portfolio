@@ -5,6 +5,7 @@ import AnimatedImg from "./AnimatedImg";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { handleClickHireMe } from "./HireMe";
+import RotatingAnimation from "./RotatingAnimation";
 
 const FirstHeroPage = () => {
   return (
@@ -55,13 +56,32 @@ const FirstHeroPage = () => {
             </div>
           </div>
           {/* right */}
-          <div>
+          {/* <div>
             <div className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] flex-shrindk-0 rounded-full bg-[#efced9] border-10 border-[#caaad9] ">
               <AnimatedImg
                 path="/CollinDesign/2s.png"
                 alt="oslim"
                 className="shadow-lg rounded-fulld"
               />
+            </div>
+          </div> */}
+          <div>
+            <RotatingAnimation>
+              <div className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] flex-shrink-0 rounded-full bg-[#efced9] border-10 border-[#caaad9]">
+                <AnimatedImg
+                  path="/CollinDesign/2s.png"
+                  alt="oslim"
+                  className="shadow-lg rounded-full"
+                />
+              </div>
+            </RotatingAnimation>
+
+            {/* Add your multiple language texts here */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <p className="text-2xl font-bold text-[#caaad9]">Language 1</p>
+              <p className="text-2xl font-bold text-[#caaad9]">Language 2</p>
+              <p className="text-2xl font-bold text-[#caaad9]">Language 3</p>
+              {/* Add more languages as needed */}
             </div>
           </div>
         </div>

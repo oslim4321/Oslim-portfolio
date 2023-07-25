@@ -125,7 +125,6 @@ const skillDa = {
   "Database Management": ["Firebase", "MongoDb", "SQL"],
   "Design Tools": ["Git", "GitHub"],
 };
-console.log(skillDa);
 
 const Skillls = () => {
   return (
@@ -173,7 +172,6 @@ import React from "react";
 
 export const MobileSkills = () => {
   const skillsArray = Object.values(skillDa).flat();
-  console.log(skillsArray);
 
   return (
     <div className="container mx-auto py-8">

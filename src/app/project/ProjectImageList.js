@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 
 import { ChevronLeft, ChevronRight } from "@/src/components/Icons";
 import Image from "next/image";

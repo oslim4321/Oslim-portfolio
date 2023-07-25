@@ -107,7 +107,7 @@ const ContactForm = () => {
             type="submit"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-full px-4 py-2 text-white font-semibold bg-[#EFCED9] dark:bg-[#1A202C] rounded-md hover:bg-[rgb(246,174,198)] dark:hover:bg-[rgb(68,76,90)] focus:outline-none"
+            className="w-full px-4 py-2 text-white font-semibold bg-[#EFCED9] dark:bg-slate-700 rounded-md hover:bg-[rgb(246,174,198)] dark:hover:bg-[rgb(68,76,90)] focus:outline-none"
             initial={{ opacity: 0, x: 200 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 }}

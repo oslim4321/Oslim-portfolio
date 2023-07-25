@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { GithubIcon } from "../../components/Icons";
 import Link from "next/link";
 import { merriweather } from "@/lib/utilty/Font";
 import Image from "next/image";
+import { Img } from "../../components/AnimatedImg";
+import ProjectImageList from "./ProjectImageList";
 
 const ProjectList = ({ project, projectData }) => {
   const [selectedId, setSelectedId] = useState(null);
@@ -22,7 +24,7 @@ const ProjectList = ({ project, projectData }) => {
           project={project}
           setSelectedId={setSelectedId}
         />
-        {/* <div className="relative">
+        <div className="relative">
           <AnimatePresence>
             {selectedId && pupUpShow && (
               <motion.div
@@ -95,7 +97,7 @@ const ProjectList = ({ project, projectData }) => {
               </motion.div>
             )}
           </AnimatePresence>
-        </div> */}
+        </div>
       </div>
     </>
   );
@@ -138,12 +140,17 @@ function GridListing({ projectData, project, setSelectedId }) {
                   rel="noopener noreferrer"
                 >
                   {/* <img src={item.image} alt="" /> */}
-                  <Image
+                  {/* <Image
                     src={item.image ? item.image : ""}
                     className="w-full h-full object-cover"
                     alt={item.projectName}
                     width="500"
                     height="500"
+                  /> */}
+                  <Img
+                    path={item.image ? item.image : ""}
+                    alt={item.projectName}
+                    className="w-full h-full object-cover"
                   />
                 </a>
               </div>
@@ -193,18 +200,35 @@ function GridListing({ projectData, project, setSelectedId }) {
                 <div className="flex justify-between items-center capitalize font-bold">
                   {item.studentName && <p>{item.studentName}</p>}
 
-                  <a
-                    href={item.projectLink}
-                    target="_blank"
-                    className="text-end"
-                  >
-                    <button
-                      onClick={() => setSelectedId(index + 1)}
-                      className="border-slate-300 border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 mt-5 text-slate-400"
+                  <div>
+                    <a
+                      href={item.projectLink}
+                      target="_blank"
+                      className="text-end"
                     >
-                      Visit Portfolio
-                    </button>
-                  </a>
+                      <button
+                        // onClick={() => setSelectedId(index + 1)}
+                        className="border-slate-300 border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 mt-5 text-slate-400"
+                      >
+                        Visit Portfolio
+                      </button>
+                    </a>
+                  </div>
+                  <div onClick={() => setSelectedId(index + 1)}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      fill="currentColor"
+                      classNAme="bi bi-arrows-angle-expand"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"
+                      />
+                    </svg>
+                  </div>
                 </div>
                 <p className="text-sm mt-2 text-gray-500">{item.projectType}</p>
               </div>

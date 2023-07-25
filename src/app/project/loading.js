@@ -11,7 +11,7 @@ const loading = () => {
         width={"700"}
         height="700"
       /> */}
-      loading...
+      {/* loading... */}
       {/* <Skeleton /> */}
       <LoadingSkeleton />
     </div>

@@ -1,7 +1,8 @@
+import LoadingSkeleton from "@/src/components/LoadingSkeleton";
 import React from "react";
 
 const loading = () => {
-  return <h1>loading...</h1>;
+  return <LoadingSkeleton />;
 };
 
 export default loading;

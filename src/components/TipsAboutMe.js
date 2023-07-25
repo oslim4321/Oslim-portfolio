@@ -4,8 +4,11 @@ import AnimatedText from "./AnimatedText";
 import AnimatedImg from "./AnimatedImg";
 import { motion } from "framer-motion";
 import { merriweather } from "@/lib/utilty/Font";
+import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
 
 const TipsAboutMe = () => {
+  const mode = localStorage.getItem("theme");
+
   return (
     <div className="relative overflow-">
       <motion.svg
@@ -66,7 +69,7 @@ const TipsAboutMe = () => {
                 I am confident that I can make a valuable contribution to your
                 organization.
               </p> */}
-              <p className="text-lg ">
+              <p className="text-lg text-slate-600 ">
                 Experienced Web Developer with 4+ years in MERN, MEVN, and PHP
                 Laravel. Strong frontend skills. Passionate about creating
                 user-friendly websites. Collaborative team player. Ready for new
