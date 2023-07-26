@@ -7,8 +7,6 @@ import { merriweather } from "@/lib/utilty/Font";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
 
 const TipsAboutMe = () => {
-  const mode = localStorage.getItem("theme");
-
   return (
     <div className="relative overflow-">
       <motion.svg
