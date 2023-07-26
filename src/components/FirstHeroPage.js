@@ -8,6 +8,8 @@ import { handleClickHireMe } from "./HireMe";
 import RotatingAnimation from "./RotatingAnimation";
 
 const FirstHeroPage = () => {
+  const languages = ["Language 1", "Language 2", "Language 3", "Language 4"];
+
   return (
     <div>
       <div className="m:h-[100vh] dark:bg-dark bg-light">
@@ -56,7 +58,7 @@ const FirstHeroPage = () => {
             </div>
           </div>
           {/* right */}
-          {/* <div>
+          <div>
             <div className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] flex-shrindk-0 rounded-full bg-[#efced9] border-10 border-[#caaad9] ">
               <AnimatedImg
                 path="/CollinDesign/2s.png"
@@ -64,25 +66,17 @@ const FirstHeroPage = () => {
                 className="shadow-lg rounded-fulld"
               />
             </div>
-          </div> */}
+          </div>
           <div>
-            <RotatingAnimation>
-              <div className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] flex-shrink-0 rounded-full bg-[#efced9] border-10 border-[#caaad9]">
+            {/* <RotatingAnimation languages={languages}>
+              <div className="w-[300px] md:w-[400px] h-[300px] md:h-[400px] flex-shrink-0 rounded-full bg-[#efced9] border-10 border-[#caaad9]">
                 <AnimatedImg
                   path="/CollinDesign/2s.png"
                   alt="oslim"
-                  className="shadow-lg rounded-full"
+                  className="shadow-slg roundedd-full h-full"
                 />
               </div>
-            </RotatingAnimation>
-
-            {/* Add your multiple language texts here */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <p className="text-2xl font-bold text-[#caaad9]">Language 1</p>
-              <p className="text-2xl font-bold text-[#caaad9]">Language 2</p>
-              <p className="text-2xl font-bold text-[#caaad9]">Language 3</p>
-              {/* Add more languages as needed */}
-            </div>
+            </RotatingAnimation> */}
           </div>
         </div>
       </div>

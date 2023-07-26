@@ -1,10 +1,11 @@
 import { MyEmail, MyName } from "@/lib/MyDetails";
 import Link from "next/link";
+import { handleClickHireMe } from "./HireMe";
 
 const Footer = () => {
   return (
     <footer
-      className="h-1[100vh] text-white py-6 dark:bg-slate-800"
+      className=" text-white py-6 dark:bg-slate-800"
       style={{
         backgroundImage: "/images/12557718_4990044.jpg",
         backgroundSize: "cover",
@@ -42,8 +43,9 @@ const Footer = () => {
         </div>
         <div className="flex space-x-4 mt-4 md:mt-0">
           <span
-            href="mailto:adewaleselim6@gmail.com"
-            className="text-gray-400 hover:text-white"
+            onClick={handleClickHireMe}
+            // href="mailto:adewaleselim6@gmail.com"
+            className="text-gray-400 hover:text-slate-500"
           >
             <MyEmail />
           </span>
@@ -51,7 +53,7 @@ const Footer = () => {
             href="https://github.com/oslim4321"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white"
+            className="text-gray-400 hover:text-slate-500"
           >
             GitHub
           </Link>
