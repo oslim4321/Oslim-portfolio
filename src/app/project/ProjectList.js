@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { GithubIcon } from "../../components/Icons";
+import { Close, GithubIcon } from "../../components/Icons";
 import Link from "next/link";
 import { merriweather } from "@/lib/utilty/Font";
 import Image from "next/image";
@@ -208,14 +208,18 @@ function GridListing({ projectData, project, setSelectedId }) {
                     >
                       <button
                         // onClick={() => setSelectedId(index + 1)}
-                        className="border-slate-300 border p-2 text-sm text-gray-600 hover:text-gray-900 transition-colors dark:text-light dark:hover:text-light/70 mt-5 text-slate-400"
+                        className="border-slate-300 border p-2 text-sm hover:text-gray-900 transition-colors dark:text-light/90 dark:hover:text-light/70 mt-5 text-black"
                       >
                         Visit Portfolio
                       </button>
                     </a>
                   </div>
-                  <div onClick={() => setSelectedId(index + 1)}>
-                    <svg
+                </div>
+                <div
+                  onClick={() => setSelectedId(index + 1)}
+                  className="absolute top-2 right-2"
+                >
+                  {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
                       height="12"
@@ -227,10 +231,21 @@ function GridListing({ projectData, project, setSelectedId }) {
                         fill-rule="evenodd"
                         d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"
                       />
-                    </svg>
-                  </div>
+                    </svg> */}
+                  <svg
+                    height="20"
+                    id="expand"
+                    viewBox="0 0 32 32"
+                    width="20"
+                    // xmlns="http://www.w3.org/2000/svg"
+                    fillRule="#efced9"
+                    fill="#efced9"
+                    className="shadow"
+                  >
+                    <path d=" M16 4 L28 4 L28 16 L24 12 L20 16 L16 12 L20 8z M4 16 L8 20 L12 16 L16 20 L12 24 L16 28 L4 28z " />
+                  </svg>
                 </div>
-                <p className="text-sm mt-2 text-gray-500">{item.projectType}</p>
+                {/* <p className="text-sm mt-2 text-gray-500">{item.projectType}</p> */}
               </div>
             </motion.div>
           ))}
