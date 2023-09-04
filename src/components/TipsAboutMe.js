@@ -5,6 +5,7 @@ import AnimatedImg from "./AnimatedImg";
 import { motion } from "framer-motion";
 import { merriweather } from "@/lib/utilty/Font";
 import UseThemesSwitcher from "./Hooks/UseThemesSwitcher";
+import Link from "next/link";
 
 const TipsAboutMe = () => {
   return (
@@ -73,6 +74,21 @@ const TipsAboutMe = () => {
                 user-friendly websites. Collaborative team player. Ready for new
                 challenges.
               </p>
+              <div className="flex justify-center md:justify-start ">
+                <Link
+                  href="/resume"
+                  className="b animate-bounce my-5 h-16 w-64 flex justify-center items-center"
+                >
+                  <div className="i h-16 w-64 bg-gradient-to-br from-[#a772bf]  to-[#a772bf] items-center rounded-xl shadow-2xl  cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
+                  <div className="text-center text-white font-semibold z-10 pointer-events-none flex justify-content items-center">
+                    View CV!
+                  </div>
+                </Link>
+                {/* dowmload button */}
+        
+
+                <div></div>
+              </div>
             </div>
           </div>
           <div className="col-span-12 md:col-span-6">
