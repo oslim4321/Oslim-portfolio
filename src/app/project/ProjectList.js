@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Close, GithubIcon } from "../../components/Icons";
-import Link from "next/link";
 import { merriweather } from "@/lib/utilty/Font";
 import Image from "next/image";
 import { Img } from "../../components/AnimatedImg";
@@ -126,7 +125,7 @@ function GridListing({ projectData, project, setSelectedId }) {
             <motion.div
               key={index + 1}
               layoutId={index + 1}
-              className={`p-4 bg-white dark:bg-gray-800 shadow-md rounded-md cursor-pointer glassBgNoShadow dark:text-white border-r-2 border-[#efced9] ${getRandomGridSpan()} h-[400px] py-10`}
+              className={`p-4 bg-white dark:bg-gray-800 shadow-md rounded-md cursor-pointer glassBgNoShadow dark:text-white border-r-2 border-[#efced9] ${getRandomGridSpan()} md:py-10`}
               initial={{ x: item.direction }}
               whileInView={{ x: 0 }}
               transition={{ delay: 0.3 + index * 0.08 }}
