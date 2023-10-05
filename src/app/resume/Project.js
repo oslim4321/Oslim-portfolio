@@ -31,7 +31,7 @@ let projectInfo = [
     projectName: "SQI Ecommerce Website",
     projectDesc:
       "I have developed an online marketplace website for a client and also collaborated with other developers to build the eCommerce website for a client using the MERN stack (MongoDB, Express.js, React.js, and Node.js), along with Tailwind CSS and Bootstrap for styling. ",
-    projectLink: "https://sqi-final-ecommece-project.netlify.app/",
+    projectLink: "https://sqi-frontend-ecommerce.vercel.app/",
     projecrGithub:
       "https://github.com/oslim4321/Sqi-frontend-project-ecommerce",
     languages: [
