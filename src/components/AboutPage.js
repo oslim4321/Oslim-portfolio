@@ -23,7 +23,7 @@ export const experienceData = [
   {
     title: "Frontend Developer",
     duration: "01/January/2023 - PRESENT",
-    company: "Mentorshub, Estonia, Estonia Remote",
+    company: "Mentorshub, Estonia Remote",
     description: [
       "Develop and maintain responsive and user-friendly web applications.",
       "Collaborate with cross-functional teams to design and implement frontend features.",
