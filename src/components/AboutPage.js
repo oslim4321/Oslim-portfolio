@@ -21,6 +21,17 @@ export const experienceData = [
     href: "https://edu.sqi.ng/",
   },
   {
+    title: "Frontend Developer",
+    duration: "01/January/2023 - PRESENT",
+    company: "Mentorshub, Estonia, Estonia Remote",
+    description: [
+      "Develop and maintain responsive and user-friendly web applications.",
+      "Collaborate with cross-functional teams to design and implement frontend features.",
+      "Optimize website performance and ensure compatibility across various browsers and devices.",
+    ],
+    href: "https://mentorshub.io/",
+  },
+  {
     title: "Freelance MERN Stack Developer",
     duration: "09/September/2021 - PRESENT",
     company: "Mern stack",

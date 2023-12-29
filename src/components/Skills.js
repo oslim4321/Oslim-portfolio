@@ -124,6 +124,12 @@ const Skills = () => {
             y="0vw"
           />
           <Skill
+            text={"Sanity.io"}
+            name="/language/sanity.svg"
+            x="40vw"
+            y="10vw"
+          />
+          <Skill
             text={"typescript"}
             name="/language/icons8-typescript.svg"
             x="-40vw"
