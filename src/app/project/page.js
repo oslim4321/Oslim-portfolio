@@ -4,6 +4,7 @@ import ProjectParent from "./ProjectParent";
 // import { collection, getDocs, query, where } from "firebase/firestore";
 import { fetchItemsByCategory, getData } from "@/lib/QueryFirebase";
 
+export const dynamic = 'force-dynamic'
 const page = async () => {
   // const data = await getData();
   const data = await fetchItemsByCategory("client-work");
