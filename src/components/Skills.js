@@ -171,6 +171,38 @@ const Skills = () => {
             x="-30vw"
             y="15vw"
           />
+
+          <Skill
+            text={"angular"}
+            name="/language/angular-icon.svg"
+            x="-20vw"
+            y="25vw"
+          />
+          <Skill
+            text={"framer motion"}
+            name="/language/framer-motion-icon.svg"
+            x="-35vw"
+            y="18vw"
+          />
+          <Skill
+            text={"Zustand"}
+            name="/language/zustand.svg"
+            x="-15vw"
+            y="18vw"
+          />
+
+          <Skill
+            text={"ShadCn"}
+            name="/language/shadcn.png"
+            x="-1vw"
+            y="22vw"
+          />
+          <Skill
+            text={"React Hook Form"}
+            name="/language/react-hook-form-logo-only.png"
+            x="1vw"
+            y="8vw"
+          />
         </div>
       </div>
     </>

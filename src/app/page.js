@@ -21,7 +21,7 @@ export default function Home() {
         className={`${montserrat.className} bg-light w-full min-h-screen tracking-wider`}
       >
         <div className="bg-[#f5f5f5]  dark:bg-dark  dark:text-light overflow-hidden">
-          <Shapes className="absolute left-0 top-[50%] md:top-[400%]" />
+          {/* <Shapes className="absolute left-0 top-[50%] lg:top-[400%]" /> */}
 
           {/* <HeroPage /> */}
           <FirstHeroPage />
