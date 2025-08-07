@@ -1,5 +1,14 @@
 import Link from "next/link";
-import React from "react";
+
+export const metadata = {
+  title: "Message Sent Successfully",
+  description:
+    "Thank you for contacting Sooto Selim! Your message has been received successfully. I'll respond to your inquiry as soon as possible.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 const EmailSendSuccess = () => {
   return (

@@ -10,6 +10,45 @@ const poppins = Poppins({
   subsets: ["latin"],
   // variable: "--font-montserrat",
 });
+
+export const metadata = {
+  title: "About",
+  description:
+    "Learn more about Sooto Selim, a dedicated Full Stack Developer with 4+ years of experience in web development. Discover my journey, skills, expertise in React, Next.js, Node.js, and passion for creating exceptional digital experiences.",
+  keywords: [
+    "About Sooto Selim",
+    "Full Stack Developer Biography",
+    "Web Developer Experience",
+    "React Expert Nigeria",
+    "JavaScript Developer Skills",
+    "Professional Background",
+    "Web Development Journey",
+    "Programming Skills",
+    "Tech Stack Expertise",
+  ],
+  openGraph: {
+    title: "About Sooto Selim - Full Stack Developer",
+    description:
+      "Learn more about Sooto Selim, a dedicated Full Stack Developer with 4+ years of experience in web development and passion for creating exceptional digital experiences.",
+    images: [
+      {
+        url: "/images/my-toon-picture-removebg-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "About Sooto Selim - Full Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    title: "About Sooto Selim - Full Stack Developer",
+    description:
+      "Learn more about my journey as a Full Stack Developer with 4+ years of experience in web development.",
+  },
+  alternates: {
+    canonical: "/about",
+  },
+};
+
 const page = () => {
   return (
     <>

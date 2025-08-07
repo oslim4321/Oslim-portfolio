@@ -1,5 +1,14 @@
 import Link from "next/link";
-import React from "react";
+
+export const metadata = {
+  title: "Coming Soon",
+  description:
+    "This page is currently under development. Stay tuned for exciting new content from Sooto Selim's portfolio.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 const page = () => {
   return (
