@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "oslim-portfolio.vercel.app";
+  const baseUrl = "https://oslim-portfolio.vercel.app";
 
   return [
     {

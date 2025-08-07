@@ -38,7 +38,7 @@ export const metadata = {
   creator: "Sooto Selim",
   publisher: "Sooto Selim",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "oslim-portfolio.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://oslim-portfolio.vercel.app"
   ),
   alternates: {
     canonical: "/",
@@ -96,7 +96,8 @@ export default function RootLayout({ children }) {
     jobTitle: "Full Stack Developer",
     description:
       "Professional Full Stack Developer & Web Designer with 4+ years of experience",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "oslim-portfolio.vercel.app",
+    url:
+      process.env.NEXT_PUBLIC_SITE_URL || "https://oslim-portfolio.vercel.app",
     email: "adewaleselim6@gmail.com",
     telephone: "+2347087121696",
     address: {
@@ -147,7 +148,7 @@ export default function RootLayout({ children }) {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>

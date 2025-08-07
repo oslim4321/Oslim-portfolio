@@ -1,0 +1,27 @@
+{
+  "name": "Sooto Selim - Full Stack Developer Portfolio",
+  "short_name": "Sooto Selim",
+  "description": "Professional Full Stack Developer & Web Designer with 4+ years of experience in React, Next.js, Node.js, and modern web technologies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/images/MyLogo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/MyLogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
