@@ -1,17 +1,16 @@
 "use client";
-import React from "react";
 import AnimatedImg from "@/src/components/AnimatedImg";
-import { Poppins, Raleway } from "next/font/google";
+// import { Poppins, Raleway } from "next/font/google";
 import AnimatedText from "./AnimatedText";
 
-const raleway = Raleway({
-  weight: ["400", "600"],
-  subsets: ["latin"],
-  // variable: "--font-montserrat",
-});
+// const raleway = Raleway({
+//   weight: ["400", "600"],
+//   subsets: ["latin"],
+//   // variable: "--font-montserrat",
+// });
 const AboutHeroPage = () => {
   return (
-    <div className="cont grid grid-cols-12 place-items-center md:gap-x-10 w-full py-10d overflow-hidden">
+    <div className="grid w-full grid-cols-12 overflow-hidden cont place-items-center md:gap-x-10 py-10d">
       <div className="col-span-12 md:col-span-6 ">
         <AnimatedText
           text="Unleashing Creativity!"
@@ -41,7 +40,7 @@ const AboutHeroPage = () => {
       </div>
       <div className="col-span-12 md:col-span-4">
         {/* <HeroPageAnimatedLeft /> */}
-        <div className="bord flex items-end justify-end">
+        <div className="flex items-end justify-end bord">
           {/* <Image
                   src="/images/my-toon-picture-removebg-preview.png"
                   alt="oslim"
